@@ -350,10 +350,10 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight font-serif">
-              因為你，才值得擁有
-              <span className="block text-2xl md:text-3xl font-light text-slate-300 font-sans tracking-wide mt-3">
-                Build Trust with Dilliz, Shape your future
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight font-serif text-white">
+              Build A Trust with DILLIZ
+              <span className="block text-2xl md:text-3xl font-light text-[var(--gold)] font-serif tracking-wide mt-3">
+                Shape The Future YOU Deserve
               </span>
             </h1>
 
@@ -849,7 +849,7 @@ export default function Home() {
                 />
               </a>
               <p className="text-xs text-slate-400 font-light leading-relaxed max-w-sm">
-                帝力斯資本信託有限公司為全球客戶提供安全、合規且高度保密的財富管理與信託託管解決方案。因為你，才值得擁有。
+                帝力斯資本信託有限公司為全球客戶提供安全、合規且高度保密的財富管理與信託託管解決方案。Build A Trust with DILLIZ, Shape The Future YOU Deserve.
               </p>
               <div className="text-xs text-slate-500">
                 信託或公司服務提供者牌照號碼: <strong className="text-slate-300">TC010540</strong>
