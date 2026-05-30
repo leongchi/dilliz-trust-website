@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Globe, Menu, X, ArrowRight, Shield } from "lucide-react";
+import { Globe, Menu, X, ArrowRight, Shield, Bell, Trash2, CheckCircle2 } from "lucide-react";
 import { t } from "@/lib/translations";
 
 interface LayoutProps {
@@ -129,6 +129,9 @@ export default function Layout({ children }: LayoutProps) {
               </button>
             </div>
 
+            {/* 尊貴通知中心 */}
+            <NotificationCenter lang={lang} />
+
             {/* 預約專屬諮詢 (btn-gold 流光與光暈) */}
             <Link 
               href="/contact" 
@@ -236,6 +239,170 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </footer>
 
+    </div>
+  );
+}
+
+
+// 尊貴通知中心組件
+interface NotificationItem {
+  id: string;
+  titleZh: string;
+  titleEn: string;
+  descZh: string;
+  descEn: string;
+  timeZh: string;
+  timeEn: string;
+  read: boolean;
+}
+
+function NotificationCenter({ lang }: { lang: "zh" | "en" }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [notifications, setNotifications] = useState<NotificationItem[]>([
+    {
+      id: "n1",
+      titleZh: "🔔 歡迎蒞臨帝力斯資本信託",
+      titleEn: "🔔 Welcome to DILLIZ Capital Trust",
+      descZh: "您的專屬瑞士私人銀行級別財富託管管家已上線。我們將竭誠為您的家族財富與跨代傳承保駕護航。",
+      descEn: "Your private banking-grade wealth custodian is now active. We are dedicated to safeguarding your legacy.",
+      timeZh: "剛剛",
+      timeEn: "Just now",
+      read: false
+    },
+    {
+      id: "n2",
+      titleZh: "📈 限時尊享：美金定存年化 5.2%",
+      titleEn: "📈 Limited Offer: 5.2% USD Fixed Deposit",
+      descZh: "即日起至本季度末，帝力斯會員尊享限時定存特惠年化收益率。請即聯絡您的專屬客戶經理預約設立。",
+      descEn: "Exclusive yield for DILLIZ members until end of quarter. Contact your dedicated manager to subscribe.",
+      timeZh: "2小時前",
+      timeEn: "2 hours ago",
+      read: false
+    },
+    {
+      id: "n3",
+      titleZh: "⚖️ 合規公告：打擊洗錢 (AML) 條例對接完成",
+      titleEn: "⚖️ Compliance: AML Cap. 615 Alignment",
+      descZh: "合規升級：本公司已全面完成香港打擊洗錢及恐怖分子資金籌集條例（第 615 章）最新合規系統升級，確保資產絕對合法隱密。",
+      descEn: "Dilliz Trust has successfully aligned with HK Cap. 615 AML Ordinance, ensuring maximum security and legality.",
+      timeZh: "1天前",
+      timeEn: "1 day ago",
+      read: false
+    }
+  ]);
+
+  const unreadCount = notifications.filter(n => !n.read).length;
+
+  const markAllAsRead = () => {
+    setNotifications(notifications.map(n => ({ ...n, read: true })));
+  };
+
+  const markAsRead = (id: string) => {
+    setNotifications(notifications.map(n => n.id === id ? { ...n, read: true } : n));
+  };
+
+  const deleteNotification = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setNotifications(notifications.filter(n => n.id !== id));
+  };
+
+  // 點擊外部自動關閉下拉選單
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleOutsideClick = () => setIsOpen(false);
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [isOpen]);
+
+  return (
+    <div className="relative" onClick={(e) => e.stopPropagation()}>
+      
+      {/* 鈴鐺按鈕 */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-metal-gold hover:border-metal-gold/40 transition-all duration-300 relative"
+      >
+        <Bell size={18} className={unreadCount > 0 ? "animate-swing" : ""} />
+        {unreadCount > 0 && (
+          <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border border-[#071426] shadow-gold-glow animate-pulse" />
+        )}
+      </button>
+
+      {/* 下拉選單 (玻璃態) */}
+      {isOpen && (
+        <div className="absolute right-0 mt-3 w-80 md:w-96 bg-[#071426]/95 backdrop-blur-xl border border-metal-gold/30 rounded-2xl shadow-gold-glow overflow-hidden z-50 animate-fadeIn">
+          
+          {/* 頭部 */}
+          <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between bg-[#030914]/80">
+            <span className="text-xs font-bold tracking-wider text-slate-200 font-serif">
+              {lang === "zh" ? "通知中心" : "Notification Center"} ({unreadCount})
+            </span>
+            {unreadCount > 0 && (
+              <button
+                onClick={markAllAsRead}
+                className="text-[10px] font-bold tracking-wider text-metal-gold hover:underline uppercase"
+              >
+                {lang === "zh" ? "全部標記已讀" : "Mark all read"}
+              </button>
+            )}
+          </div>
+
+          {/* 通知列表 */}
+          <div className="max-h-[350px] overflow-y-auto divide-y divide-white/5">
+            {notifications.length === 0 ? (
+              <div className="py-12 text-center space-y-3">
+                <CheckCircle2 size={32} className="text-metal-gold/30 mx-auto" />
+                <p className="text-xs text-slate-500 font-light">
+                  {lang === "zh" ? "暫無任何新通知" : "No new notifications"}
+                </p>
+              </div>
+            ) : (
+              notifications.map((n) => (
+                <div
+                  key={n.id}
+                  onClick={() => markAsRead(n.id)}
+                  className={`p-5 transition-all duration-300 hover:bg-white/5 cursor-pointer relative ${
+                    !n.read ? "bg-metal-gold/5" : ""
+                  }`}
+                >
+                  {/* 未讀藍點 */}
+                  {!n.read && (
+                    <span className="absolute top-6 left-2 w-1.5 h-1.5 bg-metal-gold rounded-full" />
+                  )}
+
+                  <div className="space-y-2 pl-2">
+                    <div className="flex items-start justify-between gap-4">
+                      <h4 className={`text-xs font-bold font-serif ${!n.read ? "text-metal-gold" : "text-slate-300"}`}>
+                        {lang === "zh" ? n.titleZh : n.titleEn}
+                      </h4>
+                      <button
+                        onClick={(e) => deleteNotification(n.id, e)}
+                        className="text-slate-600 hover:text-red-400 transition-colors shrink-0"
+                      >
+                        <Trash2 size={12} />
+                      </button>
+                    </div>
+                    <p className="text-[11px] text-slate-400 font-light leading-relaxed">
+                      {lang === "zh" ? n.descZh : n.descEn}
+                    </p>
+                    <span className="text-[9px] text-slate-500 block font-semibold">
+                      {lang === "zh" ? n.timeZh : n.timeEn}
+                    </span>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+
+          {/* 腳部 */}
+          <div className="px-5 py-3 border-t border-white/5 bg-[#030914]/50 text-center">
+            <span className="text-[9px] text-slate-500 font-semibold tracking-wider uppercase">
+              {lang === "zh" ? "🛡️ 帝力斯安全合規通道" : "🛡️ DILLIZ SECURE COMPLIANCE CHANNEL"}
+            </span>
+          </div>
+
+        </div>
+      )}
     </div>
   );
 }
