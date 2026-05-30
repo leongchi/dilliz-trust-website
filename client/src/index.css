@@ -43,6 +43,7 @@
 }
 
 :root {
+  --gold: #D4AF37;
   --primary: var(--color-blue-700);
   --primary-foreground: var(--color-blue-50);
   --sidebar-primary: var(--color-blue-600);
@@ -79,6 +80,7 @@
 }
 
 .dark {
+  --gold: #D4AF37;
   --primary: var(--color-blue-700);
   --primary-foreground: var(--color-blue-50);
   --sidebar-primary: var(--color-blue-500);
@@ -134,24 +136,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,17 +151,77 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+
+  /* Premium Buttons */
+  .btn-gold {
+    background-color: #D4AF37;
+    color: #071426;
+    padding: 0.75rem 2rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid #D4AF37;
+  }
+  .btn-gold:hover {
+    background-color: #C29E2F;
+    border-color: #C29E2F;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+    transform: translateY(-1px);
+  }
+  .btn-gold:active {
+    transform: translateY(1px);
+  }
+
+  .btn-gold-outline {
+    background-color: transparent;
+    color: #D4AF37;
+    border: 1px solid #D4AF37;
+    padding: 0.75rem 2rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .btn-gold-outline:hover {
+    background-color: #D4AF37;
+    color: #071426;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+    transform: translateY(-1px);
+  }
+  .btn-gold-outline:active {
+    transform: translateY(1px);
+  }
+
+  .btn-white-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.75rem 2rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .btn-white-outline:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-1px);
+  }
+  .btn-white-outline:active {
+    transform: translateY(1px);
   }
 }
 

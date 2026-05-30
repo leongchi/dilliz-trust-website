@@ -289,39 +289,39 @@ export default function Home() {
       </div>
 
       {/* 導航欄 */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+      <header className="sticky top-0 z-50 bg-[#071426]/95 backdrop-blur-md border-b border-white/10 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
             <img 
               src="/manus-storage/dilliz_logo_transparent_db9e135f.png" 
               alt="DILLIZ CAPITAL TRUST Logo" 
-              className="h-14 w-auto object-contain"
+              className="h-14 w-auto object-contain brightness-110"
             />
           </a>
 
           {/* 桌面端導航連結 */}
           <nav className="hidden lg:flex items-center gap-8">
-            <a href="#about" className="text-sm font-medium text-slate-600 hover:text-[#0B1E36] transition-colors">{t("nav.about")}</a>
-            <a href="#services" className="text-sm font-medium text-slate-600 hover:text-[#0B1E36] transition-colors">{t("nav.services")}</a>
-            <a href="#cases" className="text-sm font-medium text-slate-600 hover:text-[#0B1E36] transition-colors">{t("nav.cases")}</a>
-            <a href="#membership" className="text-sm font-medium text-slate-600 hover:text-[#0B1E36] transition-colors">{t("nav.membership")}</a>
-            <a href="#faq" className="text-sm font-medium text-slate-600 hover:text-[#0B1E36] transition-colors">{t("nav.faq")}</a>
+            <a href="#about" className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t("nav.about")}</a>
+            <a href="#services" className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t("nav.services")}</a>
+            <a href="#cases" className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t("nav.cases")}</a>
+            <a href="#membership" className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t("nav.membership")}</a>
+            <a href="#faq" className="text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors">{t("nav.faq")}</a>
           </nav>
 
           {/* 語言切換與按鈕 */}
           <div className="hidden lg:flex items-center gap-6">
             {/* 雙語切換按鈕 */}
-            <div className="flex items-center border border-slate-200 rounded-full p-0.5 bg-slate-50">
+            <div className="flex items-center border border-white/10 rounded-full p-0.5 bg-white/5">
               <button 
                 onClick={() => setLang("zh")} 
-                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${lang === "zh" ? "bg-[#0B1E36] text-white" : "text-slate-500 hover:text-slate-800"}`}
+                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${lang === "zh" ? "bg-[#D4AF37] text-[#071426]" : "text-slate-400 hover:text-white"}`}
               >
                 繁
               </button>
               <button 
                 onClick={() => setLang("en")} 
-                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${lang === "en" ? "bg-[#0B1E36] text-white" : "text-slate-500 hover:text-slate-800"}`}
+                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${lang === "en" ? "bg-[#D4AF37] text-[#071426]" : "text-slate-400 hover:text-white"}`}
               >
                 EN
               </button>
@@ -335,16 +335,16 @@ export default function Home() {
           {/* 行動端選單按鈕 */}
           <div className="flex lg:hidden items-center gap-4">
             {/* 行動端語言切換 */}
-            <div className="flex items-center border border-slate-200 rounded-full p-0.5 bg-slate-50">
+            <div className="flex items-center border border-white/10 rounded-full p-0.5 bg-white/5">
               <button 
                 onClick={() => setLang("zh")} 
-                className={`px-2 py-0.5 text-xs font-semibold rounded-full transition-all ${lang === "zh" ? "bg-[#0B1E36] text-white" : "text-slate-500"}`}
+                className={`px-2 py-0.5 text-xs font-semibold rounded-full transition-all ${lang === "zh" ? "bg-[#D4AF37] text-[#071426]" : "text-slate-400"}`}
               >
                 繁
               </button>
               <button 
                 onClick={() => setLang("en")} 
-                className={`px-2 py-0.5 text-xs font-semibold rounded-full transition-all ${lang === "en" ? "bg-[#0B1E36] text-white" : "text-slate-500"}`}
+                className={`px-2 py-0.5 text-xs font-semibold rounded-full transition-all ${lang === "en" ? "bg-[#D4AF37] text-[#071426]" : "text-slate-400"}`}
               >
                 EN
               </button>
@@ -352,7 +352,7 @@ export default function Home() {
 
             <button 
               onClick={() => setMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-700 hover:text-[#0B1E36] focus:outline-none"
+              className="p-2 text-slate-300 hover:text-[#D4AF37] focus:outline-none"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -361,15 +361,15 @@ export default function Home() {
 
         {/* 行動端下拉選單 */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-slate-100 px-6 py-6 space-y-4 flex flex-col shadow-inner">
-            <a href="#about" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-700 py-2 border-b border-slate-50">{t("nav.about")}</a>
-            <a href="#services" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-700 py-2 border-b border-slate-50">{t("nav.services")}</a>
-            <a href="#cases" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-700 py-2 border-b border-slate-50">{t("nav.cases")}</a>
-            <a href="#membership" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-700 py-2 border-b border-slate-50">{t("nav.membership")}</a>
-            <a href="#faq" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-700 py-2 border-b border-slate-50">{t("nav.faq")}</a>
+          <div className="lg:hidden bg-[#071426] border-b border-white/10 px-6 py-6 space-y-4 flex flex-col shadow-inner">
+            <a href="#about" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-300 py-2 border-b border-white/5 hover:text-[#D4AF37]">{t("nav.about")}</a>
+            <a href="#services" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-300 py-2 border-b border-white/5 hover:text-[#D4AF37]">{t("nav.services")}</a>
+            <a href="#cases" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-300 py-2 border-b border-white/5 hover:text-[#D4AF37]">{t("nav.cases")}</a>
+            <a href="#membership" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-300 py-2 border-b border-white/5 hover:text-[#D4AF37]">{t("nav.membership")}</a>
+            <a href="#faq" onClick={() => setMenuOpen(false)} className="text-base font-medium text-slate-300 py-2 border-b border-white/5 hover:text-[#D4AF37]">{t("nav.faq")}</a>
             <button 
               onClick={() => { setMenuOpen(false); handlePlaceholderClick(t("nav.portal")); }} 
-              className="text-left text-base font-medium text-slate-700 py-2 border-b border-slate-50 flex items-center gap-2"
+              className="text-left text-base font-medium text-slate-300 py-2 border-b border-white/5 flex items-center gap-2 hover:text-[#D4AF37]"
             >
               <Lock size={16} />
               {t("nav.portal")}
@@ -582,8 +582,8 @@ export default function Home() {
                     cy="50%" 
                     r="38%" 
                     fill="none" 
-                    stroke="rgba(212, 175, 55, 0.15)" 
-                    strokeWidth="2" 
+                    stroke="rgba(212, 175, 55, 0.4)" 
+                    strokeWidth="2.5" 
                     strokeDasharray="6 6"
                   />
                 </svg>
@@ -647,8 +647,8 @@ export default function Home() {
                         onClick={() => setActiveCaseIdx(idx)}
                         className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-500 shadow-md ${
                           isActive 
-                            ? "bg-[#0B1E36] border-2 border-[#D4AF37] text-[var(--gold)] scale-110 ring-4 ring-[#D4AF37]/20" 
-                            : "bg-white border border-slate-200 text-slate-500 hover:border-[#0B1E36] hover:text-[#0B1E36] hover:scale-105"
+                            ? "bg-[#071426] border-2 border-[#D4AF37] text-[#D4AF37] scale-110 ring-4 ring-[#D4AF37]/30" 
+                            : "bg-white border border-slate-300 text-[#071426] hover:border-[#D4AF37] hover:text-[#D4AF37] hover:scale-105"
                         }`}
                       >
                         <NodeIcon size={18} className="md:hidden" />
