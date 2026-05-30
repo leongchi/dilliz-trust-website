@@ -243,7 +243,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] text-slate-800 font-sans selection:bg-[#D4AF37]/30 selection:text-[#0B1E36]">
+    <div className="min-h-screen bg-[#030914] text-slate-100 font-sans selection:bg-metal-gold selection:text-[#071426]">
       
       {/* 頂部導航欄 (Navbar - 皇家深藍背景) */}
       <header className="sticky top-0 z-50 bg-[#071426] border-b border-white/5 backdrop-blur-md shadow-md">
@@ -464,23 +464,23 @@ export default function Home() {
 
       </section>
 
-      {/* 關於我們：使命、理念、定位 (重構對齊宣傳摺頁) */}
-      <section id="about" className="py-24 bg-white border-b border-metal-gold">
+      {/* 關於我們：使命、理念、定位 (皇家暗黑金屬奢華風) */}
+      <section id="about" className="py-24 bg-[#030914] border-b border-metal-gold">
         <div className="max-w-7xl mx-auto px-6">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
             {/* 左側：精緻品牌形象與真實奢華辦公室圖片疊加 */}
             <div className="lg:col-span-5 space-y-8 text-center lg:text-left">
-              <div className="relative rounded-2xl overflow-hidden shadow-luxury border border-slate-100 aspect-[4/3] group">
+              <div className="relative rounded-2xl overflow-hidden shadow-luxury border border-white/10 aspect-[4/3] group">
                 <img 
                   src="/manus-storage/luxury_office_2c65c509.jpg" 
                   alt="DILLIZ Luxury Office" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* 奢華金屬感半透明遮罩與 Logo 懸浮 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071426]/90 via-[#071426]/40 to-transparent flex items-center justify-center p-8">
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl max-w-[200px] transition-transform duration-500 group-hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071426]/95 via-[#071426]/40 to-transparent flex items-center justify-center p-8">
+                  <div className="bg-white/5 backdrop-blur-md border border-white/15 p-6 rounded-2xl shadow-2xl max-w-[200px] transition-transform duration-500 group-hover:scale-105">
                     <img 
                       src="/manus-storage/dilliz_logo_transparent_60d7bb69.png" 
                       alt="DILLIZ Shield Logo" 
@@ -490,7 +490,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-[#0B1E36] font-serif">DILLIZ CAPITAL TRUST</h3>
+                <h3 className="text-2xl font-bold text-slate-200 font-serif">DILLIZ CAPITAL TRUST</h3>
                 <p className="text-sm text-metal-gold font-bold tracking-[0.2em] uppercase">Trust · Integrity · Security</p>
               </div>
             </div>
@@ -499,11 +499,11 @@ export default function Home() {
             <div className="lg:col-span-7 space-y-10">
               
               <div className="space-y-3">
-                <span className="text-xs font-bold tracking-[0.25em] text-[var(--gold)] uppercase block">About DILLIZ</span>
+                <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block">About DILLIZ</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-metal-gold font-serif leading-tight">
                   {lang === "zh" ? "帝力斯資本信託有限公司" : "Dilliz Capital Trust Limited"}
                 </h2>
-                <p className="text-slate-600 font-light text-sm md:text-base leading-relaxed">
+                <p className="text-slate-300 font-light text-sm md:text-base leading-relaxed">
                   {lang === "zh" 
                     ? "總部設於香港，是一家香港持牌信託服務公司（牌照號碼：TC010540）。我們專注為客戶提供定制化信託解決方案，旨在成為您最值得信賴的信託公司。"
                     : "Headquartered in Hong Kong, Dilliz Capital Trust Limited is a licensed trust company in Hong Kong (License No. TC010540). We specialize in customized trust solutions to be your most trusted partner."}
@@ -513,34 +513,34 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
                 
                 {/* 使命 */}
-                <div className="bg-[#FDFBF7] p-6 border border-slate-100 rounded-xl space-y-3 shadow-sm hover:shadow-md transition-all">
-                  <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[var(--gold)]">
-                    <Shield size={20} />
+                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 space-y-3 shadow-gold-glow hover:border-metal-gold transition-all duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-metal-gold/10 flex items-center justify-center text-metal-gold">
+                    <Shield size={20} className="text-metal-gold" />
                   </div>
-                  <h4 className="text-lg font-bold text-[#0B1E36] font-serif">{t("stats.mission")}</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed">
+                  <h4 className="text-lg font-bold text-slate-200 font-serif">{t("stats.mission")}</h4>
+                  <p className="text-xs text-slate-400 font-light leading-relaxed">
                     {t("stats.mission.desc")}
                   </p>
                 </div>
 
                 {/* 理念 */}
-                <div className="bg-[#FDFBF7] p-6 border border-slate-100 rounded-xl space-y-3 shadow-sm hover:shadow-md transition-all">
-                  <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[var(--gold)]">
-                    <Users size={20} />
+                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 space-y-3 shadow-gold-glow hover:border-metal-gold transition-all duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-metal-gold/10 flex items-center justify-center text-metal-gold">
+                    <Users size={20} className="text-metal-gold" />
                   </div>
-                  <h4 className="text-lg font-bold text-[#0B1E36] font-serif">{t("stats.philosophy")}</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed">
+                  <h4 className="text-lg font-bold text-slate-200 font-serif">{t("stats.philosophy")}</h4>
+                  <p className="text-xs text-slate-400 font-light leading-relaxed">
                     {t("stats.philosophy.desc")}
                   </p>
                 </div>
 
                 {/* 定位 */}
-                <div className="bg-[#FDFBF7] p-6 border border-slate-100 rounded-xl space-y-3 shadow-sm hover:shadow-md transition-all">
-                  <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[var(--gold)]">
-                    <Briefcase size={20} />
+                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 space-y-3 shadow-gold-glow hover:border-metal-gold transition-all duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-metal-gold/10 flex items-center justify-center text-metal-gold">
+                    <Briefcase size={20} className="text-metal-gold" />
                   </div>
-                  <h4 className="text-lg font-bold text-[#0B1E36] font-serif">{t("stats.positioning")}</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed">
+                  <h4 className="text-lg font-bold text-slate-200 font-serif">{t("stats.positioning")}</h4>
+                  <p className="text-xs text-slate-400 font-light leading-relaxed">
                     {t("stats.positioning.desc")}
                   </p>
                 </div>
@@ -554,15 +554,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 核心服務板塊 (對齊宣傳摺頁五大服務) */}
-      <section id="services" className="py-24 bg-[#FDFBF7]">
+      {/* 核心服務板塊 (皇家暗黑金屬奢華風) */}
+      <section id="services" className="py-24 bg-[#071426] border-b border-metal-gold">
         <div className="max-w-7xl mx-auto px-6">
           
           {/* 標題 */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-[0.25em] text-[var(--gold)] uppercase block mb-3">Our Services</span>
+            <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block mb-3">Our Services</span>
             <h2 className="text-3xl md:text-4xl font-bold text-metal-gold mb-4 font-serif">{t("services.title")}</h2>
-            <p className="text-slate-600 font-light">
+            <p className="text-slate-300 font-light">
               {t("services.subtitle")}
             </p>
           </div>
@@ -581,17 +581,17 @@ export default function Home() {
                     onClick={() => setActiveService(idx)}
                     className={`flex items-center gap-4 p-5 rounded-xl border text-left transition-all duration-300 ${
                       isSelected 
-                        ? "bg-[#0B1E36] text-white border-metal-gold shadow-gold-glow translate-x-2" 
-                        : "bg-white text-slate-700 border-slate-100 hover:border-slate-300 hover:bg-slate-50"
+                        ? "bg-[#030914] text-white border-metal-gold shadow-gold-glow translate-x-2" 
+                        : "bg-white/5 text-slate-300 border-white/10 hover:border-metal-gold/40 hover:bg-white/10"
                     }`}
                   >
                     <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
-                      isSelected ? "bg-[#D4AF37] text-[#071426]" : "bg-[#0B1E36]/5 text-[#0B1E36]"
+                      isSelected ? "bg-metal-gold text-[#071426]" : "bg-white/5 text-metal-gold"
                     }`}>
-                      <IconComponent size={20} />
+                      <IconComponent size={20} className={isSelected ? "text-[#071426]" : "text-metal-gold"} />
                     </div>
                     <div className="min-w-0">
-                      <h3 className={`font-bold text-sm md:text-base ${isSelected ? "text-[var(--gold)]" : "text-[#0B1E36]"}`}>
+                      <h3 className={`font-bold text-sm md:text-base ${isSelected ? "text-metal-gold" : "text-slate-200"}`}>
                         {srv.title}
                       </h3>
                       <p className={`text-xs truncate mt-0.5 ${isSelected ? "text-slate-300 font-light" : "text-slate-400"}`}>
@@ -605,10 +605,10 @@ export default function Home() {
 
             {/* 右側詳情面板 (佔 8 格) */}
             <div className="lg:col-span-8">
-              <div className="bg-white border border-slate-100 rounded-2xl p-8 md:p-10 shadow-lg h-full flex flex-col justify-between min-h-[450px] transition-all duration-500 relative overflow-hidden">
+              <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 md:p-10 shadow-gold-glow h-full flex flex-col justify-between min-h-[450px] transition-all duration-500 relative overflow-hidden">
                 
                 {/* 裝飾背景圖案 */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/5 rounded-full blur-2xl -mr-10 -mt-10" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-metal-gold/5 rounded-full blur-2xl -mr-10 -mt-10" />
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10 grow">
                   
@@ -620,17 +620,17 @@ export default function Home() {
                         <span className="text-xs font-bold tracking-widest text-metal-gold uppercase block">
                           {services[activeService].tagline}
                         </span>
-                        <h3 className="text-2xl md:text-3xl font-bold text-[#0B1E36] font-serif">
+                        <h3 className="text-2xl md:text-3xl font-bold text-slate-200 font-serif">
                           {services[activeService].title}
                         </h3>
                       </div>
 
-                      <p className="text-slate-600 text-sm leading-relaxed font-light">
+                      <p className="text-slate-300 text-sm leading-relaxed font-light">
                         {services[activeService].desc}
                       </p>
                     </div>
 
-                    <hr className="border-metal-gold" />
+                    <hr className="border-white/10" />
 
                     {/* 特色亮點列表 */}
                     <div className="space-y-3">
@@ -639,14 +639,14 @@ export default function Home() {
                           <div className="w-5 h-5 rounded-full bg-metal-gold/10 flex items-center justify-center text-metal-gold mt-0.5 shrink-0">
                             <Check size={12} className="text-metal-gold" />
                           </div>
-                          <span className="text-slate-700 text-xs font-medium leading-relaxed">{feat}</span>
+                          <span className="text-slate-300 text-xs font-medium leading-relaxed">{feat}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* 右側：精緻真實圖片 (佔 5 格) */}
-                  <div className="md:col-span-5 relative rounded-xl overflow-hidden shadow-md aspect-[4/5] md:aspect-auto">
+                  <div className="md:col-span-5 relative rounded-xl overflow-hidden shadow-md aspect-[4/5] md:aspect-auto border border-white/10">
                     <img 
                       src="/manus-storage/handshake_aa0be52f.jpg" 
                       alt="Trust & Collaboration" 
@@ -658,7 +658,7 @@ export default function Home() {
                 </div>
 
                 {/* 底部諮詢行動按鈕 */}
-                <div className="pt-6 border-t border-slate-100 mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+                <div className="pt-6 border-t border-white/10 mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
                   <span className="text-xs text-slate-400 font-light">
                     {lang === "zh" ? "*所有信託服務均在香港信託法框架下安全合規運行" : "*All trust services comply strictly with HK Trust Law"}
                   </span>
@@ -675,15 +675,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 真實案例分析 (360度環狀生命週期互動版面) */}
-      <section id="cases" className="py-24 bg-white border-y border-metal-gold">
+      {/* 真實案例分析 (皇家暗黑金屬奢華風) */}
+      <section id="cases" className="py-24 bg-[#030914] border-y border-metal-gold">
         <div className="max-w-7xl mx-auto px-6">
           
           {/* 標題 */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-[0.25em] text-[var(--gold)] uppercase block mb-3">Real Scenarios</span>
+            <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block mb-3">Real Scenarios</span>
             <h2 className="text-3xl md:text-4xl font-bold text-metal-gold mb-4 font-serif">{t("cases.title")}</h2>
-            <p className="text-slate-600 font-light">
+            <p className="text-slate-300 font-light">
               {t("cases.subtitle")}
             </p>
           </div>
@@ -695,7 +695,7 @@ export default function Home() {
             <div className="lg:col-span-5 flex justify-center relative min-h-[380px] md:min-h-[450px]">
               
               {/* 中心圓圈 (代表高淨值客戶個人 - 尊貴客戶 / YOU) */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#0B1E36] border-4 border-metal-gold shadow-gold-glow flex flex-col items-center justify-center z-30">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#030914] border-4 border-metal-gold shadow-gold-glow flex flex-col items-center justify-center z-30">
                 <div className="w-12 h-12 rounded-full bg-metal-gold/10 flex items-center justify-center text-metal-gold mb-1">
                   <User size={24} className="text-metal-gold" />
                 </div>
@@ -706,8 +706,8 @@ export default function Home() {
               </div>
 
               {/* 背景虛線裝飾圓環 */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[72%] h-[72%] rounded-full border-2 border-dashed border-[#D4AF37]/40 z-0" />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[48%] h-[48%] rounded-full border border-dashed border-[#D4AF37]/20 z-0" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[72%] h-[72%] rounded-full border-2 border-dashed border-metal-gold/30 z-0" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[48%] h-[48%] rounded-full border border-dashed border-metal-gold/20 z-0" />
 
               {/* 連接線 (SVG) */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
@@ -725,7 +725,7 @@ export default function Home() {
                       y1="50%"
                       x2={`calc(50% + ${cos * 42}%)`}
                       y2={`calc(50% + ${sin * 42}%)`}
-                      stroke={isActive ? "#D4AF37" : "#cbd5e1"}
+                      stroke={isActive ? "#D4AF37" : "rgba(255,255,255,0.15)"}
                       strokeWidth={isActive ? "2" : "1"}
                       strokeDasharray={isActive ? "none" : "3,3"}
                       className="transition-all duration-300"
@@ -751,14 +751,14 @@ export default function Home() {
                     style={{ left: x, top: y }}
                     className={`absolute -translate-x-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full flex flex-col items-center justify-center transition-all duration-300 shadow-md group z-20 border ${
                       isActive 
-                        ? "bg-[#0B1E36] text-metal-gold border-metal-gold scale-110 shadow-gold-glow" 
-                        : "bg-white text-[#071426] border-slate-300 hover:border-[#0B1E36] hover:scale-105"
+                        ? "bg-[#071426] text-metal-gold border-metal-gold scale-110 shadow-gold-glow" 
+                        : "bg-white/5 text-slate-300 border-white/10 hover:border-metal-gold/50 hover:scale-105"
                     }`}
                     title={c.badge}
                   >
-                    <IconComponent size={18} className={isActive ? "text-metal-gold" : "text-[#071426]"} />
+                    <IconComponent size={18} className={isActive ? "text-metal-gold" : "text-slate-300"} />
                     <span className={`text-[8px] md:text-[9px] font-bold tracking-tight block mt-1 max-w-[50px] truncate ${
-                      isActive ? "text-white" : "text-[#071426] group-hover:text-[#0B1E36]"
+                      isActive ? "text-white" : "text-slate-400 group-hover:text-slate-200"
                     }`}>
                       {c.badge}
                     </span>
@@ -770,7 +770,7 @@ export default function Home() {
 
             {/* 右側詳情面板 (佔 7 格，重構為 Challenge, Solution, Result 官方摺頁結構) */}
             <div className="lg:col-span-7">
-              <div className="bg-[#FDFBF7] border border-slate-100 p-8 md:p-10 shadow-md relative min-h-[450px] flex flex-col justify-between transition-all duration-500 animate-fadeIn">
+              <div className="bg-white/5 backdrop-blur border border-white/10 p-8 md:p-10 shadow-gold-glow relative min-h-[450px] flex flex-col justify-between transition-all duration-500 animate-fadeIn rounded-2xl">
                 
                 {/* 頂部裝飾角 */}
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-metal-gold" />
@@ -780,15 +780,15 @@ export default function Home() {
                   
                   {/* 頂部徽章與標題 */}
                   <div className="space-y-3">
-                    <span className="inline-block bg-[#0B1E36] text-[var(--gold)] text-xs font-bold tracking-widest uppercase px-3 py-1">
+                    <span className="inline-block bg-[#071426] text-metal-gold border border-metal-gold/30 text-xs font-bold tracking-widest uppercase px-3 py-1">
                       {cases[activeCaseIdx].badge}
                     </span>
-                    <h3 className="text-2xl font-bold text-[#0B1E36] font-serif leading-tight">
+                    <h3 className="text-2xl font-bold text-slate-200 font-serif leading-tight">
                       {cases[activeCaseIdx].title}
                     </h3>
                   </div>
 
-                  <hr className="border-slate-200" />
+                  <hr className="border-white/10" />
 
                   {/* 1. 面臨挑戰 */}
                   <div className="space-y-2">
@@ -796,7 +796,7 @@ export default function Home() {
                       <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
                       {t("cases.label.challenge")}
                     </h4>
-                    <p className="text-slate-600 text-sm leading-relaxed font-light">
+                    <p className="text-slate-300 text-sm leading-relaxed font-light">
                       {cases[activeCaseIdx].desc}
                     </p>
                   </div>
@@ -804,27 +804,27 @@ export default function Home() {
                   {/* 2. 建議方案 */}
                   <div className="space-y-3">
                     <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-metal-gold" />
                       {t("cases.label.solution")}
                     </h4>
                     <div className="grid grid-cols-1 gap-2.5">
                       {cases[activeCaseIdx].solutions.map((sol, sIdx) => (
                         <div key={sIdx} className="flex items-start gap-2.5">
-                          <div className="w-4 h-4 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[var(--gold)] mt-0.5 shrink-0">
-                            <Check size={10} />
+                          <div className="w-4 h-4 rounded-full bg-metal-gold/10 flex items-center justify-center text-metal-gold mt-0.5 shrink-0">
+                            <Check size={10} className="text-metal-gold" />
                           </div>
-                          <span className="text-slate-700 text-sm font-medium">{sol}</span>
+                          <span className="text-slate-300 text-sm font-medium">{sol}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
                   {/* 3. 規劃結果 */}
-                  <div className="bg-[#0B1E36]/5 border-l-4 border-metal-gold p-4 rounded-r-lg space-y-1">
+                  <div className="bg-white/5 border-l-4 border-metal-gold p-4 rounded-r-lg space-y-1">
                     <h4 className="text-xs font-bold tracking-wider text-metal-gold uppercase">
                       {t("cases.label.result")}
                     </h4>
-                    <p className="text-slate-800 text-sm font-semibold leading-relaxed">
+                    <p className="text-slate-200 text-sm font-semibold leading-relaxed">
                       {cases[activeCaseIdx].result}
                     </p>
                   </div>
@@ -832,7 +832,7 @@ export default function Home() {
                 </div>
 
                 {/* 底部行動按鈕 */}
-                <div className="pt-6 border-t border-slate-200/60 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="pt-6 border-t border-white/10 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <span className="text-[10px] text-slate-400 font-light">
                     {lang === "zh" ? "*以上案例均為真實情境化改編，已隱去客戶私密資訊" : "*Cases adapted from real scenarios, private info redacted"}
                   </span>
@@ -849,15 +849,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 會員計劃 (Membership Section - Fancy 3D 金屬懸浮卡片對照矩陣) */}
-      <section id="membership" className="py-24 bg-[#FDFBF7]">
+      {/* 會員計劃 (皇家暗黑金屬奢華風) */}
+      <section id="membership" className="py-24 bg-[#071426] border-b border-metal-gold">
         <div className="max-w-7xl mx-auto px-6">
           
           {/* 標題 */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-[0.25em] text-[var(--gold)] uppercase block mb-3">Membership Plan</span>
+            <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block mb-3">Membership Plan</span>
             <h2 className="text-3xl md:text-4xl font-bold text-metal-gold mb-4 font-serif">{t("membership.title")}</h2>
-            <p className="text-slate-600 font-light">
+            <p className="text-slate-300 font-light">
               {t("membership.subtitle")}
             </p>
           </div>
@@ -867,25 +867,25 @@ export default function Home() {
             {membershipTiers.map((tier, idx) => (
               <div 
                 key={idx}
-                className={`relative rounded-2xl bg-white border border-slate-100 overflow-hidden flex flex-col justify-between transition-all duration-300 ${
+                className={`relative rounded-2xl bg-white/5 backdrop-blur border overflow-hidden flex flex-col justify-between transition-all duration-300 ${
                   tier.highlight 
-                    ? "shadow-gold-glow border-[#D4AF37]/50 lg:-translate-y-4 scale-[1.02] z-10" 
-                    : "shadow-luxury shadow-luxury-hover z-0"
+                    ? "shadow-gold-glow border-metal-gold lg:-translate-y-4 scale-[1.02] z-10" 
+                    : "shadow-luxury border-white/10 z-0 hover:border-metal-gold/40"
                 }`}
               >
                 {/* 尊享版「官方推薦」緞帶 */}
                 {tier.highlight && (
-                  <div className="absolute top-0 right-0 bg-[#D4AF37] text-[#071426] text-[9px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-bl-xl z-20 flex items-center gap-1">
+                  <div className="absolute top-0 right-0 bg-metal-gold text-[#071426] text-[9px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-bl-xl z-20 flex items-center gap-1">
                     <Star size={8} fill="#071426" /> {lang === "zh" ? "推薦" : "RECOMMENDED"}
                   </div>
                 )}
 
                 {/* 頂部：金屬質感 Header */}
                 <div className={`p-6 text-center relative overflow-hidden shrink-0 ${tier.cardStyle}`}>
-                  <h3 className="text-xl font-extrabold tracking-widest font-serif uppercase relative z-10">
+                  <h3 className="text-xl font-extrabold tracking-widest font-serif uppercase relative z-10 text-slate-100">
                     {tier.name}
                   </h3>
-                  <p className="text-[10px] tracking-[0.15em] font-semibold opacity-75 mt-1 uppercase relative z-10">
+                  <p className="text-[10px] tracking-[0.15em] font-semibold opacity-75 mt-1 uppercase relative z-10 text-slate-300">
                     {lang === "zh" ? "信託專屬會員" : "TRUST MEMBERSHIP"}
                   </p>
                 </div>
@@ -894,11 +894,11 @@ export default function Home() {
                 <div className="p-6 space-y-6 grow">
                   
                   {/* 定存門檻 (大字突出) */}
-                  <div className="text-center pb-5 border-b border-slate-100">
+                  <div className="text-center pb-5 border-b border-white/10">
                     <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase block mb-1">
                       {t("membership.threshold")}
                     </span>
-                    <span className="text-lg font-extrabold text-[#0B1E36]">
+                    <span className="text-lg font-extrabold text-slate-200">
                       {tier.threshold}
                     </span>
                   </div>
@@ -907,31 +907,31 @@ export default function Home() {
                   <div className="space-y-4 text-xs">
                     
                     {/* 1. 資產聯動信用卡 */}
-                    <div className="flex justify-between items-center py-1 border-b border-slate-50">
+                    <div className="flex justify-between items-center py-1 border-b border-white/5">
                       <span className="text-slate-400 font-medium">{t("membership.linkedcard")}</span>
-                      <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                        <Check size={12} />
+                      <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                        <Check size={12} className="text-emerald-400" />
                       </div>
                     </div>
 
                     {/* 2. 定存期限 */}
-                    <div className="flex justify-between items-center py-1 border-b border-slate-50">
+                    <div className="flex justify-between items-center py-1 border-b border-white/5">
                       <span className="text-slate-400 font-medium">{t("membership.duration")}</span>
-                      <span className="font-bold text-[#0B1E36]">{tier.duration}</span>
+                      <span className="font-bold text-slate-200">{tier.duration}</span>
                     </div>
 
                     {/* 3. 離岸賬戶配置 */}
-                    <div className="flex justify-between items-center py-1 border-b border-slate-50">
+                    <div className="flex justify-between items-center py-1 border-b border-white/5">
                       <span className="text-slate-400 font-medium">{t("membership.offshore")}</span>
-                      <span className={`font-bold ${tier.highlight ? "text-[var(--gold)]" : "text-[#0B1E36]"}`}>
+                      <span className={`font-bold ${tier.highlight ? "text-metal-gold" : "text-slate-200"}`}>
                         {tier.offshore}
                       </span>
                     </div>
 
                     {/* 4. 全球賬單支付 */}
-                    <div className="flex justify-between items-center py-1 border-b border-slate-50">
+                    <div className="flex justify-between items-center py-1 border-b border-white/5">
                       <span className="text-slate-400 font-medium">{t("membership.billpay")}</span>
-                      <span className={`font-bold ${tier.highlight ? "text-[var(--gold)]" : "text-[#0B1E36]"}`}>
+                      <span className={`font-bold ${tier.highlight ? "text-metal-gold" : "text-slate-200"}`}>
                         {tier.billpay}
                       </span>
                     </div>
@@ -939,7 +939,7 @@ export default function Home() {
                     {/* 5. 客戶服務 */}
                     <div className="flex justify-between items-center py-1">
                       <span className="text-slate-400 font-medium">{t("membership.customerservice")}</span>
-                      <span className="font-bold text-slate-700">{tier.service}</span>
+                      <span className="font-bold text-slate-200">{tier.service}</span>
                     </div>
 
                   </div>
@@ -952,8 +952,8 @@ export default function Home() {
                     href="#contact" 
                     className={`w-full text-center py-3 rounded-xl text-xs font-bold tracking-wider block transition-all duration-300 ${
                       tier.highlight 
-                        ? "bg-[#D4AF37] text-[#071426] hover:bg-[#C29E2F] shadow-md hover:shadow-lg" 
-                        : "bg-[#0B1E36]/5 text-[#0B1E36] hover:bg-[#0B1E36] hover:text-white"
+                        ? "bg-metal-gold text-[#071426] hover:brightness-110 shadow-md hover:shadow-lg" 
+                        : "bg-white/5 text-slate-300 hover:bg-white/10 border border-white/10"
                     }`}
                   >
                     {lang === "zh" ? "立即申請諮詢" : "Apply Consultation"}
@@ -974,15 +974,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 常見問題 (FAQ Section) */}
-      <section id="faq" className="py-24 bg-white border-y border-metal-gold">
+      {/* 常見問題 (皇家暗黑金屬奢華風) */}
+      <section id="faq" className="py-24 bg-[#030914] border-y border-metal-gold">
         <div className="max-w-4xl mx-auto px-6">
           
           {/* 標題 */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-[0.25em] text-[var(--gold)] uppercase block mb-3">FAQ</span>
+            <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block mb-3">FAQ</span>
             <h2 className="text-3xl md:text-4xl font-bold text-metal-gold mb-4 font-serif">{t("faq.title")}</h2>
-            <p className="text-slate-600 font-light">
+            <p className="text-slate-300 font-light">
               {t("faq.subtitle")}
             </p>
           </div>
@@ -994,26 +994,26 @@ export default function Home() {
               return (
                 <div 
                   key={idx} 
-                  className="border border-slate-100 rounded-lg overflow-hidden bg-[#FDFBF7] shadow-sm transition-all duration-300"
+                  className="border border-white/10 rounded-lg overflow-hidden bg-white/5 backdrop-blur shadow-sm transition-all duration-300"
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full py-5 px-6 flex items-center justify-between text-left gap-4 hover:bg-slate-50/50 transition-colors"
+                    className="w-full py-5 px-6 flex items-center justify-between text-left gap-4 hover:bg-white/10 transition-colors"
                   >
-                    <span className="font-bold text-sm md:text-base text-[#0B1E36] font-serif">
+                    <span className="font-bold text-sm md:text-base text-slate-200 font-serif">
                       {faq.q}
                     </span>
-                    <div className={`shrink-0 w-6 h-6 rounded-full bg-[#0B1E36]/5 flex items-center justify-center text-[#0B1E36] transition-transform duration-300 ${
+                    <div className={`shrink-0 w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-metal-gold transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
                     }`}>
-                      <ChevronDown size={14} />
+                      <ChevronDown size={14} className="text-metal-gold" />
                     </div>
                   </button>
 
                   <div className={`transition-all duration-300 overflow-hidden ${
-                    isOpen ? "max-h-[300px] border-t border-slate-100" : "max-h-0"
+                    isOpen ? "max-h-[300px] border-t border-white/10" : "max-h-0"
                   }`}>
-                    <div className="p-6 text-xs md:text-sm text-slate-600 leading-relaxed font-light">
+                    <div className="p-6 text-xs md:text-sm text-slate-300 leading-relaxed font-light">
                       {faq.a}
                     </div>
                   </div>
