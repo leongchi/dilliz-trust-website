@@ -221,3 +221,11 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "footer.disclaimer.text": { zh: "本網站所載之所有資訊、案例分析與產品描述僅供一般參考之用，並不構成任何法律、稅務、投資、財務或其他專業建議。信託設立、資產託管及離岸賬戶配置涉及複雜的跨境法律與稅務規範，客戶在做出任何決策前，應尋求獨立的法律與稅務專家諮詢。DILLIZ 亦不對因使用本網站資訊而產生的任何損失承擔責任。", en: "All information, case studies, and product descriptions contained on this website are for general reference purposes only and do not constitute legal, tax, investment, financial, or other professional advice. Trust establishment, asset custody, and offshore account configuration involve complex cross-border legal and tax regulations. Clients should seek independent advice from legal and tax experts before making any decisions. DILLIZ assumes no liability for any loss arising from the use of the information on this website." },
   "footer.copyright": { zh: "© 2026 帝力斯資本信託有限公司 (DilliZ Capital Trust Limited). 版權所有。香港持牌信託服務公司 (TC010540)", en: "© 2026 DilliZ Capital Trust Limited. All Rights Reserved. Licensed Trust Service Provider (TC010540)" }
 };
+
+
+// 具名導出翻譯輔助函數，便於多頁面共享
+export function t(key: string, lang: "zh" | "en" = "zh"): string {
+  const translation = translations[key];
+  if (!translation) return key;
+  return lang === "zh" ? translation.zh : translation.en;
+}
