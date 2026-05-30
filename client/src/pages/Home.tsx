@@ -273,13 +273,12 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
           {/* Logo */}
-          <a href="#" className="flex flex-col">
-            <span className="font-serif text-2xl font-bold tracking-wider text-[#0B1E36]">
-              DILLIZ <span className="text-[var(--gold)] font-sans font-light text-xl">TRUST</span>
-            </span>
-            <span className="text-[9px] tracking-[0.2em] text-slate-500 uppercase -mt-1">
-              DILLIZ CAPITAL TRUST LIMITED
-            </span>
+          <a href="#" className="flex items-center gap-3">
+            <img 
+              src="/manus-storage/IMG_3906_7699ca83.JPG" 
+              alt="DILLIZ CAPITAL TRUST Logo" 
+              className="h-14 w-auto object-contain"
+            />
           </a>
 
           {/* 桌面導航 */}
@@ -842,13 +841,12 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
             {/* 品牌資訊 */}
             <div className="lg:col-span-5 space-y-6">
-              <a href="#" className="flex flex-col">
-                <span className="font-serif text-2xl font-bold tracking-wider text-white">
-                  DILLIZ <span className="text-[var(--gold)] font-sans font-light text-xl">TRUST</span>
-                </span>
-                <span className="text-[9px] tracking-[0.2em] text-slate-500 uppercase -mt-1">
-                  DILLIZ CAPITAL TRUST LIMITED
-                </span>
+              <a href="#" className="flex items-center">
+                <img 
+                  src="/manus-storage/IMG_3906_7699ca83.JPG" 
+                  alt="DILLIZ CAPITAL TRUST Logo" 
+                  className="h-16 w-auto object-contain brightness-110"
+                />
               </a>
               <p className="text-xs text-slate-400 font-light leading-relaxed max-w-sm">
                 帝力斯資本信託有限公司為全球客戶提供安全、合規且高度保密的財富管理與信託託管解決方案。因為你，才值得擁有。
