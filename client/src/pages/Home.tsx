@@ -7,6 +7,7 @@ import {
   FileText, 
   Globe, 
   Users, 
+  User,
   Heart, 
   TrendingUp, 
   Menu, 
@@ -693,13 +694,13 @@ export default function Home() {
             {/* 左側：360度環狀互動圓盤 (佔 5 格) */}
             <div className="lg:col-span-5 flex justify-center relative min-h-[380px] md:min-h-[450px]">
               
-              {/* 中心圓圈 (代表高淨值客戶/家族) */}
+              {/* 中心圓圈 (代表高淨值客戶個人 - 尊貴客戶 / YOU) */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#0B1E36] border-4 border-metal-gold shadow-gold-glow flex flex-col items-center justify-center z-30">
                 <div className="w-12 h-12 rounded-full bg-metal-gold/10 flex items-center justify-center text-metal-gold mb-1">
-                  <Users size={24} className="text-metal-gold" />
+                  <User size={24} className="text-metal-gold" />
                 </div>
                 <span className="text-[10px] md:text-xs font-bold text-metal-gold tracking-widest uppercase font-serif">
-                  {lang === "zh" ? "客戶家族" : "CLIENT"}
+                  {lang === "zh" ? "尊貴客戶" : "YOU"}
                 </span>
                 <span className="text-[8px] text-metal-gold font-bold">DILLIZ</span>
               </div>
