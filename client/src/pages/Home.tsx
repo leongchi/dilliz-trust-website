@@ -251,7 +251,7 @@ export default function Home() {
           {/* Logo 區域 */}
           <a href="#" className="flex items-center gap-3 shrink-0">
             <img 
-              src="/manus-storage/dilliz_logo_transparent.png" 
+              src="/manus-storage/dilliz_logo_transparent_60d7bb69.png" 
               alt="DilliZ CAPITAL TRUST" 
               className="h-12 w-auto object-contain"
             />
@@ -415,11 +415,11 @@ export default function Home() {
         {/* 背景大圖 (帶半透明遮罩) */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/manus-storage/hero_banner.png" 
+            src="/manus-storage/hk_skyline_17d9ab20.jpg" 
             alt="Hong Kong Skyline" 
-            className="w-full h-full object-cover opacity-35"
+            className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071426] via-[#071426]/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071426] via-[#071426]/95 to-transparent" />
         </div>
 
         <div className="container relative z-10 py-20">
@@ -469,18 +469,28 @@ export default function Home() {
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
-            {/* 左側：精緻品牌形象與 Logo */}
-            <div className="lg:col-span-5 space-y-6 text-center lg:text-left">
-              <div className="inline-block p-8 bg-[#0B1E36]/5 rounded-2xl border border-slate-100 shadow-sm relative">
+            {/* 左側：精緻品牌形象與真實奢華辦公室圖片疊加 */}
+            <div className="lg:col-span-5 space-y-8 text-center lg:text-left">
+              <div className="relative rounded-2xl overflow-hidden shadow-luxury border border-slate-100 aspect-[4/3] group">
                 <img 
-                  src="/manus-storage/dilliz_logo_transparent.png" 
-                  alt="DILLIZ Shield Logo" 
-                  className="max-h-[220px] mx-auto object-contain"
+                  src="/manus-storage/luxury_office_2c65c509.jpg" 
+                  alt="DILLIZ Luxury Office" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                {/* 奢華金屬感半透明遮罩與 Logo 懸浮 */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071426]/90 via-[#071426]/40 to-transparent flex items-center justify-center p-8">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl max-w-[200px] transition-transform duration-500 group-hover:scale-105">
+                    <img 
+                      src="/manus-storage/dilliz_logo_transparent_60d7bb69.png" 
+                      alt="DILLIZ Shield Logo" 
+                      className="max-h-[100px] mx-auto object-contain"
+                    />
+                  </div>
+                </div>
               </div>
               <div className="space-y-2">
                 <h3 className="text-2xl font-bold text-[#0B1E36] font-serif">DILLIZ CAPITAL TRUST</h3>
-                <p className="text-sm text-[var(--gold)] font-bold tracking-[0.2em] uppercase">Trust · Integrity · Security</p>
+                <p className="text-sm text-metal-gold font-bold tracking-[0.2em] uppercase">Trust · Integrity · Security</p>
               </div>
             </div>
 
@@ -594,45 +604,60 @@ export default function Home() {
 
             {/* 右側詳情面板 (佔 8 格) */}
             <div className="lg:col-span-8">
-              <div className="bg-white border border-slate-100 rounded-2xl p-8 md:p-10 shadow-lg h-full flex flex-col justify-between min-h-[420px] transition-all duration-500 relative overflow-hidden">
+              <div className="bg-white border border-slate-100 rounded-2xl p-8 md:p-10 shadow-lg h-full flex flex-col justify-between min-h-[450px] transition-all duration-500 relative overflow-hidden">
                 
                 {/* 裝飾背景圖案 */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/5 rounded-full blur-2xl -mr-10 -mt-10" />
 
-                <div className="space-y-6 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10 grow">
                   
-                  {/* 服務標題與 Tagline */}
-                  <div className="space-y-2">
-                    <span className="text-xs font-bold tracking-widest text-[var(--gold)] uppercase">
-                      {services[activeService].tagline}
-                    </span>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#0B1E36] font-serif">
-                      {services[activeService].title}
-                    </h3>
+                  {/* 左側：文字與特色列表 (佔 7 格) */}
+                  <div className="md:col-span-7 space-y-6 flex flex-col justify-between">
+                    <div className="space-y-4">
+                      {/* 服務標題與 Tagline */}
+                      <div className="space-y-2">
+                        <span className="text-xs font-bold tracking-widest text-metal-gold uppercase block">
+                          {services[activeService].tagline}
+                        </span>
+                        <h3 className="text-2xl md:text-3xl font-bold text-[#0B1E36] font-serif">
+                          {services[activeService].title}
+                        </h3>
+                      </div>
+
+                      <p className="text-slate-600 text-sm leading-relaxed font-light">
+                        {services[activeService].desc}
+                      </p>
+                    </div>
+
+                    <hr className="border-metal-gold" />
+
+                    {/* 特色亮點列表 */}
+                    <div className="space-y-3">
+                      {services[activeService].features.map((feat, fIdx) => (
+                        <div key={fIdx} className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-metal-gold/10 flex items-center justify-center text-metal-gold mt-0.5 shrink-0">
+                            <Check size={12} className="text-metal-gold" />
+                          </div>
+                          <span className="text-slate-700 text-xs font-medium leading-relaxed">{feat}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  <p className="text-slate-600 text-sm md:text-base leading-relaxed font-light">
-                    {services[activeService].desc}
-                  </p>
-
-                  <hr className="border-metal-gold" />
-
-                  {/* 特色亮點列表 */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {services[activeService].features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-3">
-                        <div className="w-5 h-5 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[var(--gold)] mt-0.5 shrink-0">
-                          <Check size={12} />
-                        </div>
-                        <span className="text-slate-700 text-sm font-medium">{feat}</span>
-                      </div>
-                    ))}
+                  {/* 右側：精緻真實圖片 (佔 5 格) */}
+                  <div className="md:col-span-5 relative rounded-xl overflow-hidden shadow-md aspect-[4/5] md:aspect-auto">
+                    <img 
+                      src="/manus-storage/handshake_aa0be52f.jpg" 
+                      alt="Trust & Collaboration" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#071426]/60 via-transparent to-transparent" />
                   </div>
 
                 </div>
 
                 {/* 底部諮詢行動按鈕 */}
-                <div className="pt-8 border-t border-slate-100 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+                <div className="pt-6 border-t border-slate-100 mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
                   <span className="text-xs text-slate-400 font-light">
                     {lang === "zh" ? "*所有信託服務均在香港信託法框架下安全合規運行" : "*All trust services comply strictly with HK Trust Law"}
                   </span>
@@ -1195,7 +1220,7 @@ export default function Home() {
           {/* 右側：Logo */}
           <div className="shrink-0">
             <img 
-              src="/manus-storage/dilliz_logo_transparent.png" 
+              src="/manus-storage/dilliz_logo_transparent_60d7bb69.png" 
               alt="DILLIZ Footer Logo" 
               className="h-10 w-auto opacity-45 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
             />
