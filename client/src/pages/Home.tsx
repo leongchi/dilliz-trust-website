@@ -44,6 +44,9 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<"asset" | "trust" | "deposit" | "finance" | "card">("asset");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  
+  // 當前選中的案例索引 (0-5)
+  const [activeCaseIdx, setActiveCaseIdx] = useState<number>(0);
 
   // 表單數據狀態
   const [formData, setFormData] = useState({
@@ -136,37 +139,43 @@ export default function Home() {
       badge: t("cases.c1.badge"),
       title: t("cases.c1.title"),
       desc: t("cases.c1.desc"),
-      icon: Briefcase
+      icon: Briefcase,
+      color: "from-blue-500 to-[#0B1E36]"
     },
     {
       badge: t("cases.c2.badge"),
       title: t("cases.c2.title"),
       desc: t("cases.c2.desc"),
-      icon: Users
+      icon: Users,
+      color: "from-amber-500 to-yellow-600"
     },
     {
       badge: t("cases.c3.badge"),
       title: t("cases.c3.title"),
       desc: t("cases.c3.desc"),
-      icon: HeartPulse
+      icon: HeartPulse,
+      color: "from-emerald-500 to-teal-600"
     },
     {
       badge: t("cases.c4.badge"),
       title: t("cases.c4.title"),
       desc: t("cases.c4.desc"),
-      icon: Globe
+      icon: Globe,
+      color: "from-indigo-500 to-purple-600"
     },
     {
       badge: t("cases.c5.badge"),
       title: t("cases.c5.title"),
       desc: t("cases.c5.desc"),
-      icon: Lock
+      icon: Lock,
+      color: "from-red-500 to-rose-600"
     },
     {
       badge: t("cases.c6.badge"),
       title: t("cases.c6.title"),
       desc: t("cases.c6.desc"),
-      icon: Award
+      icon: Award,
+      color: "from-cyan-500 to-blue-600"
     }
   ];
 
@@ -546,49 +555,163 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 真實情境案例分析 (Case Studies Section) */}
-      <section id="cases" className="py-24 bg-white border-y border-slate-100">
+      {/* 360度環狀互動案例分析 (Case Studies Circle Section) */}
+      <section id="cases" className="py-24 bg-white border-y border-slate-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           
           {/* 標題 */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-[0.25em] text-[var(--gold)] uppercase block mb-3">Case Studies</span>
+            <span className="text-xs font-bold tracking-[0.25em] text-[var(--gold)] uppercase block mb-3">Interactive Life Stages</span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0B1E36] mb-4 font-serif">{t("cases.title")}</h2>
             <p className="text-slate-600 font-light">
               {t("cases.subtitle")}
             </p>
           </div>
 
-          {/* 案例卡片網格 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {cases.map((c, idx) => {
-              const CaseIcon = c.icon;
-              return (
-                <div key={idx} className="bg-[#FDFBF7] border border-slate-100 p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-300">
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-start">
-                      <span className="text-xs font-bold tracking-wider text-[var(--gold)] uppercase bg-amber-50 px-2.5 py-1">
+          {/* 環狀與細節並排佈局 */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            {/* 左側：360度環狀圖 (佔 6 格) */}
+            <div className="lg:col-span-6 flex justify-center items-center py-8">
+              <div className="relative w-[340px] h-[340px] md:w-[420px] md:h-[420px] flex items-center justify-center">
+                
+                {/* 圓環背景線 (SVG 虛線) */}
+                <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none">
+                  <circle 
+                    cx="50%" 
+                    cy="50%" 
+                    r="38%" 
+                    fill="none" 
+                    stroke="rgba(212, 175, 55, 0.15)" 
+                    strokeWidth="2" 
+                    strokeDasharray="6 6"
+                  />
+                </svg>
+
+                {/* 中心主體：黃金家族徽章 */}
+                <div className="absolute z-10 w-24 h-24 md:w-32 md:h-32 bg-[#071426] border-4 border-[#D4AF37] rounded-full flex flex-col items-center justify-center text-center shadow-xl">
+                  <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#B3922E] flex items-center justify-center text-[#071426] mb-1">
+                    <Users size={24} className="md:hidden" />
+                    <Users size={32} className="hidden md:block" />
+                  </div>
+                  <span className="text-[9px] md:text-[11px] font-bold tracking-widest text-[var(--gold)] uppercase font-serif">
+                    {lang === "zh" ? "家族與資產" : "FAMILY & WEALTH"}
+                  </span>
+                </div>
+
+                {/* 6 個環繞的情境節點 */}
+                {cases.map((c, idx) => {
+                  // 計算每個節點在 360 度圓周上的位置
+                  const angle = (idx * 360) / 6; // 6個節點，每個間隔 60 度
+                  const radius = 38; // 半徑百分比
+                  const radian = (angle * Math.PI) / 180;
+                  
+                  // 計算 X 和 Y 座標 (以 50% 為中心)
+                  const x = 50 + radius * Math.cos(radian);
+                  const y = 50 + radius * Math.sin(radian);
+                  
+                  const NodeIcon = c.icon;
+                  const isActive = activeCaseIdx === idx;
+
+                  return (
+                    <div 
+                      key={idx}
+                      style={{
+                        position: "absolute",
+                        left: `${x}%`,
+                        top: `${y}%`,
+                        transform: "translate(-50%, -50%)"
+                      }}
+                      className="z-20 group"
+                    >
+                      {/* 連接線 (當前選中的節點顯示發光線) */}
+                      {isActive && (
+                        <div 
+                          style={{
+                            position: "absolute",
+                            left: "50%",
+                            top: "50%",
+                            width: "120px",
+                            height: "2px",
+                            background: "linear-gradient(90deg, #D4AF37, transparent)",
+                            transform: `rotate(${angle + 180}deg)`,
+                            transformOrigin: "left center",
+                            zIndex: -1
+                          }}
+                          className="hidden md:block animate-pulse"
+                        />
+                      )}
+
+                      {/* 情境圓圈按鈕 */}
+                      <button
+                        onClick={() => setActiveCaseIdx(idx)}
+                        className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-500 shadow-md ${
+                          isActive 
+                            ? "bg-[#0B1E36] border-2 border-[#D4AF37] text-[var(--gold)] scale-110 ring-4 ring-[#D4AF37]/20" 
+                            : "bg-white border border-slate-200 text-slate-500 hover:border-[#0B1E36] hover:text-[#0B1E36] hover:scale-105"
+                        }`}
+                      >
+                        <NodeIcon size={18} className="md:hidden" />
+                        <NodeIcon size={24} className="hidden md:block" />
+                      </button>
+
+                      {/* 懸停或選中時的懸浮標籤 (在小屏幕下隱藏，大屏幕下精確定位) */}
+                      <span className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 whitespace-nowrap text-[10px] md:text-xs font-semibold px-2 py-1 rounded-sm shadow-sm border transition-all duration-300 pointer-events-none ${
+                        isActive 
+                          ? "bg-[#0B1E36] border-[#D4AF37] text-[var(--gold)] opacity-100" 
+                          : "bg-white border-slate-100 text-slate-600 opacity-0 group-hover:opacity-100"
+                      }`}>
                         {c.badge}
                       </span>
-                      <div className="text-slate-400">
-                        <CaseIcon size={20} />
-                      </div>
                     </div>
-                    <h3 className="text-lg font-bold text-[#0B1E36] font-serif pt-2">
-                      {c.title}
-                    </h3>
-                    <p className="text-slate-600 text-xs leading-relaxed font-light">
-                      {c.desc}
-                    </p>
+                  );
+                })}
+
+              </div>
+            </div>
+
+            {/* 右側：詳細案例內容展示面板 (佔 6 格) */}
+            <div className="lg:col-span-6 space-y-6">
+              <div className="bg-[#FDFBF7] border border-slate-100 p-8 md:p-12 shadow-lg relative min-h-[360px] flex flex-col justify-between transition-all duration-500">
+                
+                {/* 金色裝飾角 */}
+                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#D4AF37]/40"></div>
+                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#D4AF37]/40"></div>
+
+                {/* 動態淡入內容 */}
+                <div key={activeCaseIdx} className="space-y-6 animate-fadeIn">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-bold tracking-widest text-[var(--gold)] uppercase bg-[#071426] px-3 py-1">
+                      {cases[activeCaseIdx].badge}
+                    </span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></div>
+                    <span className="text-xs text-slate-400 font-medium">
+                      {lang === "zh" ? `案例 0${activeCaseIdx + 1}` : `Case 0${activeCaseIdx + 1}`}
+                    </span>
                   </div>
-                  <div className="pt-6 border-t border-slate-100/60 mt-6">
-                    <a href="#contact" className="text-xs font-semibold text-[#0B1E36] hover:text-[var(--gold)] flex items-center gap-1 transition-colors">
-                      {t("nav.book")} <ChevronRight size={14} />
-                    </a>
-                  </div>
+
+                  <h3 className="text-2xl font-bold text-[#0B1E36] font-serif leading-tight">
+                    {cases[activeCaseIdx].title}
+                  </h3>
+
+                  <p className="text-slate-600 text-sm leading-relaxed font-light whitespace-pre-line">
+                    {cases[activeCaseIdx].desc}
+                  </p>
                 </div>
-              );
-            })}
+
+                {/* 底部行動按鈕 */}
+                <div className="pt-8 border-t border-slate-200/60 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <span className="text-xs text-slate-400 font-light">
+                    {lang === "zh" ? "*以上案例均為真實情境化改編，已隱去客戶私密資訊" : "*Cases adapted from real scenarios, private info redacted"}
+                  </span>
+                  <a href="#contact" className="btn-gold text-center py-2.5 px-6 font-semibold text-xs tracking-wider inline-flex items-center justify-center gap-2">
+                    {t("nav.book")} <ArrowRight size={14} />
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
           </div>
 
         </div>
