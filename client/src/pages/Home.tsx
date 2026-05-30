@@ -1207,10 +1207,22 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* 左側：版權與聲明 */}
-          <div className="space-y-2 text-center md:text-left">
+          <div className="space-y-3 text-center md:text-left">
             <p className="font-semibold text-slate-400">
               &copy; 2026 DILLIZ CAPITAL TRUST LIMITED. All Rights Reserved.
             </p>
+            
+            {/* T&C 與 Privacy Policy 連結 */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs font-medium text-metal-gold/80">
+              <a href="/terms" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
+                {lang === "zh" ? "使用條款 (Terms & Conditions)" : "Terms & Conditions"}
+              </a>
+              <span className="text-slate-700 hidden sm:inline">|</span>
+              <a href="/privacy" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
+                {lang === "zh" ? "隱私政策 (Privacy Policy)" : "Privacy Policy"}
+              </a>
+            </div>
+
             <p className="max-w-2xl font-light text-slate-600 leading-relaxed">
               {lang === "zh" 
                 ? "免責聲明：本網站所載資料僅供參考，不構成任何法律、稅務、投資或專業建議。信託服務由香港持牌信託服務公司帝力斯資本信託有限公司（牌照號碼：TC010540）依法提供。"
