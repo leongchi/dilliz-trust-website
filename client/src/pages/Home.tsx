@@ -275,7 +275,7 @@ export default function Home() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
             <img 
-              src="/manus-storage/IMG_3906_7699ca83.JPG" 
+              src="/manus-storage/dilliz_logo_transparent_db9e135f.png" 
               alt="DILLIZ CAPITAL TRUST Logo" 
               className="h-14 w-auto object-contain"
             />
@@ -843,7 +843,7 @@ export default function Home() {
             <div className="lg:col-span-5 space-y-6">
               <a href="#" className="flex items-center">
                 <img 
-                  src="/manus-storage/IMG_3906_7699ca83.JPG" 
+                  src="/manus-storage/dilliz_logo_transparent_db9e135f.png" 
                   alt="DILLIZ CAPITAL TRUST Logo" 
                   className="h-16 w-auto object-contain brightness-110"
                 />
