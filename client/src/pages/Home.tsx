@@ -39,45 +39,58 @@ export default function Home() {
     {
       id: "custody",
       icon: Shield,
-      title: t("services.custody.title"),
-      tagline: t("services.custody.tagline"),
-      desc: t("services.custody.desc"),
+      title: t("services.asset.title"),
+      tagline: t("services.asset.tagline"),
+      desc: t("services.asset.desc"),
       features: [
-        t("services.custody.f1"),
-        t("services.custody.f2"),
-        t("services.custody.f3"),
-        t("services.custody.f4")
+        t("services.asset.f1"),
+        t("services.asset.f2"),
+        t("services.asset.f3"),
+        t("services.asset.f4")
       ]
     },
     {
       id: "tax",
       icon: TrendingUp,
-      title: t("services.tax.title"),
-      tagline: t("services.tax.tagline"),
-      desc: t("services.tax.desc"),
+      title: t("services.trust.title"),
+      tagline: t("services.trust.tagline"),
+      desc: t("services.trust.desc"),
       features: [
-        t("services.tax.f1"),
-        t("services.tax.f2"),
-        t("services.tax.f3"),
-        t("services.tax.f4")
+        t("services.trust.f1"),
+        t("services.trust.f2"),
+        t("services.trust.f3"),
+        t("services.trust.f4")
       ]
     },
     {
       id: "offshore",
       icon: Globe,
-      title: t("services.offshore.title"),
-      tagline: t("services.offshore.tagline"),
-      desc: t("services.offshore.desc"),
+      title: t("services.deposit.title"),
+      tagline: t("services.deposit.tagline"),
+      desc: t("services.deposit.desc"),
       features: [
-        t("services.offshore.f1"),
-        t("services.offshore.f2"),
-        t("services.offshore.f3"),
-        t("services.offshore.f4")
+        t("services.deposit.f1"),
+        t("services.deposit.f2"),
+        t("services.deposit.f3"),
+        t("services.deposit.f4")
       ]
     },
     {
       id: "card",
       icon: CreditCard,
+      title: t("services.finance.title"),
+      tagline: t("services.finance.tagline"),
+      desc: t("services.finance.desc"),
+      features: [
+        t("services.finance.f1"),
+        t("services.finance.f2"),
+        t("services.finance.f3"),
+        t("services.finance.f4")
+      ]
+    },
+    {
+      id: "bill",
+      icon: Coins,
       title: t("services.card.title"),
       tagline: t("services.card.tagline"),
       desc: t("services.card.desc"),
@@ -86,19 +99,6 @@ export default function Home() {
         t("services.card.f2"),
         t("services.card.f3"),
         t("services.card.f4")
-      ]
-    },
-    {
-      id: "bill",
-      icon: Coins,
-      title: t("services.bill.title"),
-      tagline: t("services.bill.tagline"),
-      desc: t("services.bill.desc"),
-      features: [
-        t("services.bill.f1"),
-        t("services.bill.f2"),
-        t("services.bill.f3"),
-        t("services.bill.f4")
       ]
     }
   ];
@@ -450,7 +450,7 @@ export default function Home() {
 
             {/* 關於我們簡介 (對齊宣傳摺頁) */}
             <p className="text-slate-300 text-base md:text-lg font-light leading-relaxed max-w-2xl">
-              {t("about.hero.desc")}
+              {t("hero.desc")}
             </p>
 
             {/* 核心行動按鈕 */}
@@ -511,9 +511,9 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[var(--gold)]">
                     <Shield size={20} />
                   </div>
-                  <h4 className="text-lg font-bold text-[#0B1E36] font-serif">{t("about.mission.title")}</h4>
+                  <h4 className="text-lg font-bold text-[#0B1E36] font-serif">{t("stats.mission.title")}</h4>
                   <p className="text-xs text-slate-600 font-light leading-relaxed">
-                    {t("about.mission.desc")}
+                    {t("stats.mission.desc")}
                   </p>
                 </div>
 
@@ -522,9 +522,9 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[var(--gold)]">
                     <Users size={20} />
                   </div>
-                  <h4 className="text-lg font-bold text-[#0B1E36] font-serif">{t("about.philosophy.title")}</h4>
+                  <h4 className="text-lg font-bold text-[#0B1E36] font-serif">{t("stats.philosophy.title")}</h4>
                   <p className="text-xs text-slate-600 font-light leading-relaxed">
-                    {t("about.philosophy.desc")}
+                    {t("stats.philosophy.desc")}
                   </p>
                 </div>
 
@@ -533,9 +533,9 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[var(--gold)]">
                     <Briefcase size={20} />
                   </div>
-                  <h4 className="text-lg font-bold text-[#0B1E36] font-serif">{t("about.positioning.title")}</h4>
+                  <h4 className="text-lg font-bold text-[#0B1E36] font-serif">{t("stats.positioning.title")}</h4>
                   <p className="text-xs text-slate-600 font-light leading-relaxed">
-                    {t("about.positioning.desc")}
+                    {t("stats.positioning.desc")}
                   </p>
                 </div>
 
