@@ -164,19 +164,19 @@
     }
   }
 
-  /* Premium Metallic Buttons with Flowing Sheen */
+  /* Premium Metallic Buttons with Flowing Sheen - Exactly Aligned to Logo Gold (#D4AF37) */
   .btn-gold {
-    background: linear-gradient(135deg, #fef08a 0%, #fde047 30%, #eab308 60%, #ca8a04 100%);
-    color: #071426;
+    background: linear-gradient(135deg, #F3E5AB 0%, #E6C280 30%, #D4AF37 60%, #AA7C11 100%);
+    color: #030914;
     padding: 0.75rem 2.25rem;
     font-size: 0.875rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    border: 1px solid #eab308;
+    border: 1px solid #D4AF37;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(234, 179, 8, 0.2);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
   }
   .btn-gold::after {
     content: '';
@@ -190,7 +190,7 @@
     transition: none;
   }
   .btn-gold:hover {
-    box-shadow: 0 6px 20px rgba(234, 179, 8, 0.4), 0 0 10px rgba(254, 240, 138, 0.2);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4), 0 0 10px rgba(243, 229, 171, 0.2);
     transform: translateY(-2px);
   }
   .btn-gold:hover::after {
@@ -199,7 +199,7 @@
   }
   .btn-gold:active {
     transform: translateY(1px);
-    box-shadow: 0 2px 10px rgba(234, 179, 8, 0.2);
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
   }
 
   .btn-gold-outline {
@@ -226,8 +226,8 @@
   }
   .btn-gold-outline:hover {
     background-color: rgba(212, 175, 55, 0.05);
-    border-color: #fde047;
-    color: #fde047;
+    border-color: #E6C280;
+    color: #E6C280;
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
     transform: translateY(-2px);
   }
@@ -275,9 +275,9 @@
   animation: fadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
-/* Premium Gold Metal Text Gradient */
+/* Premium Gold Metal Text Gradient - Exactly Aligned to Logo Gold (#D4AF37) */
 .text-metal-gold {
-  background: linear-gradient(135deg, #fef08a 0%, #fde047 25%, #d4af37 50%, #ca8a04 75%, #fef08a 100%);
+  background: linear-gradient(135deg, #F3E5AB 0%, #E6C280 25%, #D4AF37 50%, #AA7C11 75%, #F3E5AB 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -296,7 +296,7 @@
 }
 
 .border-metal-gold-full {
-  border-image: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #ca8a04 100%) 1;
+  border-image: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%) 1;
 }
 
 /* Fancy Metal Gradients for Membership Cards */
@@ -325,7 +325,7 @@
 }
 
 .bg-metal-gold {
-  background: linear-gradient(135deg, #fef08a 0%, #fde047 25%, #eab308 50%, #ca8a04 75%, #854d0e 100%);
+  background: linear-gradient(135deg, #F3E5AB 0%, #E6C280 25%, #D4AF37 50%, #AA7C11 75%, #5C3E00 100%);
   position: relative;
 }
 .bg-metal-gold::after {
