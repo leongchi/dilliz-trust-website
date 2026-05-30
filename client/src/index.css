@@ -240,3 +240,84 @@
 .animate-fadeIn {
   animation: fadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
+
+/* Fancy Metal Gradients for Membership Cards */
+.bg-metal-steel {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%);
+  position: relative;
+}
+.bg-metal-steel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 4px);
+  pointer-events: none;
+}
+
+.bg-metal-silver {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 30%, #cbd5e1 70%, #94a3b8 100%);
+  position: relative;
+}
+.bg-metal-silver::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.08), rgba(255,255,255,0.08) 1px, transparent 1px, transparent 3px);
+  pointer-events: none;
+}
+
+.bg-metal-gold {
+  background: linear-gradient(135deg, #fef08a 0%, #fde047 20%, #eab308 50%, #ca8a04 80%, #854d0e 100%);
+  position: relative;
+}
+.bg-metal-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 1px, transparent 1px, transparent 4px);
+  pointer-events: none;
+}
+
+.bg-metal-blackgold {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 40%, #020617 70%, #1e1b4b 100%);
+  position: relative;
+}
+.bg-metal-blackgold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(212,175,55,0.05) 0%, transparent 50%, rgba(212,175,55,0.05) 100%);
+  pointer-events: none;
+}
+
+/* Luxury Card Glows & 3D Shadows */
+.shadow-luxury {
+  box-shadow: 0 10px 30px -10px rgba(7, 20, 38, 0.08), 0 1px 3px rgba(7, 20, 38, 0.02);
+}
+
+.shadow-luxury-hover {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.shadow-luxury-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -12px rgba(7, 20, 38, 0.15), 0 1px 5px rgba(7, 20, 38, 0.05);
+}
+
+.shadow-gold-glow {
+  box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.25), 0 0 15px 2px rgba(212, 175, 55, 0.15);
+  animation: gold-pulse 3s infinite ease-in-out;
+}
+
+.shadow-gold-glow:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.35), 0 0 25px 4px rgba(212, 175, 55, 0.25);
+}
+
+@keyframes gold-pulse {
+  0%, 100% {
+    box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.25), 0 0 15px 2px rgba(212, 175, 55, 0.15);
+  }
+  50% {
+    box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.35), 0 0 25px 6px rgba(212, 175, 55, 0.25);
+  }
+}
