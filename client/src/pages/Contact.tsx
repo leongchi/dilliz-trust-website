@@ -318,7 +318,7 @@ export default function Contact() {
                         placeholder={lang === "zh" ? "請輸入您的姓名" : "Enter your name"}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors"
+                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300"
                       />
                     </div>
 
@@ -333,7 +333,7 @@ export default function Contact() {
                         placeholder={lang === "zh" ? "請輸入聯絡電話" : "Enter phone number"}
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors"
+                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300"
                       />
                     </div>
 
@@ -352,7 +352,7 @@ export default function Contact() {
                         placeholder={lang === "zh" ? "請輸入電子郵件" : "Enter email address"}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors"
+                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300"
                       />
                     </div>
 
@@ -365,7 +365,7 @@ export default function Contact() {
                         required
                         value={formData.interest}
                         onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors appearance-none cursor-pointer"
+                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300 appearance-none cursor-pointer"
                       >
                         <option value="" disabled>{t("contact.form.interest.placeholder", lang)}</option>
                         <option value="asset">{t("contact.form.interest.asset", lang)}</option>
@@ -387,7 +387,7 @@ export default function Contact() {
                       required
                       value={formData.amount}
                       onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
-                      className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors appearance-none cursor-pointer"
+                      className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300 appearance-none cursor-pointer"
                     >
                       <option value="" disabled>{t("contact.form.amount.placeholder", lang)}</option>
                       <option value="t1">{t("contact.form.amount.t1", lang)}</option>
@@ -406,7 +406,7 @@ export default function Contact() {
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors resize-none"
+                      className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300 resize-none"
                     />
                   </div>
 
