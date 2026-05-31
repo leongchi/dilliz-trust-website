@@ -113,7 +113,7 @@ export default function Home() {
             <div className="absolute -inset-4 bg-metal-gold/5 rounded-full blur-3xl" />
             <div className="relative w-80 h-80 rounded-full border border-metal-gold/20 flex items-center justify-center p-8 bg-[#2b2b2b]/30 backdrop-blur-md shadow-gold-glow">
               <img 
-                src="/manus-storage/dilliz_logo_transparent_60d7bb69.png" 
+                src="/manus-storage/dilliz_new_logo_transparent_a0c86cf6.png" 
                 alt="DILLIZ Badge" 
                 className="w-48 h-auto object-contain animate-fadeIn opacity-80"
               />
@@ -142,7 +142,7 @@ export default function Home() {
               {/* 疊加的 Shield Logo */}
               <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#1a1a1a]/40 backdrop-blur-[2px]">
                 <img 
-                  src="/manus-storage/dilliz_logo_transparent_60d7bb69.png" 
+                  src="/manus-storage/dilliz_new_logo_transparent_a0c86cf6.png" 
                   alt="DILLIZ Shield" 
                   className="w-28 md:w-36 h-auto object-contain drop-shadow-2xl"
                 />
