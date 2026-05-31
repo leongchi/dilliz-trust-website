@@ -239,7 +239,7 @@ export default function Contact() {
                   <div className="w-6 h-6 rounded-full bg-metal-gold/10 flex items-center justify-center text-metal-gold">
                     <Shield size={12} />
                   </div>
-                  <span className="text-[10px] text-metal-gold font-bold tracking-wider uppercase">
+                  <span className="text-[10px] text-metal-gold font-bold tracking-wider uppercase whitespace-pre-line leading-relaxed">
                     {t("contact.info.slogan", lang)}
                   </span>
                 </div>
