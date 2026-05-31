@@ -188,7 +188,7 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "contact.info.phone.value": { zh: "+852 6528 6838", en: "+852 6528 6838" },
   "contact.info.email": { zh: "官方電郵", en: "Official Email" },
   "contact.info.address": { zh: "總部地址", en: "Headquarters Address" },
-  "contact.info.address.value": { zh: "香港觀塘海濱道133號 萬兆豐中心17樓I室", en: "Unit I, 17/F, Billion Plaza, 133 Hoi Bun Road, Kwun Tong, Hong Kong" },
+  "contact.info.address.value": { zh: "香港觀塘海濱道133號 萬兆豐中心17樓I室", en: "Unit I, 17/F, MG Tower, 133 Hoi Bun Road, Kwun Tong, Hong Kong" },
   "contact.info.slogan": { 
     zh: "因為您，才值得擁有", 
     en: "Build A Trust with DILLIZ\nShape The Future YOU Deserve" 

@@ -252,7 +252,7 @@ export default function Contact() {
                   onMapReady={(map: any) => {
                     const maps = (window as any).google.maps;
                     const geocoder = new maps.Geocoder();
-                    const address = "Unit I, 17/F, Billion Plaza, 133 Hoi Bun Road, Kwun Tong, Hong Kong";
+                    const address = "Unit I, 17/F, MG Tower, 133 Hoi Bun Road, Kwun Tong, Hong Kong";
                     
                     geocoder.geocode({ address }, (results: any, status: any) => {
                       if (status === "OK" && results && results[0]) {
