@@ -125,8 +125,8 @@ export default function Layout({ children }: LayoutProps) {
               </button>
             </div>
 
-            {/* 尊貴通知中心 */}
-            <NotificationCenter lang={lang} />
+            {/* 暫時不需要通知中心 (Notification Center temporarily disabled for clean design) */}
+            {/* <NotificationCenter lang={lang} /> */}
 
             {/* 預約專屬諮詢 (btn-gold 流光與光暈) */}
             <Link 
