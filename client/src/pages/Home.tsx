@@ -67,13 +67,7 @@ export default function Home() {
           {/* 左側：核心文案 */}
           <div className="lg:col-span-7 space-y-8 text-left">
             
-            {/* 信託牌照徽章 */}
-            <div className="inline-flex items-center gap-2 bg-[#2b2b2b]/90 border border-metal-gold/30 px-4 py-2 rounded-full shadow-gold-glow animate-fadeIn">
-              <span className="w-2 h-2 rounded-full bg-metal-gold animate-pulse" />
-              <span className="text-[10px] md:text-xs font-bold tracking-wider text-metal-gold font-serif">
-                {t("hero.badge", lang)}
-              </span>
-            </div>
+
 
             {/* 大標題 */}
             <div className="space-y-4">
