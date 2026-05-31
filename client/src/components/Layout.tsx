@@ -67,16 +67,12 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
           {/* Logo 區域 */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
+          <Link href="/" className="flex items-center group shrink-0">
             <img 
-              src="/manus-storage/dilliz_new_logo_transparent_a0c86cf6.png" 
-              alt="DILLIZ Logo" 
-              className="h-11 w-auto transition-transform duration-500 group-hover:scale-105"
+              src="/manus-storage/dilliz_horizontal_logo_transparent_1c4515c8.png" 
+              alt="DilliZ Capital Trust Limited" 
+              className="h-9 md:h-10 w-auto transition-transform duration-500 group-hover:scale-105 object-contain"
             />
-            <div className="flex flex-col">
-              <span className="text-lg font-extrabold tracking-[0.15em] text-metal-gold font-serif leading-none">DILLIZ</span>
-              <span className="text-[7px] text-slate-400 font-bold tracking-[0.1em] mt-1 uppercase">CAPITAL TRUST LIMITED</span>
-            </div>
           </Link>
 
           {/* 桌面端導航選單 (導向獨立路由) */}
