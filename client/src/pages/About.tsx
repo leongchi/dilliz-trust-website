@@ -115,7 +115,7 @@ export default function About() {
                     <Compass size={20} />
                   </div>
                   <h4 className="text-sm font-bold text-slate-200 font-serif">{t("stats.philosophy", lang)}</h4>
-                  <p className="text-xs text-slate-400 font-light leading-relaxed">
+                  <p className="text-xs text-slate-400 font-light leading-relaxed whitespace-pre-line">
                     {t("stats.philosophy.desc", lang)}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export default function About() {
                     <Eye size={20} />
                   </div>
                   <h4 className="text-sm font-bold text-slate-200 font-serif">{t("stats.positioning", lang)}</h4>
-                  <p className="text-xs text-slate-400 font-light leading-relaxed">
+                  <p className="text-xs text-slate-400 font-light leading-relaxed whitespace-pre-line">
                     {t("stats.positioning.desc", lang)}
                   </p>
                 </div>
@@ -172,8 +172,8 @@ export default function About() {
                 </h4>
                 <p className="text-xs text-slate-400 font-light leading-relaxed">
                   {lang === "zh"
-                    ? "與瑞士、新加坡等頂級離岸銀行與私人銀行深度合作，為信託設立專屬安全賬戶，提供多幣種配置、極致隱私保護及快速開戶通道。"
-                    : "Deeply allied with top-tier Swiss and Singapore offshore and private banks to set up dedicated trust accounts, providing multi-currency setup and ultimate privacy."}
+                    ? "與全球銀行深度合作，為信託設立專屬安全賬戶，提供多幣種配置、極致隱私保護及快速開戶通道。"
+                    : "Deeply allied with global banks to set up dedicated trust accounts, providing multi-currency setup and ultimate privacy."}
                 </p>
               </div>
 
@@ -182,12 +182,12 @@ export default function About() {
                   <Sparkles size={22} />
                 </div>
                 <h4 className="text-lg font-bold text-slate-200 font-serif">
-                  {lang === "zh" ? "3. 瑞士私人銀行級定製" : "3. Swiss Private Banking Bespoke"}
+                  {lang === "zh" ? "3. 私人銀行級定製" : "3. Private Banking Bespoke"}
                 </h4>
                 <p className="text-xs text-slate-400 font-light leading-relaxed">
                   {lang === "zh"
-                    ? "打破傳統信託的高昂門檻，為每位客戶量身定制靈活的信託條款，並獨家提供定存資產授信、黑金聯名信用卡與全球賬單支付代繳等尊榮服務。"
-                    : "Breaking traditional high trustee thresholds, tailoring flexible clauses, and exclusively offering asset-linked black cards and global bill escrow services."}
+                    ? "打破傳統信託的高昂門檻，為每位客戶量身定制靈活的信託條款，並獨家提供定存資產授信、聯名信用卡與全球賬單支付代繳等尊榮服務。"
+                    : "Breaking traditional high trustee thresholds, tailoring flexible clauses, and exclusively offering asset-linked co-branded cards and global bill escrow services."}
                 </p>
               </div>
 
