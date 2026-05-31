@@ -26,7 +26,7 @@ import { toast } from "sonner";
 // - 收件人: info@dilliz.com
 // ==========================================
 const EMAILJS_SERVICE_ID: string = "service_02id98o";     // 填入您的 EmailJS Service ID
-const EMAILJS_TEMPLATE_ID: string = "template_24s67e4";   // 填入您的 EmailJS Template ID
+const EMAILJS_TEMPLATE_ID: string = "template_trgocyy";   // 填入您的 EmailJS Template ID
 const EMAILJS_PUBLIC_KEY: string = "Q9_H9y8M92fQ3Q71p";     // 填入您的 Public Key (在 Account -> API Keys 頁面)
 
 export default function Contact() {
