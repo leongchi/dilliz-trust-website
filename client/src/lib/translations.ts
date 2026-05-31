@@ -47,8 +47,8 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "services.trust.feature3": { zh: "跨境股權與信託架構的合規稅務優化", en: "Compliant tax optimization for cross-border trust structures" },
 
   "services.deposit.title": { zh: "離岸銀行設立服務", en: "Offshore Bank Setup Services" },
-  "services.deposit.desc": { zh: "連接全球，佈局世界。協助個人及企業在瑞士、新加坡、開曼群島等全球頂級離岸金融中心設立專屬離岸銀行賬戶，提供更廣闊的投資管道、更靈活的資金調配以及極致的隱私保護。", en: "Connect globally, lay out the world. Assist individuals and enterprises in setting up dedicated offshore bank accounts in top-tier offshore financial centers such as Switzerland, Singapore, and the Cayman Islands, providing wider investment channels, more flexible capital allocation, and ultimate privacy protection." },
-  "services.deposit.feature1": { zh: "瑞士、新加坡等頂級離岸銀行開戶快速通道", en: "Fast-track opening in top offshore banks in Swiss/Singapore" },
+  "services.deposit.desc": { zh: "連接全球，佈局世界。協助個人及企業在全球金融中心設立專屬離岸銀行賬戶，提供更廣闊的投資管道、更靈活的資金調配以及極致的隱私保護。", en: "Connect globally, lay out the world. Assist individuals and enterprises in setting up dedicated offshore bank accounts in global financial centers, providing wider investment channels, more flexible capital allocation, and ultimate privacy protection." },
+  "services.deposit.feature1": { zh: "全球離岸銀行開戶快速通道", en: "Fast-track opening in global offshore banks" },
   "services.deposit.feature2": { zh: "多幣種、高隱私的全球資金自由調配賬戶", en: "Multi-currency, high-privacy global allocation accounts" },
   "services.deposit.feature3": { zh: "企業離岸賬戶設立，優化跨國貿易结算", en: "Offshore corporate accounts to optimize multinational trade" },
 
