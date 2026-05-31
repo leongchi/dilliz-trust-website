@@ -42,6 +42,55 @@ export default function Contact() {
     message: ""
   });
 
+  // 實時格式校驗狀態
+  const [errors, setErrors] = useState({
+    phone: "",
+    email: ""
+  });
+
+  // 正規表示式定義
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  // 支援國際格式（如 +852 6528 6838, 0912-345-678, 13800138000 等，長度在 8 到 15 位之間）
+  const phoneRegex = /^\+?[0-9\s\-()]{8,15}$/;
+
+  // 實時校驗電郵
+  const validateEmail = (value: string) => {
+    if (!value) {
+      return "";
+    }
+    if (!emailRegex.test(value)) {
+      return lang === "zh" 
+        ? "請輸入有效的電子郵件格式（如 info@dilliztrust.com）" 
+        : "Please enter a valid email address (e.g., info@dilliztrust.com)";
+    }
+    return "";
+  };
+
+  // 實時校驗電話
+  const validatePhone = (value: string) => {
+    if (!value) {
+      return "";
+    }
+    if (!phoneRegex.test(value)) {
+      return lang === "zh" 
+        ? "請輸入有效的聯絡電話（8-15位數字，支援+、-、括號及空格）" 
+        : "Please enter a valid phone number (8-15 digits, support +, -, brackets and spaces)";
+    }
+    return "";
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setFormData(prev => ({ ...prev, email: val }));
+    setErrors(prev => ({ ...prev, email: validateEmail(val) }));
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setFormData(prev => ({ ...prev, phone: val }));
+    setErrors(prev => ({ ...prev, phone: validatePhone(val) }));
+  };
+
   useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
     if (savedLang === "zh" || savedLang === "en") {
@@ -82,6 +131,20 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // 提交前進行最終格式校驗
+    const emailErr = validateEmail(formData.email);
+    const phoneErr = validatePhone(formData.phone);
+
+    if (emailErr || phoneErr) {
+      setErrors({ email: emailErr, phone: phoneErr });
+      toast.error(
+        lang === "zh"
+          ? "表單中存在格式錯誤，請修正後再提交。"
+          : "Please correct the errors in the form before submitting."
+      );
+      return;
+    }
     
     // 如果未配置 EmailJS，提示用戶配置，但仍然允許前端模擬成功以防體驗中斷
     if (
@@ -332,9 +395,18 @@ export default function Contact() {
                         required
                         placeholder={lang === "zh" ? "請輸入聯絡電話" : "Enter phone number"}
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300"
+                        onChange={handlePhoneChange}
+                        className={`w-full bg-[#1a1a1a] border rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none transition-all duration-300 ${
+                          errors.phone 
+                            ? "border-red-500/50 focus:border-red-500 focus:ring-1 focus:ring-red-500/30" 
+                            : "border-white/10 focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30"
+                        }`}
                       />
+                      {errors.phone && (
+                        <p className="text-[10px] text-red-400/90 font-medium tracking-wide animate-fadeIn">
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
 
                   </div>
@@ -351,9 +423,18 @@ export default function Contact() {
                         required
                         placeholder={lang === "zh" ? "請輸入電子郵件" : "Enter email address"}
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300"
+                        onChange={handleEmailChange}
+                        className={`w-full bg-[#1a1a1a] border rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none transition-all duration-300 ${
+                          errors.email 
+                            ? "border-red-500/50 focus:border-red-500 focus:ring-1 focus:ring-red-500/30" 
+                            : "border-white/10 focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30"
+                        }`}
                       />
+                      {errors.email && (
+                        <p className="text-[10px] text-red-400/90 font-medium tracking-wide animate-fadeIn">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
 
                     {/* 服務選擇 */}
