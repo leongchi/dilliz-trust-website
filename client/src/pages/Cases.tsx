@@ -214,7 +214,7 @@ export default function Cases() {
                     </h3>
                   </div>
 
-                  <hr className="border-white/10" />
+
 
                   {/* 1. 面臨挑戰 */}
                   <div className="space-y-2">
