@@ -180,7 +180,7 @@ export default function Contact() {
             <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
               
               {/* 聯絡細項 */}
-              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl space-y-6 shadow-md relative overflow-hidden">
+              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl space-y-6 shadow-md relative overflow-hidden opacity-0 animate-fadeIn">
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-metal-gold" />
                 <h3 className="text-xl font-bold text-slate-200 font-serif mb-4">
                   {t("contact.info.title", lang)}
@@ -247,7 +247,7 @@ export default function Contact() {
               </div>
 
               {/* 總部地圖 (使用 MapView 組件，Google 地圖) */}
-              <div className="rounded-3xl overflow-hidden border border-white/10 shadow-luxury h-[280px] relative">
+              <div className="rounded-3xl overflow-hidden border border-white/10 shadow-luxury h-[280px] relative opacity-0 animate-fadeIn animation-delay-200">
                 <MapView 
                   onMapReady={(map: any) => {
                     const maps = (window as any).google.maps;
@@ -276,7 +276,7 @@ export default function Contact() {
             </div>
 
             {/* 右側：諮詢預約表單 (佔 7 格) */}
-            <div className="lg:col-span-7 bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl shadow-gold-glow relative flex flex-col justify-between">
+            <div className="lg:col-span-7 bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl shadow-gold-glow relative flex flex-col justify-between opacity-0 animate-fadeIn animation-delay-300">
               
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-metal-gold" />
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-metal-gold" />
