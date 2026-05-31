@@ -179,7 +179,10 @@ export const translations: Record<string, { zh: string; en: string }> = {
 
   // Contact Us (Brochure Aligned)
   "contact.title": { zh: "開始規劃您的家族財富傳承", en: "Start Planning Your Family Legacy" },
-  "contact.subtitle": { zh: "不論是企業風險隔離、全球稅務優化還是晚年生活保障，我們的資深信託專員都將為您量身定制最合適的方案。", en: "Whether it is business risk isolation, global tax optimization, or late-life quality assurance, our senior trust specialists will customize the most suitable solution for you." },
+  "contact.subtitle": { 
+    zh: "不論是企業風險隔離、全球稅務優化還是晚年生活保障，\n我們的資深信託專員都將為您量身定制最合適的方案。", 
+    en: "Whether it is business risk isolation, global tax optimization, or late-life quality assurance,\nour senior trust specialists will customize the most suitable solution for you." 
+  },
   "contact.info.title": { zh: "聯絡資訊", en: "Contact Information" },
   "contact.info.phone": { zh: "電話熱線", en: "Phone Hotline" },
   "contact.info.phone.value": { zh: "+852 6528 6838", en: "+852 6528 6838" },

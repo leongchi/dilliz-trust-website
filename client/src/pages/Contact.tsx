@@ -168,7 +168,7 @@ export default function Contact() {
             <h1 className="text-4xl md:text-5xl font-bold text-metal-gold font-serif leading-tight">
               {t("contact.title", lang)}
             </h1>
-            <p className="text-slate-300 font-light leading-relaxed">
+            <p className="text-slate-300 font-light leading-relaxed whitespace-pre-line">
               {t("contact.subtitle", lang)}
             </p>
           </div>
