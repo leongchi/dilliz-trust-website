@@ -85,8 +85,8 @@ export default function About() {
                 </h3>
                 <p className="text-slate-300 font-light leading-relaxed">
                   {lang === "zh"
-                    ? "帝力斯資本信託有限公司（DilliZ Capital Trust Limited）是一家總部設於香港的持牌信託服務公司（牌照號碼：TC010540）。我們致力於為全球高淨值客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。"
-                    : "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong (License No.: TC010540). We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global high-net-worth clients and family offices."}
+                    ? "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為全球高淨值客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。"
+                    : "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global high-net-worth clients and family offices."}
                 </p>
                 <p className="text-slate-300 font-light leading-relaxed">
                   {lang === "zh"

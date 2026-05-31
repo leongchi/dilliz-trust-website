@@ -12,7 +12,7 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "hero.badge": { zh: "香港持牌信託服務公司 · 牌照 TC010540", en: "HK Licensed Trust Service Provider · License TC010540" },
   "hero.title": { zh: "Build A Trust with DILLIZ", en: "Build A Trust with DILLIZ" },
   "hero.subtitle": { zh: "Shape The Future YOU Deserve", en: "Shape The Future YOU Deserve" },
-  "hero.desc": { zh: "帝力斯資本信託有限公司（DilliZ Capital Trust Limited）總部設於香港，是一家香港持牌信託服務公司（牌照號碼：TC010540）。我們專注為客戶提供定制化信託解決方案，旨在成為您最值得信賴的信託公司。", en: "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong (License No.: TC010540). We specialize in providing customized trust solutions, aiming to be your most trusted partner in wealth preservation and legacy planning." },
+  "hero.desc": { zh: "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 總部設於香港，是一家香港持牌信託服務公司。我們專注為客戶提供定制化信託解決方案，旨在成為您最值得信賴的信託公司。", en: "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We specialize in providing customized trust solutions, aiming to be your most trusted partner in wealth preservation and legacy planning." },
   "hero.btn.explore": { zh: "探索信託方案", en: "Explore Solutions" },
   "hero.btn.about": { zh: "關於帝力斯信託", en: "About DILLIZ" },
 
@@ -214,7 +214,7 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "contact.form.success": { zh: "感謝您的諮詢！我們的資深客戶專員將於 24 小時內與您聯絡，為您提供專屬信託規劃服務。", en: "Thank you for your inquiry! Our senior relationship manager will contact you within 24 hours to provide exclusive trust planning services." },
 
   // Footer
-  "footer.desc": { zh: "帝力斯資本信託有限公司（DilliZ Capital Trust Limited）是一家總部設於香港的持牌信託服務公司（牌照號碼：TC010540）。我們致力於為全球高淨值客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。", en: "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong (License No.: TC010540). We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global high-net-worth clients and family offices." },
+  "footer.desc": { zh: "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為全球高淨值客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。", en: "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global high-net-worth clients and family offices." },
   "footer.license": { zh: "信託或公司服務提供者牌照", en: "Trust or Company Service Provider License" },
   "footer.links.title": { zh: "快速導航", en: "Quick Links" },
   "footer.disclaimer.title": { zh: "免責聲明", en: "Disclaimer" },
