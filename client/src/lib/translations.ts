@@ -9,7 +9,7 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "nav.book": { zh: "預約專屬諮詢", en: "Book Consultation" },
 
   // Hero Section
-  "hero.badge": { zh: "香港持牌信託服務公司 · 牌照 TC010540", en: "HK Licensed Trust Service Provider · License TC010540" },
+  "hero.badge": { zh: "香港持牌信託服務公司", en: "HK Licensed Trust Service Provider" },
   "hero.title": { zh: "Build A Trust with DILLIZ", en: "Build A Trust with DILLIZ" },
   "hero.subtitle": { zh: "Shape The Future YOU Deserve", en: "Shape The Future YOU Deserve" },
   "hero.desc": { zh: "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 總部設於香港，是一家香港持牌信託服務公司。我們專注為客戶提供定制化信託解決方案，旨在成為您最值得信賴的信託公司。", en: "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We specialize in providing customized trust solutions, aiming to be your most trusted partner in wealth preservation and legacy planning." },
