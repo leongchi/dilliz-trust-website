@@ -190,7 +190,7 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "contact.info.address": { zh: "總部地址", en: "Headquarters Address" },
   "contact.info.address.value": { zh: "香港觀塘海濱道133號 萬兆豐中心17樓I室", en: "Unit I, 17/F, Billion Plaza, 133 Hoi Bun Road, Kwun Tong, Hong Kong" },
   "contact.info.slogan": { 
-    zh: "攜手帝力斯，共築信託未來\n成就您應得的璀璨明天", 
+    zh: "因為您，才值得擁有", 
     en: "Build A Trust with DILLIZ\nShape The Future YOU Deserve" 
   },
 
