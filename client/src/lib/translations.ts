@@ -72,14 +72,14 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "cases.label.solution": { zh: "建議方案", en: "Suggested Solutions" },
   "cases.label.result": { zh: "規劃結果", en: "Result" },
 
-  "cases.c1.badge": { zh: "創業債務風險", en: "Business Risk" },
+  "cases.c1.badge": { zh: "創業債務\n風險", en: "Business\nRisk" },
   "cases.c1.title": { zh: "創業成功，卻因債務風險未建個人資產隔離", en: "Successful business, but personal assets exposed to debt risks" },
   "cases.c1.desc": { zh: "王先生經營製造業企業多年，公司規模迅速擴張。然而，在一次市場波動中，公司面臨巨額債務與法律糾紛，由於早期未做好資產隔離規劃，個人名下房產和投資資產面臨被迫索風險。", en: "Mr. Wang has run a manufacturing enterprise for many years, expanding rapidly. However, during a market fluctuation, the company faced huge debts and legal disputes. Due to a lack of early asset isolation planning, his personal properties and investment assets faced foreclosure risks." },
   "cases.c1.sol1": { zh: "建立控股架構，區分個人與企業責任", en: "Establish holding structure to separate personal and corporate liabilities" },
   "cases.c1.sol2": { zh: "優化股權配置，降低債務穿透風險", en: "Optimize equity allocation to lower debt penetration risks" },
   "cases.c1.res": { zh: "個人與家庭資產成功與企業風險隔離，財富得以保全。", en: "Personal and family assets successfully isolated from corporate risks, preserving wealth." },
 
-  "cases.c2.badge": { zh: "婚姻變動風險", en: "Marital Change" },
+  "cases.c2.badge": { zh: "婚姻變動\n風險", en: "Marital\nChange" },
   "cases.c2.title": { zh: "婚姻變動，財富面臨重新分配", en: "Marital change, wealth facing redistribution" },
   "cases.c2.desc": { zh: "陳女士為高淨值投資人，婚姻關係發生變化時，才發現大部分資產屬於夫妻共同財產，可能面臨高比例分割。", en: "Ms. Chen, a high-net-worth investor, realized when her marriage changed that most of her assets were joint marital property, facing a high risk of being split." },
   "cases.c2.sol1": { zh: "提前設立信託持有部分資產", en: "Establish a trust in advance to hold partial assets" },
@@ -87,14 +87,14 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "cases.c2.sol3": { zh: "強化家族資產獨立性架構", en: "Strengthen the independent structure of family assets" },
   "cases.c2.res": { zh: "家族核心資產得到保護，子女未來規劃不受影響。", en: "Core family assets protected, ensuring children's future plans are unaffected." },
 
-  "cases.c3.badge": { zh: "退休規劃不足", en: "Retirement Risk" },
+  "cases.c3.badge": { zh: "退休規劃\n不足", en: "Retirement\nRisk" },
   "cases.c3.title": { zh: "退休規劃不足，晚年生活品質面臨風險", en: "Insufficient retirement planning, risking late-life quality of living" },
   "cases.c3.desc": { zh: "陳女士事業成功、資產豐厚，卻將多數資金投入高波動投資與家族事業，未完整規劃退休現金流與醫療保障。當年齡漸長、健康出現變化時，才發現資產雖多，卻缺乏穩定可支配收入來源，養老生活可能受到影響。", en: "Ms. Chen is successful with abundant assets, but put most funds into high-volatility investments and family business, lacking structured retirement cash flow and medical coverage. As she aged and health changed, she realized she lacked stable disposable income, risking her retirement quality." },
   "cases.c3.sol1": { zh: "提前設立退休專屬信託，鎖定穩定現金流", en: "Set up dedicated retirement trust early to lock in stable cash flows" },
   "cases.c3.sol2": { zh: "建立資產分層架構（成長資產 × 保值資產 × 現金流資產）", en: "Build layered asset structure (Growth × Preservation × Cash Flow)" },
   "cases.c3.res": { zh: "退休後擁有穩定收入與專屬保障，生活品質不受市場波動影響，同時確保家族資產有序傳承，實現安心、體面且自主的晚年生活。", en: "Secure stable income and exclusive protection post-retirement, unaffected by market volatility, ensuring orderly succession and an independent, dignified late-life." },
 
-  "cases.c4.badge": { zh: "跨境資產稅務", en: "Cross-border Tax" },
+  "cases.c4.badge": { zh: "跨境資產\n稅務", en: "Cross-border\nTax" },
   "cases.c4.title": { zh: "跨境資產面臨全球徵稅與資訊透明壓力", en: "Cross-border assets facing global taxation and information transparency" },
   "cases.c4.desc": { zh: "張先生擁有多國資產與身份，隨著全球稅務資訊交換機制（CRS）實施，面臨重複課稅與隱私暴露風險。", en: "Mr. Zhang holds multi-country assets and citizenships. With CRS implementation, he faces double taxation and privacy exposure risks." },
   "cases.c4.sol1": { zh: "重整跨境資產架構", en: "Restructure cross-border asset holding frameworks" },
@@ -102,7 +102,7 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "cases.c4.sol3": { zh: "多司法管轄區信託設計", en: "Multi-jurisdictional trust structure design" },
   "cases.c4.res": { zh: "在合法合規前提下優化稅務效率，同時保障財務隱私。", en: "Optimized tax efficiency under legal and compliant premises while safeguarding financial privacy." },
 
-  "cases.c5.badge": { zh: "突發意外凍結", en: "Emergency Risk" },
+  "cases.c5.badge": { zh: "突發意外\n凍結", en: "Emergency\nRisk" },
   "cases.c5.title": { zh: "突發意外，資產凍結與繼承延誤", en: "Sudden accident, asset freezing and inheritance delay" },
   "cases.c5.desc": { zh: "企業負責人突然重病或意外離世，銀行賬戶暫時凍結，公司資金流動受阻，家屬需要經歷繁複法律程序才能動用資產，影響企業營運與家庭生活。", en: "The sudden severe illness or passing of a business owner freezes bank accounts, blocking company cash flow. Family members must go through tedious probate procedures to access assets, disrupting business and family life." },
   "cases.c5.sol1": { zh: "設立生前信託 (Living Trust)", en: "Establish a revocable Living Trust" },
@@ -110,7 +110,7 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "cases.c5.sol3": { zh: "建立企業應急管理架構", en: "Build corporate emergency management frameworks" },
   "cases.c5.res": { zh: "資產可按預先安排平穩過渡，避免資金凍結與法律程序延誤。", en: "Assets transition smoothly as pre-arranged, avoiding frozen funds and legal delays." },
 
-  "cases.c6.badge": { zh: "子女海外發展", en: "Offshore Education" },
+  "cases.c6.badge": { zh: "子女海外\n發展", en: "Offshore\nEducation" },
   "cases.c6.title": { zh: "子女海外發展，身份與稅務複雜化", en: "Children's overseas development complexifying identity & tax" },
   "cases.c6.desc": { zh: "子女留學或移民海外，家庭資產涉及多重稅務身份，未規劃前可能面臨贈與稅、遺產稅或雙重課稅風險。", en: "With children studying or immigrating abroad, family assets involve multiple tax identities, risking gift tax, estate tax, or double taxation without prior planning." },
   "cases.c6.sol1": { zh: "跨境信託架構設計", en: "Cross-border trust architecture design" },

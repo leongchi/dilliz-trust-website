@@ -184,7 +184,7 @@ export default function Cases() {
                     title={c.badge}
                   >
                     <IconComponent size={18} className={isActive ? "text-metal-gold" : "text-slate-300"} />
-                    <span className={`text-[8px] md:text-[9px] font-bold tracking-tight block mt-1 max-w-[50px] truncate ${
+                    <span className={`text-[8px] md:text-[9px] font-bold tracking-tight block mt-1 leading-tight whitespace-pre-line ${
                       isActive ? "text-white" : "text-slate-400 group-hover:text-slate-200"
                     }`}>
                       {c.badge}
