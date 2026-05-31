@@ -1,12 +1,38 @@
 import { useState, useEffect } from "react";
-import { Phone, Mail, MapPin, Shield, Check, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Shield, Check, ArrowRight, Loader2 } from "lucide-react";
 import Layout from "@/components/Layout";
 import { t } from "@/lib/translations";
 import { MapView } from "@/components/Map";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
+
+// ==========================================
+// EmailJS 服務配置說明 (方案一)
+// ==========================================
+// 為了使此表單能夠真正發送郵件，您需要註冊並配置 EmailJS (https://www.emailjs.com/)
+// 註冊後，請在下方填入您的 Service ID、Template ID 和 Public Key。
+//
+// 1. SERVICE_ID: 您的郵件服務 ID (例如: "service_xxx")
+// 2. TEMPLATE_ID: 您的郵件模板 ID (例如: "template_xxx")
+// 3. PUBLIC_KEY: 您的帳戶公鑰 (例如: "user_xxx" 或 "xxx-xxxxxxxxxxxx")
+//
+// 建議的郵件模板 (Email Template) 變數配置：
+// - 客戶姓名: {{from_name}}
+// - 聯絡電話: {{phone}}
+// - 電子郵件: {{reply_to}}
+// - 諮詢項目: {{interest}}
+// - 資產規模: {{amount}}
+// - 諮詢留言: {{message}}
+// - 收件人: info@dilliztrust.com
+// ==========================================
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";     // 請替換為您的 EmailJS Service ID
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";   // 請替換為您的 EmailJS Template ID
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";     // 請替換為您的 EmailJS Public Key
 
 export default function Contact() {
   const [lang, setLang] = useState<"zh" | "en">("zh");
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -33,18 +59,98 @@ export default function Contact() {
     return () => window.removeEventListener("dilliz_lang_changed", handleLangChange);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const getInterestLabel = (key: string, currentLang: "zh" | "en") => {
+    switch (key) {
+      case "asset": return currentLang === "zh" ? "託管服務" : "Custody Services";
+      case "trust": return currentLang === "zh" ? "信託設立" : "Trust Setup";
+      case "deposit": return currentLang === "zh" ? "大額存款" : "Large Deposit";
+      case "finance": return currentLang === "zh" ? "融資方案" : "Financing Solutions";
+      case "card": return currentLang === "zh" ? "專屬聯名卡" : "Exclusive Co-branded Card";
+      default: return key;
+    }
+  };
+
+  const getAmountLabel = (key: string, currentLang: "zh" | "en") => {
+    switch (key) {
+      case "t1": return "$10,000 - $50,000 USD";
+      case "t2": return "$50,000 - $250,000 USD";
+      case "t3": return "$250,000 - $1,000,000 USD";
+      case "t4": return "$1,000,000+ USD";
+      default: return key;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // 模擬表單提交
-    setSubmitted(true);
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      interest: "",
-      amount: "",
-      message: ""
-    });
+    
+    // 如果未配置 EmailJS，提示用戶配置，但仍然允許前端模擬成功以防體驗中斷
+    if (
+      EMAILJS_SERVICE_ID === "YOUR_SERVICE_ID" ||
+      EMAILJS_TEMPLATE_ID === "YOUR_TEMPLATE_ID" ||
+      EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY"
+    ) {
+      toast.warning(
+        lang === "zh" 
+          ? "偵測到 EmailJS 尚未配置，表單將以模擬方式提交。請在 Contact.tsx 中填入您的 EmailJS 金鑰。"
+          : "EmailJS is not configured. Form will be submitted in mock mode. Please configure keys in Contact.tsx."
+      );
+      
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        interest: "",
+        amount: "",
+        message: ""
+      });
+      return;
+    }
+
+    setIsSending(true);
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        phone: formData.phone,
+        reply_to: formData.email,
+        interest: getInterestLabel(formData.interest, lang),
+        amount: getAmountLabel(formData.amount, lang),
+        message: formData.message || "（無留言 / No Message）"
+      };
+
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success(
+        lang === "zh" 
+          ? "您的諮詢已成功發送！專屬客戶經理將於 24 小時內與您聯絡。"
+          : "Inquiry sent successfully! A relationship manager will contact you within 24 hours."
+      );
+
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        interest: "",
+        amount: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error(
+        lang === "zh"
+          ? "發送失敗，請稍後再試，或直接發送郵件至 info@dilliztrust.com"
+          : "Failed to send inquiry. Please try again later or email us at info@dilliztrust.com"
+      );
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -148,7 +254,7 @@ export default function Contact() {
                     const geocoder = new maps.Geocoder();
                     const address = "Unit I, 17/F, Billion Plaza, 133 Hoi Bun Road, Kwun Tong, Hong Kong";
                     
-                    geocoder.geocode({ address }, (results: any[], status: string) => {
+                    geocoder.geocode({ address }, (results: any, status: any) => {
                       if (status === "OK" && results && results[0]) {
                         const location = results[0].geometry.location;
                         map.setCenter(location);
@@ -298,7 +404,6 @@ export default function Contact() {
                     </label>
                     <textarea
                       rows={4}
-                      placeholder={t("contact.form.message.placeholder", lang)}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors resize-none"
@@ -308,9 +413,19 @@ export default function Contact() {
                   {/* 提交 */}
                   <button
                     type="submit"
-                    className="w-full btn-gold shadow-gold-glow py-4 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2"
+                    disabled={isSending}
+                    className="w-full btn-gold shadow-gold-glow py-4 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {t("contact.form.btn.submit", lang)} <ArrowRight size={14} />
+                    {isSending ? (
+                      <>
+                        <Loader2 className="animate-spin" size={14} />
+                        {lang === "zh" ? "發送中..." : "Sending..."}
+                      </>
+                    ) : (
+                      <>
+                        {t("contact.form.btn.submit", lang)} <ArrowRight size={14} />
+                      </>
+                    )}
                   </button>
 
                 </form>
