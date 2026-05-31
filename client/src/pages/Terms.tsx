@@ -9,9 +9,9 @@ export default function Terms() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030914] text-slate-100 font-sans selection:bg-metal-gold selection:text-[#071426]">
+    <div className="min-h-screen bg-[#1a1a1a] text-slate-100 font-sans selection:bg-metal-gold selection:text-[#2b2b2b]">
       {/* 頂部導航欄 */}
-      <header className="sticky top-0 z-50 bg-[#071426] border-b border-white/5 backdrop-blur-md shadow-md">
+      <header className="sticky top-0 z-50 bg-[#2b2b2b] border-b border-white/5 backdrop-blur-md shadow-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/30 flex items-center justify-center text-metal-gold transition-all group-hover:border-metal-gold">

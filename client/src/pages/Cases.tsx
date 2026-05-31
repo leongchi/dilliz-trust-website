@@ -98,7 +98,7 @@ export default function Cases() {
 
   return (
     <Layout>
-      <div className="py-20 bg-[#030914] relative overflow-hidden">
+      <div className="py-20 bg-[#1a1a1a] relative overflow-hidden">
         
         {/* 背景裝飾 */}
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
@@ -123,7 +123,7 @@ export default function Cases() {
             <div className="lg:col-span-5 flex justify-center relative min-h-[380px] md:min-h-[450px]">
               
               {/* 中心圓圈 (代表高淨值客戶個人 - 尊貴客戶 / YOU) */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#030914] border-4 border-metal-gold shadow-gold-glow flex flex-col items-center justify-center z-30">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#1a1a1a] border-4 border-metal-gold shadow-gold-glow flex flex-col items-center justify-center z-30">
                 <div className="w-12 h-12 rounded-full bg-metal-gold/10 flex items-center justify-center text-metal-gold mb-1">
                   <User size={24} className="text-metal-gold" />
                 </div>
@@ -178,7 +178,7 @@ export default function Cases() {
                     style={{ left: x, top: y }}
                     className={`absolute -translate-x-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full flex flex-col items-center justify-center transition-all duration-300 shadow-md group z-20 border ${
                       isActive 
-                        ? "bg-[#071426] text-metal-gold border-metal-gold scale-110 shadow-gold-glow" 
+                        ? "bg-[#2b2b2b] text-metal-gold border-metal-gold scale-110 shadow-gold-glow" 
                         : "bg-white/5 text-slate-300 border-white/10 hover:border-metal-gold/50 hover:scale-105"
                     }`}
                     title={c.badge}
@@ -206,7 +206,7 @@ export default function Cases() {
                   
                   {/* 頂部徽章與標題 */}
                   <div className="space-y-3">
-                    <span className="inline-block bg-[#071426] text-metal-gold border border-metal-gold/30 text-xs font-bold tracking-widest uppercase px-3 py-1">
+                    <span className="inline-block bg-[#2b2b2b] text-metal-gold border border-metal-gold/30 text-xs font-bold tracking-widest uppercase px-3 py-1">
                       {cases[activeCaseIdx].badge}
                     </span>
                     <h3 className="text-2xl font-bold text-slate-200 font-serif leading-tight">

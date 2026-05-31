@@ -25,7 +25,7 @@ export default function About() {
 
   return (
     <Layout>
-      <div className="py-20 bg-[#030914] relative overflow-hidden">
+      <div className="py-20 bg-[#1a1a1a] relative overflow-hidden">
         
         {/* 背景裝飾 */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
@@ -61,7 +61,7 @@ export default function About() {
                 />
                 
                 {/* 浮動徽章 */}
-                <div className="absolute bottom-8 left-8 right-8 bg-[#071426]/90 backdrop-blur-md border border-metal-gold/30 p-6 rounded-2xl flex items-center gap-4 z-20 shadow-lg">
+                <div className="absolute bottom-8 left-8 right-8 bg-[#2b2b2b]/90 backdrop-blur-md border border-metal-gold/30 p-6 rounded-2xl flex items-center gap-4 z-20 shadow-lg">
                   <div className="w-12 h-12 rounded-full bg-metal-gold/10 border border-metal-gold/30 flex items-center justify-center text-metal-gold shrink-0">
                     <Award size={24} />
                   </div>
@@ -137,7 +137,7 @@ export default function About() {
           </div>
 
           {/* 核心競爭優勢板塊 */}
-          <div className="bg-[#071426] border border-metal-gold/20 rounded-3xl p-10 md:p-12 shadow-gold-glow space-y-10">
+          <div className="bg-[#2b2b2b] border border-metal-gold/20 rounded-3xl p-10 md:p-12 shadow-gold-glow space-y-10">
             <div className="text-center max-w-2xl mx-auto space-y-3">
               <h3 className="text-2xl md:text-3xl font-bold text-metal-gold font-serif">
                 {lang === "zh" ? "帝力斯的核心競爭優勢" : "Our Core Advantages"}

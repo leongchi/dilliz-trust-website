@@ -60,10 +60,10 @@ export default function Layout({ children }: LayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#030914] text-slate-100 font-sans selection:bg-metal-gold selection:text-[#071426] flex flex-col justify-between">
+    <div className="min-h-screen bg-[#1a1a1a] text-slate-100 font-sans selection:bg-metal-gold selection:text-[#1f1f1f] flex flex-col justify-between">
       
-      {/* 頂部導航欄 (Navbar - 皇家深藍背景) */}
-      <header className="sticky top-0 z-50 bg-[#071426] border-b border-white/5 backdrop-blur-md shadow-md">
+      {/* 頂部導航欄 (Navbar - 宣傳冊岩石深灰背景) */}
+      <header className="sticky top-0 z-50 bg-[#2b2b2b] border-b border-white/5 backdrop-blur-md shadow-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
           {/* Logo 區域 */}
@@ -106,12 +106,12 @@ export default function Layout({ children }: LayoutProps) {
           <div className="hidden lg:flex items-center gap-6">
             
             {/* 語言切換按鈕 */}
-            <div className="flex items-center bg-[#030914] border border-white/10 rounded-full p-1">
+            <div className="flex items-center bg-[#1a1a1a] border border-white/10 rounded-full p-1">
               <button 
                 onClick={() => handleLangChange("zh")}
                 className={`px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all ${
                   lang === "zh" 
-                    ? "bg-metal-gold text-[#071426] shadow-gold-glow" 
+                    ? "bg-metal-gold text-[#1a1a1a] shadow-gold-glow" 
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -121,7 +121,7 @@ export default function Layout({ children }: LayoutProps) {
                 onClick={() => handleLangChange("en")}
                 className={`px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all ${
                   lang === "en" 
-                    ? "bg-metal-gold text-[#071426] shadow-gold-glow" 
+                    ? "bg-metal-gold text-[#1a1a1a] shadow-gold-glow" 
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -164,7 +164,7 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* 行動端選單面板 */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#071426] border-b border-white/5 px-6 py-8 space-y-6 animate-fadeIn">
+          <div className="lg:hidden bg-[#2b2b2b] border-b border-white/5 px-6 py-8 space-y-6 animate-fadeIn">
             <nav className="flex flex-col gap-4">
               {navItems.map((item, idx) => {
                 const isActive = location === item.path;
@@ -198,7 +198,7 @@ export default function Layout({ children }: LayoutProps) {
       </div>
 
       {/* 官方頁尾 (Footer) */}
-      <footer className="bg-[#020914] text-slate-500 py-12 border-t border-white/5 text-xs shrink-0">
+      <footer className="bg-[#141414] text-slate-500 py-12 border-t border-white/5 text-xs shrink-0">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* 左側：版權與聲明 */}
@@ -324,16 +324,16 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" }) {
       >
         <Bell size={18} className={unreadCount > 0 ? "animate-swing" : ""} />
         {unreadCount > 0 && (
-          <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border border-[#071426] shadow-gold-glow animate-pulse" />
+          <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border border-[#2b2b2b] shadow-gold-glow animate-pulse" />
         )}
       </button>
 
       {/* 下拉選單 (玻璃態) */}
       {isOpen && (
-        <div className="absolute right-0 mt-3 w-80 md:w-96 bg-[#071426]/95 backdrop-blur-xl border border-metal-gold/30 rounded-2xl shadow-gold-glow overflow-hidden z-50 animate-fadeIn">
+        <div className="absolute right-0 mt-3 w-80 md:w-96 bg-[#2b2b2b]/95 backdrop-blur-xl border border-metal-gold/30 rounded-2xl shadow-gold-glow overflow-hidden z-50 animate-fadeIn">
           
           {/* 頭部 */}
-          <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between bg-[#030914]/80">
+          <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between bg-[#1a1a1a]/80">
             <span className="text-xs font-bold tracking-wider text-slate-200 font-serif">
               {lang === "zh" ? "通知中心" : "Notification Center"} ({unreadCount})
             </span>
@@ -395,7 +395,7 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" }) {
           </div>
 
           {/* 腳部 */}
-          <div className="px-5 py-3 border-t border-white/5 bg-[#030914]/50 text-center">
+          <div className="px-5 py-3 border-t border-white/5 bg-[#1a1a1a]/50 text-center">
             <span className="text-[9px] text-slate-500 font-semibold tracking-wider uppercase">
               {lang === "zh" ? "🛡️ 帝力斯安全合規通道" : "🛡️ DILLIZ SECURE COMPLIANCE CHANNEL"}
             </span>

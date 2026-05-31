@@ -49,7 +49,7 @@ export default function Contact() {
 
   return (
     <Layout>
-      <div className="py-20 bg-[#030914] relative overflow-hidden">
+      <div className="py-20 bg-[#1a1a1a] relative overflow-hidden">
         
         {/* 背景裝飾 */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
@@ -212,7 +212,7 @@ export default function Contact() {
                         placeholder={lang === "zh" ? "請輸入您的姓名" : "Enter your name"}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-[#030914] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors"
+                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors"
                       />
                     </div>
 
@@ -227,7 +227,7 @@ export default function Contact() {
                         placeholder={lang === "zh" ? "請輸入聯絡電話" : "Enter phone number"}
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#030914] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors"
+                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors"
                       />
                     </div>
 
@@ -246,7 +246,7 @@ export default function Contact() {
                         placeholder={lang === "zh" ? "請輸入電子郵件" : "Enter email address"}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#030914] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors"
+                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors"
                       />
                     </div>
 
@@ -259,7 +259,7 @@ export default function Contact() {
                         required
                         value={formData.interest}
                         onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                        className="w-full bg-[#030914] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors appearance-none cursor-pointer"
+                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors appearance-none cursor-pointer"
                       >
                         <option value="" disabled>{t("contact.form.interest.placeholder", lang)}</option>
                         <option value="asset">{t("contact.form.interest.asset", lang)}</option>
@@ -281,7 +281,7 @@ export default function Contact() {
                       required
                       value={formData.amount}
                       onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
-                      className="w-full bg-[#030914] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors appearance-none cursor-pointer"
+                      className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors appearance-none cursor-pointer"
                     >
                       <option value="" disabled>{t("contact.form.amount.placeholder", lang)}</option>
                       <option value="t1">{t("contact.form.amount.t1", lang)}</option>
@@ -301,7 +301,7 @@ export default function Contact() {
                       placeholder={t("contact.form.message.placeholder", lang)}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[#030914] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors resize-none"
+                      className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold transition-colors resize-none"
                     />
                   </div>
 

@@ -54,8 +54,8 @@ export default function Home() {
             alt="DILLIZ Hong Kong Skyline" 
             className="w-full h-full object-cover opacity-35"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030914] via-[#030914]/90 to-[#071426]/75" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030914] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/90 to-[#2b2b2b]/75" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent" />
         </div>
 
         {/* 奢華金屬光暈與拉絲紋理裝飾 */}
@@ -68,7 +68,7 @@ export default function Home() {
           <div className="lg:col-span-7 space-y-8 text-left">
             
             {/* 信託牌照徽章 */}
-            <div className="inline-flex items-center gap-2 bg-[#071426]/90 border border-metal-gold/30 px-4 py-2 rounded-full shadow-gold-glow animate-fadeIn">
+            <div className="inline-flex items-center gap-2 bg-[#2b2b2b]/90 border border-metal-gold/30 px-4 py-2 rounded-full shadow-gold-glow animate-fadeIn">
               <span className="w-2 h-2 rounded-full bg-metal-gold animate-pulse" />
               <span className="text-[10px] md:text-xs font-bold tracking-wider text-metal-gold font-serif">
                 {t("hero.badge", lang)}
@@ -111,7 +111,7 @@ export default function Home() {
           {/* 右側：品牌立體徽章與視覺點綴 */}
           <div className="lg:col-span-5 hidden lg:flex justify-center relative">
             <div className="absolute -inset-4 bg-metal-gold/5 rounded-full blur-3xl" />
-            <div className="relative w-80 h-80 rounded-full border border-metal-gold/20 flex items-center justify-center p-8 bg-[#071426]/30 backdrop-blur-md shadow-gold-glow">
+            <div className="relative w-80 h-80 rounded-full border border-metal-gold/20 flex items-center justify-center p-8 bg-[#2b2b2b]/30 backdrop-blur-md shadow-gold-glow">
               <img 
                 src="/manus-storage/dilliz_logo_transparent_60d7bb69.png" 
                 alt="DILLIZ Badge" 
@@ -125,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* 「關於我們」精簡導覽 */}
-      <section className="py-24 bg-[#030914] border-t border-white/5 relative overflow-hidden">
+      <section className="py-24 bg-[#1a1a1a] border-t border-white/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* 左側：真實高清圖片 + 奢華 Logo 疊加 */}
@@ -140,7 +140,7 @@ export default function Home() {
               />
               
               {/* 疊加的 Shield Logo */}
-              <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#030914]/40 backdrop-blur-[2px]">
+              <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#1a1a1a]/40 backdrop-blur-[2px]">
                 <img 
                   src="/manus-storage/dilliz_logo_transparent_60d7bb69.png" 
                   alt="DILLIZ Shield" 
@@ -189,7 +189,7 @@ export default function Home() {
       </section>
 
       {/* 「核心服務」精簡導覽 */}
-      <section className="py-24 bg-[#071426] border-t border-b border-white/5 relative overflow-hidden">
+      <section className="py-24 bg-[#2b2b2b] border-t border-b border-white/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 space-y-16">
           
           {/* 標題 */}
@@ -246,7 +246,7 @@ export default function Home() {
       </section>
 
       {/* 「真實案例」與「會員計劃」聯合導覽 */}
-      <section className="py-24 bg-[#030914] relative overflow-hidden">
+      <section className="py-24 bg-[#1a1a1a] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           
           {/* 左側：真實案例導覽卡片 */}
@@ -327,7 +327,7 @@ export default function Home() {
       </section>
 
       {/* 聯絡諮詢與知識庫 CTA 板塊 */}
-      <section className="py-20 bg-[#071426] border-t border-white/5 text-center relative overflow-hidden">
+      <section className="py-20 bg-[#2b2b2b] border-t border-white/5 text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="max-w-3xl mx-auto px-6 space-y-8 relative z-10">

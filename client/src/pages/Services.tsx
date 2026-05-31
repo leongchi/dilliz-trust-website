@@ -93,7 +93,7 @@ export default function Services() {
 
   return (
     <Layout>
-      <div className="py-20 bg-[#030914] relative overflow-hidden">
+      <div className="py-20 bg-[#1a1a1a] relative overflow-hidden">
         
         {/* 背景裝飾 */}
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
@@ -125,7 +125,7 @@ export default function Services() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-bold tracking-wider transition-all border ${
                       isActive 
-                        ? "bg-[#071426] text-metal-gold border-metal-gold shadow-gold-glow scale-105" 
+                        ? "bg-[#2b2b2b] text-metal-gold border-metal-gold shadow-gold-glow scale-105" 
                         : "bg-white/5 text-slate-300 border-white/10 hover:border-metal-gold/40"
                     }`}
                   >
@@ -185,7 +185,7 @@ export default function Services() {
 
               {/* 右側：高品質真實商務握手圖片 */}
               <div className="lg:col-span-5 relative group rounded-3xl overflow-hidden border border-white/10 shadow-luxury">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030914] via-transparent to-transparent z-10 opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent z-10 opacity-60" />
                 <img 
                   src="/manus-storage/handshake_aa0be52f.jpg" 
                   alt="DILLIZ Service Collaboration" 

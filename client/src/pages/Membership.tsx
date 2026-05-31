@@ -94,7 +94,7 @@ export default function Membership() {
 
   return (
     <Layout>
-      <div className="py-20 bg-[#030914] relative overflow-hidden">
+      <div className="py-20 bg-[#1a1a1a] relative overflow-hidden">
         
         {/* 背景裝飾 */}
         <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
@@ -127,7 +127,7 @@ export default function Membership() {
                 >
                   {/* 熱門徽章 */}
                   {tier.isPopular && (
-                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-metal-gold text-[#071426] text-[10px] font-extrabold tracking-widest uppercase px-4 py-1 rounded-full shadow-md">
+                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-metal-gold text-[#2b2b2b] text-[10px] font-extrabold tracking-widest uppercase px-4 py-1 rounded-full shadow-md">
                       {lang === "zh" ? "推薦級別" : "RECOMMENDED"}
                     </span>
                   )}

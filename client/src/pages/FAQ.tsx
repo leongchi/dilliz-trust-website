@@ -38,7 +38,7 @@ export default function FAQ() {
 
   return (
     <Layout>
-      <div className="py-20 bg-[#030914] relative overflow-hidden">
+      <div className="py-20 bg-[#1a1a1a] relative overflow-hidden">
         
         {/* 背景裝飾 */}
         <div className="absolute top-0 right-1/3 w-[500px] h-[500px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
@@ -87,7 +87,7 @@ export default function FAQ() {
                       isOpen ? "max-h-[500px] border-t border-white/5" : "max-h-0"
                     }`}
                   >
-                    <div className="px-6 py-5 md:px-8 md:py-6 bg-[#071426]/30 text-xs md:text-sm text-slate-300 leading-relaxed font-light space-y-4">
+                    <div className="px-6 py-5 md:px-8 md:py-6 bg-[#2b2b2b]/30 text-xs md:text-sm text-slate-300 leading-relaxed font-light space-y-4">
                       <p>{faq.a}</p>
                     </div>
                   </div>
@@ -98,7 +98,7 @@ export default function FAQ() {
           </div>
 
           {/* 額外合規宣告與牌照資訊 */}
-          <div className="bg-[#071426] border border-metal-gold/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-gold-glow">
+          <div className="bg-[#2b2b2b] border border-metal-gold/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-gold-glow">
             <div className="w-12 h-12 rounded-full bg-metal-gold/10 border border-metal-gold/30 flex items-center justify-center text-metal-gold shrink-0">
               <ShieldCheck size={24} />
             </div>
