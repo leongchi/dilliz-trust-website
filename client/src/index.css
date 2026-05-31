@@ -272,7 +272,7 @@
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation: fadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
 /* Premium Gold Metal Text Gradient - Aligned to Pamphlet Warm Gold (#95856e) */
