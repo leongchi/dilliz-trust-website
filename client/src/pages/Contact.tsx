@@ -23,7 +23,7 @@ import { toast } from "sonner";
 // - 諮詢項目: {{interest}}
 // - 資產規模: {{amount}}
 // - 諮詢留言: {{message}}
-// - 收件人: info@dilliztrust.com
+// - 收件人: info@dilliz.com
 // ==========================================
 const EMAILJS_SERVICE_ID: string = "service_02id98oD";     // 填入您的 EmailJS Service ID
 const EMAILJS_TEMPLATE_ID: string = "template_24s67e4";   // 填入您的 EmailJS Template ID
@@ -60,8 +60,8 @@ export default function Contact() {
     }
     if (!emailRegex.test(value)) {
       return lang === "zh" 
-        ? "請輸入有效的電子郵件格式（如 info@dilliztrust.com）" 
-        : "Please enter a valid email address (e.g., info@dilliztrust.com)";
+        ? "請輸入有效的電子郵件格式（如 info@dilliz.com）" 
+        : "Please enter a valid email address (e.g., info@dilliz.com)";
     }
     return "";
   };
@@ -204,13 +204,28 @@ export default function Contact() {
         amount: "",
         message: ""
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error("EmailJS Error:", error);
-      toast.error(
-        lang === "zh"
-          ? "發送失敗，請稍後再試，或直接發送郵件至 info@dilliztrust.com"
-          : "Failed to send inquiry. Please try again later or email us at info@dilliztrust.com"
-      );
+      
+      // 提取 EmailJS 的錯誤資訊進行精準診斷
+      const errStatus = error?.status;
+      const errText = error?.text || "";
+      
+      let errorMsgZh = "發送失敗，請稍後再試，或直接發送郵件至 info@dilliz.com";
+      let errorMsgEn = "Failed to send inquiry. Please try again later or email us at info@dilliz.com";
+      
+      if (errStatus === 400 && errText.includes("service ID not found")) {
+        errorMsgZh = "發送失敗：EmailJS Service ID 錯誤，請檢查您的配置。";
+        errorMsgEn = "Failed: EmailJS Service ID not found. Please check your configuration.";
+      } else if (errStatus === 400 && errText.includes("template ID not found")) {
+        errorMsgZh = "發送失敗：EmailJS Template ID 錯誤，請檢查您的配置。";
+        errorMsgEn = "Failed: EmailJS Template ID not found. Please check your configuration.";
+      } else if (errStatus === 401 || errText.includes("public key") || errText.includes("API key")) {
+        errorMsgZh = "發送失敗：EmailJS Public Key 錯誤，請檢查您的配置。";
+        errorMsgEn = "Failed: EmailJS Public Key is invalid. Please check your configuration.";
+      }
+      
+      toast.error(lang === "zh" ? errorMsgZh : errorMsgEn);
     } finally {
       setIsSending(false);
     }
@@ -275,8 +290,8 @@ export default function Contact() {
                       <span className="text-[10px] text-slate-500 font-bold tracking-wider uppercase block">
                         {t("contact.info.email", lang)}
                       </span>
-                      <a href="mailto:info@dilliztrust.com" className="text-slate-200 font-bold hover:text-metal-gold transition-colors text-sm">
-                        info@dilliztrust.com
+                      <a href="mailto:info@dilliz.com" className="text-slate-200 font-bold hover:text-metal-gold transition-colors text-sm">
+                        info@dilliz.com
                       </a>
                     </div>
                   </div>
