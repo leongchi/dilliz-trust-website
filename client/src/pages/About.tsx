@@ -40,8 +40,8 @@ export default function About() {
             </h1>
             <p className="text-slate-300 font-light leading-relaxed">
               {lang === "zh" 
-                ? "源自瑞士私人銀行級別的財富保護美學，立足香港全球金融中心，為高淨值家族與企業守護永續未來。"
-                : "Rooted in Swiss private banking-grade wealth preservation aesthetics, based in Hong Kong's global financial hub, safeguarding a sustainable future for high-net-worth families and enterprises."}
+                ? "源自瑞士私人銀行級別的財富保護美學，立足香港全球金融中心，為家族與企業守護永續未來。"
+                : "Rooted in Swiss private banking-grade wealth preservation aesthetics, based in Hong Kong's global financial hub, safeguarding a sustainable future for families and enterprises."}
             </p>
           </div>
 
