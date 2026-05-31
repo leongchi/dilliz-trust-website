@@ -33,7 +33,14 @@ export default function FAQ() {
     { q: t("faq.q2", lang), a: t("faq.a2", lang) },
     { q: t("faq.q3", lang), a: t("faq.a3", lang) },
     { q: t("faq.q4", lang), a: t("faq.a4", lang) },
-    { q: t("faq.q5", lang), a: t("faq.a5", lang) }
+    { q: t("faq.q5", lang), a: t("faq.a5", lang) },
+    { q: t("faq.q6", lang), a: t("faq.a6", lang) },
+    { q: t("faq.q7", lang), a: t("faq.a7", lang) },
+    { q: t("faq.q8", lang), a: t("faq.a8", lang) },
+    { q: t("faq.q9", lang), a: t("faq.a9", lang) },
+    { q: t("faq.q10", lang), a: t("faq.a10", lang) },
+    { q: t("faq.q11", lang), a: t("faq.a11", lang) },
+    { q: t("faq.q12", lang), a: t("faq.a12", lang) }
   ];
 
   return (
@@ -84,10 +91,10 @@ export default function FAQ() {
                   {/* 問答展開內容 */}
                   <div
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                      isOpen ? "max-h-[500px] border-t border-white/5" : "max-h-0"
+                      isOpen ? "max-h-[800px] border-t border-white/5" : "max-h-0"
                     }`}
                   >
-                    <div className="px-6 py-5 md:px-8 md:py-6 bg-[#2b2b2b]/30 text-xs md:text-sm text-slate-300 leading-relaxed font-light space-y-4">
+                    <div className="px-6 py-5 md:px-8 md:py-6 bg-[#2b2b2b]/30 text-xs md:text-sm text-slate-300 leading-relaxed font-light space-y-4 whitespace-pre-line">
                       <p>{faq.a}</p>
                     </div>
                   </div>

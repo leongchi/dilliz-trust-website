@@ -159,23 +159,80 @@ export const translations: Record<string, { zh: string; en: string }> = {
   "membership.t4.service": { zh: "資深客戶專員聯絡", en: "Senior Manager" },
 
   // FAQ
-  "faq.title": { zh: "常見問題與信託知識庫", en: "Frequently Asked Questions" },
-  "faq.subtitle": { zh: "為您解答關於香港信託、資產安全與合規運營的所有疑問", en: "Answering all your questions about Hong Kong trusts, asset security, and compliant operations" },
+  "faq.title": { zh: "常見問題與信託知識庫", en: "Frequently Asked Questions & Trust Knowledge Base" },
+  "faq.subtitle": { zh: "「信託公司」是專門辦理信託業務的金融機構。簡單來說，就是「委託人」將財產交給信託公司（受託人），由公司依照您的意願來管理、處分，以照顧指定的「受益人」或達成特定目的。", en: "A 'Trust Company' is a financial institution specialized in fiduciary services. Simply put, the 'Settlor' transfers property to the trust company (Trustee), which manages and disposes of the assets according to your wishes to care for designated 'Beneficiaries' or achieve specific purposes." },
   
-  "faq.q1": { zh: "1. 帝力斯資本信託有限公司（DILLIZ）的牌照資質是什麼？", en: "1. What are the licensing credentials of DILLIZ Capital Trust?" },
-  "faq.a1": { zh: "DILLIZ 是一家總部設在香港的持牌信託服務公司，持有香港公司註冊處頒發的「信託或公司服務提供者牌照」（TCSP License），牌照號碼為 TC010540。我們嚴格遵循香港《打擊洗錢及恐怖分子資金籌集條例》（第 615 章）的監管要求，確保所有業務運營 100% 合規、透明且安全。", en: "DILLIZ is a licensed trust service company headquartered in Hong Kong, holding the Trust or Company Service Provider License (TCSP License) issued by the Hong Kong Companies Registry, under License No. TC010540. We strictly comply with the regulatory requirements of the Anti-Money Laundering and Counter-Terrorist Financing Ordinance (Cap. 615) of Hong Kong, ensuring all business operations are 100% compliant, transparent, and secure." },
+  "faq.q1": { zh: "Q1：什麼是信託？主要角色有哪些？", en: "Q1: What is a trust and who are the key parties involved?" },
+  "faq.a1": { 
+    zh: "信託是一種財產管理制度，主要包含三個角色：\n• 委託人：提供或擁有財產的人。\n• 受託人（信託公司）：負責管理與處分財產的專業機構。\n• 受益人：享受信託利益的人（委託人自己或其指定的家人、任何自然人皆可）。", 
+    en: "A trust is a property management system that mainly involves three roles:\n• Settlor: The person who provides or owns the property.\n• Trustee (Trust Company): The professional institution responsible for managing and disposing of the property.\n• Beneficiary: The person who enjoys the benefits of the trust (can be the settlor themselves, designated family members, or any natural person)." 
+  },
   
-  "faq.q2": { zh: "2. 為什麼選擇香港信託？香港信託有哪些法律優勢？", en: "2. Why choose a Hong Kong trust? What are its legal advantages?" },
-  "faq.a2": { zh: "香港作為全球領先的國際金融中心，實行普通法系。香港信託擁有極其完善的法律保障：首先是「資產徹底隔離」，信託資產在法律上不再屬於委託人，能有效規避未來的商業訴訟與債務追索；其次是「極致的隱私保護」，信託契約無需向公眾公開；最後，香港不徵收資本利得稅、贈與稅或遺產稅，是全球財富保護與傳承的首選地。", en: "Hong Kong, as a leading global financial hub, practices the Common Law system. Hong Kong trusts enjoy comprehensive legal protection: firstly, 'complete asset isolation' - trust assets legally no longer belong to the settlor, effectively mitigating future commercial litigation and debt claims; secondly, 'ultimate privacy protection' - trust deeds do not need to be disclosed to the public; lastly, Hong Kong does not levy capital gains tax, gift tax, or estate duty, making it the premier choice for global wealth protection and succession." },
+  "faq.q2": { zh: "Q2：信託公司與一般的商業銀行有什麼不同？", en: "Q2: What is the difference between a trust company and a commercial bank?" },
+  "faq.a2": { 
+    zh: "兩者最大差異在於業務範圍與資金運用：\n• 商業銀行：主要業務為吸收大眾存款與辦理放款，可公開募集資金。\n• 信託公司：主要是為客戶提供資產管理、信託規劃等服務，不能吸收公眾存款，資金募集也多採私募形式。在香港，許多大型銀行內部皆設有專屬的「信託部」來提供此服務。", 
+    en: "The primary differences lie in business scope and fund utilization:\n• Commercial Banks: Mainly engage in absorbing public deposits and providing loans, with the ability to raise funds publicly.\n• Trust Companies: Primarily provide asset management and trust planning services. They cannot absorb public deposits, and fund raising is mostly conducted through private placement. In Hong Kong, many large banks also have dedicated 'Trust Departments' internally to offer this service." 
+  },
 
-  "faq.q3": { zh: "3. 什麼是資產聯動信用卡服務？如何申請？", en: "3. What is the Asset-Linked Card Service and how to apply?" },
-  "faq.a3": { zh: "資產聯動信用卡是 DILLIZ 專為信託客戶推出的高階金融工具。當您在 DILLIZ 託管定存或信託資產時，我們可以直接以該筆資產為基礎，為您授信並核發一張尊貴的聯名黑金信用卡。您在全球消費、進行大額商務支付時，無需頻繁結算或變現您的信託投資，即可直接刷卡，隨後由信託資產自動進行期末結算。只要您的信託資產達到基礎會員門檻（美金10,000+）即可隨信託開戶一併申請。", en: "The Asset-Linked Card is a high-end financial tool exclusively launched by DILLIZ for trust clients. When you custody fixed deposits or trust assets with DILLIZ, we can directly grant credit and issue a prestigious co-branded black gold credit card based on those assets. During global spending or large-value commercial payments, you do not need to frequently liquidate your trust investments; you can spend directly, with automatic end-of-period settlement from your trust assets. You can apply for this card upon trust opening as long as your assets meet the basic tier threshold ($10,000+ USD)." },
+  "faq.q3": { zh: "Q3：香港信託公司與銀行的保障機制有何本質區別？", en: "Q3: What is the essential difference in protection mechanisms between HK trust companies and banks?" },
+  "faq.a3": { 
+    zh: "香港銀行受存款保障計劃（DPS）覆蓋，每人最高保障 80 萬港元。而信託的核心保障在於「信託財產獨立隔離」，資產不屬於受託人的自有資產，因此不受 DPS 保護（但存放在銀行的信託現金存款仍受 DPS 覆蓋）。", 
+    en: "Hong Kong banks are covered by the Deposit Protection Scheme (DPS), protecting up to HKD 800,000 per depositor. Conversely, the core protection of a trust lies in the 'independent isolation of trust assets'. These assets do not belong to the trustee's own assets and are not protected by the DPS (although trust cash deposits placed in banks remain covered by the DPS)." 
+  },
 
-  "faq.q4": { zh: "4. 信託設立後，資產如何進行投資與增值？", en: "4. How are trust assets invested and appreciated after establishment?" },
-  "faq.a4": { zh: "作為受託人，DILLIZ 嚴格遵循信託契約（Trust Deed）中委託人的意願進行資產配置。我們與瑞士、新加坡等全球頂級離岸銀行合作，為信託設立專屬賬戶。您可以選擇保本型的定期存款（享受不同會員級別的特惠利率），亦可授權我們配置全球優質債券、藍籌股、基金或房產等。所有投資運營均在極致安全的法律架構下進行，確保資產穩健增值。", en: "As trustee, DILLIZ strictly follows the settlor's wishes in the Trust Deed for asset allocation. We cooperate with top offshore banks in Switzerland and Singapore to set up dedicated trust accounts. You can choose principal-protected fixed deposits (enjoying preferential rates based on your membership tier), or authorize us to allocate global bonds, blue-chip equities, mutual funds, or real estate. All investment operations are conducted under an extremely secure legal framework, ensuring steady asset growth." },
+  "faq.q4": { zh: "Q4：如果信託公司倒閉，我的資產會被清算嗎？", en: "Q4: If the trust company goes bankrupt, will my assets be liquidated?" },
+  "faq.a4": { 
+    zh: "不會。根據香港《受託人條例》，信託資產獨立於信託公司的自有資產，不納入其破產清算範圍。資產將由法院或委託人委任的新受託人接管，確保您的資產安全無虞。", 
+    en: "No. According to the Hong Kong 'Trustee Ordinance', trust assets are strictly independent of the trust company's proprietary assets and will not be included in its bankruptcy liquidation. The assets will be taken over by the court or a new trustee appointed by the settlor, ensuring your assets remain safe and secure." 
+  },
 
-  "faq.q5": { zh: "5. 全球賬單支付服務如何運作？安全嗎？", en: "5. How does the Global Bill Payment service work and is it secure?" },
-  "faq.a5": { zh: "全球賬單支付服務是 DILLIZ 為高淨值客戶提供的全方位託管代付服務。您只需向我們授權並提交您的全球開支賬單（如海外房產稅、子女學費、大額跨國保單保費、私人飛機維護費等），我們便會設立自動代扣機制，在賬單到期前直接自您的信託賬戶中撥付資金完成繳納。整個過程由專業的信託會計與合規團隊執行，每季度為您出具詳盡、合規、透明的全球開支流水報告，極其安全且省心。", en: "The Global Bill Payment service is a comprehensive custody and payment service provided by DILLIZ for high-net-worth clients. You only need to authorize and submit your global expense bills (such as overseas property taxes, children's tuition, large multinational insurance premiums, private jet maintenance fees, etc.) to us, and we will set up an automatic deduction mechanism to disburse funds directly from your trust account before the bill's due date. The entire process is executed by a professional trust accounting and compliance team, providing you with detailed, compliant, and transparent quarterly global expense reports, ensuring absolute security and peace of mind." },
+  "faq.q5": { zh: "Q5：信託公司可以幫忙處理哪些財產？", en: "Q5: What types of property can a trust company handle?" },
+  "faq.a5": { 
+    zh: "幾乎所有具有經濟價值的財產都能交付信託，常見的包含：\n• 金錢信託：用於退休規劃、子女教育基金、不動產買賣價金履約保證。\n• 有價證券信託：包含股票、債券等，企業常用於「員工持股信託」以留才。\n• 不動產信託：包含房屋、土地，可用於管理租金收入或防範產權遭詐騙。", 
+    en: "Almost any property with economic value can be placed into a trust, commonly including:\n• Money Trust: Used for retirement planning, children's education funds, or real estate escrow guarantees.\n• Securities Trust: Includes stocks, bonds, etc., often used by enterprises for 'Employee Stock Ownership Trusts' (ESOT) to retain talent.\n• Real Estate Trust: Includes houses and land, used for managing rental income or preventing property title fraud." 
+  },
+
+  "faq.q6": { zh: "Q6：把錢或財產交給信託公司，會不會被私吞或搞丟？", en: "Q6: Will the money or property handed to a trust company be embezzled or lost?" },
+  "faq.a6": { 
+    zh: "不會。信託財產具有高度的法律保障：\n• 獨立性：信託財產完全獨立於信託公司的自有資產之外。即便信託公司經營不善破產，債權人也無權拍賣或扣押您的信託財產。\n• 政府嚴格監管：各地金融主管機關皆有嚴格的設立門檻與法規（如香港的《信託法》與《受託人條例》），確保受託人依法行事。", 
+    en: "No. Trust assets enjoy high legal protections:\n• Independence: Trust property is entirely independent of the trust company's own assets. Even if the trust company fails or goes bankrupt, creditors have no right to seize or auction your trust assets.\n• Strict Regulation: Financial regulatory authorities impose high entry barriers and strict regulations (such as Hong Kong's 'Trustee Ordinance' and common law fiduciary duties) to ensure trustees act strictly in accordance with the law." 
+  },
+
+  "faq.q7": { zh: "Q7：信託能持續多久？我可以終止我的信託嗎？", en: "Q7: How long can a trust last? Can I terminate my trust?" },
+  "faq.a7": { 
+    zh: "在香港設立的信託，如果您不主動終止它，它可以永遠存在（永久存續），使您的資產受到信託的無限期保護。\n至於終止，這取決於您設立的信託類型：\n1. 可撤銷信託：您可以隨時按照條款撤銷或終止它。\n2. 不可撤銷信託：一旦設立，非經特定法定條件或受益人全體同意外，委託人無權單方面撤銷或終止。", 
+    en: "A trust established in Hong Kong can exist forever (perpetual duration) if you do not actively terminate it, providing indefinite protection for your assets.\nAs for termination, it depends on the type of trust established:\n1. Revocable Trust: You can revoke or terminate it at any time according to the terms.\n2. Irrevocable Trust: Once established, the settlor has no right to unilaterally revoke or terminate it, except under specific statutory conditions or with the consent of all beneficiaries." 
+  },
+
+  "faq.q8": { zh: "Q8：信託公司的客戶經理或你們的專業團隊會管理我帳戶中的資產嗎？", en: "Q8: Will the trust company's relationship managers or professional team manage the assets in my account?" },
+  "faq.a8": { 
+    zh: "委託人如需要專業或投資建議，絕對有權自行聘請律師、會計師或持牌投資顧問等獨立專業人士。帝力斯信託不提供投資建議。我們的客戶經理僅以信託行政人員身份，嚴格按照您的指示行事。", 
+    en: "Settlors have the absolute right to hire independent professionals such as lawyers, accountants, or licensed investment advisors if they require professional or investment advice. DILLIZ Trust does not provide investment advice. Our relationship managers act strictly as trust administrators and execute orders in accordance with your explicit instructions." 
+  },
+
+  "faq.q9": { zh: "Q9: 經營信託業務需要特別的證照嗎？", en: "Q9: Does operating a trust business require a special license?" },
+  "faq.a9": { 
+    zh: "是的。以香港為例，任何經營信託或公司服務業務的業者（TCSP），都必須向公司註冊處申請並持有相關牌照，並受《打擊洗錢條例》嚴格監管。帝力斯資本信託有限公司持有 TCSP 牌照（牌照號碼：TC010540），完全合規運營。", 
+    en: "Yes. Taking Hong Kong as an example, any operator conducting trust or company service businesses (TCSP) must apply for and hold a relevant license from the Companies Registry and is strictly regulated under the Anti-Money Laundering Ordinance. DILLIZ Capital Trust Limited holds the TCSP license (License No.: TC010540) and operates in full compliance." 
+  },
+
+  "faq.q10": { zh: "Q10：債權人可以通過信託追溯我的資產嗎？", en: "Q10: Can creditors trace my assets through a trust?" },
+  "faq.a10": { 
+    zh: "帝力斯信託提供的託管信託服務可以作為財產的防火牆，也具有保密功能。根據香港《信託承認條例》(第76章) 附表相關規定，信託資產是一項獨立的基金，不屬於受託人（信託公司）自己的財產，以受託人的名義持有，受託人負責根據條款管理。如果信託的設立目的是合法合規的，且信託存續期限超過5年，信託資產被債權人成功追溯的可能性極低。", 
+    en: "The custody trust services provided by DILLIZ Trust act as an asset firewall and offer confidentiality. According to the Hong Kong 'Recognition of Trusts Ordinance' (Cap. 76), trust assets constitute a separate fund and do not form part of the trustee's own estate. They are held in the trustee's name, and the trustee is responsible for managing them in accordance with the terms. If the purpose of the trust is legitimate and compliant, and the trust has been established for more than 5 years, the likelihood of successful creditor tracing is extremely low." 
+  },
+
+  "faq.q11": { zh: "Q11：委託人可以用什麼角色成立信託賬戶？", en: "Q11: In what capacity can a settlor establish a trust account?" },
+  "faq.a11": { 
+    zh: "委託人可以選擇以「個人（自然人）」、「公司（法人）」或「離岸公司（如 BVI、開曼等）」的角色來成立信託賬戶，我們會根據您選擇的主體角色為您定制專屬的開戶與託管方案。", 
+    en: "A settlor can choose to establish a trust account in the capacity of an 'Individual (Natural Person)', 'Company (Corporate)', or 'Offshore Company (such as BVI, Cayman, etc.)'. We will customize exclusive onboarding and custody solutions based on the chosen entity." 
+  },
+
+  "faq.q12": { zh: "Q12：香港信託相對於日本或歐美信託的主要優勢？", en: "Q12: What are the main advantages of HK trusts compared to Japanese or Western trusts?" },
+  "faq.a12": { 
+    zh: "主要優勢包括：\n1. 永久存續：香港已廢除百年訴訟防範規則，信託可永久存續。\n2. 排除外國強迫繼承法（防火牆條款）：保護資產免受外國繼承法律干預。\n3. 稅務環境優越：無資產增值稅、遺產稅及預扣稅。\n4. 極高的隱私性：香港沒有公共信託登記冊，信託契約與受益人身份完全保密。\n\n歡迎隨時和我們的顧問聊聊，讓我們一起為您找出更安心、更貼心的金融規劃。", 
+    en: "Key advantages include:\n1. Perpetual Duration: Hong Kong has abolished the rule against perpetuities, allowing trusts to last indefinitely.\n2. Exclusion of Foreign Forced Heirship (Firewall Clause): Protects assets from foreign forced heirship laws.\n3. Favorable Tax Environment: No capital gains tax, estate duty, or withholding tax.\n4. High Privacy: There is no public trust registry in Hong Kong, keeping trust deeds and beneficiary identities strictly confidential.\n\nWelcome to speak with our advisors at any time, and let us find a more secure and caring financial plan together." 
+  },
 
   // Contact Us (Brochure Aligned)
   "contact.title": { zh: "開始規劃您的家族財富傳承", en: "Start Planning Your Family Legacy" },
