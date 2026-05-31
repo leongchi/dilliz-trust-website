@@ -85,8 +85,8 @@ export default function About() {
                 </h3>
                 <p className="text-slate-300 font-light leading-relaxed">
                   {lang === "zh"
-                    ? "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為全球高淨值客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。"
-                    : "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global high-net-worth clients and family offices."}
+                    ? "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為全球客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。"
+                    : "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global clients and family offices."}
                 </p>
                 <p className="text-slate-300 font-light leading-relaxed">
                   {lang === "zh"
@@ -104,7 +104,7 @@ export default function About() {
                     <Target size={20} />
                   </div>
                   <h4 className="text-sm font-bold text-slate-200 font-serif">{t("stats.mission", lang)}</h4>
-                  <p className="text-xs text-slate-400 font-light leading-relaxed">
+                  <p className="text-xs text-slate-400 font-light leading-relaxed whitespace-pre-line">
                     {t("stats.mission.desc", lang)}
                   </p>
                 </div>

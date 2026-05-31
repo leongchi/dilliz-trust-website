@@ -18,11 +18,11 @@ export const translations: Record<string, { zh: string; en: string }> = {
 
   // About Us (Brochure Aligned)
   "stats.mission": { zh: "使命 (Mission)", en: "Mission" },
-  "stats.mission.desc": { zh: "保護並傳承每一位客戶的財富，超越世代", en: "To protect and pass on the wealth of every client, transcending generations." },
+  "stats.mission.desc": { zh: "保護並傳承每一位客戶的財富\n超越世代", en: "To protect and pass on the wealth of every client\ntranscending generations." },
   "stats.philosophy": { zh: "理念 (Philosophy)", en: "Philosophy" },
-  "stats.philosophy.desc": { zh: "以客為本，信任相連，\n創新驅動", en: "Client-centric, trust-connected,\nand innovation-driven." },
+  "stats.philosophy.desc": { zh: "以客為本，信任相連\n創新驅動", en: "Client-centric, trust-connected\nand innovation-driven." },
   "stats.positioning": { zh: "定位 (Positioning)", en: "Positioning" },
-  "stats.positioning.desc": { zh: "簡易靈活管理，\n長期守護您的財富", en: "Simple and flexible management,\nsafeguarding your wealth over the long term." },
+  "stats.positioning.desc": { zh: "簡易靈活管理\n長期守護您的財富", en: "Simple and flexible management\nsafeguarding your wealth over the long term." },
 
   // Services Section (Brochure Aligned)
   "services.title": { zh: "我們提供的服務", en: "Our Services" },
