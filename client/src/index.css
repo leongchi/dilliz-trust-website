@@ -396,3 +396,8 @@
 .animation-delay-500 {
   animation-delay: 500ms;
 }
+
+  /* Premium Chinese Calligraphy Kaiti Font Stack */
+  .font-kaiti {
+    font-family: "Kaiti", "楷體", "STKaiti", "BiauKai", "KaiTi", "Microsoft YaHei", serif;
+  }

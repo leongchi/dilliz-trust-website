@@ -71,12 +71,22 @@ export default function Home() {
 
             {/* 大標題 */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide text-metal-gold font-serif leading-tight">
-                {t("hero.title", lang)}
-              </h1>
-              <p className="text-lg md:text-2xl font-bold tracking-[0.15em] text-slate-300 uppercase font-serif">
-                {t("hero.subtitle", lang)}
-              </p>
+              {lang === "zh" ? (
+                <div className="space-y-2 py-2">
+                  <h1 className="text-4xl md:text-6xl font-medium tracking-widest text-metal-gold font-kaiti leading-tight">
+                    因為您，才值得擁有
+                  </h1>
+                </div>
+              ) : (
+                <>
+                  <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide text-metal-gold font-serif leading-tight">
+                    Build A Trust with DILLIZ
+                  </h1>
+                  <p className="text-lg md:text-2xl font-bold tracking-[0.15em] text-slate-300 uppercase font-serif">
+                    Shape The Future YOU Deserve
+                  </p>
+                </>
+              )}
             </div>
 
             {/* 描述 */}
