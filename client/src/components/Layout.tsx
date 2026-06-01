@@ -216,17 +216,19 @@ export default function Layout({ children }: LayoutProps) {
             {/* T&C 與 Privacy Policy 連結 */}
             <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs font-medium text-metal-gold/80">
               <Link href="/terms" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
-                {lang === "zh" ? "使用條款 (Terms & Conditions)" : "Terms & Conditions"}
+                {lang === "zh" ? "使用條款 (Terms & Conditions)" : lang === "cn" ? "使用条款 (Terms & Conditions)" : "Terms & Conditions"}
               </Link>
               <span className="text-slate-700 hidden sm:inline">|</span>
               <Link href="/privacy" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
-                {lang === "zh" ? "隱私政策 (Privacy Policy)" : "Privacy Policy"}
+                {lang === "zh" ? "隱私政策 (Privacy Policy)" : lang === "cn" ? "隐私政策 (Privacy Policy)" : "Privacy Policy"}
               </Link>
             </div>
 
             <p className="max-w-2xl font-light text-slate-600 leading-relaxed">
               {lang === "zh" 
                 ? "免責聲明：本網站所載資料僅供參考，不構成任何法律、稅務、投資或專業建議。信託服務由香港持牌信託服務公司帝力斯資本信託有限公司（牌照號碼：TC010540）依法提供。"
+                : lang === "cn"
+                ? "免责声明：本网站所载资料仅供参考，不构成任何法律、税务、投资或专业建议。信托服务由香港持牌信托服务公司帝力斯资本信托有限公司（牌照号码：TC010540）依法提供。"
                 : "Disclaimer: The information contained in this website is for reference only and does not constitute any legal, tax, investment, or professional advice. Trust services are provided by Dilliz Capital Trust Limited (License No. TC010540)."}
             </p>
           </div>
@@ -262,7 +264,7 @@ interface NotificationItem {
   read: boolean;
 }
 
-function NotificationCenter({ lang }: { lang: "zh" | "en" }) {
+function NotificationCenter({ lang }: { lang: "zh" | "en" | "cn" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [notifications, setNotifications] = useState<NotificationItem[]>([
     {
@@ -341,14 +343,14 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" }) {
           {/* 頭部 */}
           <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between bg-[#1a1a1a]/80">
             <span className="text-xs font-bold tracking-wider text-slate-200 font-serif">
-              {lang === "zh" ? "通知中心" : "Notification Center"} ({unreadCount})
+              {lang === "zh" ? "通知中心" : lang === "cn" ? "通知中心" : "Notification Center"} ({unreadCount})
             </span>
             {unreadCount > 0 && (
               <button
                 onClick={markAllAsRead}
                 className="text-[10px] font-bold tracking-wider text-metal-gold hover:underline uppercase"
               >
-                {lang === "zh" ? "全部標記已讀" : "Mark all read"}
+                {lang === "zh" ? "全部標記已讀" : lang === "cn" ? "全部标记已读" : "Mark all read"}
               </button>
             )}
           </div>
@@ -359,7 +361,7 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" }) {
               <div className="py-12 text-center space-y-3">
                 <CheckCircle2 size={32} className="text-metal-gold/30 mx-auto" />
                 <p className="text-xs text-slate-500 font-light">
-                  {lang === "zh" ? "暫無任何新通知" : "No new notifications"}
+                  {lang === "zh" ? "暫無任何新通知" : lang === "cn" ? "暂无任何新通知" : "No new notifications"}
                 </p>
               </div>
             ) : (
@@ -379,7 +381,7 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" }) {
                   <div className="space-y-2 pl-2">
                     <div className="flex items-start justify-between gap-4">
                       <h4 className={`text-xs font-bold font-serif ${!n.read ? "text-metal-gold" : "text-slate-300"}`}>
-                        {lang === "zh" ? n.titleZh : n.titleEn}
+                        {lang === "zh" ? n.titleZh : lang === "cn" ? n.titleZh.replace(/託/g, '托').replace(/劃/g, '划').replace(/開/g, '开').replace(/戶/g, '户').replace(/資/g, '资').replace(/產/g, '产').replace(/權/g, '权').replace(/益/g, '益').replace(/實/g, '实').replace(/時/g, '时').replace(/監/g, '监').replace(/控/g, '控').replace(/審/g, '审').replace(/核/g, '核').replace(/認/g, '认').replace(/證/g, '证').replace(/會/g, '会').replace(/員/g, '员').replace(/專/g, '专').replace(/屬/g, '属').replace(/諮/g, '咨').replace(/詢/g, '询').replace(/發/g, '发').replace(/送/g, '送').replace(/成/g, '成').replace(/功/g, '功') : n.titleEn}
                       </h4>
                       <button
                         onClick={(e) => deleteNotification(n.id, e)}
@@ -389,10 +391,10 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" }) {
                       </button>
                     </div>
                     <p className="text-[11px] text-slate-400 font-light leading-relaxed">
-                      {lang === "zh" ? n.descZh : n.descEn}
+                      {lang === "zh" ? n.descZh : lang === "cn" ? n.descZh.replace(/託/g, '托').replace(/劃/g, '划').replace(/開/g, '开').replace(/戶/g, '户').replace(/資/g, '资').replace(/產/g, '产').replace(/權/g, '权').replace(/益/g, '益').replace(/實/g, '实').replace(/時/g, '时').replace(/監/g, '监').replace(/控/g, '控').replace(/審/g, '审').replace(/核/g, '核').replace(/認/g, '认').replace(/證/g, '证').replace(/會/g, '会').replace(/員/g, '员').replace(/專/g, '专').replace(/屬/g, '属').replace(/諮/g, '咨').replace(/詢/g, '询').replace(/發/g, '发').replace(/送/g, '送').replace(/成/g, '成').replace(/功/g, '功') : n.descEn}
                     </p>
                     <span className="text-[9px] text-slate-500 block font-semibold">
-                      {lang === "zh" ? n.timeZh : n.timeEn}
+                      {lang === "zh" ? n.timeZh : lang === "cn" ? n.timeZh.replace(/分/g, '分').replace(/鐘/g, '钟').replace(/前/g, '前').replace(/天/g, '天').replace(/小/g, '小').replace(/時/g, '时') : n.timeEn}
                     </span>
                   </div>
                 </div>
@@ -403,7 +405,7 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" }) {
           {/* 腳部 */}
           <div className="px-5 py-3 border-t border-white/5 bg-[#1a1a1a]/50 text-center">
             <span className="text-[9px] text-slate-500 font-semibold tracking-wider uppercase">
-              {lang === "zh" ? "🛡️ 帝力斯安全合規通道" : "🛡️ DILLIZ SECURE COMPLIANCE CHANNEL"}
+              {lang === "zh" ? "🛡️ 帝力斯安全合規通道" : lang === "cn" ? "🛡️ 帝力斯安全合规通道" : "🛡️ DILLIZ SECURE COMPLIANCE CHANNEL"}
             </span>
           </div>
 

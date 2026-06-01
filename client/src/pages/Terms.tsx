@@ -92,6 +92,8 @@ export default function Terms() {
               <p>
                 {lang === "zh"
                   ? "我們嚴格執行香港打擊洗錢及恐怖分子資金籌集之合規標準。在建立任何正式信託或諮詢關係前，客戶必須配合本公司進行「了解您的客戶」（KYC）及資金來源（SOF）審查。"
+                  : lang === "cn"
+                  ? "我们严格执行香港打击洗钱及恐怖分子资金筹集之合规标准。在建立任何正式信托或咨询关系前，客户必须配合本公司进行“了解您的客户”（KYC）及资金来源（SOF）审查。"
                   : "We strictly enforce Hong Kong anti-money laundering (AML) and counter-terrorist financing compliance standards. Before establishing any formal trust or advisory relationship, clients must cooperate with our 'Know Your Customer' (KYC) and Source of Funds (SOF) verifications."}
               </p>
             </div>
@@ -101,17 +103,21 @@ export default function Terms() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">3</span>
-              {lang === "zh" ? "服務範疇與諮詢性質" : "Scope of Services & Consultations"}
+              {lang === "zh" ? "服務範疇與諮詢性質" : lang === "cn" ? "服务范畴与咨询性质" : "Scope of Services & Consultations"}
             </h2>
             <div className="space-y-3">
               <p>
                 {lang === "zh"
                   ? "本網站所展示的信託、財富傳承、資產保護及定存等服務，均需根據客戶的具體情況進行定制，並最終以雙方正式簽署的信託契約（Trust Deed）或服務協議為準。"
+                  : lang === "cn"
+                  ? "本网站所展示的信托、财富传承、资产保护及定存等服务，均需根据客户的具体情况进行定制，并最终以双方正式签署的信托契约（Trust Deed）或服务协议为准。"
                   : "The trust, wealth succession, asset protection, and fixed deposit services displayed on this website are subject to customization based on each client's specific circumstances, and are ultimately governed by the formal Trust Deed or Service Agreement signed by both parties."}
               </p>
               <p>
                 {lang === "zh"
                   ? "通過本網站預約的「專屬諮詢」屬於初步意向交流，不代表信託關係的成立，亦不產生任何受託人法律責任。正式信託關係的成立需通過本公司合規委員會的審核。"
+                  : lang === "cn"
+                  ? "通过本网站预约的“专属咨询”属于初步意向交流，不代表信托关系的成立，亦不产生任何受托人法律责任。正式信托关系的成立需通过本公司合规委员会的审核。"
                   : "The 'Exclusive Consultation' booked through this website is an initial exchange of intent, does not represent the establishment of a trust relationship, and does not generate any fiduciary liabilities. The formal establishment of a trust relationship is subject to the approval of our Compliance Committee."}
               </p>
             </div>
@@ -121,12 +127,14 @@ export default function Terms() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">4</span>
-              {lang === "zh" ? "免責聲明" : "Disclaimers"}
+              {lang === "zh" ? "免責聲明" : lang === "cn" ? "免责声明" : "Disclaimers"}
             </h2>
             <div className="space-y-3">
               <p>
                 {lang === "zh"
                   ? "本公司盡力確保本網站所載資訊的準確性，但對於因使用或依賴本網站資訊而導致的任何直接或間接損失，本公司不承擔任何法律責任。資產配置、信託架構及金融定存均存在一定的市場、稅務及法規變動風險，歷史業績不代表未來表現。"
+                  : lang === "cn"
+                  ? "本公司尽力确保本网站所载资讯的准确性，但对于因使用或依赖本网站资讯而导致的任何直接或间接损失，本公司不承担任何法律责任。资产配置、信托架构及金融定存均存在一定的市场、税务及法规变动风险，历史业绩不代表未来表现。"
                   : "The Company endeavors to ensure the accuracy of the information contained on this website, but accepts no liability for any direct or indirect loss resulting from the use of or reliance on such information. Asset allocation, trust structuring, and fixed deposits are subject to market, tax, and regulatory risks, and historical performance is not indicative of future results."}
               </p>
             </div>
@@ -136,12 +144,14 @@ export default function Terms() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">5</span>
-              {lang === "zh" ? "司法管轄權" : "Governing Law & Jurisdiction"}
+              {lang === "zh" ? "司法管轄權" : lang === "cn" ? "司法管辖权" : "Governing Law & Jurisdiction"}
             </h2>
             <div className="space-y-3">
               <p>
                 {lang === "zh"
                   ? "本使用條款受香港特別行政區法律管轄並按其解釋。因本網站或本條款引起之任何爭議，應提交香港法院專屬管轄。"
+                  : lang === "cn"
+                  ? "本使用条款受香港特别行政区法律管辖并按其解释。因本网站或本条款引起之任何争议，应提交香港法院专属管辖。"
                   : "These Terms and Conditions shall be governed by and construed in accordance with the laws of the Hong Kong Special Administrative Region. Any disputes arising from this website or these Terms shall be subject to the exclusive jurisdiction of the courts of Hong Kong."}
               </p>
             </div>
@@ -152,7 +162,7 @@ export default function Terms() {
         {/* 底部印章 */}
         <div className="pt-10 border-t border-white/10 text-center text-xs text-slate-500 space-y-2">
           <p>© 2026 DILLIZ CAPITAL TRUST LIMITED. All rights reserved.</p>
-          <p>{lang === "zh" ? "香港持牌信託服務公司 · 牌照號碼: TC010540" : "Licensed Trust Company in HK · License No. TC010540"}</p>
+          <p>{lang === "zh" ? "香港持牌信託服務公司 · 牌照號碼: TC010540" : lang === "cn" ? "香港持牌信托服务公司 · 牌照号码: TC010540" : "Licensed Trust Company in HK · License No. TC010540"}</p>
         </div>
       </main>
     </div>

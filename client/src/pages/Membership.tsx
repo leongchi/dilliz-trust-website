@@ -128,7 +128,7 @@ export default function Membership() {
                   {/* 熱門徽章 */}
                   {tier.isPopular && (
                     <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-metal-gold text-[#2b2b2b] text-[10px] font-extrabold tracking-widest uppercase px-4 py-1 rounded-full shadow-md">
-                      {lang === "zh" ? "推薦級別" : "RECOMMENDED"}
+                      {lang === "zh" ? "推薦級別" : lang === "cn" ? "推荐级别" : "RECOMMENDED"}
                     </span>
                   )}
 
@@ -195,7 +195,7 @@ export default function Membership() {
                     {/* 特色亮點 */}
                     <div className="space-y-3">
                       <span className="text-[10px] text-slate-500 font-bold tracking-wider uppercase block">
-                        {lang === "zh" ? "包含權益" : "Rights Included"}
+                        {lang === "zh" ? "包含權益" : lang === "cn" ? "包含权益" : "Rights Included"}
                       </span>
                       <div className="space-y-2.5">
                         {tier.features.map((feat, fIdx) => (
