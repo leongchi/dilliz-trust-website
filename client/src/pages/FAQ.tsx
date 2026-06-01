@@ -4,19 +4,19 @@ import Layout from "@/components/Layout";
 import { t } from "@/lib/translations";
 
 export default function FAQ() {
-  const [lang, setLang] = useState<"zh" | "en">("zh");
+  const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [openIndex, setOpenOpenIndex] = useState<number | null>(0);
 
   useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
-    if (savedLang === "zh" || savedLang === "en") {
-      setLang(savedLang);
+    if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
+      setLang(savedLang as "zh" | "en" | "cn");
     }
 
     const handleLangChange = () => {
       const updatedLang = localStorage.getItem("dilliz_lang");
-      if (updatedLang === "zh" || updatedLang === "en") {
-        setLang(updatedLang);
+      if (updatedLang === "zh" || updatedLang === "en" || updatedLang === "cn") {
+        setLang(updatedLang as "zh" | "en" | "cn");
       }
     };
 

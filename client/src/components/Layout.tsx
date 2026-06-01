@@ -9,18 +9,18 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [location, setLocation] = useLocation();
-  const [lang, setLang] = useState<"zh" | "en">("zh");
+  const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // 初始化時讀取 localStorage 中的語言設定，確保跨頁面一致
   useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
-    if (savedLang === "zh" || savedLang === "en") {
-      setLang(savedLang);
+    if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
+      setLang(savedLang as "zh" | "en" | "cn");
     }
   }, []);
 
-  const handleLangChange = (newLang: "zh" | "en") => {
+  const handleLangChange = (newLang: "zh" | "en" | "cn") => {
     setLang(newLang);
     localStorage.setItem("dilliz_lang", newLang);
     // 觸發自定義事件，通知其他可能正在監聽語言變更的組件
@@ -28,7 +28,7 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   const toggleLang = () => {
-    const target = lang === "zh" ? "en" : "zh";
+    const target = lang === "zh" ? "cn" : lang === "cn" ? "en" : "zh";
     handleLangChange(target);
   };
 
@@ -36,8 +36,8 @@ export default function Layout({ children }: LayoutProps) {
   useEffect(() => {
     const handleEvent = () => {
       const savedLang = localStorage.getItem("dilliz_lang");
-      if (savedLang === "zh" || savedLang === "en") {
-        setLang(savedLang);
+      if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
+        setLang(savedLang as "zh" | "en" | "cn");
       }
     };
     window.addEventListener("dilliz_lang_changed", handleEvent);
@@ -105,7 +105,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="flex items-center bg-[#1a1a1a] border border-white/10 rounded-full p-1">
               <button 
                 onClick={() => handleLangChange("zh")}
-                className={`px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all ${
+                className={`px-2.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all ${
                   lang === "zh" 
                     ? "bg-metal-gold text-[#1a1a1a] shadow-gold-glow" 
                     : "text-slate-400 hover:text-slate-200"
@@ -114,8 +114,18 @@ export default function Layout({ children }: LayoutProps) {
                 繁
               </button>
               <button 
+                onClick={() => handleLangChange("cn")}
+                className={`px-2.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all ${
+                  lang === "cn" 
+                    ? "bg-metal-gold text-[#1a1a1a] shadow-gold-glow" 
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                简
+              </button>
+              <button 
                 onClick={() => handleLangChange("en")}
-                className={`px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all ${
+                className={`px-2.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider transition-all ${
                   lang === "en" 
                     ? "bg-metal-gold text-[#1a1a1a] shadow-gold-glow" 
                     : "text-slate-400 hover:text-slate-200"
@@ -145,7 +155,7 @@ export default function Layout({ children }: LayoutProps) {
               onClick={toggleLang}
               className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-slate-300 text-xs font-bold"
             >
-              {lang === "zh" ? "繁" : "EN"}
+              {lang === "zh" ? "繁" : lang === "cn" ? "简" : "EN"}
             </button>
 
             <button 

@@ -4,19 +4,19 @@ import Layout from "@/components/Layout";
 import { t } from "@/lib/translations";
 
 export default function Cases() {
-  const [lang, setLang] = useState<"zh" | "en">("zh");
+  const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [activeCaseIdx, setActiveCaseIdx] = useState(0);
 
   useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
-    if (savedLang === "zh" || savedLang === "en") {
-      setLang(savedLang);
+    if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
+      setLang(savedLang as "zh" | "en" | "cn");
     }
 
     const handleLangChange = () => {
       const updatedLang = localStorage.getItem("dilliz_lang");
-      if (updatedLang === "zh" || updatedLang === "en") {
-        setLang(updatedLang);
+      if (updatedLang === "zh" || updatedLang === "en" || updatedLang === "cn") {
+        setLang(updatedLang as "zh" | "en" | "cn");
       }
     };
 
@@ -109,7 +109,7 @@ export default function Cases() {
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block">Case Studies</span>
             <h1 className="text-4xl md:text-5xl font-bold text-metal-gold font-serif leading-tight">
-              {lang === "zh" ? "真實情境個案分析" : "Real Case Studies"}
+              {lang === "zh" ? "真實情境個案分析" : lang === "cn" ? "真实情境个案分析" : "Real Case Studies"}
             </h1>
             <p className="text-slate-300 font-light leading-relaxed">
               {t("cases.subtitle", lang)}
@@ -128,7 +128,7 @@ export default function Cases() {
                   <User size={24} className="text-metal-gold" />
                 </div>
                 <span className="text-[10px] md:text-xs font-bold text-metal-gold tracking-widest uppercase font-serif">
-                  {lang === "zh" ? "尊貴客戶" : "YOU"}
+                  {lang === "zh" ? "尊貴客戶" : lang === "cn" ? "尊贵客户" : "YOU"}
                 </span>
                 <span className="text-[8px] text-metal-gold font-bold">DILLIZ</span>
               </div>
@@ -260,7 +260,7 @@ export default function Cases() {
                 {/* 底部行動按鈕 */}
                 <div className="pt-6 border-t border-white/10 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <span className="text-[10px] text-slate-400 font-light">
-                    {lang === "zh" ? "*以上案例均為真實情境化改編，已隱去客戶私密資訊" : "*Cases adapted from real scenarios, private info redacted"}
+                    {lang === "zh" ? "*以上案例均為真實情境化改編，已隱去客戶私密資訊" : lang === "cn" ? "*以上案例均为真实情境化改编，已隐去客户私密信息" : "*Cases adapted from real scenarios, private info redacted"}
                   </span>
                   <a href="/contact" className="btn-gold text-center py-2.5 px-6 font-semibold text-xs tracking-wider inline-flex items-center justify-center gap-2">
                     {t("nav.book", lang)} <ArrowRight size={14} />

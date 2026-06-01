@@ -4,19 +4,19 @@ import Layout from "@/components/Layout";
 import { t } from "@/lib/translations";
 
 export default function Services() {
-  const [lang, setLang] = useState<"zh" | "en">("zh");
+  const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [activeTab, setActiveTab] = useState("asset");
 
   useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
-    if (savedLang === "zh" || savedLang === "en") {
-      setLang(savedLang);
+    if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
+      setLang(savedLang as "zh" | "en" | "cn");
     }
 
     const handleLangChange = () => {
       const updatedLang = localStorage.getItem("dilliz_lang");
-      if (updatedLang === "zh" || updatedLang === "en") {
-        setLang(updatedLang);
+      if (updatedLang === "zh" || updatedLang === "en" || updatedLang === "cn") {
+        setLang(updatedLang as "zh" | "en" | "cn");
       }
     };
 
@@ -158,7 +158,7 @@ export default function Services() {
 
                   <div className="border-t border-white/10 pt-6 space-y-4">
                     <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase">
-                      {lang === "zh" ? "核心服務優勢" : "Core Advantages"}
+                      {lang === "zh" ? "核心服務優勢" : lang === "cn" ? "核心服务优势" : "Core Advantages"}
                     </h4>
                     <div className="grid grid-cols-1 gap-3.5">
                       {detail.features.map((feat, fIdx) => (
@@ -175,7 +175,7 @@ export default function Services() {
 
                 <div className="pt-8 border-t border-white/10 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <span className="text-[10px] text-slate-400 font-light italic">
-                    {lang === "zh" ? "* 服務具體條款與操作細節，請預約專屬客戶專員洽詢" : "* Specific terms and details, please book a private manager"}
+                    {lang === "zh" ? "* 服務具體條款與操作細節，請預約專屬客戶專員洽詢" : lang === "cn" ? "* 服务具体条款与操作细节，请预约专属客户专员洽询" : "* Specific terms and details, please book a private manager"}
                   </span>
                   <a href="/contact" className="btn-gold text-center py-3 px-8 font-bold text-xs tracking-wider inline-flex items-center justify-center gap-2">
                     {t("nav.book", lang)} <ArrowRight size={14} />
@@ -196,7 +196,7 @@ export default function Services() {
                 <div className="absolute bottom-8 left-8 right-8 z-20 space-y-1">
                   <span className="text-[10px] font-bold tracking-widest text-metal-gold uppercase">DILLIZ TRUST</span>
                   <h4 className="text-lg font-bold text-white font-serif">
-                    {lang === "zh" ? "以客為尊 · 誠信傳承" : "Client-First · Integrity Succession"}
+                    {lang === "zh" ? "以客為尊 · 誠信傳承" : lang === "cn" ? "以客为尊 · 诚信传承" : "Client-First · Integrity Succession"}
                   </h4>
                 </div>
               </div>

@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Shield, ArrowLeft, Globe, FileText, Check } from "lucide-react";
 
 export default function Terms() {
-  const [lang, setLang] = useState<"zh" | "en">("zh");
+  const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
 
   const toggleLang = () => {
-    setLang(lang === "zh" ? "en" : "zh");
+    setLang(prev => prev === "zh" ? "cn" : prev === "cn" ? "en" : "zh");
   };
 
   return (
@@ -18,7 +18,7 @@ export default function Terms() {
               <ArrowLeft size={20} />
             </div>
             <span className="text-sm font-bold text-slate-300 group-hover:text-metal-gold transition-colors">
-              {lang === "zh" ? "返回首頁" : "Back to Home"}
+              {lang === "zh" ? "返回首頁" : lang === "cn" ? "返回首页" : "Back to Home"}
             </span>
           </a>
 
@@ -28,7 +28,7 @@ export default function Terms() {
             className="flex items-center gap-2 px-4 py-2 rounded-full border border-metal-gold text-xs font-bold text-metal-gold hover:bg-metal-gold/10 transition-all shadow-gold-glow"
           >
             <Globe size={14} />
-            <span>{lang === "zh" ? "ENGLISH" : "繁體中文"}</span>
+            <span>{lang === "zh" ? "简" : lang === "cn" ? "EN" : "繁"}</span>
           </button>
         </div>
       </header>
@@ -41,10 +41,10 @@ export default function Terms() {
             <Shield size={32} />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-metal-gold font-serif">
-            {lang === "zh" ? "使用條款" : "Terms & Conditions"}
+            {lang === "zh" ? "使用條款" : lang === "cn" ? "使用条款" : "Terms & Conditions"}
           </h1>
           <p className="text-xs text-slate-400 font-light tracking-wider">
-            {lang === "zh" ? "最後更新日期：2026年5月30日" : "Last Updated: May 30, 2026"}
+            {lang === "zh" ? "最後更新日期：2026年5月30日" : lang === "cn" ? "最后更新日期：2026年5月30日" : "Last Updated: May 30, 2026"}
           </p>
         </div>
 
@@ -55,17 +55,21 @@ export default function Terms() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">1</span>
-              {lang === "zh" ? "總則與法律地位" : "General & Legal Status"}
+              {lang === "zh" ? "總則與法律地位" : lang === "cn" ? "总则与法律地位" : "General & Legal Status"}
             </h2>
             <div className="space-y-3">
               <p>
                 {lang === "zh" 
                   ? "歡迎訪問帝力斯資本信託有限公司（以下簡稱「本公司」或「我們」）官方網站。本公司是一家在香港合法註冊並持有信託或公司服務提供者牌照（牌照號碼：TC010540）的持牌機構。訪問、瀏覽或使用本網站，即表示您已閱讀、理解並同意接受本條款之約束。"
+                  : lang === "cn"
+                  ? "欢迎访问帝力斯资本信托有限公司（以下简称「本公司」或「我们」）官方网站。本公司是一家在香港合法注册并持有信托或公司服务提供者牌照（牌照号码：TC010540）的持牌机构。访问、浏览或使用本网站，即表示您已阅读、理解并同意接受本条款之约束。"
                   : "Welcome to the official website of Dilliz Capital Trust Limited (hereinafter referred to as 'the Company' or 'we'). The Company is a licensed entity legally registered in Hong Kong holding a Trust or Company Service Provider License (License No. TC010540). By accessing, browsing, or using this website, you acknowledge that you have read, understood, and agree to be bound by these Terms."}
               </p>
               <p>
                 {lang === "zh"
                   ? "本網站所載之所有資訊及服務均受香港特別行政區法律管轄。本網站的內容僅供一般參考之用，不構成任何法律、稅務、財務、投資或專業建議。"
+                  : lang === "cn"
+                  ? "本网站所载之所有信息及服务均受香港特别行政区法律管辖。本网站的内容仅供一般参考之用，不构成任何法律、税务、财务、投资或专业建议。"
                   : "All information and services on this website are governed by the laws of the Hong Kong Special Administrative Region. The content of this website is for general informational purposes only and does not constitute legal, tax, financial, investment, or professional advice."}
               </p>
             </div>
@@ -75,12 +79,14 @@ export default function Terms() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">2</span>
-              {lang === "zh" ? "受託人職責與合規承諾" : "Fiduciary Duties & Compliance"}
+              {lang === "zh" ? "受託人職責與合規承諾" : lang === "cn" ? "受托人职责与合规承诺" : "Fiduciary Duties & Compliance"}
             </h2>
             <div className="space-y-3">
               <p>
                 {lang === "zh"
                   ? "作為持牌受託人，我們嚴格遵守香港《信託條例》（第29章）及其他相關法律法規，對信託資產履行最高的受託人職責（Fiduciary Duties），包括誠實信用、謹慎管理、避免利益衝突以及維護受益人最大權益。"
+                  : lang === "cn"
+                  ? "作为持牌受托人，我们严格遵守香港《信托条例》（第29章）及其他相关法律法规，对信托资产履行最高的受托人职责（Fiduciary Duties），包括诚实信用、谨慎管理、避免利益冲突以及维护受益人最大权益。"
                   : "As a licensed trustee, we strictly adhere to the Trustee Ordinance (Cap. 29) of Hong Kong and other relevant laws and regulations, performing the highest fiduciary duties, including honesty, prudent management, avoidance of conflicts of interest, and safeguarding the best interests of beneficiaries."}
               </p>
               <p>

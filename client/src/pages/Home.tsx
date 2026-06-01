@@ -22,18 +22,18 @@ import Layout from "@/components/Layout";
 import { t } from "@/lib/translations";
 
 export default function Home() {
-  const [lang, setLang] = useState<"zh" | "en">("zh");
+  const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
 
   useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
-    if (savedLang === "zh" || savedLang === "en") {
-      setLang(savedLang);
+    if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
+      setLang(savedLang as "zh" | "en" | "cn");
     }
 
     const handleLangChange = () => {
       const updatedLang = localStorage.getItem("dilliz_lang");
-      if (updatedLang === "zh" || updatedLang === "en") {
-        setLang(updatedLang);
+      if (updatedLang === "zh" || updatedLang === "en" || updatedLang === "cn") {
+        setLang(updatedLang as "zh" | "en" | "cn");
       }
     };
 
@@ -71,7 +71,7 @@ export default function Home() {
 
             {/* 大標題 */}
             <div className="space-y-4">
-              {lang === "zh" ? (
+              {lang === "zh" || lang === "cn" ? (
                 <div className="space-y-2 py-2">
                   <h1 className="text-4xl md:text-6xl font-medium tracking-widest text-metal-gold font-kaiti leading-tight">
                     因為您，才值得擁有

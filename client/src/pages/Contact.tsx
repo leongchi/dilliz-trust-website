@@ -30,7 +30,7 @@ const EMAILJS_TEMPLATE_ID: string = "template_trgocyy";   // 填入您的 EmailJ
 const EMAILJS_PUBLIC_KEY: string = "Q9_H9y8M92fQ3Q71p";     // 填入您的 Public Key (在 Account -> API Keys 頁面)
 
 export default function Contact() {
-  const [lang, setLang] = useState<"zh" | "en">("zh");
+  const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({
@@ -93,14 +93,14 @@ export default function Contact() {
 
   useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
-    if (savedLang === "zh" || savedLang === "en") {
-      setLang(savedLang);
+    if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
+      setLang(savedLang as "zh" | "en" | "cn");
     }
 
     const handleLangChange = () => {
       const updatedLang = localStorage.getItem("dilliz_lang");
-      if (updatedLang === "zh" || updatedLang === "en") {
-        setLang(updatedLang);
+      if (updatedLang === "zh" || updatedLang === "en" || updatedLang === "cn") {
+        setLang(updatedLang as "zh" | "en" | "cn");
       }
     };
 
@@ -108,18 +108,18 @@ export default function Contact() {
     return () => window.removeEventListener("dilliz_lang_changed", handleLangChange);
   }, []);
 
-  const getInterestLabel = (key: string, currentLang: "zh" | "en") => {
+  const getInterestLabel = (key: string, currentLang: "zh" | "en" | "cn") => {
     switch (key) {
-      case "asset": return currentLang === "zh" ? "託管服務" : "Custody Services";
-      case "trust": return currentLang === "zh" ? "信託設立" : "Trust Setup";
-      case "deposit": return currentLang === "zh" ? "大額存款" : "Large Deposit";
-      case "finance": return currentLang === "zh" ? "融資方案" : "Financing Solutions";
-      case "card": return currentLang === "zh" ? "專屬聯名卡" : "Exclusive Co-branded Card";
+      case "asset": return currentLang === "zh" ? "託管服務" : currentLang === "cn" ? "托管服务" : "Custody Services";
+      case "trust": return currentLang === "zh" ? "信託設立" : currentLang === "cn" ? "信托设立" : "Trust Setup";
+      case "deposit": return currentLang === "zh" ? "大額存款" : currentLang === "cn" ? "大额存款" : "Large Deposit";
+      case "finance": return currentLang === "zh" ? "融資方案" : currentLang === "cn" ? "融资方案" : "Financing Solutions";
+      case "card": return currentLang === "zh" ? "專屬聯名卡" : currentLang === "cn" ? "专属联名卡" : "Exclusive Co-branded Card";
       default: return key;
     }
   };
 
-  const getAmountLabel = (key: string, currentLang: "zh" | "en") => {
+  const getAmountLabel = (key: string, currentLang: "zh" | "en" | "cn") => {
     switch (key) {
       case "t1": return "$10,000 - $50,000 USD";
       case "t2": return "$50,000 - $250,000 USD";

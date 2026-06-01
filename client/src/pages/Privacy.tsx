@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Shield, ArrowLeft, Globe, Lock, Eye } from "lucide-react";
 
 export default function Privacy() {
-  const [lang, setLang] = useState<"zh" | "en">("zh");
+  const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
 
   const toggleLang = () => {
-    setLang(lang === "zh" ? "en" : "zh");
+    setLang(prev => prev === "zh" ? "cn" : prev === "cn" ? "en" : "zh");
   };
 
   return (
@@ -18,7 +18,7 @@ export default function Privacy() {
               <ArrowLeft size={20} />
             </div>
             <span className="text-sm font-bold text-slate-300 group-hover:text-metal-gold transition-colors">
-              {lang === "zh" ? "返回首頁" : "Back to Home"}
+              {lang === "zh" ? "返回首頁" : lang === "cn" ? "返回首页" : "Back to Home"}
             </span>
           </a>
 
@@ -28,7 +28,7 @@ export default function Privacy() {
             className="flex items-center gap-2 px-4 py-2 rounded-full border border-metal-gold text-xs font-bold text-metal-gold hover:bg-metal-gold/10 transition-all shadow-gold-glow"
           >
             <Globe size={14} />
-            <span>{lang === "zh" ? "ENGLISH" : "繁體中文"}</span>
+            <span>{lang === "zh" ? "简" : lang === "cn" ? "EN" : "繁"}</span>
           </button>
         </div>
       </header>
@@ -41,10 +41,10 @@ export default function Privacy() {
             <Lock size={32} />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-metal-gold font-serif">
-            {lang === "zh" ? "隱私政策" : "Privacy Policy"}
+            {lang === "zh" ? "隱私政策" : lang === "cn" ? "隐私政策" : "Privacy Policy"}
           </h1>
           <p className="text-xs text-slate-400 font-light tracking-wider">
-            {lang === "zh" ? "最後更新日期：2026年5月30日" : "Last Updated: May 30, 2026"}
+            {lang === "zh" ? "最後更新日期：2026年5月30日" : lang === "cn" ? "最后更新日期：2026年5月30日" : "Last Updated: May 30, 2026"}
           </p>
         </div>
 
@@ -55,12 +55,14 @@ export default function Privacy() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">1</span>
-              {lang === "zh" ? "隱私保護承諾" : "Our Commitment to Privacy"}
+              {lang === "zh" ? "隱私保護承諾" : lang === "cn" ? "隐私保护承诺" : "Our Commitment to Privacy"}
             </h2>
             <div className="space-y-3">
               <p>
                 {lang === "zh" 
                   ? "帝力斯資本信託有限公司（以下簡稱「本公司」或「我們」）高度重視客戶的隱私及個人資料安全。我們承諾嚴格遵守香港《個人資料（私隱）條例》（第486章）以及信託行業最高級別的保密義務，保護高淨值客戶及其受益人的資產與身份私密資訊。"
+                  : lang === "cn"
+                  ? "帝力斯资本信托有限公司（以下简称「本公司」或「我们」）高度重视客户的隐私及个人数据安全。我们承诺严格遵守香港《个人资料（私隐）条例》（第486章）以及信托行业最高级别的保密义务，保护高净值客户及其受益人的资产与身份私密信息。"
                   : "Dilliz Capital Trust Limited (hereinafter referred to as 'the Company' or 'we') places the highest value on client privacy and data security. We commit to strictly complying with the Personal Data (Privacy) Ordinance (Cap. 486) of Hong Kong and the highest confidentiality obligations of the trust industry to protect the asset and identity privacy of high-net-worth clients and beneficiaries."}
               </p>
             </div>
@@ -70,12 +72,14 @@ export default function Privacy() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">2</span>
-              {lang === "zh" ? "個人資料收集與範疇" : "Collection of Personal Data"}
+              {lang === "zh" ? "個人資料收集與範疇" : lang === "cn" ? "个人数据收集与范畴" : "Collection of Personal Data"}
             </h2>
             <div className="space-y-3">
               <p>
                 {lang === "zh"
                   ? "當您使用本網站預約諮詢或提交表單時，我們可能會收集您的：姓名、聯絡電話、電子郵件、意向信託服務類型、意向資產規模等。在正式建立信託關係時，根據監管要求，我們還將收集身份證明、住址證明、稅務居民身份及資金來源證明（SOF）。"
+                  : lang === "cn"
+                  ? "当您使用本网站预约咨询或提交表单时，我们可能会收集您的：姓名、联络电话、电子邮件、意向信托服务类型、意向资产规模等。在正式建立信托关系时，根据监管要求，我们还将收集身份证明、住址证明、税务居民身份及资金来源证明（SOF）。"
                   : "When you use this website to book consultations or submit forms, we may collect your: name, phone number, email address, intended trust service types, and intended asset scale. Upon formally establishing a trust, we will also collect identity proof, proof of address, tax residency status, and source of funds (SOF) as required by regulations."}
               </p>
             </div>
