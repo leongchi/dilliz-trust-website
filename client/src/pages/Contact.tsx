@@ -25,9 +25,9 @@ import { toast } from "sonner";
 // - 諮詢留言: {{message}}
 // - 收件人: info@dilliz.com
 // ==========================================
-const EMAILJS_SERVICE_ID: string = "service_02id98o";     // 填入您的 EmailJS Service ID
-const EMAILJS_TEMPLATE_ID: string = "template_trgocyy";   // 填入您的 EmailJS Template ID
-const EMAILJS_PUBLIC_KEY: string = "Q9_H9y8M92fQ3Q71p";     // 填入您的 Public Key (在 Account -> API Keys 頁面)
+const EMAILJS_SERVICE_ID: string = "service_p02igzf";     // 填入您的 EmailJS Service ID
+const EMAILJS_TEMPLATE_ID: string = "template_ii25bqr";   // 填入您的 EmailJS Template ID
+const EMAILJS_PUBLIC_KEY: string = "jV6VJZBOtjeaELQb2";     // 填入您的 Public Key (在 Account -> API Keys 頁面)
 
 export default function Contact() {
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
