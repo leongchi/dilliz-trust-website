@@ -12,7 +12,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "hero.badge": { zh: "香港持牌信託服務公司", en: "HK Licensed Trust Service Provider", cn: "香港持牌信托服务公司" },
   "hero.title": { zh: "Build A Trust with DILLIZ", en: "Build A Trust with DILLIZ", cn: "Build A Trust with DILLIZ" },
   "hero.subtitle": { zh: "Shape The Future YOU Deserve", en: "Shape The Future YOU Deserve", cn: "Shape The Future YOU Deserve" },
-  "hero.desc": { zh: "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 總部設於香港，是一家香港持牌信託服務公司。我們專注為客戶提供定制化信託解決方案，旨在成為您最值得信賴的信託公司。", en: "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We specialize in providing customized trust solutions, aiming to be your most trusted partner in wealth preservation and legacy planning.", cn: "帝力斯资本信托有限公司 DilliZ Capital Trust Limited 总部设于香港，是一家香港持牌信托服务公司。我们专注为客户提供定制化信托解决方案，旨在成为您最值得信赖的信托公司。" },
+  "hero.desc": { zh: "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 總部設於香港，是一家香港持牌信託服務公司。我們專注為客戶提供定制化信託解決方案，旨在成為您最值得信賴的信託公司。", en: "Dilliz Capital Trust Limited is a licensed trust service provider in Hong Kong. We specialize in providing customized trust solutions, aiming to be your most trusted partner in wealth preservation and legacy planning.", cn: "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 总部设于香港，是一家香港持牌信托服务公司。我们专注为客户提供定制化信托解决方案，旨在成为您最值得信赖的信托公司。" },
   "hero.btn.explore": { zh: "探索信託方案", en: "Explore Solutions", cn: "探索信托方案" },
   "hero.btn.about": { zh: "關於帝力斯信託", en: "About DILLIZ", cn: "关于帝力斯信托" },
 
@@ -26,7 +26,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
 
   // Services Section (Brochure Aligned)
   "services.title": { zh: "我們提供的服務", en: "Our Services", cn: "我们提供的服务" },
-  "services.subtitle": { zh: "為高淨值個人與企業提供一站式、定制化的全球資產保護與信託託管解決方案", en: "Providing one-stop, customized global asset protection and trust custody solutions for high-net-worth individuals and enterprises.", cn: "为高净值个人与企业提供一站式、定制化的全球资产保护与信托托管解决方案" },
+  "services.subtitle": { zh: "為個人與企業提供一站式、定制化的全球資產保護與信託託管解決方案", en: "Providing one-stop, customized global asset protection and trust custody solutions for individuals and enterprises.", cn: "为个人与企业提供一站式、定制化的全球资产保护与信托托管解决方案" },
   
   "services.tab.asset": { zh: "託管服務", en: "Custody Services", cn: "托管服务" },
   "services.tab.trust": { zh: "稅務優化", en: "Tax Optimization", cn: "税务优化" },

@@ -162,25 +162,25 @@ export default function Home() {
             </h2>
             <p className="text-slate-300 font-light leading-relaxed">
               {lang === "zh"
-                ? "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為全球高淨值客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。"
+                ? "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為客戶提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。"
                 : lang === "cn"
-                ? "帝力斯资本信托有限公司 DilliZ Capital Trust Limited 是一家总部设于香港的持牌信托服务公司。我们致力于为全球高净值客户与家族办公室提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
-                : "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global high-net-worth clients and family offices."}
+                ? "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 是一家总部设于香港的持牌信托服务公司。我们致力于为客户提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
+                : "Dilliz Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for our clients."}
             </p>
 
             {/* 使命、理念、定位三大指標 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
               <div className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2">
-                <h4 className="text-xs font-bold text-slate-200 font-serif">{t("stats.mission", lang)}</h4>
-                <p className="text-[11px] text-slate-400 font-light leading-relaxed">{t("stats.mission.desc", lang)}</p>
+                <h4 className="text-xs font-bold text-slate-200 font-serif" style={{fontSize: '16px'}}>{t("stats.mission", lang)}</h4>
+                <p className="text-[11px] text-slate-400 font-light leading-relaxed" style={{fontSize: '15px'}}>{t("stats.mission.desc", lang)}</p>
               </div>
               <div className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2">
-                <h4 className="text-xs font-bold text-slate-200 font-serif">{t("stats.philosophy", lang)}</h4>
-                <p className="text-[11px] text-slate-400 font-light leading-relaxed">{t("stats.philosophy.desc", lang)}</p>
+                <h4 className="text-xs font-bold text-slate-200 font-serif" style={{fontSize: '16px'}}>{t("stats.philosophy", lang)}</h4>
+                <p className="text-[11px] text-slate-400 font-light leading-relaxed" style={{fontSize: '15px'}}>{t("stats.philosophy.desc", lang)}</p>
               </div>
               <div className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2">
-                <h4 className="text-xs font-bold text-slate-200 font-serif">{t("stats.positioning", lang)}</h4>
-                <p className="text-[11px] text-slate-400 font-light leading-relaxed">{t("stats.positioning.desc", lang)}</p>
+                <h4 className="text-xs font-bold text-slate-200 font-serif" style={{fontSize: '16px'}}>{t("stats.positioning", lang)}</h4>
+                <p className="text-[11px] text-slate-400 font-light leading-relaxed" style={{fontSize: '15px'}}>{t("stats.positioning.desc", lang)}</p>
               </div>
             </div>
 
@@ -229,10 +229,10 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold">
                       <IconComp size={20} />
                     </div>
-                    <h4 className="text-sm font-bold text-slate-200 font-serif group-hover:text-metal-gold transition-colors">
+                    <h4 className="text-sm font-bold text-slate-200 font-serif group-hover:text-metal-gold transition-colors" style={{fontSize: '16px'}}>
                       {srv.name}
                     </h4>
-                    <p className="text-[11px] text-slate-400 font-light leading-relaxed">
+                    <p className="text-[11px] text-slate-400 font-light leading-relaxed" style={{fontSize: '15px'}}>
                       {srv.desc}
                     </p>
                   </div>
@@ -345,12 +345,12 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-white font-serif leading-tight">
             {lang === "zh" ? "立即開啟您的專屬財富傳承規劃" : lang === "cn" ? "立即开启您的专属财富传承规划" : "Begin Your Bespoke Wealth Planning Today"}
           </h2>
-          <p className="text-slate-300 font-light text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-slate-300 font-light text-sm md:text-base leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
             {lang === "zh"
-              ? "不論是家族資產隔離、全球稅務合規優化，還是跨代財富穩健傳承，我們的資深信託與法律專家團隊都將為您提供最專業、最隱密的諮詢服務。"
+              ? "不論是家族資產隔離、全球稅務合規優化，還是跨代財富穩健傳承，\n我們的資深信託與法律專家團隊都將為您提供最專業、最隱密的諮詢服務。"
               : lang === "cn"
-              ? "不论是家族资产隔离、全球税务合规优化，还是跨代财富稳健传承，我们的资深信托与法律专家团队都将为您提供最专业、最隐密的咨询服务。"
-              : "Whether it is asset isolation, tax optimization, or multi-generational wealth succession, our senior legal and trust experts are ready to assist you in absolute confidentiality."}
+              ? "不论是家族资产隔离、全球税务合规优化，还是跨代财富稳健传承，\n我们的资深信托与法律专家团队都将为您提供最专业、最隐密的咨询服务。"
+              : "Whether it is asset isolation, tax optimization, or multi-generational wealth succession,\nour senior legal and trust experts are ready to assist you in absolute confidentiality."}
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
