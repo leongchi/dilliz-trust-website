@@ -217,7 +217,7 @@ export default function Home() {
               { id: "trust", name: t("services.tab.trust", lang), icon: Compass, desc: lang === "zh" ? "量身定制跨國資產信託，合規合法減輕稅務" : lang === "cn" ? "量身定制跨国资产信托，合规合法减轻税务" : "Bespoke trust structures to minimize global taxes" },
               { id: "deposit", name: t("services.tab.deposit", lang), icon: Landmark, desc: lang === "zh" ? "協助在全球頂級離岸中心設立賬戶" : lang === "cn" ? "协助在全球顶级离岸中心设立账户" : "Set up accounts in Swiss/Singapore financial centers" },
               { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard, desc: lang === "zh" ? "定存資產直接授信，獲發尊貴聯名信用卡" : lang === "cn" ? "定存资产直接授信，获发尊贵联名信用卡" : "Direct credit based on assets, black gold co-brand" },
-              { id: "card", name: t("services.tab.card", lang), icon: Receipt, desc: lang === "zh" ? "一站式海外物業稅、子女學費等全球賬單代付" : lang === "cn" ? "一站式海外物业税、子女学费等全球账单代付" : "One-stop escrow & auto-payment for global bills" }
+              { id: "card", name: t("services.tab.card", lang), icon: Receipt, desc: lang === "zh" ? "一站式海外物業稅，子女學費等全球賬單代付" : lang === "cn" ? "一站式海外物业税，子女学费等全球账单代付" : "One-stop escrow & auto-payment for global bills" }
             ].map((srv, idx) => {
               const IconComp = srv.icon;
               return (

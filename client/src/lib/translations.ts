@@ -20,7 +20,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "stats.mission": { zh: "使命 (Mission)", en: "Mission", cn: "使命 (Mission)" },
   "stats.mission.desc": { zh: "保護並傳承每一位客戶的財富\n超越世代", en: "To protect and pass on the wealth of every client\ntranscending generations.", cn: "保护并传承每一位客户的财富\n超越世代" },
   "stats.philosophy": { zh: "理念 (Philosophy)", en: "Philosophy", cn: "理念 (Philosophy)" },
-  "stats.philosophy.desc": { zh: "以客為本，信任相連\n創新驅動", en: "Client-centric, trust-connected\nand innovation-driven.", cn: "以客为本，信任相连\n创新驱动" },
+  "stats.philosophy.desc": { zh: "以客為本 信任相連\n創新驅動", en: "Client-centric, trust-connected\nand innovation-driven.", cn: "以客为本 信任相连\n创新驱动" },
   "stats.positioning": { zh: "定位 (Positioning)", en: "Positioning", cn: "定位 (Positioning)" },
   "stats.positioning.desc": { zh: "簡易靈活管理\n長期守護您的財富", en: "Simple and flexible management\nsafeguarding your wealth over the long term.", cn: "简易灵活管理\n长期守护您的财富" },
 
