@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Globe, Menu, X, ArrowRight, Shield, Bell, Trash2, CheckCircle2 } from "lucide-react";
+import { Globe, Menu, X, ArrowRight, Shield, Bell, Trash2, CheckCircle2, User } from "lucide-react";
 import { t } from "@/lib/translations";
 
 interface LayoutProps {
@@ -146,6 +146,17 @@ export default function Layout({ children }: LayoutProps) {
               {t("nav.book", lang)} <ArrowRight size={14} />
             </Link>
 
+            {/* 登入按鈕 (Login Icon Link) */}
+            <a 
+              href="https://www.dilliz.io/login" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-metal-gold hover:border-metal-gold/40 hover:bg-metal-gold/5 transition-all duration-300 group"
+              title={lang === "zh" ? "會員登入" : lang === "cn" ? "会员登录" : "Member Login"}
+            >
+              <User size={18} className="group-hover:scale-110 transition-transform" />
+            </a>
+
           </div>
 
           {/* 行動端選單開關 */}
@@ -194,6 +205,17 @@ export default function Layout({ children }: LayoutProps) {
             >
               {t("nav.book", lang)}
             </Link>
+
+            {/* 行動端登入按鈕 */}
+            <a 
+              href="https://www.dilliz.io/login" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full border border-white/10 bg-white/5 text-slate-300 hover:text-metal-gold hover:border-metal-gold/40 text-center py-4 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 rounded-xl transition-all"
+            >
+              <User size={16} />
+              {lang === "zh" ? "會員登入" : lang === "cn" ? "会员登录" : "Member Login"}
+            </a>
           </div>
         )}
       </header>
