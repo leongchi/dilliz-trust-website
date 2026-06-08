@@ -245,7 +245,11 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "contact.info.phone.value": { zh: "+852 6528 6838", en: "+852 6528 6838", cn: "+852 6528 6838" },
   "contact.info.email": { zh: "官方電郵", en: "Official Email", cn: "官方电邮" },
   "contact.info.address": { zh: "總部地址", en: "Headquarters Address", cn: "总部地址" },
-  "contact.info.address.value": { zh: "香港觀塘海濱道133號 萬兆豐中心17樓I室", en: "Unit I, 17/F, MG Tower, 133 Hoi Bun Road, Kwun Tong, Hong Kong", cn: "香港观塘海滨道133号 万兆丰中心17楼I室" },
+  "contact.info.address.value": { 
+    zh: "香港觀塘海濱道133號 萬兆豐中心17樓I室", 
+    en: "Unit I, 17/F, MG Tower,\n133 Hoi Bun Road, Kwun Tong,\nHong Kong", 
+    cn: "香港观塘海滨道133号 万兆丰中心17楼I室" 
+  },
   "contact.info.slogan": { 
     zh: "因為您，才值得擁有", 
     en: "Build A Trust with DILLIZ\nShape The Future YOU Deserve", cn: "因为您，才值得拥有" 

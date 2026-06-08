@@ -315,7 +315,7 @@ export default function Contact() {
                       <span className="text-[10px] text-slate-500 font-bold tracking-wider uppercase block">
                         {t("contact.info.address", lang)}
                       </span>
-                      <span className="text-slate-200 font-medium text-xs leading-relaxed block">
+                      <span className="text-slate-200 font-medium text-xs leading-relaxed block whitespace-pre-line">
                         {t("contact.info.address.value", lang)}
                       </span>
                     </div>
