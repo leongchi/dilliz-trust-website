@@ -140,7 +140,7 @@ export default function Home() {
                 <img 
                   src="/images/luxury_office_2c65c509.jpg?v=2" 
                   alt="DILLIZ Luxury Office" 
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
                 
                 {/* 疊加的 Shield Logo */}
