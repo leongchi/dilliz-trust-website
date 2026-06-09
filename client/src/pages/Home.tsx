@@ -219,7 +219,7 @@ export default function Home() {
               { id: "asset", name: t("services.tab.asset", lang), icon: Shield, desc: lang === "zh" ? "安全合規的第三方資產託管與法律隔離保護" : lang === "cn" ? "安全合规的第三方资产托管与法律隔离保护" : "Secure third-party custody & legal isolation" },
               { id: "trust", name: t("services.tab.trust", lang), icon: Compass, desc: lang === "zh" ? "量身定制跨國資產信託，合規合法減輕稅務" : lang === "cn" ? "量身定制跨国资产信托，合规合法减轻税务" : "Bespoke trust structures to minimize global taxes" },
               { id: "deposit", name: t("services.tab.deposit", lang), icon: Landmark, desc: lang === "zh" ? "協助在全球頂級離岸中心設立賬戶" : lang === "cn" ? "协助在全球顶级离岸中心设立账户" : "Set up accounts in top offshore financial centers" },
-              { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard, desc: lang === "zh" ? "定存資產直接授信，獲發尊貴聯名信用卡" : lang === "cn" ? "定存资产直接授信，获发尊贵联名信用卡" : "Direct credit based on assets, exclusive co-brand card" },
+              { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard, desc: lang === "zh" ? "定存資產直接授信，獲發尊貴資產聯動信用卡" : lang === "cn" ? "定存资产直接授信，获发尊贵资产联动信用卡" : "Direct credit based on assets, exclusive asset-linked card" },
               { id: "card", name: t("services.tab.card", lang), icon: Receipt, desc: lang === "zh" ? "一站式海外物業稅，子女學費等全球賬單代付" : lang === "cn" ? "一站式海外物业税，子女学费等全球账单代付" : "One-stop escrow & auto-payment for global bills" }
             ].map((srv, idx) => {
               const IconComp = srv.icon;
@@ -336,11 +336,11 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2 text-slate-300">
                     <Check size={14} className="text-metal-gold" />
-                    <span>{lang === "zh" ? "豁免離岸賬戶行政費" : lang === "cn" ? "豁免离岸账户行政费" : "Waived Offshore Admin Fees"}</span>
+                    <span>{lang === "zh" ? "豁免申請開戶行政費" : lang === "cn" ? "豁免申请开户行政费" : "Waived Account Setup Admin Fees"}</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-300">
                     <Check size={14} className="text-metal-gold" />
-                    <span>{lang === "zh" ? "聯名信用卡" : lang === "cn" ? "联名信用卡" : "Black Gold Co-branded Card"}</span>
+                    <span>{lang === "zh" ? "資產聯動信用卡" : lang === "cn" ? "资产联动信用卡" : "Asset-Linked Credit Card"}</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-300">
                     <Check size={14} className="text-metal-gold" />
