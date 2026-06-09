@@ -50,7 +50,7 @@ export default function Home() {
         {/* 高清真實香港天際線背景圖片 (帶有極致奢華的深藍色漸層遮罩) */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/manus-storage/hero_banner_b798c937.png" 
+            src="/manus-storage/hero_banner.png" 
             alt="DILLIZ Hong Kong Skyline" 
             className="w-full h-full object-cover opacity-35"
           />
@@ -140,7 +140,7 @@ export default function Home() {
               <img 
                 src="/manus-storage/luxury_office_2c65c509.jpg" 
                 alt="DILLIZ Luxury Office" 
-                className="w-full h-full object-cover transition-transform duration-[15000ms] ease-out hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
               />
               
               {/* 疊加的 Shield Logo */}
