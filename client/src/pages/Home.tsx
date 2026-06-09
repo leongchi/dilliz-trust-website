@@ -50,7 +50,7 @@ export default function Home() {
         {/* 高清真實香港天際線背景圖片 (帶有極致奢華的深藍色漸層遮罩) */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/manus-storage/hero_banner.png" 
+            src="/manus-storage/hero_banner.jpg" 
             alt="DILLIZ Hong Kong Skyline" 
             className="w-full h-full object-cover opacity-35"
           />

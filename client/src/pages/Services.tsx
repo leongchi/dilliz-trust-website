@@ -202,10 +202,10 @@ export default function Services() {
                 <img 
                   src={
                     activeTab === "asset" ? "/manus-storage/luxury_office_2c65c509.jpg" :
-                    activeTab === "trust" ? "/manus-storage/trust_concept.png" :
+                    activeTab === "trust" ? "/manus-storage/trust_concept.jpg" :
                     activeTab === "deposit" ? "/manus-storage/hk_skyline.jpg" :
-                    activeTab === "finance" ? "/manus-storage/credit_card.png" :
-                    "/manus-storage/hero_banner.png"
+                    activeTab === "finance" ? "/manus-storage/credit_card.jpg" :
+                    "/manus-storage/hero_banner.jpg"
                   } 
                   alt="DILLIZ Service Illustration" 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
