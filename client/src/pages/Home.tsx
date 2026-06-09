@@ -113,13 +113,28 @@ export default function Home() {
 
           {/* 右側：品牌立體徽章與視覺點綴 */}
           <div className="lg:col-span-5 hidden lg:flex justify-center relative">
+            {/* 3D 空間背景高光 */}
             <div className="absolute -inset-4 bg-metal-gold/5 rounded-full blur-3xl" />
-            <ScrollReveal delay={200} className="relative w-80 h-80 rounded-full border border-metal-gold/20 flex items-center justify-center p-8 bg-[#2b2b2b]/30 backdrop-blur-md shadow-gold-glow animate-ambient-float">
-              <img 
-                src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
-                alt="DILLIZ Badge" 
-                className="w-48 h-auto object-contain opacity-80"
-              />
+            
+            <ScrollReveal delay={200} className="relative w-80 h-80 flex items-center justify-center">
+              
+              {/* 1. 金色漣漪擴散層 (Expanding Aura Waves) - 獨立於本體之外，無限向外溫和擴散，不影響本體穩定性 */}
+              <div className="absolute inset-0 rounded-full border border-metal-gold/30 animate-gold-ripple pointer-events-none" />
+              <div className="absolute inset-4 rounded-full border border-metal-gold/10 animate-gold-ripple pointer-events-none [animation-delay:2s]" />
+
+              {/* 2. 徽章本體容器 (3D Ambient Floating Badge) */}
+              <div className="relative w-80 h-80 rounded-full border border-metal-gold/25 flex items-center justify-center p-8 bg-[#2b2b2b]/40 backdrop-blur-md shadow-gold-glow animate-ambient-float overflow-hidden">
+                
+                {/* 3. 金屬拉絲流光掠影層 (Sweep Shimmer Effect) - 在徽章本體表面定時橫掃，極具立體拉絲金屬質感 */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent w-[50%] h-full -skew-x-[25deg] animate-gold-sheen pointer-events-none" />
+                
+                <img 
+                  src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
+                  alt="DILLIZ Badge" 
+                  className="w-48 h-auto object-contain opacity-85 relative z-10 filter drop-shadow-[0_4px_12px_rgba(149,133,110,0.3)]"
+                />
+              </div>
+
             </ScrollReveal>
           </div>
 
