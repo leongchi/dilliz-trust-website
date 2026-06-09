@@ -147,22 +147,27 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* 左側：真實高清圖片 + 奢華 Logo 疊加 */}
-          <div className="lg:col-span-5 relative group">
-            <div className="absolute inset-0 bg-gradient-to-tr from-metal-gold/20 to-transparent rounded-3xl opacity-50 z-10" />
-            <div className="absolute -inset-1 bg-gradient-to-r from-metal-gold/30 to-white/5 rounded-[26px] blur-md opacity-75" />
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] shadow-gold-glow">
+          <div className="lg:col-span-5 relative group cursor-pointer">
+            {/* 金色光暈漸變底層 */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-metal-gold/20 to-transparent rounded-3xl opacity-50 z-10 transition-opacity duration-700 group-hover:opacity-70" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-metal-gold/30 to-white/5 rounded-[26px] blur-md opacity-75 transition-all duration-700 group-hover:from-metal-gold/40 group-hover:blur-lg" />
+            
+            {/* 內層浮起主體容器 - 500ms 貝氏曲線緩動 */}
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] shadow-gold-glow transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] transform group-hover:-translate-y-1.5 group-hover:scale-[1.01] group-hover:shadow-[0_30px_60px_-15px_rgba(149,133,110,0.4),0_0_25px_4px_rgba(149,133,110,0.25)]">
+              
+              {/* 背景辦公室大圖 */}
               <img 
                 src="/images/luxury_office_2c65c509.jpg?v=2" 
                 alt="DILLIZ Luxury Office" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
               />
               
-              {/* 疊加的 Shield Logo */}
-              <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#1a1a1a]/40 backdrop-blur-[2px]">
+              {/* 疊加的 Shield Logo 容器 - 帶有 3D 視差聯動 (比背景多浮起 1px，微幅放大，觸發更強陰影) */}
+              <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#1a1a1a]/40 backdrop-blur-[2px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] transform group-hover:-translate-y-1 group-hover:scale-[1.03]">
                 <img 
                   src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
                   alt="DILLIZ Shield" 
-                  className="w-28 md:w-36 h-auto object-contain drop-shadow-2xl"
+                  className="w-28 md:w-36 h-auto object-contain drop-shadow-2xl filter transition-all duration-700 group-hover:drop-shadow-[0_15px_25px_rgba(149,133,110,0.5)]"
                 />
               </div>
             </div>
