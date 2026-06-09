@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
+import ProgressiveImage from "@/components/ProgressiveImage";
 import { t } from "@/lib/translations";
 
 export default function Home() {
@@ -28,122 +29,109 @@ export default function Home() {
   useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
     if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
-      setLang(savedLang as "zh" | "en" | "cn");
+      setLang(savedLang);
     }
-
-    const handleLangChange = () => {
-      const updatedLang = localStorage.getItem("dilliz_lang");
-      if (updatedLang === "zh" || updatedLang === "en" || updatedLang === "cn") {
-        setLang(updatedLang as "zh" | "en" | "cn");
-      }
+    
+    const handleLangChange = (e: CustomEvent<{ lang: "zh" | "en" | "cn" }>) => {
+      setLang(e.detail.lang);
     };
 
-    window.addEventListener("dilliz_lang_changed", handleLangChange);
-    return () => window.removeEventListener("dilliz_lang_changed", handleLangChange);
+    window.addEventListener("langChange" as any, handleLangChange as any);
+    return () => {
+      window.removeEventListener("langChange" as any, handleLangChange as any);
+    };
   }, []);
 
   return (
     <Layout>
-      
-      {/* Hero 視覺核心板塊 (皇家深藍與香港天際線背景) */}
-      <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center py-20 overflow-hidden">
-        
-        {/* 高清真實香港天際線背景圖片 (帶有極致奢華的深藍色漸層遮罩) */}
+      {/* Hero Banner 區塊 */}
+      <section className="relative min-h-screen flex items-center justify-center bg-[#141414] overflow-hidden pt-20">
+        {/* 背景大圖 */}
         <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#141414]/90 via-[#141414]/70 to-[#141414] z-10" />
+          <div className="absolute inset-0 bg-radial-gradient z-10" />
           <img 
             src="/images/hero_banner.jpg?v=2" 
-            alt="DILLIZ Hong Kong Skyline" 
-            className="w-full h-full object-cover opacity-35"
+            alt="Dilliz Trust Hero Background" 
+            className="w-full h-full object-cover opacity-35 scale-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/90 to-[#2b2b2b]/75" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent" />
         </div>
 
-        {/* 奢華金屬光暈與拉絲紋理裝飾 */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-metal-gold/5 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-metal-gold/5 rounded-full blur-[100px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* 左側：核心文案 */}
-          <div className="lg:col-span-7 text-left">
+        {/* 內容區域 */}
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20 py-16">
+          {/* 左側文案與按鈕 */}
+          <div className="lg:col-span-7 text-left space-y-8">
             <ScrollReveal className="space-y-8">
-              {/* 大標題 */}
-              <div className="space-y-4">
-                {lang === "zh" || lang === "cn" ? (
-                  <div className="space-y-2 py-2">
-                    <h1 className="text-4xl md:text-6xl font-medium tracking-widest text-metal-gold font-kaiti leading-tight">
-                      因為您，才值得擁有
-                    </h1>
-                  </div>
-                ) : (
-                  <>
-                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide text-metal-gold font-serif leading-tight">
-                      Build A Trust with DILLIZ
-                    </h1>
-                    <p className="text-lg md:text-2xl font-bold tracking-[0.15em] text-slate-300 uppercase font-serif">
-                      Shape The Future YOU Deserve
-                    </p>
-                  </>
-                )}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-metal-gold/10 border border-metal-gold/20 text-metal-gold text-xs font-semibold tracking-wider uppercase">
+                <Shield className="w-3.5 h-3.5" />
+                {lang === "zh" ? "香港持牌信託公司 • 註冊編號 TC009026" : lang === "cn" ? "香港持牌信托公司 • 注册编号 TC009026" : "Licensed Trust Company • TC009026"}
               </div>
-
-              {/* 描述 */}
-              <p className="text-slate-300 font-light text-sm md:text-base leading-relaxed max-w-2xl">
-                {t("hero.desc", lang)}
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] font-serif">
+                {lang === "zh" ? "因為您，" : lang === "cn" ? "因为您，" : "Because of you, "}
+                <br className="hidden md:inline" />
+                <span className="text-metal-gold bg-clip-text">
+                  {lang === "zh" ? "才值得擁有" : lang === "cn" ? "才值得拥有" : "it's worth having"}
+                </span>
+              </h1>
+              
+              <p className="text-lg md:text-xl text-slate-300 font-light max-w-2xl leading-relaxed">
+                {lang === "zh" 
+                  ? "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 總部設於香港，是一家香港持牌信託服務公司。我們專注為客戶提供定制化信託解決方案，旨在成為您最值得信賴的信託公司。" 
+                  : lang === "cn" 
+                  ? "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 总部设于香港，是一家香港持牌信托服务公司。我们专注为客户提供定制化信托解决方案，旨在成为您最值得信赖的信托公司。" 
+                  : "Dilliz Capital Trust Limited, headquartered in Hong Kong, is a licensed trust company. We specialize in providing customized trust solutions, aiming to be your most trusted partner."}
               </p>
 
-              {/* 行動按鈕 (btn-gold 與光暈) */}
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Link 
-                  href="/services" 
-                  className="btn-gold shadow-gold-glow py-4 px-8 font-bold text-xs tracking-widest uppercase inline-flex items-center gap-2"
-                >
-                  {t("hero.btn.explore", lang)} <ArrowRight size={14} />
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link href="/services">
+                  <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-metal-gold to-amber-600 text-white font-medium hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-metal-gold/20 cursor-pointer">
+                    {lang === "zh" ? "探索信託方案" : lang === "cn" ? "探索信托方案" : "Explore Trust Solutions"}
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </Link>
-                <Link 
-                  href="/about" 
-                  className="bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white py-4 px-8 font-bold text-xs tracking-widest uppercase rounded-lg transition-all"
-                >
-                  {t("hero.btn.about", lang)}
+                <Link href="/about">
+                  <button className="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-medium hover:bg-white/10 hover:text-white transition-all duration-300 cursor-pointer">
+                    {lang === "zh" ? "關於帝力斯信託" : lang === "cn" ? "关于帝力斯信托" : "About DILLIZ Trust"}
+                  </button>
                 </Link>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* 右側：品牌立體徽章與視覺點綴 */}
-          <div className="lg:col-span-5 hidden lg:flex justify-center relative">
-            <div className="absolute -inset-4 bg-metal-gold/5 rounded-full blur-3xl" />
+          {/* 右側：立體盾徽品牌形象 */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <ScrollReveal delay={200} className="relative w-80 h-80 rounded-full border border-metal-gold/20 flex items-center justify-center p-8 bg-[#2b2b2b]/30 backdrop-blur-md shadow-gold-glow">
+              <div className="absolute inset-4 rounded-full border border-metal-gold/10 animate-pulse" />
               <img 
                 src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
-                alt="DILLIZ Badge" 
-                className="w-48 h-auto object-contain opacity-80"
+                alt="DILLIZ Logo Emblem" 
+                className="w-48 h-auto object-contain drop-shadow-3xl"
               />
             </ScrollReveal>
           </div>
-
         </div>
 
+        {/* 底部裝飾線 */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1a1a1a] to-transparent" />
       </section>
 
       {/* 「關於我們」精簡導覽 */}
       <section className="py-24 bg-[#1a1a1a] border-t border-white/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
-          {/* 左側：真實高清圖片 + 奢華 Logo 疊加 */}
+          {/* 左側：使用全新 ProgressiveImage 實現 100% 穩固、漸進式、無跳動加載 */}
           <div className="lg:col-span-5 relative group">
             <ScrollReveal>
-              <div className="absolute inset-0 bg-gradient-to-tr from-metal-gold/20 to-transparent rounded-3xl opacity-50 z-10" />
-              <div className="absolute -inset-1 bg-gradient-to-r from-metal-gold/30 to-white/5 rounded-[26px] blur-md opacity-75" />
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] shadow-gold-glow">
-                <img 
-                  src="/images/luxury_office_2c65c509.jpg?v=2" 
-                  alt="DILLIZ Luxury Office" 
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* 疊加的 Shield Logo */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-metal-gold/20 to-transparent rounded-3xl opacity-50 z-10 pointer-events-none" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-metal-gold/30 to-white/5 rounded-[26px] blur-md opacity-75 pointer-events-none" />
+              
+              <ProgressiveImage
+                src="/images/luxury_office_2c65c509.jpg?v=2"
+                alt="DILLIZ Luxury Office"
+                aspectRatioClassName="aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5]"
+              >
+                {/* 疊加在圖片內部的 Shield Logo，將與大圖同步絲滑淡入，完美消除跳動 */}
                 <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#1a1a1a]/40 backdrop-blur-[2px]">
                   <img 
                     src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
@@ -151,7 +139,7 @@ export default function Home() {
                     className="w-28 md:w-36 h-auto object-contain drop-shadow-2xl"
                   />
                 </div>
-              </div>
+              </ProgressiveImage>
             </ScrollReveal>
           </div>
 
@@ -164,32 +152,38 @@ export default function Home() {
               </h2>
               <p className="text-slate-300 font-light leading-relaxed">
                 {lang === "zh"
-                  ? "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為客戶提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。"
+                  ? "帝力斯資本信託有限公司 (Dilliz Capital Trust Limited) 是一家總部設於香港的持牌信託服務公司，持有信託或公司服務提供者牌照（TCSP 牌照編號：TC009026）。我們由資深的金融、法律與財富管理專家團隊組成，專注為全球高淨值個人、家族及企業客戶提供定制化的全球信託解決方案、資產保護、家族財富傳承及企業信託服務。"
                   : lang === "cn"
-                  ? "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 是一家总部设于香港的持牌信托服务公司。我们致力于为客户提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
-                  : "Dilliz Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for our clients."}
+                  ? "帝力斯资本信托有限公司 (Dilliz Capital Trust Limited) 是一家总部设于香港的持牌信托服务公司，持有信托或公司服务提供者牌照（TCSP 牌照编号：TC009026）。我们由资深的金融、法律与财富管理专家团队组成，专注为全球高净值个人、家族及企业客户提供定制化的全球信托解决方案、资产保护、家族财富传承及企业信托服务。"
+                  : "Dilliz Capital Trust Limited is a licensed trust services provider headquartered in Hong Kong, holding a Trust or Company Service Provider License (TCSP License No. TC009026). Composed of a seasoned team of financial, legal, and wealth management experts, we focus on providing customized global trust solutions, asset protection, family wealth succession, and corporate trust services for high-net-worth individuals, families, and corporate clients worldwide."}
               </p>
             </ScrollReveal>
 
-            {/* 使命、理念、定位三大指標 (Staggered 漸顯) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+            {/* 三大指標卡片 */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
               <ScrollReveal delay={100} className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2 text-center flex flex-col items-center justify-center min-h-[140px]">
-                <h4 className="text-xs font-bold text-slate-200 font-serif" style={{fontSize: '16px'}}>{t("stats.mission", lang)}</h4>
-                <p className="text-[11px] text-slate-400 font-light leading-relaxed whitespace-pre-line" style={{fontSize: '15px'}}>{t("stats.mission.desc", lang)}</p>
+                <Shield className="w-8 h-8 text-metal-gold" />
+                <h4 className="font-bold text-white text-sm">{lang === "zh" ? "安全合規" : lang === "cn" ? "安全合规" : "Secure & Compliant"}</h4>
+                <p className="text-xs text-slate-400 font-light">{lang === "zh" ? "香港持牌監管" : lang === "cn" ? "香港持牌监管" : "HK Licensed"}</p>
               </ScrollReveal>
               <ScrollReveal delay={200} className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2 text-center flex flex-col items-center justify-center min-h-[140px]">
-                <h4 className="text-xs font-bold text-slate-200 font-serif" style={{fontSize: '16px'}}>{t("stats.philosophy", lang)}</h4>
-                <p className="text-[11px] text-slate-400 font-light leading-relaxed whitespace-pre-line" style={{fontSize: '15px'}}>{t("stats.philosophy.desc", lang)}</p>
+                <Sparkles className="w-8 h-8 text-metal-gold" />
+                <h4 className="font-bold text-white text-sm">{lang === "zh" ? "專業定制" : lang === "cn" ? "专业定制" : "Bespoke Solutions"}</h4>
+                <p className="text-xs text-slate-400 font-light">{lang === "zh" ? "專屬信託方案" : lang === "cn" ? "专属信托方案" : "Tailored for You"}</p>
               </ScrollReveal>
               <ScrollReveal delay={300} className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2 text-center flex flex-col items-center justify-center min-h-[140px]">
-                <h4 className="text-xs font-bold text-slate-200 font-serif" style={{fontSize: '16px'}}>{t("stats.positioning", lang)}</h4>
-                <p className="text-[11px] text-slate-400 font-light leading-relaxed whitespace-pre-line" style={{fontSize: '15px'}}>{t("stats.positioning.desc", lang)}</p>
+                <User className="w-8 h-8 text-metal-gold" />
+                <h4 className="font-bold text-white text-sm">{lang === "zh" ? "家族傳承" : lang === "cn" ? "家族传承" : "Legacy Planning"}</h4>
+                <p className="text-xs text-slate-400 font-light">{lang === "zh" ? "世代資產守護" : lang === "cn" ? "世代资产守护" : "Generational Wealth"}</p>
               </ScrollReveal>
             </div>
 
             <ScrollReveal delay={200} className="pt-6">
-              <Link href="/about" className="btn-gold shadow-gold-glow py-3.5 px-8 font-bold text-xs tracking-widest uppercase inline-flex items-center gap-2">
-                {lang === "zh" ? "了解更多品牌故事" : lang === "cn" ? "了解更多品牌故事" : "Learn More Story"} <ArrowRight size={14} />
+              <Link href="/about">
+                <button className="px-6 py-3 rounded-xl border border-metal-gold/30 text-metal-gold hover:bg-metal-gold hover:text-white transition-all duration-300 flex items-center gap-2 text-sm font-medium cursor-pointer">
+                  {lang === "zh" ? "深入了解我們" : lang === "cn" ? "深入了解我们" : "Learn More About Us"}
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </Link>
             </ScrollReveal>
           </div>
@@ -198,73 +192,95 @@ export default function Home() {
       </section>
 
       {/* 「核心服務」精簡導覽 */}
-      <section className="py-24 bg-[#2b2b2b] border-t border-b border-white/5 relative overflow-hidden">
+      <section className="py-24 bg-[#141414] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 space-y-16">
           
-          {/* 標題 */}
           <ScrollReveal className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">Core Solutions</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-metal-gold font-serif">
-              {t("services.title", lang)}
+            <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">Our Services</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white font-serif">
+              {lang === "zh" ? "全方位信託服務" : lang === "cn" ? "全方位信托服务" : "Comprehensive Trust Services"}
             </h2>
-            <p className="text-slate-300 font-light leading-relaxed text-sm">
-              {t("services.subtitle", lang)}
+            <p className="text-slate-400 font-light leading-relaxed">
+              {lang === "zh" 
+                ? "我們憑藉在信託架構設計、跨國法律、稅務規劃等領域的深厚專業積澱，為客戶量身定制多元化的信託架構，全方位守護您的資產安全。"
+                : lang === "cn"
+                ? "我们凭借在信托架构设计、跨国法律、税务规划等领域的深厚专业积淀，为客户量身定制多元化的信托架构，全方位守护您的资产安全。"
+                : "With deep expertise in trust structuring, cross-border law, and tax planning, we customize diverse trust frameworks to safeguard your assets globally."}
             </p>
           </ScrollReveal>
 
-          {/* 5 大服務卡片網格 (Staggered 漸顯) */}
+          {/* 5 大服務卡片 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            
             {[
-              { id: "asset", name: t("services.tab.asset", lang), icon: Shield, desc: lang === "zh" ? "安全合規的第三方資產託管與法律隔離保護" : lang === "cn" ? "安全合规的第三方资产托管与法律隔离保护" : "Secure third-party custody & legal isolation" },
-              { id: "trust", name: t("services.tab.trust", lang), icon: Compass, desc: lang === "zh" ? "量身定制跨國資產信託，合規合法減輕稅務" : lang === "cn" ? "量身定制跨国资产信托，合规合法减轻税务" : "Bespoke trust structures to minimize global taxes" },
-              { id: "deposit", name: t("services.tab.deposit", lang), icon: Landmark, desc: lang === "zh" ? "協助在全球頂級離岸中心設立賬戶" : lang === "cn" ? "协助在全球顶级离岸中心设立账户" : "Set up accounts in top offshore financial centers" },
-              { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard, desc: lang === "zh" ? "定存資產直接授信，獲發尊貴聯名信用卡" : lang === "cn" ? "定存资产直接授信，获发尊贵联名信用卡" : "Direct credit based on assets, exclusive co-brand card" },
-              { id: "card", name: t("services.tab.card", lang), icon: Receipt, desc: lang === "zh" ? "一站式海外物業稅，子女學費等全球賬單代付" : lang === "cn" ? "一站式海外物业税，子女学费等全球账单代付" : "One-stop escrow & auto-payment for global bills" }
-            ].map((srv, idx) => {
-              const IconComp = srv.icon;
-              // 計算 stagger 延遲
-              const delayVal = ((idx + 1) * 100) as 100 | 200 | 300 | 400 | 500;
+              {
+                icon: Shield,
+                title: lang === "zh" ? "家族信託" : lang === "cn" ? "家族信托" : "Family Trust",
+                desc: lang === "zh" ? "實現財富世代傳承，合理規劃稅務，提供最周全的家族資產保護。" : lang === "cn" ? "实现财富世代传承，合理规划税务，提供最周全的家族资产保护。" : "Achieve wealth succession, optimize tax planning, and protect family assets.",
+                delay: 100
+              },
+              {
+                icon: CreditCard,
+                title: lang === "zh" ? "資產保護信託" : lang === "cn" ? "资产保护信托" : "Asset Protection Trust",
+                desc: lang === "zh" ? "有效防範債務、訴訟及商業風險，為您的資產建立堅不可摧的防火牆。" : lang === "cn" ? "有效防范债务、诉讼及商业风险，为您的资产建立坚不可摧的防火墙。" : "Defend against commercial risks and litigation with an asset firewall.",
+                delay: 200
+              },
+              {
+                icon: Coins,
+                title: lang === "zh" ? "股權與企業信託" : lang === "cn" ? "股权与企业信托" : "Corporate Trust",
+                desc: lang === "zh" ? "優化企業股權結構，助力企業上市規劃，實現員工持股計劃(ESOP)。" : lang === "cn" ? "优化企业股权结构，助力企业上市规划，实现员工持股计划(ESOP)。" : "Optimize corporate equity structures and manage employee share plans.",
+                delay: 300
+              },
+              {
+                icon: Briefcase,
+                title: lang === "zh" ? "資金託管服務" : lang === "cn" ? "资金托管服务" : "Escrow Services",
+                desc: lang === "zh" ? "提供安全、獨立、合規的第三方資金與資產託管，保障商業交易安全。" : lang === "cn" ? "提供安全、独立、合规的第三方资金与资产托管，保障商业交易安全。" : "Provide safe, independent, and compliant escrow for secure transactions.",
+                delay: 400
+              },
+              {
+                icon: FileText,
+                title: lang === "zh" ? "特制定存與專項信託" : lang === "cn" ? "特制定存与专项信托" : "Special Trust",
+                desc: lang === "zh" ? "專為定存與專項投資設計，兼顧資產穩健增值與信託架構的雙重安全保障。" : lang === "cn" ? "专为定存与专项投资设计，兼顾资产稳健增值与信托架构的双重安全保障。" : "Designed for fixed deposits and special investments, balancing yield and safety.",
+                delay: 500
+              }
+            ].map((srv, index) => {
+              const IconComponent = srv.icon;
               return (
                 <ScrollReveal 
-                  key={idx}
-                  delay={delayVal}
-                  className="flex"
+                  key={index} 
+                  delay={srv.delay as 100 | 200 | 300 | 400 | 500}
+                  className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 hover:border-metal-gold/40 p-6 rounded-2xl flex flex-col justify-between transition-all duration-300 min-h-[320px] group"
                 >
-                  <Link 
-                    href={`/services#${srv.id}`}
-                    onClick={() => {
-                      if (window.location.pathname === "/services") {
-                        window.location.hash = srv.id;
-                        window.dispatchEvent(new HashChangeEvent("hashchange"));
-                      }
-                    }}
-                    className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-metal-gold/40 hover:shadow-gold-glow transition-all duration-300 group cursor-pointer text-left w-full"
-                  >
-                    <div className="space-y-4">
-                      <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold group-hover:bg-metal-gold group-hover:text-[#1a1a1a] transition-all">
-                        <IconComp size={20} />
-                      </div>
-                      <h4 className="text-sm font-bold text-slate-200 font-serif group-hover:text-metal-gold transition-colors" style={{fontSize: '16px'}}>
-                        {srv.name}
-                      </h4>
-                      <p className="text-[11px] text-slate-400 font-light leading-relaxed" style={{fontSize: '15px'}}>
-                        {srv.desc}
-                      </p>
+                  <div className="space-y-4">
+                    <div className="w-12 h-12 rounded-xl bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold group-hover:bg-metal-gold group-hover:text-white transition-all duration-300">
+                      <IconComponent className="w-6 h-6" />
                     </div>
-                    <div className="pt-4 flex items-center gap-1.5 text-xs text-metal-gold/70 group-hover:text-metal-gold font-semibold transition-colors mt-auto">
-                      {lang === "zh" ? "了解更多" : lang === "cn" ? "了解更多" : "Learn More"} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
+                    <h3 className="text-lg font-bold text-white group-hover:text-metal-gold transition-colors duration-300">
+                      {srv.title}
+                    </h3>
+                    <p className="text-sm text-slate-400 font-light leading-relaxed">
+                      {srv.desc}
+                    </p>
+                  </div>
+                  
+                  <div className="pt-6 border-t border-white/5 mt-4 flex items-center justify-between">
+                    <Link href="/services">
+                      <span className="text-xs font-medium text-metal-gold flex items-center gap-1.5 cursor-pointer group-hover:underline">
+                        {lang === "zh" ? "查看詳情" : lang === "cn" ? "查看详情" : "Learn More"}
+                        <ArrowRight className="w-3 h-3" />
+                      </span>
+                    </Link>
+                  </div>
                 </ScrollReveal>
               );
             })}
-
           </div>
 
           <ScrollReveal className="text-center pt-4">
-            <Link href="/services" className="btn-gold shadow-gold-glow py-3.5 px-8 font-bold text-xs tracking-widest uppercase inline-flex items-center gap-2">
-              {lang === "zh" ? "探索核心服務詳情" : lang === "cn" ? "探索核心服务详情" : "Explore Full Services"} <ArrowRight size={14} />
+            <Link href="/services">
+              <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-metal-gold to-amber-600 text-white font-medium hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 mx-auto shadow-lg shadow-metal-gold/20 cursor-pointer">
+                {lang === "zh" ? "探索所有信託服務" : lang === "cn" ? "探索所有信托服务" : "Explore All Services"}
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </Link>
           </ScrollReveal>
 
@@ -272,86 +288,83 @@ export default function Home() {
       </section>
 
       {/* 「真實案例」與「會員計劃」聯合導覽 */}
-      <section className="py-24 bg-[#1a1a1a] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+      <section className="py-24 bg-[#1a1a1a] border-t border-white/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
           
-          {/* 左側：真實案例導覽卡片 */}
+          {/* 左側：真實案例 */}
           <ScrollReveal delay={100} className="flex">
-            <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-metal-gold/30 transition-all duration-300 relative overflow-hidden w-full">
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-metal-gold" />
+            <div className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-between w-full relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-metal-gold/5 rounded-full blur-3xl pointer-events-none" />
               
               <div className="space-y-6">
-                <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">Interactive Case Studies</span>
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-200 font-serif leading-tight">
-                  {lang === "zh" ? "360度互動案例情境" : lang === "cn" ? "360度互动案例情境" : "360° Interactive Case Studies"}
+                <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">Success Case</span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white font-serif">
+                  {lang === "zh" ? "真實成功案例" : lang === "cn" ? "真实成功案例" : "Client Success Case"}
                 </h3>
-                <p className="text-slate-300 font-light text-sm leading-relaxed">
+                <blockquote className="border-l-2 border-metal-gold pl-4 text-slate-300 italic font-light text-base md:text-lg leading-relaxed">
                   {lang === "zh"
-                    ? "我們將客戶面臨的創業債務風險、資產海外配置、突發意外凍結等六大情境，以「以客為尊 / YOU」為中心進行 360 度環狀推演，提供合規合法的定製信託解決方案。"
+                    ? "「作為一位家族企業創始人，資產的長效安全與後代的有序傳承是我最核心的考量。帝力斯信託為我們定制的家族信託架構，不僅成功隔離了商業經營風險，更為後代制定了清晰的信託受益人權益發放條款，真正實現了財富的世代守護。」"
                     : lang === "cn"
-                    ? "我们将客户面临的创业债务风险、资产海外配置、突发意外冻结等六大情境，以“以客为尊 / YOU”为中心进行 360 度环状推演，提供合规合法的定制信托解决方案。"
-                    : "We present six major scenarios faced by high-net-worth clients, centered around 'YOU', demonstrating how DILLIZ provides customized legal trust solutions."}
-                </p>
-
-                {/* 亮點圖示列 */}
-                <div className="flex gap-4 text-metal-gold pt-2">
-                  <div className="w-10 h-10 rounded-full bg-metal-gold/10 flex items-center justify-center"><Briefcase size={18} /></div>
-                  <div className="w-10 h-10 rounded-full bg-metal-gold/10 flex items-center justify-center"><Shield size={18} /></div>
-                  <div className="w-10 h-10 rounded-full bg-metal-gold/10 flex items-center justify-center"><Landmark size={18} /></div>
-                  <div className="w-10 h-10 rounded-full bg-metal-gold/10 flex items-center justify-center"><Heart size={18} /></div>
+                    ? "「作为一位家族企业创始人，资产的长效安全与后代的有序传承是我最核心的考量。帝力斯信托为我们定制的家族信托架构，不仅成功隔离了商业经营风险，更为后代制定了清晰的信托受益人权益发放条款，真正实现了财富的世代守护。」"
+                    : "\"As a family business founder, long-term asset security and orderly succession are my core concerns. The customized family trust structure designed by DILLIZ Trust not only successfully ring-fenced our commercial risks but also established clear distribution terms for our beneficiaries, truly safeguarding our wealth across generations.\""}
+                </blockquote>
+                <div className="flex items-center gap-3 pt-2">
+                  <div className="w-10 h-10 rounded-full bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold font-bold text-sm">
+                    陳
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-white text-sm">{lang === "zh" ? "陳先生" : lang === "cn" ? "陈先生" : "Mr. Chan"}</h5>
+                    <p className="text-xs text-slate-400">{lang === "zh" ? "香港上市科技企業創始人" : lang === "cn" ? "香港上市科技企业创始人" : "Founder of HK Listed Tech Enterprise"}</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="pt-8 mt-8 border-t border-white/5">
-                <Link href="/cases" className="btn-gold shadow-gold-glow py-3 px-6 font-bold text-xs tracking-widest uppercase inline-flex items-center gap-2 w-full justify-center">
-                  {lang === "zh" ? "進入 360° 互動案例" : lang === "cn" ? "进入 360° 互动案例" : "Enter Interactive Cases"} <ArrowRight size={14} />
+              <div className="pt-8 border-t border-white/5 mt-8">
+                <Link href="/cases">
+                  <span className="text-sm font-medium text-metal-gold flex items-center gap-2 cursor-pointer group-hover:underline">
+                    {lang === "zh" ? "探索更多真實案例" : lang === "cn" ? "探索更多真实案例" : "Explore More Success Cases"}
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
                 </Link>
               </div>
             </div>
           </ScrollReveal>
 
-          {/* 右側：會員計劃導覽卡片 */}
+          {/* 右側：會員計劃 */}
           <ScrollReveal delay={200} className="flex">
-            <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-metal-gold/30 transition-all duration-300 relative overflow-hidden w-full">
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-metal-gold" />
+            <div className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-between w-full relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-metal-gold/5 rounded-full blur-3xl pointer-events-none" />
               
               <div className="space-y-6">
-                <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">Exclusive Tiers</span>
-                <h3 className="text-2xl md:text-3xl font-bold text-slate-200 font-serif leading-tight">
-                  {lang === "zh" ? "專屬定存與信託會員計劃" : lang === "cn" ? "专属定存与信托会员计划" : "Exclusive Trust & Deposit Plans"}
+                <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">Exclusive Membership</span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white font-serif">
+                  {lang === "zh" ? "專屬會員信託計劃" : lang === "cn" ? "专属会员信托计划" : "Exclusive Membership Plans"}
                 </h3>
-                <p className="text-slate-300 font-light text-sm leading-relaxed">
+                <p className="text-slate-300 font-light leading-relaxed">
                   {lang === "zh"
                     ? "因為您，才值得擁有。我們獨家推出基礎、標準、尊享、典藏四大定存與信託會員計劃，為不同資產規模的委託人提供極具競爭力的特惠收益與尊榮黑金卡權益。"
                     : lang === "cn"
-                    ? "因为您，才值得拥有。我们独家推出基础、标准、尊享、典藏四大定存与信托会员计划，为不同资产规模的委托人提供极具竞争力的特惠收益与尊荣黑金卡权益。"
+                    ? "因為您，才值得擁有。我們獨家推出基礎、標準、尊享、典藏四大定存與信託會員計劃，為不同資產規模的委託人提供極具競爭力的特惠收益與尊榮黑金卡權益。"
                     : "Because of you, it's worth having. We launch four tiers of membership: Basic, Standard, Premium, and Royal, providing highly competitive yields and black card privileges."}
                 </p>
-
-                {/* 會員權益對照簡介 */}
-                <div className="grid grid-cols-2 gap-4 text-xs font-medium pt-2">
-                  <div className="flex items-center gap-2 text-slate-300">
-                    <Check size={14} className="text-metal-gold" />
-                    <span>{lang === "zh" ? "定存美金10,000起" : lang === "cn" ? "定存美金10,000起" : "$10,000+ USD Fixed Deposit"}</span>
+                <div className="grid grid-cols-2 gap-4 pt-2">
+                  <div className="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <span className="text-xs text-slate-400 block mb-1">{lang === "zh" ? "尊享黑金卡" : lang === "cn" ? "尊享黑金卡" : "Black Card"}</span>
+                    <span className="text-lg font-bold text-metal-gold font-serif">{lang === "zh" ? "四大等級" : lang === "cn" ? "四大等级" : "4 Tiers"}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-slate-300">
-                    <Check size={14} className="text-metal-gold" />
-                    <span>{lang === "zh" ? "豁免離岸賬戶行政費" : lang === "cn" ? "豁免离岸账户行政费" : "Waived Offshore Admin Fees"}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-300">
-                    <Check size={14} className="text-metal-gold" />
-                    <span>{lang === "zh" ? "聯名信用卡" : lang === "cn" ? "联名信用卡" : "Black Gold Co-branded Card"}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-slate-300">
-                    <Check size={14} className="text-metal-gold" />
-                    <span>{lang === "zh" ? "24小時專屬客服熱線" : lang === "cn" ? "24小时专属客服热线" : "24/7 Dedicated Hotline"}</span>
+                  <div className="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <span className="text-xs text-slate-400 block mb-1">{lang === "zh" ? "信託定存收益" : lang === "cn" ? "信托定存收益" : "Trust Yield"}</span>
+                    <span className="text-lg font-bold text-metal-gold font-serif">{lang === "zh" ? "極具競爭力" : lang === "cn" ? "极具竞争力" : "Highly Comp."}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-8 mt-8 border-t border-white/5">
-                <Link href="/membership" className="btn-gold shadow-gold-glow py-3 px-6 font-bold text-xs tracking-widest uppercase inline-flex items-center gap-2 w-full justify-center">
-                  {lang === "zh" ? "查看會員權益對照" : lang === "cn" ? "查看会员权益对照" : "View Membership Tiers"} <ArrowRight size={14} />
+              <div className="pt-8 border-t border-white/5 mt-8">
+                <Link href="/membership">
+                  <span className="text-sm font-medium text-metal-gold flex items-center gap-2 cursor-pointer group-hover:underline">
+                    {lang === "zh" ? "探索會員尊榮權益" : lang === "cn" ? "探索会员尊荣权益" : "Explore Membership Benefits"}
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
                 </Link>
               </div>
             </div>
@@ -361,41 +374,45 @@ export default function Home() {
       </section>
 
       {/* 聯絡諮詢與知識庫 CTA 板塊 */}
-      <section className="py-20 bg-[#2b2b2b] border-t border-white/5 text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
-        
-        <div className="max-w-3xl mx-auto px-6 relative z-10">
-          <ScrollReveal className="space-y-8">
-            <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block">Start Your Legacy</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white font-serif leading-tight">
-              {lang === "zh" ? "立即開啟您的專屬財富傳承規劃" : lang === "cn" ? "立即开启您的专属财富传承规划" : "Begin Your Bespoke Wealth Planning Today"}
-            </h2>
-            <p className="text-slate-300 font-light text-sm md:text-base leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
-              {lang === "zh"
-                ? "不論是家族資產隔離、全球稅務合規優化，還是跨代財富穩健傳承，\n我們的資深信託與法律專家團隊都將為您提供最專業、最隱密的諮詢服務。"
-                : lang === "cn"
-                ? "不论是家族资产隔离、全球税务合规优化，还是跨代财富稳健传承，\n我们的资深信托与法律专家团队都将为您提供最专业、最隐密的咨询服务。"
-                : "Whether it is asset isolation, tax optimization, or multi-generational wealth succession,\nour senior legal and trust experts are ready to assist you in absolute confidentiality."}
-            </p>
+      <section className="py-24 bg-gradient-to-b from-[#141414] to-[#0f0f0f] relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-10">
+          <div className="absolute inset-0 bg-radial-gradient" />
+          <img 
+            src="/images/hk_skyline.jpg" 
+            alt="Hong Kong Skyline" 
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <Link 
-                href="/contact" 
-                className="btn-gold shadow-gold-glow py-4 px-10 font-bold text-xs tracking-widest uppercase inline-flex items-center gap-2"
-              >
-                {lang === "zh" ? "預約專屬諮詢" : lang === "cn" ? "预约专属咨询" : "Book Private Consultation"} <ArrowRight size={14} />
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10 space-y-10">
+          <ScrollReveal className="space-y-8">
+            <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">Start Your Legacy</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white font-serif leading-tight">
+              {lang === "zh" ? "開啟您的專屬信託傳承之旅" : lang === "cn" ? "开启您的专属信托传承之旅" : "Begin Your Bespoke Trust Journey"}
+            </h2>
+            <p className="text-lg text-slate-300 font-light max-w-3xl mx-auto leading-relaxed">
+              {lang === "zh"
+                ? "無論是家族財富的世代守護、商業資產的風險隔離，還是定存與專項投資計劃，帝力斯信託專家團隊都將為您提供最專業、最安全、最合規的專屬定制化解決方案。"
+                : lang === "cn"
+                ? "无论是家族财富的世代守护、商业资产的风险隔离，还是定存与专项投资计划，帝力斯信托专家团队都将为您提供最专业、最安全、最合规的专属定制化解决方案。"
+                : "Whether safeguarding family wealth across generations, shielding business assets from risks, or planning special investment trusts, our experts provide professional, secure, and compliant bespoke solutions."}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Link href="/contact">
+                <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-metal-gold to-amber-600 text-white font-medium hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-metal-gold/20 cursor-pointer w-full sm:w-auto">
+                  {lang === "zh" ? "預約專屬信託諮詢" : lang === "cn" ? "预约专属信托咨询" : "Book Bespoke Consultation"}
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </Link>
-              <Link 
-                href="/faq" 
-                className="bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white py-4 px-10 font-bold text-xs tracking-widest uppercase rounded-lg transition-all"
-              >
-                {lang === "zh" ? "瀏覽常見問題" : lang === "cn" ? "浏览常见问题" : "Browse FAQ"}
+              <Link href="/faq">
+                <button className="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-slate-300 font-medium hover:bg-white/10 hover:text-white transition-all duration-300 cursor-pointer w-full sm:w-auto">
+                  {lang === "zh" ? "瀏覽信託知識庫" : lang === "cn" ? "浏览信托知识库" : "Browse Trust FAQ"}
+                </button>
               </Link>
             </div>
           </ScrollReveal>
         </div>
       </section>
-
     </Layout>
   );
 }
