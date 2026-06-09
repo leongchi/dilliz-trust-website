@@ -83,6 +83,8 @@ import { cn } from "@/lib/utils";
 declare global {
   interface Window {
     google?: typeof google;
+    googleMapsLoadingPromise?: Promise<void>;
+    googleMapsLoadedFlag?: boolean;
   }
 }
 
@@ -92,21 +94,49 @@ const FORGE_BASE_URL =
   "https://forge.butterfly-effect.dev";
 const MAPS_PROXY_URL = `${FORGE_BASE_URL}/v1/maps/proxy`;
 
-function loadMapScript() {
-  return new Promise(resolve => {
+function loadMapScript(): Promise<void> {
+  // 1. 如果 SDK 已經完全加載成功，直接返回
+  if (window.googleMapsLoadedFlag || (window.google && window.google.maps)) {
+    return Promise.resolve();
+  }
+
+  // 2. 如果正在加載中，直接複用現有的 Promise，防止重複插入 script 標籤
+  if (window.googleMapsLoadingPromise) {
+    return window.googleMapsLoadingPromise;
+  }
+
+  // 3. 首次加載，創建並存儲 Promise 實例（單例模式）
+  window.googleMapsLoadingPromise = new Promise<void>((resolve) => {
+    // 再次雙重確認，防止極端併發情況
+    if (window.google && window.google.maps) {
+      window.googleMapsLoadedFlag = true;
+      resolve();
+      return;
+    }
+
     const script = document.createElement("script");
     script.src = `${MAPS_PROXY_URL}/maps/api/js?key=${API_KEY}&v=weekly&libraries=marker,places,geocoding,geometry`;
     script.async = true;
     script.crossOrigin = "anonymous";
+    
     script.onload = () => {
-      resolve(null);
-      script.remove(); // Clean up immediately
+      window.googleMapsLoadedFlag = true;
+      resolve();
+      // 注意：不要在 onload 中立即刪除 script 標籤，因為 Google Maps API 
+      // 在異步初始化模塊（如 marker, places）時，可能還需要讀取或引用該 script 標籤。
+      // 保持 script 標籤在 DOM 中是更安全、更穩定的做法。
     };
+    
     script.onerror = () => {
       console.error("Failed to load Google Maps script");
+      window.googleMapsLoadingPromise = undefined; // 允許出錯後重試
+      resolve();
     };
+    
     document.head.appendChild(script);
   });
+
+  return window.googleMapsLoadingPromise;
 }
 
 interface MapViewProps {
