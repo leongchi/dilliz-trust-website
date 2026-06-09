@@ -237,20 +237,20 @@ export default function Home() {
                         window.dispatchEvent(new HashChangeEvent("hashchange"));
                       }
                     }}
-                    className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-metal-gold/40 hover:shadow-gold-glow transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform group-hover/card:-translate-y-2 group cursor-pointer text-left w-full" // 內層平滑浮動，絕不震盪
+                    className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-metal-gold/40 hover:shadow-gold-glow transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform group-hover/card:-translate-y-2 group cursor-pointer text-center w-full" // 改為 text-center 實現文字置中
                   >
-                    <div className="space-y-4">
-                      <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold group-hover:bg-metal-gold group-hover:text-[#1a1a1a] transition-all">
+                    <div className="space-y-4 flex flex-col items-center"> {/* 加上 items-center 確保子元素置中 */}
+                      <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold group-hover:bg-metal-gold group-hover:text-[#1a1a1a] transition-all mx-auto"> {/* 加上 mx-auto 確保 Icon 置中 */}
                         <IconComp size={20} />
                       </div>
-                      <h4 className="text-sm font-bold text-slate-200 font-serif group-hover:text-metal-gold transition-colors" style={{fontSize: '16px'}}>
+                      <h4 className="text-sm font-bold text-slate-200 font-serif group-hover:text-metal-gold transition-colors w-full" style={{fontSize: '16px'}}>
                         {srv.name}
                       </h4>
-                      <p className="text-[11px] text-slate-400 font-light leading-relaxed" style={{fontSize: '15px'}}>
+                      <p className="text-[11px] text-slate-400 font-light leading-relaxed w-full" style={{fontSize: '15px'}}>
                         {srv.desc}
                       </p>
                     </div>
-                    <div className="pt-4 flex items-center gap-1.5 text-xs text-metal-gold/70 group-hover:text-metal-gold font-semibold transition-colors mt-auto">
+                    <div className="pt-4 flex items-center justify-center gap-1.5 text-xs text-metal-gold/70 group-hover:text-metal-gold font-semibold transition-colors mt-auto"> {/* 加上 justify-center 確保按鈕置中 */}
                       {lang === "zh" ? "了解更多" : lang === "cn" ? "了解更多" : "Learn More"} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
