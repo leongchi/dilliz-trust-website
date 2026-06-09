@@ -114,7 +114,7 @@ export default function Home() {
           {/* 右側：品牌立體徽章與視覺點綴 */}
           <div className="lg:col-span-5 hidden lg:flex justify-center relative">
             <div className="absolute -inset-4 bg-metal-gold/5 rounded-full blur-3xl" />
-            <ScrollReveal delay={200} className="relative w-80 h-80 rounded-full border border-metal-gold/20 flex items-center justify-center p-8 bg-[#2b2b2b]/30 backdrop-blur-md shadow-gold-glow">
+            <ScrollReveal delay={200} className="relative w-80 h-80 rounded-full border border-metal-gold/20 flex items-center justify-center p-8 bg-[#2b2b2b]/30 backdrop-blur-md shadow-gold-glow animate-ambient-float">
               <img 
                 src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
                 alt="DILLIZ Badge" 
@@ -227,7 +227,7 @@ export default function Home() {
                 <ScrollReveal 
                   key={idx}
                   delay={delayVal}
-                  className="flex"
+                  className="flex group/card" // 外層固定觸發區
                 >
                   <Link 
                     href={`/services#${srv.id}`}
@@ -237,7 +237,7 @@ export default function Home() {
                         window.dispatchEvent(new HashChangeEvent("hashchange"));
                       }
                     }}
-                    className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-metal-gold/40 hover:shadow-gold-glow transition-all duration-300 group cursor-pointer text-left w-full"
+                    className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-metal-gold/40 hover:shadow-gold-glow transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform group-hover/card:-translate-y-2 group cursor-pointer text-left w-full" // 內層平滑浮動，絕不震盪
                   >
                     <div className="space-y-4">
                       <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold group-hover:bg-metal-gold group-hover:text-[#1a1a1a] transition-all">
@@ -274,8 +274,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           
           {/* 左側：真實案例導覽卡片 */}
-          <ScrollReveal delay={100} className="flex">
-            <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-metal-gold/30 transition-all duration-300 relative overflow-hidden w-full">
+          <ScrollReveal delay={100} className="flex group/card">
+            <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-metal-gold/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform group-hover/card:-translate-y-2 relative overflow-hidden w-full">
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-metal-gold" />
               
               <div className="space-y-6">
@@ -309,8 +309,8 @@ export default function Home() {
           </ScrollReveal>
 
           {/* 右側：會員計劃導覽卡片 */}
-          <ScrollReveal delay={200} className="flex">
-            <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-metal-gold/30 transition-all duration-300 relative overflow-hidden w-full">
+          <ScrollReveal delay={200} className="flex group/card">
+            <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl flex flex-col justify-between hover:border-metal-gold/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform group-hover/card:-translate-y-2 relative overflow-hidden w-full">
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-metal-gold" />
               
               <div className="space-y-6">

@@ -443,3 +443,18 @@
     transform: translateX(100%);
   }
 }
+
+/* Premium 3D Ambient Floating Animation - Aligned to Luxury Theme */
+@keyframes ambient-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-ambient-float {
+  animation: ambient-float 6s ease-in-out infinite;
+  will-change: transform;
+}
