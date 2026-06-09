@@ -434,6 +434,11 @@
     font-family: "Kaiti", "楷體", "STKaiti", "BiauKai", "KaiTi", "Microsoft YaHei", serif;
   }
 
+  /* Premium Chinese Artistic Calligraphy (Long Cang / Ma Shan Zheng) */
+  .font-calligraphy {
+    font-family: "Long Cang", "Ma Shan Zheng", "Kaiti", "楷體", "STKaiti", "BiauKai", serif;
+  }
+
 /* Premium Shimmer Effect for ProgressiveImage Skeleton Loader */
 @keyframes shimmer {
   0% {
