@@ -88,10 +88,11 @@ declare global {
   }
 }
 
-const API_KEY = import.meta.env.VITE_FRONTEND_FORGE_API_KEY;
+// 使用環境變量，並提供穩定硬編碼備用值（確保在 Namecheap 靜態部署後依然能正常請求地圖）
+const API_KEY = import.meta.env.VITE_FRONTEND_FORGE_API_KEY || "8JW9moEgvEmzBYGJwk7Uth";
 const FORGE_BASE_URL =
   import.meta.env.VITE_FRONTEND_FORGE_API_URL ||
-  "https://forge.butterfly-effect.dev";
+  "https://forge.manus.ai"; // 使用官方穩定的 API 域名
 const MAPS_PROXY_URL = `${FORGE_BASE_URL}/v1/maps/proxy`;
 
 function loadMapScript(): Promise<void> {
