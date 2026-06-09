@@ -204,11 +204,11 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent z-10 opacity-60" />
                 <img 
                   src={
-                    activeTab === "asset" ? "/manus-storage/luxury_office_2c65c509.jpg?v=2" :
-                    activeTab === "trust" ? "/manus-storage/trust_concept.jpg?v=2" :
-                    activeTab === "deposit" ? "/manus-storage/hk_skyline.jpg?v=2" :
-                    activeTab === "finance" ? "/manus-storage/credit_card.jpg?v=2" :
-                    "/manus-storage/bill_escrow.jpg?v=2"
+                    activeTab === "asset" ? "/images/luxury_office_2c65c509.jpg?v=2" :
+                    activeTab === "trust" ? "/images/trust_concept.jpg?v=2" :
+                    activeTab === "deposit" ? "/images/hk_skyline.jpg?v=2" :
+                    activeTab === "finance" ? "/images/credit_card.jpg?v=2" :
+                    "/images/bill_escrow.jpg?v=2"
                   } 
                   alt="DILLIZ Service Illustration" 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

@@ -57,7 +57,7 @@ export default function About() {
               
               <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/5] shadow-gold-glow">
                 <img 
-                  src="/manus-storage/luxury_office_2c65c509.jpg?v=2" 
+                  src="/images/luxury_office_2c65c509.jpg?v=2" 
                   alt="DILLIZ Luxury Office" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

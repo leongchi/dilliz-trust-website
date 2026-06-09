@@ -69,7 +69,7 @@ export default function Layout({ children }: LayoutProps) {
           {/* Logo 區域 */}
           <Link href="/" className="flex items-center group shrink-0">
             <img 
-              src="/manus-storage/dilliz_horizontal_logo_transparent_1c4515c8.png" 
+              src="/images/dilliz_horizontal_logo_transparent_1c4515c8.png" 
               alt="DilliZ Capital Trust Limited" 
               className="h-9 md:h-10 w-auto transition-transform duration-500 group-hover:scale-105 object-contain"
             />
@@ -259,7 +259,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="shrink-0">
             <Link href="/">
               <img 
-                src="/manus-storage/dilliz_new_logo_transparent_a0c86cf6.png" 
+                src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
                 alt="DILLIZ Footer Logo" 
                 className="h-10 w-auto opacity-45 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer"
               />
