@@ -71,20 +71,10 @@ export default function Home() {
               {/* 大標題 */}
               <div className="space-y-4">
                 {lang === "zh" || lang === "cn" ? (
-                  <div className="space-y-3 py-2">
-                    {/* 高奢書法「寫法字」排版：使用頂級「霞鶩文楷」繁體楷書體，配合端莊大氣的寬字距、金屬拉絲漸變流光，並配以精奢無襯線落款 */}
-                    <div className="relative inline-block">
-                      <h1 className="text-5xl md:text-7xl font-medium tracking-[0.18em] font-calligraphy leading-tight bg-clip-text text-transparent bg-gradient-to-r from-metal-gold via-white to-metal-gold filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)] select-none">
-                        因為您，才值得擁有
-                      </h1>
-                      {/* 書法落款效果 */}
-                      <div className="flex items-center justify-end gap-2 mt-2 opacity-80">
-                        <span className="h-[1px] w-8 bg-metal-gold/40" />
-                        <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-metal-gold font-sans font-semibold">
-                          DILLIZ TRUST
-                        </span>
-                      </div>
-                    </div>
+                  <div className="space-y-2 py-2">
+                    <h1 className="text-4xl md:text-6xl font-medium tracking-widest text-metal-gold font-kaiti leading-tight">
+                      因為您，才值得擁有
+                    </h1>
                   </div>
                 ) : (
                   <>

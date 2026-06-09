@@ -434,11 +434,6 @@
     font-family: "Kaiti", "楷體", "STKaiti", "BiauKai", "KaiTi", "Microsoft YaHei", serif;
   }
 
-  /* Premium Chinese Artistic Calligraphy (LXGW WenKai TC - Elegant Kaiti) */
-  .font-calligraphy {
-    font-family: "LXGW WenKai TC", "Kaiti", "楷體", "STKaiti", "BiauKai", serif;
-  }
-
 /* Premium Shimmer Effect for ProgressiveImage Skeleton Loader */
 @keyframes shimmer {
   0% {
