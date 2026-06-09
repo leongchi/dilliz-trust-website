@@ -291,13 +291,7 @@ export default function Home() {
                     : "We present six major scenarios faced by high-net-worth clients, centered around 'YOU', demonstrating how DILLIZ provides customized legal trust solutions."}
                 </p>
 
-                {/* 亮點圖示列 */}
-                <div className="flex gap-4 text-metal-gold pt-2">
-                  <div className="w-10 h-10 rounded-full bg-metal-gold/10 flex items-center justify-center"><Briefcase size={18} /></div>
-                  <div className="w-10 h-10 rounded-full bg-metal-gold/10 flex items-center justify-center"><Shield size={18} /></div>
-                  <div className="w-10 h-10 rounded-full bg-metal-gold/10 flex items-center justify-center"><Landmark size={18} /></div>
-                  <div className="w-10 h-10 rounded-full bg-metal-gold/10 flex items-center justify-center"><Heart size={18} /></div>
-                </div>
+
               </div>
 
               <div className="pt-8 mt-8 border-t border-white/5">
