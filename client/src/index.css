@@ -398,7 +398,7 @@
 }
 
 .shadow-gold-glow:hover {
-  transform: translateY(-12px);
+  /* 移除 translateY 位移，防止滑鼠懸停在元素邊緣時觸發無限循環的物理震盪（Jitter） */
   box-shadow: 0 25px 50px -12px rgba(149, 133, 110, 0.35), 0 0 25px 4px rgba(149, 133, 110, 0.25);
 }
 
