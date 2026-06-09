@@ -55,7 +55,7 @@ export default function ScrollReveal({
   }, [threshold, triggerOnce]);
 
   // 動態生成動畫與延遲類別
-  const animationClass = isIntersecting ? "animate-fadeIn" : "opacity-0";
+  const animationClass = isIntersecting ? "animate-reveal" : "opacity-0";
   const delayClass = delay ? `animation-delay-${delay}` : "";
 
   return (
@@ -65,7 +65,8 @@ export default function ScrollReveal({
       style={{
         // 為了防止加載時的閃爍，在未相交且支援 JS 時先將不透明度設為 0
         opacity: isIntersecting ? undefined : 0,
-        transition: "opacity 0.5s ease-out"
+        transition: "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+        willChange: "transform, opacity"
       }}
     >
       {children}
