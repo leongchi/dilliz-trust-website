@@ -135,7 +135,10 @@ export default function Services() {
                 return (
                   <button
                     key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
+                    onClick={() => {
+                      setActiveTab(tab.id);
+                      window.location.hash = tab.id;
+                    }}
                     className={`flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-bold tracking-wider transition-all border ${
                       isActive 
                         ? "bg-[#2b2b2b] text-metal-gold border-metal-gold shadow-gold-glow scale-105" 
