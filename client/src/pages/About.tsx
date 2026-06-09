@@ -40,10 +40,10 @@ export default function About() {
             </h1>
             <p className="text-slate-300 font-light leading-relaxed">
               {lang === "zh" 
-                ? "源自瑞士私人銀行級別的財富保護美學，立足香港全球金融中心，為家族與企業守護永續未來。"
+                ? "源自私人銀行級別的財富保護美學，立足香港全球金融中心，為家族與企業守護永續未來。"
                 : lang === "cn"
-                ? "源自瑞士私人银行级别的财富保护美学，立足香港全球金融中心，为家族与企业守护永续未来。"
-                : "Rooted in Swiss private banking-grade wealth preservation aesthetics, based in Hong Kong's global financial hub, safeguarding a sustainable future for families and enterprises."}
+                ? "源自私人银行级别的财富保护美学，立足香港全球金融中心，为家族与企业守护永续未来。"
+                : "Rooted in private banking-grade wealth preservation aesthetics, based in Hong Kong's global financial hub, safeguarding a sustainable future for families and enterprises."}
             </p>
           </div>
 
@@ -94,10 +94,10 @@ export default function About() {
                 </p>
                 <p className="text-slate-300 font-light leading-relaxed">
                   {lang === "zh"
-                    ? "我們深知，財富不僅僅是數字的累積，更是家族奮鬥歷史的沉澱與對未來的期許。因此，我們秉持「以客為本，信任相連」的核心價值，將瑞士私人銀行的嚴謹與精緻，與香港普通法系下信託架構的靈活優勢完美結合。"
+                    ? "我們深知，財富不僅僅是數字的累積，更是家族奮鬥歷史的沉澱與對未來的期許。因此，我們秉持「以客為本，信任相連」的核心價值，將私人銀行的嚴謹與精緻，與香港普通法系下信託架構的靈活優勢完美結合。"
                     : lang === "cn"
-                    ? "我们深知，财富不仅仅是数字的累积，更是家族奋斗历史的沉淀与对未来的期许。因此，我们秉持「以客为本，信任相连」的核心价值，将瑞士私人银行的严谨与精致，与香港普通法系下信托架构的灵活优势完美结合。"
-                    : "We understand that wealth is not just an accumulation of numbers, but the crystallization of family struggles and hopes for the future. Therefore, we uphold the core value of 'Client-Centric, Trust-Connected', combining the rigor and sophistication of Swiss private banking with the flexible advantages of Hong Kong's common law trust structure."}
+                    ? "我们深知，财富不仅仅是数字的累积，更是家族奋斗历史的沉淀与对未来的期许。因此，我们秉持「以客为本，信任相连」的核心价值，将私人银行的严谨与精致，与香港普通法系下信托架构的灵活优势完美结合。"
+                    : "We understand that wealth is not just an accumulation of numbers, but the crystallization of family struggles and hopes for the future. Therefore, we uphold the core value of 'Client-Centric, Trust-Connected', combining the rigor and sophistication of private banking with the flexible advantages of Hong Kong's common law trust structure."}
                 </p>
               </div>
 
@@ -176,7 +176,7 @@ export default function About() {
                   <Building size={22} />
                 </div>
                 <h4 className="text-lg font-bold text-slate-200 font-serif">
-                  {lang === "zh" ? "2. 全球銀行聯動" : lang === "cn" ? "2. 全球银行联动" : "2. Global Banking Alliance"}
+                  {lang === "zh" ? "2. 全球銀行戶口開設" : lang === "cn" ? "2. 全球银行户口开设" : "2. Global Bank Account Opening"}
                 </h4>
                 <p className="text-xs text-slate-400 font-light leading-relaxed">
                   {lang === "zh"
@@ -192,7 +192,7 @@ export default function About() {
                   <Sparkles size={22} />
                 </div>
                 <h4 className="text-lg font-bold text-slate-200 font-serif">
-                  {lang === "zh" ? "3. 私人銀行級定製" : lang === "cn" ? "3. 私人银行级定制" : "3. Private Banking Bespoke"}
+                  {lang === "zh" ? "3. 私人銀行級別專屬定製" : lang === "cn" ? "3. 私人银行级别专属定制" : "3. Private Banking Bespoke Customization"}
                 </h4>
                 <p className="text-xs text-slate-400 font-light leading-relaxed">
                   {lang === "zh"
