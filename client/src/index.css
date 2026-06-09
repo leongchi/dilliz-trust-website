@@ -190,8 +190,8 @@
     transition: none;
   }
   .btn-gold:hover {
-    box-shadow: 0 6px 20px rgba(149, 133, 110, 0.4), 0 0 10px rgba(191, 174, 149, 0.2);
-    transform: translateY(-2px);
+    /* 移除 translateY(-2px) 位移，保持本體絕對穩固，僅觸發流光與高奢金光擴散，防止邊緣懸停震盪 */
+    box-shadow: 0 10px 30px rgba(149, 133, 110, 0.45), 0 0 15px rgba(191, 174, 149, 0.3);
   }
   .btn-gold:hover::after {
     left: 150%;
@@ -225,11 +225,11 @@
     transform: skewX(-25deg);
   }
   .btn-gold-outline:hover {
+    /* 移除 translateY(-2px) 位移，保持本體絕對穩固，防止邊緣懸停震盪 */
     background-color: rgba(149, 133, 110, 0.05);
     border-color: #ab9a81;
     color: #ab9a81;
-    box-shadow: 0 4px 15px rgba(149, 133, 110, 0.15);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(149, 133, 110, 0.25);
   }
   .btn-gold-outline:hover::after {
     left: 150%;
@@ -250,9 +250,10 @@
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   }
   .btn-white-outline:hover {
+    /* 移除 translateY(-2px) 位移，保持本體絕對穩固，防止邊緣懸停震盪 */
     border-color: #ffffff;
     background-color: rgba(255, 255, 255, 0.05);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
   }
   .btn-white-outline:active {
     transform: translateY(1px);
@@ -388,8 +389,8 @@
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .shadow-luxury-hover:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px -12px rgba(7, 20, 38, 0.15), 0 1px 5px rgba(7, 20, 38, 0.05);
+  /* 移除 translateY(-8px) 位移，保持本體絕對穩固，防止邊緣懸停震盪 */
+  box-shadow: 0 25px 50px -12px rgba(7, 20, 38, 0.25), 0 1px 8px rgba(7, 20, 38, 0.08);
 }
 
 .shadow-gold-glow {
