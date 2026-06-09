@@ -133,26 +133,24 @@ export default function Home() {
           
           {/* 左側：真實高清圖片 + 奢華 Logo 疊加 */}
           <div className="lg:col-span-5 relative group">
-            <ScrollReveal>
-              <div className="absolute inset-0 bg-gradient-to-tr from-metal-gold/20 to-transparent rounded-3xl opacity-50 z-10" />
-              <div className="absolute -inset-1 bg-gradient-to-r from-metal-gold/30 to-white/5 rounded-[26px] blur-md opacity-75" />
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] shadow-gold-glow">
+            <div className="absolute inset-0 bg-gradient-to-tr from-metal-gold/20 to-transparent rounded-3xl opacity-50 z-10" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-metal-gold/30 to-white/5 rounded-[26px] blur-md opacity-75" />
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] shadow-gold-glow">
+              <img 
+                src="/images/luxury_office_2c65c509.jpg?v=2" 
+                alt="DILLIZ Luxury Office" 
+                className="w-full h-full object-cover"
+              />
+              
+              {/* 疊加的 Shield Logo */}
+              <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#1a1a1a]/40 backdrop-blur-[2px]">
                 <img 
-                  src="/images/luxury_office_2c65c509.jpg?v=2" 
-                  alt="DILLIZ Luxury Office" 
-                  className="w-full h-full object-cover"
+                  src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
+                  alt="DILLIZ Shield" 
+                  className="w-28 md:w-36 h-auto object-contain drop-shadow-2xl"
                 />
-                
-                {/* 疊加的 Shield Logo */}
-                <div className="absolute inset-0 flex items-center justify-center z-20 bg-[#1a1a1a]/40 backdrop-blur-[2px]">
-                  <img 
-                    src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
-                    alt="DILLIZ Shield" 
-                    className="w-28 md:w-36 h-auto object-contain drop-shadow-2xl"
-                  />
-                </div>
               </div>
-            </ScrollReveal>
+            </div>
           </div>
 
           {/* 右側：品牌故事導覽 */}
