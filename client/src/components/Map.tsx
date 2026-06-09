@@ -76,7 +76,7 @@
 
 /// <reference types="@types/google.maps" />
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePersistFn } from "@/hooks/usePersistFn";
 import { cn } from "@/lib/utils";
 
@@ -128,15 +128,14 @@ function loadMapScript(): Promise<void> {
       // 保持 script 標籤在 DOM 中是更安全、更穩定的做法。
     };
     
-    script.onerror = () => {
-      console.error("Failed to load Google Maps script");
-      window.googleMapsLoadingPromise = undefined; // 允許出錯後重試
+        script.onerror = () => {
+      console.warn("Failed to load Google Maps script via Proxy, switching to luxury static fallback.");
+      window.googleMapsLoadingPromise = undefined;
+      window.googleMapsLoadedFlag = false;
       resolve();
     };
-    
     document.head.appendChild(script);
   });
-
   return window.googleMapsLoadingPromise;
 }
 
@@ -149,36 +148,92 @@ interface MapViewProps {
 
 export function MapView({
   className,
-  initialCenter = { lat: 37.7749, lng: -122.4194 },
-  initialZoom = 12,
+  initialCenter = { lat: 22.3121, lng: 114.2185 }, // 默認香港觀塘 MG Tower 坐標
+  initialZoom = 16,
   onMapReady,
 }: MapViewProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<google.maps.Map | null>(null);
+  const [loadFailed, setLoadFailed] = useState(false);
 
   const init = usePersistFn(async () => {
     await loadMapScript();
+    
+    // 如果 SDK 載入失敗，或者 window.google 未定義，觸發備用靜態地圖
+    if (!window.google || !window.google.maps) {
+      setLoadFailed(true);
+      return;
+    }
+
     if (!mapContainer.current) {
       console.error("Map container not found");
       return;
     }
-    map.current = new window.google.maps.Map(mapContainer.current, {
-      zoom: initialZoom,
-      center: initialCenter,
-      mapTypeControl: true,
-      fullscreenControl: true,
-      zoomControl: true,
-      streetViewControl: true,
-      mapId: "DEMO_MAP_ID",
-    });
-    if (onMapReady) {
-      onMapReady(map.current);
+
+    try {
+      map.current = new window.google.maps.Map(mapContainer.current, {
+        zoom: initialZoom,
+        center: initialCenter,
+        mapTypeControl: true,
+        fullscreenControl: true,
+        zoomControl: true,
+        streetViewControl: true,
+        mapId: "DEMO_MAP_ID",
+      });
+      if (onMapReady) {
+        onMapReady(map.current);
+      }
+    } catch (err) {
+      console.error("Error initializing Google Map:", err);
+      setLoadFailed(true);
     }
   });
 
   useEffect(() => {
     init();
   }, [init]);
+
+  // 如果加載失敗（在外部 cPanel 等非沙盒環境），呈現高奢、100% 穩定的靜態 3D 地圖卡片與導航跳轉
+  if (loadFailed) {
+    return (
+      <div className={cn("w-full h-[280px] relative flex flex-col items-center justify-center overflow-hidden bg-zinc-900 group/map", className)}>
+        {/* 高奢暗色地圖背景圖（中環/觀塘海濱 3D 視覺） */}
+        <img 
+          src="/images/hk_skyline.jpg" 
+          alt="DILLIZ CAPITAL TRUST LIMITED" 
+          className="absolute inset-0 w-full h-full object-cover opacity-20 filter grayscale contrast-125 group-hover/map:scale-105 transition-transform duration-[2000ms]"
+        />
+        
+        {/* 暗金色微光遮罩 */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+        
+        {/* 核心引導內容 */}
+        <div className="relative z-10 text-center px-6 space-y-4">
+          <div className="w-12 h-12 rounded-full bg-metal-gold/10 border border-metal-gold/30 flex items-center justify-center text-metal-gold mx-auto animate-pulse">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div className="space-y-1">
+            <h4 className="text-sm font-bold text-slate-200 font-serif">DILLIZ CAPITAL TRUST LIMITED</h4>
+            <p className="text-[11px] text-slate-400 font-light max-w-xs mx-auto leading-relaxed">
+              香港九龍觀塘海濱道 133 號萬兆豐群樓 17 樓 I 室<br/>
+              Unit I, 17/F, MG Tower, 133 Hoi Bun Road, Kwun Tong, HK
+            </p>
+          </div>
+          
+          {/* 高奢金屬按鈕：一鍵跳轉 Google Map 導航 */}
+          <a 
+            href="https://maps.google.com/?q=Unit+I,+17/F,+MG+Tower,+133+Hoi+Bun+Road,+Kwun+Tong,+Hong+Kong" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-metal-gold text-black text-[10px] font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300 shadow-gold-glow hover:shadow-white/20"
+          >
+            開啟 Google 地圖導航
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div ref={mapContainer} className={cn("w-full h-[500px]", className)} />
