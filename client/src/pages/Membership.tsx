@@ -122,10 +122,10 @@ export default function Membership() {
               return (
                 <div
                   key={idx}
-                  className={`bg-white/5 backdrop-blur border rounded-3xl p-8 flex flex-col justify-between shadow-md transition-all duration-300 relative ${
+                  className={`bg-white/5 backdrop-blur border rounded-3xl p-8 flex flex-col justify-between shadow-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform relative ${
                     tier.isPopular 
-                      ? "border-metal-gold shadow-gold-glow scale-[1.03] z-10" 
-                      : "border-white/10 hover:border-metal-gold/40"
+                      ? "border-metal-gold/60 shadow-gold-glow scale-[1.03] z-10 hover:scale-[1.06] hover:-translate-y-2.5 hover:border-metal-gold hover:shadow-[0_25px_60px_-10px_rgba(149,133,110,0.45),0_0_30px_6px_rgba(149,133,110,0.35)]" 
+                      : "border-white/10 hover:scale-[1.03] hover:-translate-y-2 hover:border-metal-gold/50 hover:shadow-gold-glow hover:z-10"
                   }`}
                 >
                   {/* 熱門徽章 */}
