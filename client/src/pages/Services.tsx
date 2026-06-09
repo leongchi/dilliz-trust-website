@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Shield, Landmark, CreditCard, Receipt, Compass, Check, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import { ProgressiveImage } from "@/components/ProgressiveImage";
 import { t } from "@/lib/translations";
 
 export default function Services() {
@@ -200,9 +201,9 @@ export default function Services() {
               </div>
 
               {/* 右側：根據 activeTab 動態渲染的高品質無人像背景圖（契合宣傳冊高奢調性） */}
-              <div className="lg:col-span-5 relative group rounded-3xl overflow-hidden border border-white/10 shadow-luxury min-h-[400px] lg:min-h-auto">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent z-10 opacity-60" />
-                <img 
+              <div className="lg:col-span-5 relative group rounded-3xl overflow-hidden border border-white/10 shadow-luxury min-h-[400px] lg:min-h-auto flex">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent z-20 opacity-60 pointer-events-none" />
+                <ProgressiveImage 
                   src={
                     activeTab === "asset" ? "/images/luxury_office_2c65c509.jpg?v=2" :
                     activeTab === "trust" ? "/images/trust_concept.jpg?v=2" :
@@ -211,7 +212,9 @@ export default function Services() {
                     "/images/bill_escrow.jpg?v=2"
                   } 
                   alt="DILLIZ Service Illustration" 
-                  className="absolute inset-0 w-full h-full object-cover"
+                  aspectRatio="aspect-auto"
+                  containerClassName="w-full min-h-[400px] lg:min-h-full rounded-3xl"
+                  className="w-full h-full object-cover"
                 />
                 
                 {/* 浮動水印 */}

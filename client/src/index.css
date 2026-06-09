@@ -432,3 +432,13 @@
   .font-kaiti {
     font-family: "Kaiti", "楷體", "STKaiti", "BiauKai", "KaiTi", "Microsoft YaHei", serif;
   }
+
+/* Premium Shimmer Effect for ProgressiveImage Skeleton Loader */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
