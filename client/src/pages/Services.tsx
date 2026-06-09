@@ -205,7 +205,7 @@ export default function Services() {
                     activeTab === "trust" ? "/manus-storage/trust_concept.png" :
                     activeTab === "deposit" ? "/manus-storage/hk_skyline.jpg" :
                     activeTab === "finance" ? "/manus-storage/credit_card.png" :
-                    "/manus-storage/handshake_aa0be52f.jpg"
+                    "/manus-storage/hero_banner.png"
                   } 
                   alt="DILLIZ Service Illustration" 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
