@@ -124,7 +124,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "membership.btn.select": { zh: "立即申請預約", en: "Apply Now", cn: "立即申请预约" },
   "membership.threshold": { zh: "定存門檻", en: "Fixed Deposit Threshold", cn: "定存门槛" },
   "membership.duration": { zh: "定存期限", en: "Fixed Deposit Duration", cn: "定存期限" },
-  "membership.offshore": { zh: "離岸賬戶配置", en: "Offshore Account Setup", cn: "离岸账户配置" },
+  "membership.offshore": { zh: "全球銀行戶口開設服務", en: "Global Bank Account Opening", cn: "全球银行户口开设服务" },
   "membership.billpay": { zh: "全球賬單支付", en: "Global Bill Payment", cn: "全球账单支付" },
   "membership.customerservice": { zh: "客戶服務", en: "Customer Service", cn: "客户服务" },
   "membership.linkedcard": { zh: "資產聯動信用卡", en: "Asset-Linked Card", cn: "资产联动信用卡" },
@@ -285,7 +285,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "footer.license": { zh: "信託或公司服務提供者牌照", en: "Trust or Company Service Provider License", cn: "信托或公司服务提供者牌照" },
   "footer.links.title": { zh: "快速導航", en: "Quick Links", cn: "快速导航" },
   "footer.disclaimer.title": { zh: "免責聲明", en: "Disclaimer", cn: "免责声明" },
-  "footer.disclaimer.text": { zh: "本網站所載之所有資訊、案例分析與產品描述僅供一般參考之用，並不構成任何法律、稅務、投資、財務或其他專業建議。信託設立、資產託管及離岸賬戶配置涉及複雜的跨境法律與稅務規範，客戶在做出任何決策前，應尋求獨立的法律與稅務專家諮詢。DILLIZ 亦不對因使用本網站資訊而產生的任何損失承擔責任。", en: "All information, case studies, and product descriptions contained on this website are for general reference purposes only and do not constitute legal, tax, investment, financial, or other professional advice. Trust establishment, asset custody, and offshore account configuration involve complex cross-border legal and tax regulations. Clients should seek independent advice from legal and tax experts before making any decisions. DILLIZ assumes no liability for any loss arising from the use of the information on this website.", cn: "本网站所载之所有资讯、案例分析与产品描述仅供一般参考之用，并不构成任何法律、税务、投资、财务或其他专业建议。信托设立、资产托管及离岸账户配置涉及复杂的跨境法律与税务规范，客户在做出任何决策前，应寻求独立的法律与税务专家咨询。DILLIZ 亦不对因使用本网站资讯而产生的任何损失承担责任。" },
+  "footer.disclaimer.text": { zh: "本網站所載之所有資訊、案例分析與產品描述僅供一般參考之用，並不構成任何法律、稅務、投資、財務或其他專業建議。信託設立、資產託管及全球銀行戶口開設服務涉及複雜的跨境法律與稅務規範，客戶在做出任何決策前，應尋求獨立的法律與稅務專家諮詢。DILLIZ 亦不對因使用本網站資訊而產生的任何損失承擔責任。", en: "All information, case studies, and product descriptions contained on this website are for general reference purposes only and do not constitute legal, tax, investment, financial, or other professional advice. Trust establishment, asset custody, and global bank account opening involve complex cross-border legal and tax regulations. Clients should seek independent advice from legal and tax experts before making any decisions. DILLIZ assumes no liability for any loss arising from the use of the information on this website.", cn: "本网站所载之所有资讯、案例分析与产品描述仅供一般参考之用，并不构成任何法律、税务、投资、财务或其他专业建议。信托设立、资产托管及全球银行户口开设服务涉及复杂的跨境法律与税务规范，客户在做出任何决策前，应寻求独立的法律与税务专家咨询。DILLIZ 亦不对因使用本网站资讯而产生的任何损失承担责任。" },
   "footer.copyright": { zh: "© 2026 帝力斯資本信託有限公司 (DilliZ Capital Trust Limited). 版權所有。香港持牌信託服務公司 (TC010540)", en: "© 2026 DilliZ Capital Trust Limited. All Rights Reserved. Licensed Trust Service Provider (TC010540)", cn: "© 2026 帝力斯资本信托有限公司 (DilliZ Capital Trust Limited). 版权所有。香港持牌信托服务公司 (TC010540)" }
 };
 

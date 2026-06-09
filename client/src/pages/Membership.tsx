@@ -51,7 +51,7 @@ export default function Membership() {
       service: t("membership.t2.service", lang),
       features: [
         lang === "zh" ? "標準已包括基礎所有權益" : lang === "cn" ? "标准已包括基础所有权益" : "Standard includes all Basic rights",
-        lang === "zh" ? "專屬離岸銀行開戶快速通道" : lang === "cn" ? "专属离岸银行开户快速通道" : "Fast-track offshore bank opening",
+        lang === "zh" ? "專屬全球銀行開戶快速通道" : lang === "cn" ? "专属全球银行开户快速通道" : "Fast-track global bank opening",
         lang === "zh" ? "全球賬單託管代繳服務" : lang === "cn" ? "全球账单托管代缴服务" : "Global bill escrow services",
         lang === "zh" ? "尊享定存特惠收益率" : lang === "cn" ? "尊享定存特惠收益率" : "Preferential deposit yield"
       ],
@@ -68,7 +68,7 @@ export default function Membership() {
       service: t("membership.t3.service", lang),
       features: [
         lang === "zh" ? "尊享已包括標準所有權益" : lang === "cn" ? "尊享已包括标准所有权益" : "Premium includes all Standard rights",
-        lang === "zh" ? "完全豁免離岸賬戶行政費" : lang === "cn" ? "完全豁免离岸账户行政费" : "Waived offshore admin fees",
+        lang === "zh" ? "完全豁免全球銀行戶口開設行政費" : lang === "cn" ? "完全豁免全球银行户口开设行政费" : "Waived global bank account opening admin fees",
         lang === "zh" ? "資產聯動信用卡授信" : lang === "cn" ? "资产联动信用卡授信" : "Asset-Linked Card",
         lang === "zh" ? "專屬客戶經理（辦公時間）" : lang === "cn" ? "专属客户经理（办公时间）" : "Dedicated relationship manager (Office Hours)",
         lang === "zh" ? "定制化信託受益人條款" : lang === "cn" ? "定制化信托受益人条款" : "Customized trust clauses"
