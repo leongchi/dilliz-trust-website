@@ -120,7 +120,7 @@ export default function Cases() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             
             {/* 左側：360度環狀互動圓盤 (佔 5 格) */}
-            <div className="lg:col-span-5 flex justify-center relative min-h-[380px] md:min-h-[450px]">
+            <div className="lg:col-span-5 flex justify-center items-center relative w-full max-w-[340px] md:max-w-[420px] aspect-square mx-auto">
               
               {/* 中心圓圈 (代表高淨值客戶個人 - 尊貴客戶 / YOU) */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#1a1a1a] border-4 border-metal-gold shadow-gold-glow flex flex-col items-center justify-center z-30">
@@ -134,32 +134,33 @@ export default function Cases() {
               </div>
 
               {/* 背景虛線裝飾圓環 */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[72%] h-[72%] rounded-full border-2 border-dashed border-metal-gold/30 z-0" />
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[48%] h-[48%] rounded-full border border-dashed border-metal-gold/20 z-0" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[84%] h-[84%] rounded-full border-2 border-dashed border-metal-gold/30 z-0" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[56%] h-[56%] rounded-full border border-dashed border-metal-gold/20 z-0" />
 
-              {/* 連接線 (SVG) */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
-                {cases.map((_, idx) => {
-                  const angle = (idx * 60 * Math.PI) / 180 - Math.PI / 2;
-                  const cos = Math.cos(angle);
-                  const sin = Math.sin(angle);
-                  const isActive = activeCaseIdx === idx;
-                  
-                  return (
-                    <line
-                      key={idx}
-                      x1="50%"
-                      y1="50%"
-                      x2={`calc(50% + ${cos * 42}%)`}
-                      y2={`calc(50% + ${sin * 42}%)`}
-                      stroke={isActive ? "#D4AF37" : "rgba(255,255,255,0.15)"}
-                      strokeWidth={isActive ? "2" : "1"}
-                      strokeDasharray={isActive ? "none" : "3,3"}
-                      className="transition-all duration-300"
-                    />
-                  );
-                })}
-              </svg>
+              {/* 高奢雷達指針 (單線旋轉，平滑過渡) */}
+              <div 
+                className="absolute inset-0 pointer-events-none z-10 transition-transform duration-500 ease-out"
+                style={{ transform: `rotate(${activeCaseIdx * 60}deg)` }}
+              >
+                <svg className="w-full h-full">
+                  <line
+                    x1="50%"
+                    y1="50%"
+                    x2="50%"
+                    y2="8%"
+                    stroke="#D4AF37"
+                    strokeWidth="2.5"
+                    className="shadow-gold-glow"
+                  />
+                  <circle
+                    cx="50%"
+                    cy="8%"
+                    r="4"
+                    fill="#D4AF37"
+                    className="animate-pulse"
+                  />
+                </svg>
+              </div>
 
               {/* 6 個環繞情境圓圈按鈕 */}
               {cases.map((c, idx) => {
