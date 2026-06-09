@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Phone, Mail, MapPin, Shield, Check, ArrowRight, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Shield, CheckCircle2, ArrowRight, MessageSquare, Check, Loader2 } from "lucide-react";
 import Layout from "@/components/Layout";
 import { t } from "@/lib/translations";
 import { MapView } from "@/components/Map";
@@ -115,10 +115,10 @@ export default function Contact() {
   const getInterestLabel = (key: string, currentLang: "zh" | "en" | "cn") => {
     switch (key) {
       case "asset": return currentLang === "zh" ? "託管服務" : currentLang === "cn" ? "托管服务" : "Custody Services";
-      case "trust": return currentLang === "zh" ? "信託設立" : currentLang === "cn" ? "信托设立" : "Trust Setup";
-      case "deposit": return currentLang === "zh" ? "大額存款" : currentLang === "cn" ? "大额存款" : "Large Deposit";
-      case "finance": return currentLang === "zh" ? "融資方案" : currentLang === "cn" ? "融资方案" : "Financing Solutions";
-      case "card": return currentLang === "zh" ? "專屬聯名卡" : currentLang === "cn" ? "专属联名卡" : "Exclusive Co-branded Card";
+      case "trust": return currentLang === "zh" ? "稅務優化" : currentLang === "cn" ? "税务优化" : "Tax Optimization";
+      case "deposit": return currentLang === "zh" ? "全球銀行戶口開設" : currentLang === "cn" ? "全球银行户口开设" : "Global Bank Account Setup";
+      case "finance": return currentLang === "zh" ? "資產聯動信用卡" : currentLang === "cn" ? "资产联动信用卡" : "Asset-Linked Card";
+      case "card": return currentLang === "zh" ? "全球賬單代付" : currentLang === "cn" ? "全球账单代付" : "Global Bill Payment";
       default: return key;
     }
   };
@@ -276,17 +276,18 @@ export default function Contact() {
 
                 <div className="space-y-4">
                   
-                  {/* 電話 */}
+                  {/* WhatsApp */}
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold shrink-0">
-                      <Phone size={18} />
+                      <MessageSquare size={18} />
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-500 font-bold tracking-wider uppercase block">
                         {t("contact.info.phone", lang)}
                       </span>
-                      <a href="tel:+85265286838" className="text-slate-200 font-bold hover:text-metal-gold transition-colors text-sm">
+                      <a href="https://wa.me/85265286838" target="_blank" rel="noopener noreferrer" className="text-slate-200 font-bold hover:text-metal-gold transition-colors text-sm flex items-center gap-1.5">
                         {t("contact.info.phone.value", lang)}
+                        <span className="text-[9px] bg-green-500/20 text-green-400 border border-green-500/30 px-1.5 py-0.5 rounded-full font-sans">WhatsApp</span>
                       </a>
                     </div>
                   </div>

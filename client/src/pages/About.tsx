@@ -105,7 +105,7 @@ export default function About() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
                 {/* 使命 */}
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl space-y-3 shadow-sm hover:border-metal-gold/30 transition-all duration-300">
+                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl space-y-3 shadow-sm hover:border-metal-gold/30 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[180px]">
                   <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold">
                     <Target size={20} />
                   </div>
@@ -116,7 +116,7 @@ export default function About() {
                 </div>
 
                 {/* 理念 */}
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl space-y-3 shadow-sm hover:border-metal-gold/30 transition-all duration-300">
+                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl space-y-3 shadow-sm hover:border-metal-gold/30 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[180px]">
                   <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold">
                     <Compass size={20} />
                   </div>
@@ -127,7 +127,7 @@ export default function About() {
                 </div>
 
                 {/* 定位 */}
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl space-y-3 shadow-sm hover:border-metal-gold/30 transition-all duration-300">
+                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl space-y-3 shadow-sm hover:border-metal-gold/30 transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[180px]">
                   <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold">
                     <Eye size={20} />
                   </div>

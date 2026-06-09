@@ -1,38 +1,29 @@
-import { useState } from "react";
-import { Shield, ArrowLeft, Globe, FileText, Check } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Shield, FileText, Check } from "lucide-react";
+import Layout from "@/components/Layout";
 
 export default function Terms() {
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
 
-  const toggleLang = () => {
-    setLang(prev => prev === "zh" ? "cn" : prev === "cn" ? "en" : "zh");
-  };
+  useEffect(() => {
+    const savedLang = localStorage.getItem("dilliz_lang");
+    if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
+      setLang(savedLang as "zh" | "en" | "cn");
+    }
+
+    const handleLangChange = () => {
+      const updatedLang = localStorage.getItem("dilliz_lang");
+      if (updatedLang === "zh" || updatedLang === "en" || updatedLang === "cn") {
+        setLang(updatedLang as "zh" | "en" | "cn");
+      }
+    };
+
+    window.addEventListener("dilliz_lang_changed", handleLangChange);
+    return () => window.removeEventListener("dilliz_lang_changed", handleLangChange);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] text-slate-100 font-sans selection:bg-metal-gold selection:text-[#2b2b2b]">
-      {/* 頂部導航欄 */}
-      <header className="sticky top-0 z-50 bg-[#2b2b2b] border-b border-white/5 backdrop-blur-md shadow-md">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/30 flex items-center justify-center text-metal-gold transition-all group-hover:border-metal-gold">
-              <ArrowLeft size={20} />
-            </div>
-            <span className="text-sm font-bold text-slate-300 group-hover:text-metal-gold transition-colors">
-              {lang === "zh" ? "返回首頁" : lang === "cn" ? "返回首页" : "Back to Home"}
-            </span>
-          </a>
-
-          {/* 語言切換 */}
-          <button 
-            onClick={toggleLang}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-metal-gold text-xs font-bold text-metal-gold hover:bg-metal-gold/10 transition-all shadow-gold-glow"
-          >
-            <Globe size={14} />
-            <span>{lang === "zh" ? "简" : lang === "cn" ? "EN" : "繁"}</span>
-          </button>
-        </div>
-      </header>
-
+    <Layout>
       {/* 條款內容區 */}
       <main className="max-w-4xl mx-auto px-6 py-20 space-y-12">
         {/* 標題 */}
@@ -165,6 +156,6 @@ export default function Terms() {
           <p>{lang === "zh" ? "香港持牌信託服務公司 · 牌照號碼: TC010540" : lang === "cn" ? "香港持牌信托服务公司 · 牌照号码: TC010540" : "Licensed Trust Company in HK · License No. TC010540"}</p>
         </div>
       </main>
-    </div>
+    </Layout>
   );
 }

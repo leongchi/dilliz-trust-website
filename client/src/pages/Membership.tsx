@@ -50,6 +50,7 @@ export default function Membership() {
       billpay: t("membership.t2.billpay", lang),
       service: t("membership.t2.service", lang),
       features: [
+        lang === "zh" ? "標準已包括基礎所有權益" : lang === "cn" ? "标准已包括基础所有权益" : "Standard includes all Basic rights",
         lang === "zh" ? "專屬離岸銀行開戶快速通道" : lang === "cn" ? "专属离岸银行开户快速通道" : "Fast-track offshore bank opening",
         lang === "zh" ? "全球賬單託管代繳服務" : lang === "cn" ? "全球账单托管代缴服务" : "Global bill escrow services",
         lang === "zh" ? "尊享定存特惠收益率" : lang === "cn" ? "尊享定存特惠收益率" : "Preferential deposit yield"
@@ -66,9 +67,10 @@ export default function Membership() {
       billpay: t("membership.t3.billpay", lang),
       service: t("membership.t3.service", lang),
       features: [
+        lang === "zh" ? "尊享已包括標準所有權益" : lang === "cn" ? "尊享已包括标准所有权益" : "Premium includes all Standard rights",
         lang === "zh" ? "完全豁免離岸賬戶行政費" : lang === "cn" ? "完全豁免离岸账户行政费" : "Waived offshore admin fees",
-        lang === "zh" ? "黑金資產聯動信用卡授信" : lang === "cn" ? "黑金资产联动信用卡授信" : "Black Gold Asset-Linked Card",
-        lang === "zh" ? "24小時專屬客戶經理熱線" : lang === "cn" ? "24小时专属客户经理热线" : "24/7 dedicated manager hotline",
+        lang === "zh" ? "資產聯動信用卡授信" : lang === "cn" ? "资产联动信用卡授信" : "Asset-Linked Card",
+        lang === "zh" ? "專屬客戶經理（辦公時間）" : lang === "cn" ? "专属客户经理（办公时间）" : "Dedicated relationship manager (Office Hours)",
         lang === "zh" ? "定制化信託受益人條款" : lang === "cn" ? "定制化信托受益人条款" : "Customized trust clauses"
       ],
       isPopular: true
@@ -83,6 +85,7 @@ export default function Membership() {
       billpay: t("membership.t4.billpay", lang),
       service: t("membership.t4.service", lang),
       features: [
+        lang === "zh" ? "典藏已包括尊享所有權益" : lang === "cn" ? "典藏已包括尊享所有权益" : "Royal includes all Premium rights",
         lang === "zh" ? "全球資產與股權信託架構定製" : lang === "cn" ? "全球资产与股权信托架构定制" : "Global asset & equity trust design",
         lang === "zh" ? "極致隱私保護與多重信託聯動" : lang === "cn" ? "极致隐私保护与多重信托联动" : "Ultimate privacy & multi-trusts",
         lang === "zh" ? "資深合夥人親自提供諮詢服務" : lang === "cn" ? "资深合伙人亲自提供咨询服务" : "Senior partners consulting",

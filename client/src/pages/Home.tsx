@@ -140,7 +140,7 @@ export default function Home() {
               <img 
                 src="/manus-storage/luxury_office_2c65c509.jpg" 
                 alt="DILLIZ Luxury Office" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-[15000ms] ease-out hover:scale-110"
               />
               
               {/* 疊加的 Shield Logo */}
@@ -170,17 +170,17 @@ export default function Home() {
 
             {/* 使命、理念、定位三大指標 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-              <div className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2">
+              <div className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2 text-center flex flex-col items-center justify-center min-h-[140px]">
                 <h4 className="text-xs font-bold text-slate-200 font-serif" style={{fontSize: '16px'}}>{t("stats.mission", lang)}</h4>
-                <p className="text-[11px] text-slate-400 font-light leading-relaxed" style={{fontSize: '15px'}}>{t("stats.mission.desc", lang)}</p>
+                <p className="text-[11px] text-slate-400 font-light leading-relaxed whitespace-pre-line" style={{fontSize: '15px'}}>{t("stats.mission.desc", lang)}</p>
               </div>
-              <div className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2">
+              <div className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2 text-center flex flex-col items-center justify-center min-h-[140px]">
                 <h4 className="text-xs font-bold text-slate-200 font-serif" style={{fontSize: '16px'}}>{t("stats.philosophy", lang)}</h4>
-                <p className="text-[11px] text-slate-400 font-light leading-relaxed" style={{fontSize: '15px'}}>{t("stats.philosophy.desc", lang)}</p>
+                <p className="text-[11px] text-slate-400 font-light leading-relaxed whitespace-pre-line" style={{fontSize: '15px'}}>{t("stats.philosophy.desc", lang)}</p>
               </div>
-              <div className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2">
+              <div className="bg-white/5 border border-white/10 p-5 rounded-xl space-y-2 text-center flex flex-col items-center justify-center min-h-[140px]">
                 <h4 className="text-xs font-bold text-slate-200 font-serif" style={{fontSize: '16px'}}>{t("stats.positioning", lang)}</h4>
-                <p className="text-[11px] text-slate-400 font-light leading-relaxed" style={{fontSize: '15px'}}>{t("stats.positioning.desc", lang)}</p>
+                <p className="text-[11px] text-slate-400 font-light leading-relaxed whitespace-pre-line" style={{fontSize: '15px'}}>{t("stats.positioning.desc", lang)}</p>
               </div>
             </div>
 
@@ -215,18 +215,26 @@ export default function Home() {
             {[
               { id: "asset", name: t("services.tab.asset", lang), icon: Shield, desc: lang === "zh" ? "安全合規的第三方資產託管與法律隔離保護" : lang === "cn" ? "安全合规的第三方资产托管与法律隔离保护" : "Secure third-party custody & legal isolation" },
               { id: "trust", name: t("services.tab.trust", lang), icon: Compass, desc: lang === "zh" ? "量身定制跨國資產信託，合規合法減輕稅務" : lang === "cn" ? "量身定制跨国资产信托，合规合法减轻税务" : "Bespoke trust structures to minimize global taxes" },
-              { id: "deposit", name: t("services.tab.deposit", lang), icon: Landmark, desc: lang === "zh" ? "協助在全球頂級離岸中心設立賬戶" : lang === "cn" ? "协助在全球顶级离岸中心设立账户" : "Set up accounts in Swiss/Singapore financial centers" },
-              { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard, desc: lang === "zh" ? "定存資產直接授信，獲發尊貴聯名信用卡" : lang === "cn" ? "定存资产直接授信，获发尊贵联名信用卡" : "Direct credit based on assets, black gold co-brand" },
+              { id: "deposit", name: t("services.tab.deposit", lang), icon: Landmark, desc: lang === "zh" ? "協助在全球頂級離岸中心設立賬戶" : lang === "cn" ? "协助在全球顶级离岸中心设立账户" : "Set up accounts in top offshore financial centers" },
+              { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard, desc: lang === "zh" ? "定存資產直接授信，獲發尊貴聯名信用卡" : lang === "cn" ? "定存资产直接授信，获发尊贵联名信用卡" : "Direct credit based on assets, exclusive co-brand card" },
               { id: "card", name: t("services.tab.card", lang), icon: Receipt, desc: lang === "zh" ? "一站式海外物業稅，子女學費等全球賬單代付" : lang === "cn" ? "一站式海外物业税，子女学费等全球账单代付" : "One-stop escrow & auto-payment for global bills" }
             ].map((srv, idx) => {
               const IconComp = srv.icon;
               return (
-                <div 
+                <Link 
                   key={idx}
-                  className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-metal-gold/40 transition-all duration-300 group"
+                  href={`/services#${srv.id}`}
+                  onClick={() => {
+                    // 如果已經在 services 頁面，點擊後手動觸發 hash 變更與 activeTab 刷新
+                    if (window.location.pathname === "/services") {
+                      window.location.hash = srv.id;
+                      window.dispatchEvent(new HashChangeEvent("hashchange"));
+                    }
+                  }}
+                  className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col justify-between hover:border-metal-gold/40 hover:shadow-gold-glow transition-all duration-300 group cursor-pointer text-left"
                 >
                   <div className="space-y-4">
-                    <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold">
+                    <div className="w-10 h-10 rounded-lg bg-metal-gold/10 border border-metal-gold/20 flex items-center justify-center text-metal-gold group-hover:bg-metal-gold group-hover:text-[#1a1a1a] transition-all">
                       <IconComp size={20} />
                     </div>
                     <h4 className="text-sm font-bold text-slate-200 font-serif group-hover:text-metal-gold transition-colors" style={{fontSize: '16px'}}>
@@ -236,7 +244,10 @@ export default function Home() {
                       {srv.desc}
                     </p>
                   </div>
-                </div>
+                  <div className="pt-4 flex items-center gap-1.5 text-xs text-metal-gold/70 group-hover:text-metal-gold font-semibold transition-colors mt-auto">
+                    {lang === "zh" ? "了解更多" : lang === "cn" ? "了解更多" : "Learn More"} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
               );
             })}
 

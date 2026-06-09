@@ -8,6 +8,19 @@ export default function Services() {
   const [activeTab, setActiveTab] = useState("asset");
 
   useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (["asset", "trust", "deposit", "finance", "card"].includes(hash)) {
+        setActiveTab(hash);
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
     if (savedLang === "zh" || savedLang === "en" || savedLang === "cn") {
       setLang(savedLang as "zh" | "en" | "cn");
@@ -183,20 +196,30 @@ export default function Services() {
                 </div>
               </div>
 
-              {/* 右側：高品質真實商務握手圖片 */}
-              <div className="lg:col-span-5 relative group rounded-3xl overflow-hidden border border-white/10 shadow-luxury">
+              {/* 右側：根據 activeTab 動態渲染的高品質無人像背景圖（契合宣傳冊高奢調性） */}
+              <div className="lg:col-span-5 relative group rounded-3xl overflow-hidden border border-white/10 shadow-luxury min-h-[400px] lg:min-h-auto">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent z-10 opacity-60" />
                 <img 
-                  src="/manus-storage/handshake_aa0be52f.jpg" 
-                  alt="DILLIZ Service Collaboration" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src={
+                    activeTab === "asset" ? "/manus-storage/luxury_office_2c65c509.jpg" :
+                    activeTab === "trust" ? "/manus-storage/trust_concept.png" :
+                    activeTab === "deposit" ? "/manus-storage/hk_skyline.jpg" :
+                    activeTab === "finance" ? "/manus-storage/credit_card.png" :
+                    "/manus-storage/handshake_aa0be52f.jpg"
+                  } 
+                  alt="DILLIZ Service Illustration" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 {/* 浮動水印 */}
                 <div className="absolute bottom-8 left-8 right-8 z-20 space-y-1">
                   <span className="text-[10px] font-bold tracking-widest text-metal-gold uppercase">DILLIZ TRUST</span>
                   <h4 className="text-lg font-bold text-white font-serif">
-                    {lang === "zh" ? "以客為尊 · 誠信傳承" : lang === "cn" ? "以客为尊 · 诚信传承" : "Client-First · Integrity Succession"}
+                    {activeTab === "asset" && (lang === "zh" ? "資產託管 · 法律隔離" : lang === "cn" ? "资产托管 · 法律隔离" : "Asset Custody & Legal Isolation")}
+                    {activeTab === "trust" && (lang === "zh" ? "稅務優化 · 家族傳承" : lang === "cn" ? "税务优化 · 家族传承" : "Tax Optimization & Succession")}
+                    {activeTab === "deposit" && (lang === "zh" ? "全球賬戶 · 安全便捷" : lang === "cn" ? "全球账户 · 安全便捷" : "Global Accounts & Security")}
+                    {activeTab === "finance" && (lang === "zh" ? "資產聯動 · 尊貴特權" : lang === "cn" ? "资产联动 · 尊贵特权" : "Asset-Linked Co-brand Card")}
+                    {activeTab === "card" && (lang === "zh" ? "賬單代付 · 全球代繳" : lang === "cn" ? "账单代付 · 全球代缴" : "Global Bill Escrow")}
                   </h4>
                 </div>
               </div>

@@ -18,11 +18,11 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
 
   // About Us (Brochure Aligned)
   "stats.mission": { zh: "使命 (Mission)", en: "Mission", cn: "使命 (Mission)" },
-  "stats.mission.desc": { zh: "保護並傳承每一位客戶的財富\n超越世代", en: "To protect and pass on the wealth of every client\ntranscending generations.", cn: "保护并传承每一位客户的财富\n超越世代" },
+  "stats.mission.desc": { zh: "守護客戶財富傳承\n超越世代永續長存", en: "Safeguard client wealth inheritance\nand transcend generations eternally.", cn: "守护客户财富传承\n超越世代永续长存" },
   "stats.philosophy": { zh: "理念 (Philosophy)", en: "Philosophy", cn: "理念 (Philosophy)" },
-  "stats.philosophy.desc": { zh: "以客為本 信任相連\n創新驅動", en: "Client-centric, trust-connected\nand innovation-driven.", cn: "以客为本 信任相连\n创新驱动" },
+  "stats.philosophy.desc": { zh: "以客為本 信任相連\n創新驅動 未來無限", en: "Client-centric, trust-connected\nand innovation-driven future.", cn: "以客为本 信任相连\n创新驱动 未来无限" },
   "stats.positioning": { zh: "定位 (Positioning)", en: "Positioning", cn: "定位 (Positioning)" },
-  "stats.positioning.desc": { zh: "簡易靈活管理\n長期守護您的財富", en: "Simple and flexible management\nsafeguarding your wealth over the long term.", cn: "简易灵活管理\n长期守护您的财富" },
+  "stats.positioning.desc": { zh: "簡易靈活資產管理\n長期守護您的財富", en: "Simple and flexible asset management\nsafeguarding your wealth long-term.", cn: "简易灵活资产管理\n长期守护您的财富" },
 
   // Services Section (Brochure Aligned)
   "services.title": { zh: "我們提供的服務", en: "Our Services", cn: "我们提供的服务" },
@@ -30,9 +30,9 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   
   "services.tab.asset": { zh: "託管服務", en: "Custody Services", cn: "托管服务" },
   "services.tab.trust": { zh: "稅務優化", en: "Tax Optimization", cn: "税务优化" },
-  "services.tab.deposit": { zh: "離岸銀行設立", en: "Offshore Bank Setup", cn: "离岸银行设立" },
+  "services.tab.deposit": { zh: "全球銀行戶口開設", en: "Global Bank Account Setup", cn: "全球银行户口开设" },
   "services.tab.finance": { zh: "資產聯動信用卡", en: "Asset-Linked Card", cn: "资产联动信用卡" },
-  "services.tab.card": { zh: "全球賬單支付", en: "Global Bill Payment", cn: "全球账单支付" },
+  "services.tab.card": { zh: "全球賬單代付", en: "Global Bill Payment", cn: "全球账单代付" },
 
   "services.asset.title": { zh: "託管服務", en: "Custody Services", cn: "托管服务" },
   "services.asset.desc": { zh: "守護您的資產，傳承您的未來。我們提供安全合規的第三方資產託管與隔離保護，確保您的家族財富免受商業訴訟、債務糾紛等外界風險侵擾，實現財富的永續流傳。", en: "Safeguard your assets, inherit your future. We provide secure and compliant third-party asset custody and isolation protection, ensuring your family wealth is shielded from external risks such as commercial litigation and debt disputes, achieving sustainable inheritance.", cn: "守护您的资产，传承您的未来。我们提供安全合规的第三方资产托管与隔离保护，确保您的家族财富免受商业诉讼、债务纠纷等外界风险侵扰，实现财富的永续流传。" },
@@ -46,14 +46,14 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "services.trust.feature2": { zh: "利用香港無遺產稅與低稅率優勢進行資產重組", en: "Leverage Hong Kong's tax advantages for asset restructuring", cn: "利用香港无遗产税与低税率优势进行资产重组" },
   "services.trust.feature3": { zh: "跨境股權與信託架構的合規稅務優化", en: "Compliant tax optimization for cross-border trust structures", cn: "跨境股权与信托架构的合规税务优化" },
 
-  "services.deposit.title": { zh: "離岸銀行設立服務", en: "Offshore Bank Setup Services", cn: "离岸银行设立服务" },
-  "services.deposit.desc": { zh: "連接全球，佈局世界。協助個人及企業在全球金融中心設立專屬離岸銀行賬戶，提供更廣闊的投資管道、更靈活的資金調配以及極致的隱私保護。", en: "Connect globally, lay out the world. Assist individuals and enterprises in setting up dedicated offshore bank accounts in global financial centers, providing wider investment channels, more flexible capital allocation, and ultimate privacy protection.", cn: "连接全球，布局世界。协助个人及企业在全球金融中心设立专属离岸银行账户，提供更广阔的投资管道、更灵活的资金调配以及极致的隐私保护。" },
-  "services.deposit.feature1": { zh: "全球離岸銀行開戶快速通道", en: "Fast-track opening in global offshore banks", cn: "全球离岸银行开户快速通道" },
-  "services.deposit.feature2": { zh: "多幣種、高隱私的全球資金自由調配賬戶", en: "Multi-currency, high-privacy global allocation accounts", cn: "多币种、高隐私的全球资金自由调配账户" },
-  "services.deposit.feature3": { zh: "企業離岸賬戶設立，優化跨國貿易结算", en: "Offshore corporate accounts to optimize multinational trade", cn: "企业离岸账户设立，优化跨国贸易结算" },
+  "services.deposit.title": { zh: "全球銀行戶口開設服務", en: "Global Bank Account Setup Services", cn: "全球银行户口开设服务" },
+  "services.deposit.desc": { zh: "連接全球，佈局世界。協助個人及企業在全球金融中心設立專屬銀行賬戶，提供更廣闊的投資管道、更靈活的資金調配以及極致的隱私保護。", en: "Connect globally, lay out the world. Assist individuals and enterprises in setting up dedicated bank accounts in global financial centers, providing wider investment channels, more flexible capital allocation, and ultimate privacy protection.", cn: "连接全球，布局世界。协助个人及企业在全球金融中心设立专属银行账户，提供更广阔的投资管道、更灵活的资金调配以及极致的隐私保护。" },
+  "services.deposit.feature1": { zh: "全球銀行開戶快速通道", en: "Fast-track opening in global banks", cn: "全球银行开户快速通道" },
+  "services.deposit.feature2": { zh: "多幣種、高隱私的全球資金自由調配賬戶", en: "Multi-currency, high-privacy global allocation accounts", cn: "多币种、高隐私 of global allocation accounts" },
+  "services.deposit.feature3": { zh: "私人銀行級別專屬定製，優化跨國貿易结算", en: "Private banking level customization to optimize multinational trade", cn: "私人银行级别专属定制，优化跨国贸易结算" },
 
   "services.finance.title": { zh: "資產聯動信用卡服務", en: "Asset-Linked Card Services", cn: "资产联动信用卡服务" },
-  "services.finance.desc": { zh: "靈活消費，尊享禮遇。我們獨家推出與您的信託/定存資產直接聯動的黑金聯名信用卡。您無需頻繁變現資產，即可直接以信託資產為信用額度進行全球消費與大額支付，同時享有頂級禮賓禮遇。", en: "Flexible consumption, exclusive privileges. We exclusively launch the black gold co-branded credit card directly linked with your trust/deposit assets. Without liquidating assets frequently, you can directly use trust assets as credit limits for global consumption and large-value payments, while enjoying top-tier concierge privileges.", cn: "灵活消费，尊享礼遇。我们独家推出与您的信托/定存资产直接联动的黑金联名信用卡。您无需频繁变现资产，即可直接以信托资产为信用额度进行全球消费与大额支付，同时享有顶级礼宾礼遇。" },
+  "services.finance.desc": { zh: "靈活消費，尊享禮遇。我們獨家推出與您的信託/定存資產直接聯動的聯名信用卡。您無需頻繁變現資產，即可直接以信託資產為信用額度進行全球消費與大額支付，同時享有頂級禮賓禮遇。", en: "Flexible consumption, exclusive privileges. We exclusively launch the co-branded credit card directly linked with your trust/deposit assets. Without liquidating assets frequently, you can directly use trust assets as credit limits for global consumption and large-value payments, while enjoying top-tier concierge privileges.", cn: "灵活消费，尊享礼遇。我们独家推出与您的信托/定存资产直接联动的联名信用卡。您无需频繁变现资产，即可直接以信托资产为信用额度进行全球消费与大额支付，同时享有顶级礼宾礼遇。" },
   "services.finance.feature1": { zh: "定存/信託資產直接授信，超高信用額度", en: "Direct credit line based on trust/deposit assets, ultra-high limit", cn: "定存/信托资产直接授信，超高信用额度" },
   "services.finance.feature2": { zh: "全球消費免貨幣轉換費，大額支付暢通無阻", en: "Zero currency conversion fees, seamless large-value payments", cn: "全球消费免货币转换费，大额支付畅通无阻" },
   "services.finance.feature3": { zh: "專屬機場貴賓廳、頂級酒店與私人禮賓服務", en: "Exclusive airport lounge access, luxury hotels & concierge", cn: "专属机场贵宾厅、顶级酒店与私人礼宾服务" },
@@ -241,7 +241,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
     en: "Whether it is business risk isolation, global tax optimization, or late-life quality assurance,\nour senior trust specialists will customize the most suitable solution for you.", cn: "不论是企业风险隔离、全球税务优化还是晚年生活保障，\n我们的资深信托专员都将为您量身定制最合适的方案。" 
   },
   "contact.info.title": { zh: "聯絡資訊", en: "Contact Information", cn: "联络资讯" },
-  "contact.info.phone": { zh: "電話熱線", en: "Phone Hotline", cn: "电话热线" },
+  "contact.info.phone": { zh: "WhatsApp 熱線", en: "WhatsApp Hotline", cn: "WhatsApp 热线" },
   "contact.info.phone.value": { zh: "+852 6528 6838", en: "+852 6528 6838", cn: "+852 6528 6838" },
   "contact.info.email": { zh: "官方電郵", en: "Official Email", cn: "官方电邮" },
   "contact.info.address": { zh: "總部地址", en: "Headquarters Address", cn: "总部地址" },
@@ -264,9 +264,9 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "contact.form.interest.placeholder": { zh: "請選擇服務項目...", en: "Please select a service...", cn: "请选择服务项目..." },
   "contact.form.interest.asset": { zh: "託管服務 (Custody Services)", en: "Custody Services", cn: "托管服务 (Custody Services)" },
   "contact.form.interest.trust": { zh: "稅務優化 (Tax Optimization)", en: "Tax Optimization", cn: "税务优化 (Tax Optimization)" },
-  "contact.form.interest.deposit": { zh: "離岸銀行設立 (Offshore Bank Setup)", en: "Offshore Bank Setup", cn: "离岸银行设立 (Offshore Bank Setup)" },
+  "contact.form.interest.deposit": { zh: "全球銀行戶口開設 (Global Bank Account Setup)", en: "Global Bank Account Setup", cn: "全球银行户口开设 (Global Bank Account Setup)" },
   "contact.form.interest.finance": { zh: "資產聯動信用卡 (Asset-Linked Card)", en: "Asset-Linked Card", cn: "资产联动信用卡 (Asset-Linked Card)" },
-  "contact.form.interest.card": { zh: "全球賬單支付 (Global Bill Payment)", en: "Global Bill Payment", cn: "全球账单支付 (Global Bill Payment)" },
+  "contact.form.interest.card": { zh: "全球賬單代付 (Global Bill Payment)", en: "Global Bill Payment", cn: "全球账单代付 (Global Bill Payment)" },
   
   "contact.form.amount": { zh: "預計定存/信託規模", en: "Estimated Trust Size", cn: "预计定存/信托规模" },
   "contact.form.amount.placeholder": { zh: "請選擇資產規模...", en: "Please select asset size...", cn: "请选择资产规模..." },
