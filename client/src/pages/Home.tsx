@@ -72,9 +72,9 @@ export default function Home() {
               <div className="space-y-4">
                 {lang === "zh" || lang === "cn" ? (
                   <div className="space-y-3 py-2">
-                    {/* 高奢書法「寫法字」排版：使用 Long Cang 書法體，配合寬字距、金屬拉絲漸變流光，並配以精奢無襯線落款 */}
+                    {/* 高奢書法「寫法字」排版：使用頂級「霞鶩文楷」繁體楷書體，配合端莊大氣的寬字距、金屬拉絲漸變流光，並配以精奢無襯線落款 */}
                     <div className="relative inline-block">
-                      <h1 className="text-5xl md:text-7xl font-normal tracking-[0.18em] font-calligraphy leading-tight bg-clip-text text-transparent bg-gradient-to-r from-metal-gold via-white to-metal-gold filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)] select-none">
+                      <h1 className="text-5xl md:text-7xl font-medium tracking-[0.18em] font-calligraphy leading-tight bg-clip-text text-transparent bg-gradient-to-r from-metal-gold via-white to-metal-gold filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.25)] select-none">
                         因為您，才值得擁有
                       </h1>
                       {/* 書法落款效果 */}
