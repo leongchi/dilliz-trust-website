@@ -148,94 +148,56 @@ interface MapViewProps {
 
 export function MapView({
   className,
-  initialCenter = { lat: 22.3121, lng: 114.2185 }, // 默認香港觀塘 MG Tower 坐標
-  initialZoom = 16,
-  onMapReady,
 }: MapViewProps) {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<google.maps.Map | null>(null);
-  const [loadFailed, setLoadFailed] = useState(false);
-
-  const init = usePersistFn(async () => {
-    await loadMapScript();
-    
-    // 如果 SDK 載入失敗，或者 window.google 未定義，觸發備用靜態地圖
-    if (!window.google || !window.google.maps) {
-      setLoadFailed(true);
-      return;
-    }
-
-    if (!mapContainer.current) {
-      console.error("Map container not found");
-      return;
-    }
-
-    try {
-      map.current = new window.google.maps.Map(mapContainer.current, {
-        zoom: initialZoom,
-        center: initialCenter,
-        mapTypeControl: true,
-        fullscreenControl: true,
-        zoomControl: true,
-        streetViewControl: true,
-        mapId: "DEMO_MAP_ID",
-      });
-      if (onMapReady) {
-        onMapReady(map.current);
-      }
-    } catch (err) {
-      console.error("Error initializing Google Map:", err);
-      setLoadFailed(true);
-    }
-  });
-
-  useEffect(() => {
-    init();
-  }, [init]);
-
-  // 如果加載失敗（在外部 cPanel 等非沙盒環境），呈現高奢、100% 穩定的靜態 3D 地圖卡片與導航跳轉
-  if (loadFailed) {
-    return (
-      <div className={cn("w-full h-[280px] relative flex flex-col items-center justify-center overflow-hidden bg-zinc-900 group/map", className)}>
-        {/* 高奢暗色地圖背景圖（中環/觀塘海濱 3D 視覺） */}
-        <img 
-          src="/images/hk_skyline.jpg" 
-          alt="DILLIZ CAPITAL TRUST LIMITED" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20 filter grayscale contrast-125 group-hover/map:scale-105 transition-transform duration-[2000ms]"
-        />
-        
-        {/* 暗金色微光遮罩 */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
-        
-        {/* 核心引導內容 */}
-        <div className="relative z-10 text-center px-6 space-y-4">
-          <div className="w-12 h-12 rounded-full bg-metal-gold/10 border border-metal-gold/30 flex items-center justify-center text-metal-gold mx-auto animate-pulse">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div className="space-y-1">
-            <h4 className="text-sm font-bold text-slate-200 font-serif">DILLIZ CAPITAL TRUST LIMITED</h4>
-            <p className="text-[11px] text-slate-400 font-light max-w-xs mx-auto leading-relaxed">
-              香港九龍觀塘海濱道 133 號萬兆豐群樓 17 樓 I 室<br/>
-              Unit I, 17/F, MG Tower, 133 Hoi Bun Road, Kwun Tong, HK
-            </p>
-          </div>
-          
-          {/* 高奢金屬按鈕：一鍵跳轉 Google Map 導航 */}
-          <a 
-            href="https://maps.google.com/?q=Unit+I,+17/F,+MG+Tower,+133+Hoi+Bun+Road,+Kwun+Tong,+Hong+Kong" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-metal-gold text-black text-[10px] font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300 shadow-gold-glow hover:shadow-white/20"
-          >
-            開啟 Google 地圖導航
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-          </a>
-        </div>
-      </div>
-    );
-  }
+  const [isIframeLoading, setIsIframeLoading] = useState(true);
+  
+  // 帝力斯信託香港觀塘總部精確地址：萬兆豐中心 17 樓 I 室
+  const addressQuery = "Unit I, 17/F, MG Tower, 133 Hoi Bun Road, Kwun Tong, Hong Kong";
+  const embedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(addressQuery)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
   return (
-    <div ref={mapContainer} className={cn("w-full h-[500px]", className)} />
+    <div className={cn("w-full h-[320px] md:h-[400px] relative rounded-2xl overflow-hidden border border-white/10 bg-zinc-950 shadow-gold-glow group/map", className)}>
+      
+      {/* Iframe 載入中的優雅骨架屏 (暗金流光) */}
+      {isIframeLoading && (
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-zinc-950">
+          <div className="w-10 h-10 rounded-full border-2 border-metal-gold/20 border-t-metal-gold animate-spin mb-4" />
+          <p className="text-xs text-slate-400 font-light tracking-widest uppercase">
+            正在加載 DILLIZ 總部即時地圖...
+          </p>
+        </div>
+      )}
+
+      {/* 100% 成功加載、免金鑰、高奢即時交互 Google Map */}
+      <iframe
+        title="DILLIZ CAPITAL TRUST LIMITED Office Location"
+        src={embedUrl}
+        className="w-full h-full border-0 relative z-10 transition-opacity duration-700 ease-out"
+        style={{
+          opacity: isIframeLoading ? 0 : 1,
+          // 高奢暗黑極簡濾鏡：將原生明亮的地圖反轉、調色，完美契合全站的奢華深色調！
+          filter: "invert(90%) hue-rotate(180deg) contrast(120%) saturate(80%) brightness(95%)",
+        }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        onLoad={() => setIsIframeLoading(false)}
+      />
+
+      {/* 地圖右下角的高奢懸浮「導航與全螢幕」引導按鈕，提供極致便利的交互體驗 */}
+      {!isIframeLoading && (
+        <div className="absolute bottom-4 left-4 z-20 flex flex-wrap gap-2 pointer-events-auto">
+          <a 
+            href={`https://maps.google.com/?q=${encodeURIComponent(addressQuery)}`}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-zinc-900/90 hover:bg-metal-gold text-slate-200 hover:text-black text-[9px] font-bold tracking-widest uppercase transition-all duration-300 border border-white/10 hover:border-metal-gold shadow-lg"
+          >
+            開啟導航
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </a>
+        </div>
+      )}
+    </div>
   );
 }
