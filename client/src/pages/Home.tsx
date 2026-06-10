@@ -178,7 +178,7 @@ export default function Home() {
             <ScrollReveal className="space-y-6">
               <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">Brand Story</span>
               <h2 className="text-3xl md:text-4xl font-bold text-metal-gold font-serif">
-                {lang === "zh" ? "關於帝力斯信託" : lang === "cn" ? "关于帝力斯信托" : "About DILLIZ Trust"}
+                {lang === "zh" ? "關於帝力斯信託" : lang === "cn" ? "关于帝力斯信托" : "About DILLIZ Capital"}
               </h2>
               <p className="text-slate-300 font-light leading-relaxed">
                 {lang === "zh"
