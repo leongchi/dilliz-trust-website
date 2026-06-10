@@ -36,7 +36,7 @@ export default function About() {
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block">About DILLIZ</span>
             <h1 className="text-4xl md:text-5xl font-bold text-metal-gold font-serif leading-tight">
-              {lang === "zh" ? "關於帝力斯信託" : lang === "cn" ? "关于帝力斯信托" : "About DILLIZ Trust"}
+              {lang === "zh" ? "關於帝力斯信託" : lang === "cn" ? "关于帝力斯信托" : "About DILLIZ Capital"}
             </h1>
             <p className="text-slate-300 font-light leading-relaxed">
               {lang === "zh" 
