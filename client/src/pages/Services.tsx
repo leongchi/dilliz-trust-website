@@ -183,7 +183,7 @@ export default function Services() {
                           <div className="w-5 h-5 rounded-full bg-metal-gold/10 border border-metal-gold/30 flex items-center justify-center text-metal-gold mt-0.5 shrink-0">
                             <Check size={12} className="text-metal-gold" />
                           </div>
-                          <span className="text-slate-200 text-sm font-medium">{feat}</span>
+                          <span className="text-slate-200 text-sm font-medium break-words">{feat}</span>
                         </div>
                       ))}
                     </div>

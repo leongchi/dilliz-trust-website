@@ -121,6 +121,25 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* 全局多語言流暢折行與排版防溢出 */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 確保所有文本在小螢幕下都能完美自適應折行，絕不撐破版面 */
+  p, span, li, a, h1, h2, h3, h4, h5, h6, td, th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  /* 英文與多語言長文本兩端對齊優化，展現極致精奢排版 */
+  .text-justify-custom {
+    text-align: justify;
+    text-justify: inter-word;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),

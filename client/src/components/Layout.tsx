@@ -246,7 +246,7 @@ export default function Layout({ children }: LayoutProps) {
               </Link>
             </div>
 
-            <p className="max-w-2xl font-light text-slate-600 leading-relaxed">
+            <p className="max-w-2xl font-light text-slate-600 leading-relaxed text-justify-custom break-words text-[11px] md:text-xs">
               {lang === "zh" 
                 ? "免責聲明：本網站所載資料僅供參考，不構成任何法律、稅務、投資或專業建議。信託服務由香港持牌信託服務公司帝力斯資本信託有限公司（牌照號碼：TC010540）依法提供。"
                 : lang === "cn"

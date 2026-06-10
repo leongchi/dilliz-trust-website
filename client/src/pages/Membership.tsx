@@ -202,9 +202,9 @@ export default function Membership() {
                       </span>
                       <div className="space-y-2.5">
                         {tier.features.map((feat, fIdx) => (
-                          <div key={fIdx} className="flex items-start gap-2 text-xs">
+                          <div key={fIdx} className="flex items-start gap-2 text-[11px] md:text-xs">
                             <Check size={14} className="text-metal-gold mt-0.5 shrink-0" />
-                            <span className="text-slate-300 font-light leading-relaxed">{feat}</span>
+                            <span className="text-slate-300 font-light leading-relaxed break-words">{feat}</span>
                           </div>
                         ))}
                       </div>

@@ -78,10 +78,10 @@ export default function Home() {
                   </div>
                 ) : (
                   <>
-                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide text-metal-gold font-serif leading-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-wide text-metal-gold font-serif leading-tight break-words">
                       Build A Trust with DILLIZ
                     </h1>
-                    <p className="text-lg md:text-2xl font-bold tracking-[0.15em] text-slate-300 uppercase font-serif">
+                    <p className="text-base sm:text-lg md:text-2xl font-bold tracking-[0.15em] text-slate-300 uppercase font-serif leading-relaxed break-words">
                       Shape The Future YOU Deserve
                     </p>
                   </>
