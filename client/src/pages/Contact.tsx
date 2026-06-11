@@ -117,7 +117,7 @@ export default function Contact() {
       case "asset": return currentLang === "zh" ? "託管服務" : currentLang === "cn" ? "托管服务" : "Custody Services";
       case "trust": return currentLang === "zh" ? "稅務優化" : currentLang === "cn" ? "税务优化" : "Tax Optimization";
       case "deposit": return currentLang === "zh" ? "全球銀行戶口開設" : currentLang === "cn" ? "全球银行户口开设" : "Global Bank Account Setup";
-      case "finance": return currentLang === "zh" ? "資產聯動信用卡" : currentLang === "cn" ? "资产联动信用卡" : "Asset-Linked Card";
+      case "finance": return currentLang === "zh" ? "資產聯動信用卡" : currentLang === "cn" ? "资产联动信用卡" : "Asset-Linked Credit Card";
       case "card": return currentLang === "zh" ? "全球賬單代付" : currentLang === "cn" ? "全球账单代付" : "Global Bill Payment";
       default: return key;
     }

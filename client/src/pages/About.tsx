@@ -199,7 +199,7 @@ export default function About() {
                     ? "打破傳統信託的高昂門檻，為每位客戶量身定制靈活的信託條款，並獨家提供定存資產授信、聯名信用卡與全球賬單支付代繳等尊榮服務。"
                     : lang === "cn"
                     ? "打破传统信托的高昂门槛，为每位客户量身定制灵活的信托条款，并独家提供定存资产授信、联名信用卡与全球账单支付代缴等尊荣服务。"
-                    : "Breaking traditional high trustee thresholds, tailoring flexible clauses, and exclusively offering asset-linked co-branded cards and global bill escrow services."}
+                    : "Breaking traditional high trustee thresholds, tailoring flexible clauses, and exclusively offering asset-linked credit cards and global bill escrow services."}
                 </p>
               </div>
 

@@ -224,7 +224,7 @@ export default function Services() {
                     {activeTab === "asset" && (lang === "zh" ? "資產託管 · 法律隔離" : lang === "cn" ? "资产托管 · 法律隔离" : "Asset Custody & Legal Isolation")}
                     {activeTab === "trust" && (lang === "zh" ? "稅務優化 · 家族傳承" : lang === "cn" ? "税务优化 · 家族传承" : "Tax Optimization & Succession")}
                     {activeTab === "deposit" && (lang === "zh" ? "全球賬戶 · 安全便捷" : lang === "cn" ? "全球账户 · 安全便捷" : "Global Accounts & Security")}
-                    {activeTab === "finance" && (lang === "zh" ? "資產聯動 · 尊貴特權" : lang === "cn" ? "资产联动 · 尊贵特权" : "Asset-Linked Co-brand Card")}
+                    {activeTab === "finance" && (lang === "zh" ? "資產聯動 · 尊貴特權" : lang === "cn" ? "资产联动 · 尊贵特权" : "Asset Link Credit Card")}
                     {activeTab === "card" && (lang === "zh" ? "賬單代付 · 全球代繳" : lang === "cn" ? "账单代付 · 全球代缴" : "Global Bill Escrow")}
                   </h4>
                 </div>

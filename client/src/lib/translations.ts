@@ -31,7 +31,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "services.tab.asset": { zh: "託管服務", en: "Custody Services", cn: "托管服务" },
   "services.tab.trust": { zh: "稅務優化", en: "Tax Optimization", cn: "税务优化" },
   "services.tab.deposit": { zh: "全球銀行戶口開設", en: "Global Bank Account Setup", cn: "全球银行户口开设" },
-  "services.tab.finance": { zh: "資產聯動信用卡", en: "Asset-Linked Card", cn: "资产联动信用卡" },
+  "services.tab.finance": { zh: "資產聯動信用卡", en: "Asset Link Credit Card", cn: "资产联动信用卡" },
   "services.tab.card": { zh: "全球賬單代付", en: "Global Bill Payment", cn: "全球账单代付" },
 
   "services.asset.title": { zh: "託管服務", en: "Custody Services", cn: "托管服务" },
@@ -52,7 +52,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "services.deposit.feature2": { zh: "多幣種、高隱私的全球資金自由調配賬戶", en: "Multi-currency, high-privacy global allocation accounts", cn: "多币种、高隐私 of global allocation accounts" },
   "services.deposit.feature3": { zh: "私人銀行級別專屬定製，優化跨國貿易结算", en: "Private banking level customization to optimize multinational trade", cn: "私人银行级别专属定制，优化跨国贸易结算" },
 
-  "services.finance.title": { zh: "資產聯動信用卡服務", en: "Asset-Linked Card Services", cn: "资产联动信用卡服务" },
+  "services.finance.title": { zh: "資產聯動信用卡服務", en: "Asset Link Credit Card Services", cn: "资产联动信用卡服务" },
   "services.finance.desc": { zh: "靈活消費，尊享禮遇。我們獨家推出與您的信託/定存資產直接聯動的聯名信用卡。您無需頻繁變現資產，即可直接以信託資產為信用額度進行全球消費與大額支付，同時享有頂級禮賓禮遇。", en: "Flexible consumption, exclusive privileges. We exclusively launch the co-branded credit card directly linked with your trust/deposit assets. Without liquidating assets frequently, you can directly use trust assets as credit limits for global consumption and large-value payments, while enjoying top-tier concierge privileges.", cn: "灵活消费，尊享礼遇。我们独家推出与您的信托/定存资产直接联动的联名信用卡。您无需频繁变现资产，即可直接以信托资产为信用额度进行全球消费与大额支付，同时享有顶级礼宾礼遇。" },
   "services.finance.feature1": { zh: "定存/信託資產直接授信，超高信用額度", en: "Direct credit line based on trust/deposit assets, ultra-high limit", cn: "定存/信托资产直接授信，超高信用额度" },
   "services.finance.feature2": { zh: "全球消費免貨幣轉換費，大額支付暢通無阻", en: "Zero currency conversion fees, seamless large-value payments", cn: "全球消费免货币转换费，大额支付畅通无阻" },
@@ -127,7 +127,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "membership.offshore": { zh: "全球銀行戶口開設服務", en: "Global Bank Account Opening", cn: "全球银行户口开设服务" },
   "membership.billpay": { zh: "全球賬單支付", en: "Global Bill Payment", cn: "全球账单支付" },
   "membership.customerservice": { zh: "客戶服務", en: "Customer Service", cn: "客户服务" },
-  "membership.linkedcard": { zh: "資產聯動信用卡", en: "Asset-Linked Card", cn: "资产联动信用卡" },
+  "membership.linkedcard": { zh: "資產聯動信用卡", en: "Asset Link Credit Card", cn: "资产联动信用卡" },
   "membership.brochure.note": { zh: "如需了解詳情，請與資深客戶專員聯絡", en: "For details, please contact our senior relationship manager", cn: "如需了解详情，请与资深客户专员联络" },
   
   "membership.t1.name": { zh: "基礎", en: "Basic", cn: "基础" },
@@ -265,7 +265,7 @@ export const translations: Record<string, { zh: string; en: string; cn: string }
   "contact.form.interest.asset": { zh: "託管服務 (Custody Services)", en: "Custody Services", cn: "托管服务 (Custody Services)" },
   "contact.form.interest.trust": { zh: "稅務優化 (Tax Optimization)", en: "Tax Optimization", cn: "税务优化 (Tax Optimization)" },
   "contact.form.interest.deposit": { zh: "全球銀行戶口開設 (Global Bank Account Setup)", en: "Global Bank Account Setup", cn: "全球银行户口开设 (Global Bank Account Setup)" },
-  "contact.form.interest.finance": { zh: "資產聯動信用卡 (Asset-Linked Card)", en: "Asset-Linked Card", cn: "资产联动信用卡 (Asset-Linked Card)" },
+  "contact.form.interest.finance": { zh: "資產聯動信用卡 (Asset Link Credit Card)", en: "Asset Link Credit Card", cn: "资产联动信用卡 (Asset Link Credit Card)" },
   "contact.form.interest.card": { zh: "全球賬單代付 (Global Bill Payment)", en: "Global Bill Payment", cn: "全球账单代付 (Global Bill Payment)" },
   
   "contact.form.amount": { zh: "預計定存/信託規模", en: "Estimated Trust Size", cn: "预计定存/信托规模" },
