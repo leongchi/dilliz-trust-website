@@ -106,7 +106,7 @@ export default function Home() {
                 </Link>
                 <Link 
                   href="/about" 
-                  className="bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white py-4 px-8 font-bold text-xs tracking-widest uppercase rounded-lg transition-all"
+                  className="bg-white/5 border border-white/10 text-slate-300 hover:text-white py-4 px-8 font-bold text-xs tracking-widest uppercase transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:-translate-y-[1px] hover:scale-[1.015] active:scale-[0.98] will-change-transform"
                 >
                   {t("hero.btn.about", lang)}
                 </Link>

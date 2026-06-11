@@ -83,15 +83,15 @@ export default function Layout({ children }: LayoutProps) {
                 <Link 
                   key={idx} 
                   href={item.path}
-                  className={`text-xs font-bold tracking-[0.15em] uppercase transition-all duration-300 relative py-2 ${
+                  className={`text-xs font-bold tracking-[0.15em] uppercase relative py-2 ${
                     isActive 
                       ? "text-metal-gold" 
-                      : "text-slate-300 hover:text-metal-gold"
+                      : "text-slate-300 nav-link-luxury"
                   }`}
                 >
                   {item.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-metal-gold shadow-gold-glow animate-fadeIn" />
+                    <span className="absolute bottom-[-4px] left-0 w-full h-[1.5px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent shadow-gold-glow animate-fadeIn" />
                   )}
                 </Link>
               );
