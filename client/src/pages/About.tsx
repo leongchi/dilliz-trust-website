@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Shield, Target, Eye, Compass, Award, Building, Sparkles } from "lucide-react";
 import Layout from "@/components/Layout";
+import { ProgressiveImage } from "@/components/ProgressiveImage";
 import { t } from "@/lib/translations";
 
 export default function About() {
@@ -55,11 +56,13 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-tr from-metal-gold/20 to-transparent rounded-3xl opacity-50 group-hover:opacity-75 transition-opacity duration-500 z-10" />
               <div className="absolute -inset-1 bg-gradient-to-r from-metal-gold/30 to-white/5 rounded-[26px] blur-md opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/5] shadow-gold-glow">
-                <img 
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/5] shadow-gold-glow group">
+                <ProgressiveImage 
                   src="/images/luxury_office_2c65c509.jpg?v=2" 
                   alt="DILLIZ Luxury Office" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  aspectRatio="aspect-[4/5]"
+                  containerClassName="w-full h-full"
+                  className="transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 {/* 浮動徽章 */}

@@ -19,6 +19,7 @@ import {
   Receipt
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import { ProgressiveImage } from "@/components/ProgressiveImage";
 import ScrollReveal from "@/components/ScrollReveal";
 import { t } from "@/lib/translations";
 
@@ -50,12 +51,14 @@ export default function Home() {
         
         {/* 高清真實香港天際線背景圖片 (帶有極致奢華的深藍色漸層遮罩) */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <ProgressiveImage 
             src="/images/hero_banner.jpg?v=2" 
             alt="DILLIZ Hong Kong Skyline" 
+            aspectRatio="aspect-none"
+            containerClassName="w-full h-full"
             className="w-full h-full object-cover opacity-35"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/90 to-[#2b2b2b]/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/90 to-[#2b2b2b]/75 z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent" />
         </div>
 
@@ -156,9 +159,11 @@ export default function Home() {
             <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] shadow-gold-glow transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] transform group-hover:-translate-y-1.5 group-hover:scale-[1.01] group-hover:shadow-[0_30px_60px_-15px_rgba(149,133,110,0.4),0_0_25px_4px_rgba(149,133,110,0.25)]">
               
               {/* 背景辦公室大圖 */}
-              <img 
+              <ProgressiveImage 
                 src="/images/luxury_office_2c65c509.jpg?v=2" 
                 alt="DILLIZ Luxury Office" 
+                aspectRatio="aspect-none"
+                containerClassName="w-full h-full"
                 className="w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
               />
               
