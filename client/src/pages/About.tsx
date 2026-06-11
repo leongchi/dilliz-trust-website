@@ -87,10 +87,10 @@ export default function About() {
                 </h3>
                 <p className="text-slate-300 font-light leading-relaxed">
                   {lang === "zh"
-                    ? "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為全球客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。"
+                    ? "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為全球客戶提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。"
                     : lang === "cn"
-                    ? "帝力斯资本信托有限公司 DilliZ Capital Trust Limited 是一家总部设于香港的持牌信托服务公司。我们致力于为全球客户与家族办公室提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
-                    : "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global clients and family offices."}
+                    ? "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 是一家总部设于香港的持牌信托服务公司。我们致力于为全球客户提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
+                    : "Dilliz Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global clients."}
                 </p>
                 <p className="text-slate-300 font-light leading-relaxed">
                   {lang === "zh"
