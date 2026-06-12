@@ -116,12 +116,30 @@ export default function Cases() {
             </p>
           </div>
 
+          {/* 全局高奢指引橫幅 (位於標題與圓盤之間，極其醒目且永不重疊) */}
+          <div className="flex justify-center pt-2">
+            <div className="bg-metal-gold/10 border border-metal-gold/30 px-6 py-2.5 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.15)] flex items-center gap-3 animate-pulse">
+              <span className="inline-block w-2 h-2 rounded-full bg-metal-gold animate-ping" />
+              <span className="text-[13px] md:text-base font-bold text-metal-gold tracking-[0.18em]">
+                {lang === "zh" ? "👈 點擊左側 360° 環狀節點即可切換真實信託案例 👉" : lang === "cn" ? "👈 点击左侧 360° 环状节点即可切换真实信托案例 👉" : "👈 CLICK THE 360° NODES ON THE LEFT TO EXPLORE REAL CASES 👉"}
+              </span>
+              <span className="inline-block w-2 h-2 rounded-full bg-metal-gold animate-ping" />
+            </div>
+          </div>
+
           {/* 360度環狀互動版面網格 */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center pt-8">
             
             {/* 左側：360度環狀互動圓盤 (佔 5 格) */}
             <div className="lg:col-span-5 flex justify-center items-center relative w-full max-w-[340px] md:max-w-[420px] aspect-square mx-auto">
               
+              {/* 頂部動態指引小箭頭 (僅作視覺呼應，精緻而不重疊) */}
+              <div className="absolute top-[-25px] left-1/2 -translate-x-1/2 z-40 flex flex-col items-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
+                  <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+              </div>
+
               {/* 中心圓圈 (代表高淨值客戶個人 - 尊貴客戶 / YOU) */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#1a1a1a] border-4 border-metal-gold shadow-gold-glow flex flex-col items-center justify-center z-30">
                 <div className="w-12 h-12 rounded-full bg-metal-gold/10 flex items-center justify-center text-metal-gold mb-1">
@@ -177,19 +195,36 @@ export default function Cases() {
                     key={idx}
                     onClick={() => setActiveCaseIdx(idx)}
                     style={{ left: x, top: y }}
-                    className={`absolute -translate-x-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full flex flex-col items-center justify-center transition-all duration-300 shadow-md group z-20 border ${
+                    className={`absolute -translate-x-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full flex flex-col items-center justify-center transition-all duration-300 shadow-md group z-20 border cursor-pointer ${
                       isActive 
-                        ? "bg-[#2b2b2b] text-metal-gold border-metal-gold scale-110 shadow-gold-glow" 
-                        : "bg-white/5 text-slate-300 border-white/10 hover:border-metal-gold/50 hover:scale-105"
+                        ? "bg-[#2b2b2b] text-metal-gold border-metal-gold scale-125 shadow-gold-glow ring-4 ring-metal-gold/20" 
+                        : "bg-[#2b2b2b] text-slate-200 border-metal-gold/40 hover:border-metal-gold hover:scale-110 hover:shadow-gold-glow hover:bg-[#333] shadow-[0_0_15px_rgba(212,175,55,0.15)]"
                     }`}
                     title={c.badge}
                   >
-                    <IconComponent size={18} className={isActive ? "text-metal-gold" : "text-slate-300"} />
-                    <span className={`text-[8px] md:text-[9px] font-bold tracking-tight block mt-1 leading-tight whitespace-pre-line ${
-                      isActive ? "text-white" : "text-slate-400 group-hover:text-slate-200"
-                    }`}>
-                      {c.badge}
-                    </span>
+                    {/* 呼吸光暈底層 (僅非 active 時顯示，吸引點擊) */}
+                    {!isActive && (
+                      <div className="absolute inset-0 rounded-full border border-metal-gold/50 animate-ping opacity-30 pointer-events-none" />
+                    )}
+                    
+                    <IconComponent size={20} className={isActive ? "text-metal-gold" : "text-metal-gold/80 group-hover:text-metal-gold"} />
+                    
+                    {/* 智能定位的獨立文字層，放置在圓形按鈕外部，根據角度動態計算 top 偏移量以避免重疊 */}
+                    <div 
+                      className="absolute left-1/2 -translate-x-1/2 w-36 text-center pointer-events-none"
+                      style={{ 
+                        // idx 為 0 (最頂部) 時往下移一點；idx 為 3 (最底部) 時往更下方移以防重疊；其他側邊節點維持標準偏移
+                        top: idx === 0 ? "120%" : idx === 3 ? "125%" : "118%" 
+                      }}
+                    >
+                      <span className={`text-[12px] md:text-[14px] font-bold tracking-widest block leading-snug whitespace-pre-line drop-shadow-md transition-colors ${
+                        isActive 
+                          ? "text-metal-gold drop-shadow-[0_0_10px_rgba(212,175,55,0.8)] scale-105" 
+                          : "text-slate-200 group-hover:text-metal-gold"
+                      }`}>
+                        {c.badge}
+                      </span>
+                    </div>
                   </button>
                 );
               })}
