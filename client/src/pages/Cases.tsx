@@ -6,6 +6,31 @@ import { t } from "@/lib/translations";
 export default function Cases() {
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [activeCaseIdx, setActiveCaseIdx] = useState(0);
+  const [rotationAngle, setRotationAngle] = useState(0);
+
+  // 統一的切換函數，確保指針永遠「順走」或以最短路徑優雅旋轉
+  const handleCaseChange = (targetIdx: number) => {
+    setActiveCaseIdx(targetIdx);
+    
+    // 計算當前角度與目標角度的差值，確保指針以順滑、前進的方式旋轉
+    const currentNormalized = ((rotationAngle % 360) + 360) % 360;
+    const targetAngle = targetIdx * 60;
+    
+    let diff = targetAngle - currentNormalized;
+    // 調整 diff，使其在 [-180, 180] 區間內，保證旋轉路徑最短
+    if (diff > 180) {
+      diff -= 360;
+    } else if (diff < -180) {
+      diff += 360;
+    }
+    
+    // 如果是自動輪播的下一個 (例如從 5 到 0)，我們強制讓它繼續順時針前進 (+60度)
+    if (targetIdx === 0 && activeCaseIdx === 5) {
+      setRotationAngle(rotationAngle + 60);
+    } else {
+      setRotationAngle(rotationAngle + diff);
+    }
+  };
 
   useEffect(() => {
     const savedLang = localStorage.getItem("dilliz_lang");
@@ -27,11 +52,12 @@ export default function Cases() {
   // 實裝 8 秒高奢自動輪播計時器 (當用戶手動點擊時，計時器會自動重置重新計時)
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setActiveCaseIdx((prevIdx) => (prevIdx + 1) % 6);
+      const nextIdx = (activeCaseIdx + 1) % 6;
+      handleCaseChange(nextIdx);
     }, 8000);
 
     return () => clearInterval(intervalId);
-  }, [activeCaseIdx]);
+  }, [activeCaseIdx, rotationAngle]);
 
   const cases = [
     {
@@ -142,12 +168,7 @@ export default function Cases() {
             {/* 左側：360度環狀互動圓盤 (佔 5 格) */}
             <div className="lg:col-span-5 flex justify-center items-center relative w-full max-w-[340px] md:max-w-[420px] aspect-square mx-auto">
               
-              {/* 頂部動態指引小箭頭 (僅作視覺呼應，精緻而不重疊) */}
-              <div className="absolute top-[-25px] left-1/2 -translate-x-1/2 z-40 flex flex-col items-center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="animate-bounce">
-                  <path d="M12 5v14M19 12l-7 7-7-7" />
-                </svg>
-              </div>
+              {/* 移除頂部創業小箭頭，保持乾淨大氣 */}
 
               {/* 中心圓圈 (代表高淨值客戶個人 - 尊貴客戶 / YOU) */}
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#1a1a1a] border-4 border-metal-gold shadow-gold-glow flex flex-col items-center justify-center z-30">
@@ -164,27 +185,54 @@ export default function Cases() {
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[84%] h-[84%] rounded-full border-2 border-dashed border-metal-gold/30 z-0" />
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[56%] h-[56%] rounded-full border border-dashed border-metal-gold/20 z-0" />
 
-              {/* 高奢雷達指針 (單線旋轉，平滑過渡) */}
+              {/* 高奢雷達指針 (升級為順時針「順走」的精緻 SVG 金屬 Arrow 箭頭) */}
               <div 
-                className="absolute inset-0 pointer-events-none z-10 transition-transform duration-500 ease-out"
-                style={{ transform: `rotate(${activeCaseIdx * 60}deg)` }}
+                className="absolute inset-0 pointer-events-none z-10 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                style={{ transform: `rotate(${rotationAngle}deg)` }}
               >
-                <svg className="w-full h-full">
+                <svg className="w-full h-full" viewBox="0 0 400 400">
+                  <defs>
+                    {/* 金屬拉絲金漸變 */}
+                    <linearGradient id="gold-arrow-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+                      <stop offset="0%" stopColor="#bfae95" />
+                      <stop offset="50%" stopColor="#D4AF37" />
+                      <stop offset="100%" stopColor="#FFF" />
+                    </linearGradient>
+                    {/* 柔和發光濾鏡 */}
+                    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="6" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
+
+                  {/* 1. 金色指針主線條 */}
                   <line
-                    x1="50%"
-                    y1="50%"
-                    x2="50%"
-                    y2="8%"
-                    stroke="#D4AF37"
-                    strokeWidth="2.5"
-                    className="shadow-gold-glow"
+                    x1="200"
+                    y1="200"
+                    x2="200"
+                    y2="55"
+                    stroke="url(#gold-arrow-grad)"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    filter="url(#gold-glow)"
                   />
-                  <circle
-                    cx="50%"
-                    cy="8%"
-                    r="4"
-                    fill="#D4AF37"
+
+                  {/* 2. 精緻的 Arrow 金屬箭頭 (指向節點) */}
+                  <path
+                    d="M190 62 L200 32 L210 62 L200 52 Z"
+                    fill="url(#gold-arrow-grad)"
+                    filter="url(#gold-glow)"
                     className="animate-pulse"
+                  />
+
+                  {/* 3. 箭頭頂部的微型脈衝亮點 */}
+                  <circle
+                    cx="200"
+                    cy="32"
+                    r="3.5"
+                    fill="#FFF"
+                    className="animate-ping"
+                    style={{ animationDuration: '2s' }}
                   />
                 </svg>
               </div>
@@ -202,7 +250,7 @@ export default function Cases() {
                 return (
                   <button
                     key={idx}
-                    onClick={() => setActiveCaseIdx(idx)}
+                    onClick={() => handleCaseChange(idx)}
                     style={{ left: x, top: y }}
                     className={`absolute -translate-x-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 rounded-full flex flex-col items-center justify-center transition-all duration-300 shadow-md group z-20 border cursor-pointer ${
                       isActive 
