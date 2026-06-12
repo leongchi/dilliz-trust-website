@@ -24,6 +24,15 @@ export default function Cases() {
     return () => window.removeEventListener("dilliz_lang_changed", handleLangChange);
   }, []);
 
+  // 實裝 8 秒高奢自動輪播計時器 (當用戶手動點擊時，計時器會自動重置重新計時)
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setActiveCaseIdx((prevIdx) => (prevIdx + 1) % 6);
+    }, 8000);
+
+    return () => clearInterval(intervalId);
+  }, [activeCaseIdx]);
+
   const cases = [
     {
       badge: t("cases.c1.badge", lang),
