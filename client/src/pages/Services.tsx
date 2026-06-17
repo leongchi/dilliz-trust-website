@@ -6,7 +6,7 @@ import { t } from "@/lib/translations";
 
 export default function Services() {
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
-  const [activeTab, setActiveTab] = useState("trust"); // Default active tab is 'trust' (RC3.0) to prioritize and highlight it!
+  const [activeTab, setActiveTab] = useState("asset");
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -39,82 +39,67 @@ export default function Services() {
   }, []);
 
   const serviceTabs = [
-    { id: "trust", name: t("services.tab.trust", lang), icon: Compass, isHighlighted: true }, // Highlighted RC3.0 App
-    { id: "asset", name: t("services.tab.asset", lang), icon: Shield }, // RC Ecosystem
-    { id: "deposit", name: t("services.tab.deposit", lang), icon: Landmark }, // VBA
-    { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard }, // CreditCard
-    { id: "card", name: t("services.tab.card", lang), icon: Receipt } // Global Bill Payment
+    { id: "asset", name: t("services.tab.asset", lang), icon: Shield },
+    { id: "trust", name: t("services.tab.trust", lang), icon: Compass },
+    { id: "deposit", name: t("services.tab.deposit", lang), icon: Landmark },
+    { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard },
+    { id: "card", name: t("services.tab.card", lang), icon: Receipt }
   ];
 
   const getServiceDetail = () => {
     switch (activeTab) {
       case "asset":
         return {
-          badge: "MOE-POE",
           title: t("services.asset.title", lang),
           desc: t("services.asset.desc", lang),
           features: [
             t("services.asset.feature1", lang),
             t("services.asset.feature2", lang),
             t("services.asset.feature3", lang)
-          ],
-          img: "/images/luxury_office_2c65c509.jpg?v=2",
-          watermark: lang === "zh" ? "商戶生態 · 數字收款" : lang === "cn" ? "商户生态 · 数字收款" : "Merchant Ecosystem & Digital Payments"
+          ]
         };
       case "trust":
         return {
-          badge: "RC3.0 APP",
           title: t("services.trust.title", lang),
           desc: t("services.trust.desc", lang),
           features: [
             t("services.trust.feature1", lang),
             t("services.trust.feature2", lang),
             t("services.trust.feature3", lang)
-          ],
-          img: "/images/trust_concept.jpg?v=2",
-          watermark: lang === "zh" ? "RC3.0 · 智能終端" : lang === "cn" ? "RC3.0 · 智能终端" : "RC3.0 Smart Application"
+          ]
         };
       case "deposit":
         return {
-          badge: "VBA",
           title: t("services.deposit.title", lang),
           desc: t("services.deposit.desc", lang),
           features: [
             t("services.deposit.feature1", lang),
             t("services.deposit.feature2", lang),
             t("services.deposit.feature3", lang)
-          ],
-          img: "/images/hk_skyline.jpg?v=2",
-          watermark: lang === "zh" ? "虛擬賬戶 · 一線清算" : lang === "cn" ? "虚拟账户 · 一线清算" : "Virtual Account & Tier-1 Clearing"
+          ]
         };
       case "finance":
         return {
-          badge: "CREDIT CARD",
           title: t("services.finance.title", lang),
           desc: t("services.finance.desc", lang),
           features: [
             t("services.finance.feature1", lang),
             t("services.finance.feature2", lang),
             t("services.finance.feature3", lang)
-          ],
-          img: "/images/credit_card.jpg?v=2",
-          watermark: lang === "zh" ? "資產聯動 · 尊貴特權" : lang === "cn" ? "资产联动 ·尊贵特权" : "Asset Link & Elite Privileges"
+          ]
         };
       case "card":
         return {
-          badge: "BILL PAYMENT",
           title: t("services.card.title", lang),
           desc: t("services.card.desc", lang),
           features: [
             t("services.card.feature1", lang),
             t("services.card.feature2", lang),
             t("services.card.feature3", lang)
-          ],
-          img: "/images/bill_escrow.jpg?v=2",
-          watermark: lang === "zh" ? "全球代繳 · 尊享託管" : lang === "cn" ? "全球代缴 · 尊享托管" : "Global Bill Escrow & Payment"
+          ]
         };
       default:
-        return { badge: "", title: "", desc: "", features: [], img: "", watermark: "" };
+        return { title: "", desc: "", features: [] };
     }
   };
 
@@ -127,11 +112,11 @@ export default function Services() {
         {/* 背景裝飾 */}
         <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 space-y-16">
+        <div className="max-w-7xl mx-auto px-6 space-y-20">
           
           {/* 頁面標題 */}
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block">Our Services & Products</span>
+            <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block">Our Services</span>
             <h1 className="text-4xl md:text-5xl font-bold text-metal-gold font-serif leading-tight">
               {t("services.title", lang)}
             </h1>
@@ -140,7 +125,7 @@ export default function Services() {
             </p>
           </div>
 
-          {/* 核心服務與產品切換面板 */}
+          {/* 核心：五大核心服務交互面板 */}
           <div className="space-y-12">
             
             {/* 服務切換 Tab 按鈕列 */}
@@ -158,25 +143,18 @@ export default function Services() {
                     className={`flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-bold tracking-wider transition-all border ${
                       isActive 
                         ? "bg-[#2b2b2b] text-metal-gold border-metal-gold shadow-gold-glow scale-105" 
-                        : tab.isHighlighted
-                          ? "bg-metal-gold/10 text-metal-gold border-metal-gold/30 hover:bg-metal-gold/20"
-                          : "bg-white/5 text-slate-300 border-white/10 hover:border-metal-gold/40"
+                        : "bg-white/5 text-slate-300 border-white/10 hover:border-metal-gold/40"
                     }`}
                   >
-                    <IconComponent size={14} className={isActive || tab.isHighlighted ? "text-metal-gold" : "text-slate-400"} />
+                    <IconComponent size={14} className={isActive ? "text-metal-gold" : "text-slate-400"} />
                     <span>{tab.name}</span>
-                    {tab.isHighlighted && !isActive && (
-                      <span className="ml-1 px-1.5 py-0.5 text-[8px] bg-metal-gold text-black rounded-full font-extrabold uppercase scale-90">
-                        Hot
-                      </span>
-                    )}
                   </button>
                 );
               })}
             </div>
 
-            {/* 服務詳情雙欄網格面板 (統一大小、文字和圖片最好比例) */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch min-h-[550px]">
+            {/* 服務詳情雙欄網格面板 */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
               
               {/* 左側：文字、亮點特色與預約按鈕 */}
               <div className="lg:col-span-7 bg-white/5 backdrop-blur border border-white/10 p-8 md:p-12 rounded-3xl flex flex-col justify-between shadow-gold-glow relative overflow-hidden">
@@ -185,21 +163,19 @@ export default function Services() {
 
                 <div className="space-y-8">
                   <div className="space-y-3">
-                    <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">
-                      {detail.badge}
-                    </span>
+                    <span className="text-xs font-bold tracking-[0.2em] text-metal-gold uppercase block">DILLIZ BESPOKE TRUST</span>
                     <h3 className="text-2xl md:text-3xl font-bold text-slate-200 font-serif leading-tight">
                       {detail.title}
                     </h3>
                   </div>
 
-                  <p className="text-slate-300 font-light leading-relaxed text-sm md:text-base whitespace-pre-line">
+                  <p className="text-slate-300 font-light leading-relaxed text-sm md:text-base">
                     {detail.desc}
                   </p>
 
                   <div className="border-t border-white/10 pt-6 space-y-4">
                     <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase">
-                      {lang === "zh" ? "核心產品優勢" : lang === "cn" ? "核心产品优势" : "Core Product Advantages"}
+                      {lang === "zh" ? "核心服務優勢" : lang === "cn" ? "核心服务优势" : "Core Advantages"}
                     </h4>
                     <div className="grid grid-cols-1 gap-3.5">
                       {detail.features.map((feat, fIdx) => (
@@ -216,22 +192,28 @@ export default function Services() {
 
                 <div className="pt-8 border-t border-white/10 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <span className="text-[10px] text-slate-400 font-light italic">
-                    {lang === "zh" ? "* 產品具體條款與操作細節，請預約專屬客戶專員洽詢" : lang === "cn" ? "* 产品具体条款与操作细节，请预约专属客户专员洽询" : "* For detailed product terms and specifications, please book a private manager."}
+                    {lang === "zh" ? "* 服務具體條款與操作細節，請預約專屬客戶專員洽詢" : lang === "cn" ? "* 服务具体条款与操作细节，请预约专属客户专员洽询" : "* Specific terms and details, please book a private manager"}
                   </span>
-                  <a href="/contact" className="btn-gold text-center py-3 px-8 font-bold text-xs tracking-wider inline-flex items-center justify-center gap-2 shrink-0">
+                  <a href="/contact" className="btn-gold text-center py-3 px-8 font-bold text-xs tracking-wider inline-flex items-center justify-center gap-2">
                     {t("nav.book", lang)} <ArrowRight size={14} />
                   </a>
                 </div>
               </div>
 
-              {/* 右側：根據 activeTab 動態渲染的高品質無人像背景圖 (統一比例，完美匹配左側高度) */}
-              <div className="lg:col-span-5 relative group rounded-3xl overflow-hidden border border-white/10 shadow-luxury flex h-full min-h-[400px] lg:min-h-full">
+              {/* 右側：根據 activeTab 動態渲染的高品質無人像背景圖（契合宣傳冊高奢調性） */}
+              <div className="lg:col-span-5 relative group rounded-3xl overflow-hidden border border-white/10 shadow-luxury min-h-[400px] lg:min-h-auto flex">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent z-20 opacity-60 pointer-events-none" />
                 <ProgressiveImage 
-                  src={detail.img} 
+                  src={
+                    activeTab === "asset" ? "/images/luxury_office_2c65c509.jpg?v=2" :
+                    activeTab === "trust" ? "/images/trust_concept.jpg?v=2" :
+                    activeTab === "deposit" ? "/images/hk_skyline.jpg?v=2" :
+                    activeTab === "finance" ? "/images/credit_card.jpg?v=2" :
+                    "/images/bill_escrow.jpg?v=2"
+                  } 
                   alt="DILLIZ Service Illustration" 
                   aspectRatio="aspect-auto"
-                  containerClassName="w-full h-full rounded-3xl"
+                  containerClassName="w-full min-h-[400px] lg:min-h-full rounded-3xl"
                   className="w-full h-full object-cover"
                 />
                 
@@ -239,7 +221,11 @@ export default function Services() {
                 <div className="absolute bottom-8 left-8 right-8 z-20 space-y-1">
                   <span className="text-[10px] font-bold tracking-widest text-metal-gold uppercase">DILLIZ TRUST</span>
                   <h4 className="text-lg font-bold text-white font-serif">
-                    {detail.watermark}
+                    {activeTab === "asset" && (lang === "zh" ? "資產託管 · 法律隔離" : lang === "cn" ? "资产托管 · 法律隔离" : "Asset Custody & Legal Isolation")}
+                    {activeTab === "trust" && (lang === "zh" ? "稅務優化 · 家族傳承" : lang === "cn" ? "税务优化 · 家族传承" : "Tax Optimization & Succession")}
+                    {activeTab === "deposit" && (lang === "zh" ? "全球賬戶 · 安全便捷" : lang === "cn" ? "全球账户 · 安全便捷" : "Global Accounts & Security")}
+                    {activeTab === "finance" && (lang === "zh" ? "資產聯動 · 尊貴特權" : lang === "cn" ? "资产联动 · 尊贵特权" : "Asset Link Credit Card")}
+                    {activeTab === "card" && (lang === "zh" ? "賬單代付 · 全球代繳" : lang === "cn" ? "账单代付 · 全球代缴" : "Global Bill Escrow")}
                   </h4>
                 </div>
               </div>

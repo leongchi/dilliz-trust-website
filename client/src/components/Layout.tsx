@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Globe, Menu, X, ArrowRight, Shield, Bell, Trash2, CheckCircle2, User } from "lucide-react";
 import { t } from "@/lib/translations";
@@ -98,6 +98,7 @@ export default function Layout({ children }: LayoutProps) {
             })}
           </nav>
 
+          {/* 右側：語言切換與預約按鈕 */}
           <div className="hidden lg:flex items-center gap-6">
             
             {/* 語言切換按鈕 */}
@@ -224,139 +225,45 @@ export default function Layout({ children }: LayoutProps) {
         {children}
       </div>
 
-      {/* 官方頁尾 (Footer - 升級高奢多欄版面，整合 RCPAY365 公司連結) */}
-      <footer className="bg-[#141414] text-slate-500 pt-16 pb-12 border-t border-white/5 text-xs shrink-0">
-        <div className="max-w-7xl mx-auto px-6 space-y-12">
+      {/* 官方頁尾 (Footer) */}
+      <footer className="bg-[#141414] text-slate-500 py-12 border-t border-white/5 text-xs shrink-0">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           
-          {/* 上半部：四欄佈局 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* 左側：版權與聲明 */}
+          <div className="space-y-3 text-center md:text-left">
+            <p className="font-semibold text-slate-400">
+              &copy; 2026 DILLIZ CAPITAL TRUST LIMITED. All Rights Reserved.
+            </p>
             
-            {/* 欄 1：品牌與簡介 */}
-            <div className="space-y-4">
-              <Link href="/">
-                <img 
-                  src="/images/dilliz_horizontal_logo_transparent_1c4515c8.png" 
-                  alt="DilliZ Logo" 
-                  className="h-8 w-auto transition-transform duration-300 hover:scale-105 object-contain cursor-pointer"
-                />
+            {/* T&C 與 Privacy Policy 連結 */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs font-medium text-metal-gold/80">
+              <Link href="/terms" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
+                {lang === "zh" ? "使用條款 (Terms & Conditions)" : lang === "cn" ? "使用条款 (Terms & Conditions)" : "Terms & Conditions"}
               </Link>
-              <p className="text-slate-400 font-light leading-relaxed text-justify-custom text-[11px]">
-                {t("footer.desc", lang)}
-              </p>
+              <span className="text-slate-700 hidden sm:inline">|</span>
+              <Link href="/privacy" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
+                {lang === "zh" ? "隱私政策 (Privacy Policy)" : lang === "cn" ? "隐私政策 (Privacy Policy)" : "Privacy Policy"}
+              </Link>
             </div>
 
-            {/* 欄 2：核心服務與產品 (Services & Products) */}
-            <div className="space-y-4">
-              <h4 className="text-slate-200 font-bold tracking-wider font-serif uppercase text-xs">
-                {lang === "zh" ? "數字金融與產品" : lang === "cn" ? "数字金融与产品" : "Fintech & Products"}
-              </h4>
-              <ul className="space-y-2.5 text-[11px] font-light">
-                <li>
-                  <Link href="/services#trust" className="hover:text-metal-gold transition-colors">
-                    {t("services.tab.trust", lang)}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services#asset" className="hover:text-metal-gold transition-colors">
-                    {t("services.tab.asset", lang)}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services#deposit" className="hover:text-metal-gold transition-colors">
-                    {t("services.tab.deposit", lang)}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services#finance" className="hover:text-metal-gold transition-colors">
-                    {t("services.tab.finance", lang)}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services#card" className="hover:text-metal-gold transition-colors">
-                    {t("services.tab.card", lang)}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* 欄 3：公司與合作夥伴 (Company Section - 包含 RCPAY365 連結) */}
-            <div className="space-y-4">
-              <h4 className="text-slate-200 font-bold tracking-wider font-serif uppercase text-xs">
-                {lang === "zh" ? "關於與合作" : lang === "cn" ? "关于与合作" : "Company & Partners"}
-              </h4>
-              <ul className="space-y-2.5 text-[11px] font-light">
-                <li>
-                  <Link href="/about" className="hover:text-metal-gold transition-colors">
-                    {t("nav.about", lang)}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/faq" className="hover:text-metal-gold transition-colors">
-                    {t("nav.faq", lang)}
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-metal-gold transition-colors">
-                    {t("nav.contact", lang)}
-                  </Link>
-                </li>
-                {/* CRITICAL REQUIREMENT: For the 'company' section, 'RCPAY365' should directly link back to the website homepage */}
-                <li>
-                  <Link href="/" className="hover:text-metal-gold transition-colors font-semibold text-metal-gold/90">
-                    RCPAY365
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* 欄 4：合規與聯絡 */}
-            <div className="space-y-4">
-              <h4 className="text-slate-200 font-bold tracking-wider font-serif uppercase text-xs">
-                {lang === "zh" ? "持牌與合規" : lang === "cn" ? "持牌与合规" : "Licensing & Compliance"}
-              </h4>
-              <div className="space-y-3 text-[11px] font-light text-slate-400">
-                <p>
-                  <span className="font-semibold text-slate-300 block mb-0.5">
-                    {t("footer.license", lang)}:
-                  </span>
-                  TC010540 (Hong Kong Companies Registry)
-                </p>
-                <p>
-                  <span className="font-semibold text-slate-300 block mb-0.5">
-                    {lang === "zh" ? "辦公地址" : lang === "cn" ? "办公地址" : "Address"}:
-                  </span>
-                  {lang === "zh" || lang === "cn" 
-                    ? "香港九龍觀塘海濱道 133 號萬兆豐群樓 17 樓 I 室" 
-                    : "Unit I, 17/F, MG Tower, 133 Hoi Bun Road, Kwun Tong, Kowloon, Hong Kong"}
-                </p>
-              </div>
-            </div>
-
+            <p className="max-w-2xl font-light text-slate-600 leading-relaxed text-justify-custom break-words text-[11px] md:text-xs">
+              {lang === "zh" 
+                ? "免責聲明：本網站所載資料僅供參考，不構成任何法律、稅務、投資或專業建議。信託服務由香港持牌信託服務公司帝力斯資本信託有限公司（牌照號碼：TC010540）依法提供。"
+                : lang === "cn"
+                ? "免责声明：本网站所载资料仅供参考，不构成任何法律、税务、投资或专业建议。信托服务由香港持牌信托服务公司帝力斯资本信托有限公司（牌照号码：TC010540）依法提供。"
+                : "Disclaimer: The information contained in this website is for reference only and does not constitute any legal, tax, investment, or professional advice. Trust services are provided by Dilliz Capital Trust Limited (License No. TC010540)."}
+            </p>
           </div>
 
-          {/* 下半部：免責聲明與版權資訊 */}
-          <div className="border-t border-white/5 pt-8 space-y-6">
-            <p className="max-w-7xl font-light text-slate-600 leading-relaxed text-justify-custom break-words text-[10px] md:text-[11px]">
-              <span className="font-semibold text-slate-500 block mb-1">
-                {t("footer.disclaimer.title", lang)}:
-              </span>
-              {t("footer.disclaimer.text", lang)}
-            </p>
-
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-[10px] text-slate-500 font-medium">
-              <p>
-                {t("footer.copyright", lang)}
-              </p>
-              <div className="flex gap-4">
-                <Link href="/terms" className="hover:text-metal-gold transition-colors">
-                  {lang === "zh" ? "使用條款" : lang === "cn" ? "使用条款" : "Terms"}
-                </Link>
-                <span>|</span>
-                <Link href="/privacy" className="hover:text-metal-gold transition-colors">
-                  {lang === "zh" ? "隱私政策" : lang === "cn" ? "隐私政策" : "Privacy"}
-                </Link>
-              </div>
-            </div>
+          {/* 右側：Logo */}
+          <div className="shrink-0">
+            <Link href="/">
+              <img 
+                src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
+                alt="DILLIZ Footer Logo" 
+                className="h-10 w-auto opacity-45 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer"
+              />
+            </Link>
           </div>
 
         </div>
@@ -365,6 +272,7 @@ export default function Layout({ children }: LayoutProps) {
     </div>
   );
 }
+
 
 // 尊貴通知中心組件
 interface NotificationItem {

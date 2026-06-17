@@ -239,11 +239,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             
             {[
-              { id: "trust", name: t("services.tab.trust", lang), icon: Compass, desc: lang === "zh" ? "整合虛擬賬戶與商戶 POS 的智能金融終端應用" : lang === "cn" ? "整合虚拟账户与商户 POS 的智能金融终端应用" : "Smart fintech application integrating virtual accounts & merchant POS" },
-              { id: "asset", name: t("services.tab.asset", lang), icon: Shield, desc: lang === "zh" ? "商戶專屬 QR 二維碼與數字貨幣安全清算生態系統" : lang === "cn" ? "商户专属 QR 二维码与数字货币安全清算生态系统" : "Merchant QR code & digital currency secure clearing ecosystem" },
-              { id: "deposit", name: t("services.tab.deposit", lang), icon: Landmark, desc: lang === "zh" ? "通過 API 門戶獲取一線銀行清算支持的虛擬賬戶" : lang === "cn" ? "通过 API 门户获取一线银行清算支持的虚拟账户" : "Apply for virtual bank accounts backed by tier-one clearing" },
-              { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard, desc: lang === "zh" ? "信託資產直接聯動授信，尊享全球免手續費刷卡" : lang === "cn" ? "信托资产直接联动授信，尊享全球免手续费刷卡" : "Direct trust asset-linked credit limit for global consumption" },
-              { id: "card", name: t("services.tab.card", lang), icon: Receipt, desc: lang === "zh" ? "全球物業稅與學費等大額賬單的一站式代付託管" : lang === "cn" ? "全球物业税与学费等大额账单的一站式代付托管" : "One-stop secure escrow & auto-payment for global bills" }
+              { id: "asset", name: t("services.tab.asset", lang), icon: Shield, desc: lang === "zh" ? "安全合規的第三方資產託管與法律隔離保護" : lang === "cn" ? "安全合规的第三方资产托管与法律隔离保护" : "Secure third-party custody & legal isolation" },
+              { id: "trust", name: t("services.tab.trust", lang), icon: Compass, desc: lang === "zh" ? "量身定制跨國資產信託，合規合法減輕稅務" : lang === "cn" ? "量身定制跨国资产信托，合规合法减轻税务" : "Bespoke trust structures to minimize global taxes" },
+              { id: "deposit", name: t("services.tab.deposit", lang), icon: Landmark, desc: lang === "zh" ? "協助在全球頂級金融中心設立賬戶" : lang === "cn" ? "协助在全球顶级金融中心设立账户" : "Set up accounts in top global financial centers" },
+              { id: "finance", name: t("services.tab.finance", lang), icon: CreditCard, desc: lang === "zh" ? "定存資產直接授信，獲發尊貴資產聯動信用卡" : lang === "cn" ? "定存资产直接授信，获发尊贵资产联动信用卡" : "Direct credit based on assets, exclusive asset-linked credit card" },
+              { id: "card", name: t("services.tab.card", lang), icon: Receipt, desc: lang === "zh" ? "一站式海外物業稅，子女學費等全球賬單代付" : lang === "cn" ? "一站式海外物业税，子女学费等全球账单代付" : "One-stop escrow & auto-payment for global bills" }
             ].map((srv, idx) => {
               const IconComp = srv.icon;
               // 計算 stagger 延遲
