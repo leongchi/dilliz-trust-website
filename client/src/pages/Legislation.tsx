@@ -166,11 +166,6 @@ export default function Legislation() {
 
         </div>
 
-        {/* 底部印章 */}
-        <div className="pt-10 border-t border-white/10 text-center text-xs text-slate-500 space-y-2">
-          <p>&copy; 2026 DILLIZ CAPITAL TRUST LIMITED. All rights reserved.</p>
-          <p>{licenseNote[lang]}</p>
-        </div>
       </main>
     </Layout>
   );
