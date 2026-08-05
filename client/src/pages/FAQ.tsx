@@ -111,14 +111,10 @@ export default function FAQ() {
             </div>
             <div className="space-y-1 text-center md:text-left">
               <h4 className="text-sm font-bold text-slate-200 font-serif">
-                {lang === "zh" ? "合規合約與反洗錢 (AML) 聲明" : lang === "cn" ? "合规合约与反洗钱 (AML) 声明" : "Compliance & AML Statement"}
+                {t("inline.faq.0", lang)}
               </h4>
               <p className="text-xs text-slate-400 font-light leading-relaxed">
-                {lang === "zh"
-                  ? "帝力斯資本信託嚴格遵守香港《打擊洗錢及恐怖分子資金籌集條例》（第 615 章）及香港公司註冊處 TCSP 牌照規範。所有客戶均需通過嚴格的 KYC (認識您的客戶) 審查與合規背景調查，以確保資金來源合法合規，維護信託體系的極致安全與合規信譽。"
-                  : lang === "cn"
-                  ? "帝力斯资本信托严格遵守香港《打击洗钱及恐怖分子资金筹集条例》（第 615 章）及香港公司注册处 TCSP 牌照规范。所有客户均需通过严格的 KYC (认识您的客户) 审查与合规背景调查，以确保资金来源合法合规，维护信托体系的极致安全与合规信誉。"
-                  : "Dilliz Capital Trust strictly complies with Cap. 615 Anti-Money Laundering Ordinance of HK and TCSP regulations. All settlors must pass rigorous KYC & AML screening to ensure legitimacy and preserve the integrity of our trust systems."}
+                {t("inline.faq.1", lang)}
               </p>
             </div>
           </div>

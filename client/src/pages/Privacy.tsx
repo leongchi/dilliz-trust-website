@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Lock, Eye } from "lucide-react";
 import Layout from "@/components/Layout";
+import { t } from "@/lib/translations";
 
 export default function Privacy() {
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
@@ -32,10 +33,10 @@ export default function Privacy() {
             <Lock size={32} />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-metal-gold font-serif">
-            {lang === "zh" ? "隱私政策" : lang === "cn" ? "隐私政策" : "Privacy Policy"}
+            {t("inline.privacy.0", lang)}
           </h1>
           <p className="text-xs text-slate-400 font-light tracking-wider">
-            {lang === "zh" ? "最後更新日期：2026年5月30日" : lang === "cn" ? "最后更新日期：2026年5月30日" : "Last Updated: May 30, 2026"}
+            {t("inline.privacy.1", lang)}
           </p>
         </div>
 
@@ -46,15 +47,11 @@ export default function Privacy() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">1</span>
-              {lang === "zh" ? "隱私保護承諾" : lang === "cn" ? "隐私保护承诺" : "Our Commitment to Privacy"}
+              {t("inline.privacy.2", lang)}
             </h2>
             <div className="space-y-3">
               <p>
-                {lang === "zh" 
-                  ? "帝力斯資本信託有限公司（以下簡稱「本公司」或「我們」）高度重視客戶的隱私及個人資料安全。我們承諾嚴格遵守香港《個人資料（私隱）條例》（第486章）以及信託行業最高級別的保密義務，保護高淨值客戶及其受益人的資產與身份私密資訊。"
-                  : lang === "cn"
-                  ? "帝力斯资本信托有限公司（以下简称「本公司」或「我们」）高度重视客户的隐私及个人数据安全。我们承诺严格遵守香港《个人资料（私隐）条例》（第486章）以及信托行业最高级别的保密义务，保护高净值客户及其受益人的资产与身份私密信息。"
-                  : "Dilliz Capital Trust Limited (hereinafter referred to as 'the Company' or 'we') places the highest value on client privacy and data security. We commit to strictly complying with the Personal Data (Privacy) Ordinance (Cap. 486) of Hong Kong and the highest confidentiality obligations of the trust industry to protect the asset and identity privacy of high-net-worth clients and beneficiaries."}
+                {t("inline.privacy.3", lang)}
               </p>
             </div>
           </section>
@@ -63,15 +60,11 @@ export default function Privacy() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">2</span>
-              {lang === "zh" ? "個人資料收集與範疇" : lang === "cn" ? "个人数据收集与范畴" : "Collection of Personal Data"}
+              {t("inline.privacy.4", lang)}
             </h2>
             <div className="space-y-3">
               <p>
-                {lang === "zh"
-                  ? "當您使用本網站預約諮詢或提交表單時，我們可能會收集您的：姓名、聯絡電話、電子郵件、意向信託服務類型、意向資產規模等。在正式建立信託關係時，根據監管要求，我們還將收集身份證明、住址證明、稅務居民身份及資金來源證明（SOF）。"
-                  : lang === "cn"
-                  ? "当您使用本网站预约咨询或提交表单时，我们可能会收集您的：姓名、联络电话、电子邮件、意向信托服务类型、意向资产规模等。在正式建立信托关系时，根据监管要求，我们还将收集身份证明、住址证明、税务居民身份及资金来源证明（SOF）。"
-                  : "When you use this website to book consultations or submit forms, we may collect your: name, phone number, email address, intended trust service types, and intended asset scale. Upon formally establishing a trust, we will also collect identity proof, proof of address, tax residency status, and source of funds (SOF) as required by regulations."}
+                {t("inline.privacy.5", lang)}
               </p>
             </div>
           </section>
@@ -80,15 +73,11 @@ export default function Privacy() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">3</span>
-              {lang === "zh" ? "資料使用目的" : lang === "cn" ? "资料使用目的" : "Purpose of Data Usage"}
+              {t("inline.privacy.6", lang)}
             </h2>
             <div className="space-y-3">
               <p>
-                {lang === "zh"
-                  ? "我們收集的個人資料將嚴格用於以下目的：提供定制化信託諮詢服務、進行客戶身份盡職調查（KYC）、防範洗錢及金融犯罪合規審查、履行受託人日常管理職責，以及向您發送與信託或定存相關的合規通告與重要通知。"
-                  : lang === "cn"
-                  ? "我们收集的个人资料将严格用于以下目的：提供定制化信托咨询服务、进行客户身份尽职调查（KYC）、防范洗钱及金融犯罪合规审查、履行受托人日常管理职责，以及向您发送与信托或定存相关的合规通告与重要通知。"
-                  : "The personal data we collect will be strictly used for: providing customized trust consultation services, performing client due diligence (KYC), complying with anti-money laundering and financial crime prevention audits, performing daily trustee administrative duties, and sending you regulatory circulars and important notices related to your trust or fixed deposits."}
+                {t("inline.privacy.7", lang)}
               </p>
             </div>
           </section>
@@ -97,22 +86,14 @@ export default function Privacy() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">4</span>
-              {lang === "zh" ? "資料安全與國際合規保密" : lang === "cn" ? "资料安全与国际合规保密" : "Data Security & Global Compliance Confidentiality"}
+              {t("inline.privacy.8", lang)}
             </h2>
             <div className="space-y-3">
               <p>
-                {lang === "zh"
-                  ? "本公司採用銀行級的數據加密傳輸與安全存儲技術，嚴格限制非授權人員訪問您的個人及資產資訊。我們絕不會將您的資料出售、出租或洩露給任何第三方機構。"
-                  : lang === "cn"
-                  ? "本公司采用银行级的数据加密传输与安全存储技术，严格限制非授权人员访问您的个人及资产资讯。我们绝不会将您的资料出售、出租或泄露给任何第三方机构。"
-                  : "The Company employs bank-grade data encryption and secure storage technologies, strictly restricting unauthorized personnel from accessing your personal and asset information. We will never sell, rent, or disclose your data to any third-party organizations."}
+                {t("inline.privacy.9", lang)}
               </p>
               <p>
-                {lang === "zh"
-                  ? "作為持牌受託機構，我們在遵守本地保密法的同時，嚴格履行與共同申報標準（CRS）及美國外國帳戶稅收合規法案（FATCA）相關的國際合規與申報義務。"
-                  : lang === "cn"
-                  ? "作为持牌受托机构，我们在遵守本地保密法的同时，严格履行与共同申报标准（CRS）及美国外国帐户税收合规法案（FATCA）相关的国际合规与申报义务。"
-                  : "As a licensed trustee, while adhering to local confidentiality laws, we strictly perform global compliance and reporting obligations under the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA)."}
+                {t("inline.privacy.10", lang)}
               </p>
             </div>
           </section>
@@ -121,15 +102,11 @@ export default function Privacy() {
           <section className="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="text-sm bg-metal-gold/10 text-metal-gold w-6 h-6 rounded-full flex items-center justify-center font-bold">5</span>
-              {lang === "zh" ? "客戶資料權利" : lang === "cn" ? "客户资料权利" : "Your Rights Regarding Your Data"}
+              {t("inline.privacy.11", lang)}
             </h2>
             <div className="space-y-3">
               <p>
-                {lang === "zh"
-                  ? "您有權隨時要求查詢、更正或刪除我們所持有的您的個人資料。如需行使上述權利，或對我們的隱私政策有任何疑問，請通過本網站的聯絡電子郵件或電話與我們的合規官（Compliance Officer）聯絡。"
-                  : lang === "cn"
-                  ? "您有权随时要求查询、更正或删除我们所持有的您的个人资料。如需行使上述权利，或对我们的隐私政策有任何疑问，请通过本网站的联络电子邮件或电话与我们的合规官（Compliance Officer）联络。"
-                  : "You have the right to request access to, correction of, or erasure of your personal data held by us at any time. To exercise these rights, or if you have any questions regarding our Privacy Policy, please contact our Compliance Officer via the contact email or phone number listed on this website."}
+                {t("inline.privacy.12", lang)}
               </p>
             </div>
           </section>
@@ -139,7 +116,7 @@ export default function Privacy() {
         {/* 底部印章 */}
         <div className="pt-10 border-t border-white/10 text-center text-xs text-slate-500 space-y-2">
           <p>© 2026 DILLIZ CAPITAL TRUST LIMITED. All rights reserved.</p>
-          <p>{lang === "zh" ? "香港持牌信託服務公司 · 牌照號碼: TC010540" : lang === "cn" ? "香港持牌信托服务公司 · 牌照号码: TC010540" : "Licensed Trust Company in HK · License No. TC010540"}</p>
+          <p>{t("inline.privacy.13", lang)}</p>
         </div>
       </main>
     </Layout>

@@ -59,11 +59,7 @@ export default function Contact() {
       return "";
     }
     if (!emailRegex.test(value)) {
-      return lang === "zh" 
-        ? "請輸入有效的電子郵件格式（如 info@dilliz.com）" 
-        : lang === "cn"
-        ? "请输入有效的电子邮件格式（如 info@dilliz.com）"
-        : "Please enter a valid email address (e.g., info@dilliz.com)";
+      return t("inline.contact.0", lang);
     }
     return "";
   };
@@ -74,11 +70,7 @@ export default function Contact() {
       return "";
     }
     if (!phoneRegex.test(value)) {
-      return lang === "zh" 
-        ? "請輸入有效的聯絡電話（8-15位數字，支援+、-、括號及空格）" 
-        : lang === "cn"
-        ? "请输入有效的联络电话（8-15位数字，支持+、-、括号及空格）"
-        : "Please enter a valid phone number (8-15 digits, support +, -, brackets and spaces)";
+      return t("inline.contact.1", lang);
     }
     return "";
   };
@@ -143,11 +135,7 @@ export default function Contact() {
     if (emailErr || phoneErr) {
       setErrors({ email: emailErr, phone: phoneErr });
       toast.error(
-        lang === "zh"
-          ? "表單中存在格式錯誤，請修正後再提交。"
-          : lang === "cn"
-          ? "表单中存在格式错误，请修正后再提交。"
-          : "Please correct the errors in the form before submitting."
+        t("inline.contact.2", lang)
       );
       return;
     }
@@ -159,11 +147,7 @@ export default function Contact() {
       EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY"
     ) {
       toast.warning(
-        lang === "zh" 
-          ? "偵測到 EmailJS 尚未配置，表單將以模擬方式提交。請在 Contact.tsx 中填入您的 EmailJS 金鑰。"
-          : lang === "cn"
-          ? "侦测到 EmailJS 尚未配置，表单将以模拟方式提交。请在 Contact.tsx 中填入您的 EmailJS 金钥。"
-          : "EmailJS is not configured. Form will be submitted in mock mode. Please configure keys in Contact.tsx."
+        t("inline.contact.3", lang)
       );
       
       setSubmitted(true);
@@ -198,11 +182,7 @@ export default function Contact() {
       );
 
       toast.success(
-        lang === "zh" 
-          ? "您的諮詢已成功發送！專屬客戶經理將於 24 小時內與您聯絡。"
-          : lang === "cn"
-          ? "您的咨询已成功发送！专属客户经理将于 24 小时内与您联络。"
-          : "Inquiry sent successfully! A relationship manager will contact you within 24 hours."
+        t("inline.contact.4", lang)
       );
 
       setSubmitted(true);
@@ -376,7 +356,7 @@ export default function Contact() {
                     <Check size={32} />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-200 font-serif">
-                    {lang === "zh" ? "提交成功" : lang === "cn" ? "提交成功" : "Inquiry Submitted"}
+                    {t("inline.contact.5", lang)}
                   </h3>
                   <p className="text-slate-300 text-sm leading-relaxed font-light">
                     {t("contact.form.success", lang)}
@@ -385,7 +365,7 @@ export default function Contact() {
                     onClick={() => setSubmitted(false)}
                     className="btn-gold px-8 py-3 font-bold text-xs tracking-widest uppercase inline-flex items-center gap-2"
                   >
-                    {lang === "zh" ? "再次諮詢" : lang === "cn" ? "再次咨询" : "Submit Another"} <ArrowRight size={14} />
+                    {t("inline.contact.6", lang)} <ArrowRight size={14} />
                   </button>
                 </div>
               ) : (
@@ -404,7 +384,7 @@ export default function Contact() {
                       <input
                         type="text"
                         required
-                        placeholder={lang === "zh" ? "請輸入您的姓名" : lang === "cn" ? "请输入您的姓名" : "Enter your name"}
+                        placeholder={t("inline.contact.7", lang)}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300"
@@ -447,7 +427,7 @@ export default function Contact() {
                       <input
                         type="email"
                         required
-                        placeholder={lang === "zh" ? "請輸入電子郵件" : lang === "cn" ? "请输入电子邮件" : "Enter email address"}
+                        placeholder={t("inline.contact.8", lang)}
                         value={formData.email}
                         onChange={handleEmailChange}
                         className={`w-full bg-[#1a1a1a] border rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none transition-all duration-300 ${
@@ -526,7 +506,7 @@ export default function Contact() {
                     {isSending ? (
                       <>
                         <Loader2 className="animate-spin" size={14} />
-                        {lang === "zh" ? "發送中..." : lang === "cn" ? "发送中..." : "Sending..."}
+                        {t("inline.contact.9", lang)}
                       </>
                     ) : (
                       <>

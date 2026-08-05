@@ -144,7 +144,7 @@ export default function Cases() {
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block">Case Studies</span>
             <h1 className="text-4xl md:text-5xl font-bold text-metal-gold font-serif leading-tight">
-              {lang === "zh" ? "真實情境個案分析" : lang === "cn" ? "真实情境个案分析" : "Real Case Studies"}
+              {t("inline.cases.0", lang)}
             </h1>
             <p className="text-slate-300 font-light leading-relaxed">
               {t("cases.subtitle", lang)}
@@ -156,7 +156,7 @@ export default function Cases() {
             <div className="bg-metal-gold/10 border border-metal-gold/30 px-6 py-2.5 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.15)] flex items-center gap-3 animate-pulse">
               <span className="inline-block w-2 h-2 rounded-full bg-metal-gold animate-ping" />
               <span className="text-[13px] md:text-base font-bold text-metal-gold tracking-[0.18em]">
-                {lang === "zh" ? "👈 點擊左側 360° 環狀節點即可切換真實信託案例 👉" : lang === "cn" ? "👈 点击左侧 360° 环状节点即可切换真实信托案例 👉" : "👈 CLICK THE 360° NODES ON THE LEFT TO EXPLORE REAL CASES 👉"}
+                {t("inline.cases.1", lang)}
               </span>
               <span className="inline-block w-2 h-2 rounded-full bg-metal-gold animate-ping" />
             </div>
@@ -176,7 +176,7 @@ export default function Cases() {
                   <User size={24} className="text-metal-gold" />
                 </div>
                 <span className="text-[10px] md:text-xs font-bold text-metal-gold tracking-widest uppercase font-serif">
-                  {lang === "zh" ? "尊貴客戶" : lang === "cn" ? "尊贵客户" : "YOU"}
+                  {t("inline.cases.2", lang)}
                 </span>
                 <span className="text-[8px] text-metal-gold font-bold">DILLIZ</span>
               </div>
@@ -353,7 +353,7 @@ export default function Cases() {
                 {/* 底部行動按鈕 */}
                 <div className="pt-6 border-t border-white/10 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <span className="text-[10px] text-slate-400 font-light">
-                    {lang === "zh" ? "*以上案例均為真實情境化改編，已隱去客戶私密資訊" : lang === "cn" ? "*以上案例均为真实情境化改编，已隐去客户私密信息" : "*Cases adapted from real scenarios, private info redacted"}
+                    {t("inline.cases.3", lang)}
                   </span>
                   <a href="/contact" className="btn-gold text-center py-2.5 px-6 font-semibold text-xs tracking-wider inline-flex items-center justify-center gap-2">
                     {t("nav.book", lang)} <ArrowRight size={14} />

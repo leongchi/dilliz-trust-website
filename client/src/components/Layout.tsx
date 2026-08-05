@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Globe, Menu, X, ArrowRight, Shield, Bell, Trash2, CheckCircle2, User } from "lucide-react";
-import { t } from "@/lib/translations";
+import { t, useTranslationsReady } from "@/lib/translations";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,6 +11,8 @@ export default function Layout({ children }: LayoutProps) {
   const [location, setLocation] = useLocation();
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // Force re-render when content.json finishes loading
+  const _translationsReady = useTranslationsReady();
 
   // 初始化時讀取 localStorage 中的語言設定，確保跨頁面一致
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   const toggleLang = () => {
-    const target = lang === "zh" ? "cn" : lang === "cn" ? "en" : "zh";
+    const target = t("inline.layout.0", lang) as "zh" | "en" | "cn";
     handleLangChange(target);
   };
 
@@ -152,7 +154,7 @@ export default function Layout({ children }: LayoutProps) {
               target="_blank" 
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-metal-gold hover:border-metal-gold/40 hover:bg-metal-gold/5 transition-all duration-300 group"
-              title={lang === "zh" ? "會員登入" : lang === "cn" ? "会员登录" : "Member Login"}
+              title={t("inline.layout.1", lang)}
             >
               <User size={18} className="group-hover:scale-110 transition-transform" />
             </a>
@@ -166,7 +168,7 @@ export default function Layout({ children }: LayoutProps) {
               onClick={toggleLang}
               className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-slate-300 text-xs font-bold"
             >
-              {lang === "zh" ? "繁" : lang === "cn" ? "简" : "EN"}
+              {t("inline.layout.2", lang)}
             </button>
 
             <button 
@@ -214,7 +216,7 @@ export default function Layout({ children }: LayoutProps) {
               className="w-full border border-white/10 bg-white/5 text-slate-300 hover:text-metal-gold hover:border-metal-gold/40 text-center py-4 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 rounded-xl transition-all"
             >
               <User size={16} />
-              {lang === "zh" ? "會員登入" : lang === "cn" ? "会员登录" : "Member Login"}
+              {t("inline.layout.3", lang)}
             </a>
           </div>
         )}
@@ -238,20 +240,16 @@ export default function Layout({ children }: LayoutProps) {
             {/* T&C 與 Privacy Policy 連結 */}
             <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs font-medium text-metal-gold/80">
               <Link href="/terms" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
-                {lang === "zh" ? "使用條款 (Terms & Conditions)" : lang === "cn" ? "使用条款 (Terms & Conditions)" : "Terms & Conditions"}
+                {t("inline.layout.4", lang)}
               </Link>
               <span className="text-slate-700 hidden sm:inline">|</span>
               <Link href="/privacy" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
-                {lang === "zh" ? "隱私政策 (Privacy Policy)" : lang === "cn" ? "隐私政策 (Privacy Policy)" : "Privacy Policy"}
+                {t("inline.layout.5", lang)}
               </Link>
             </div>
 
             <p className="max-w-2xl font-light text-slate-600 leading-relaxed text-justify-custom break-words text-[11px] md:text-xs">
-              {lang === "zh" 
-                ? "免責聲明：本網站所載資料僅供參考，不構成任何法律、稅務、投資或專業建議。信託服務由香港持牌信託服務公司帝力斯資本信託有限公司（牌照號碼：TC010540）依法提供。"
-                : lang === "cn"
-                ? "免责声明：本网站所载资料仅供参考，不构成任何法律、税务、投资或专业建议。信托服务由香港持牌信托服务公司帝力斯资本信托有限公司（牌照号码：TC010540）依法提供。"
-                : "Disclaimer: The information contained in this website is for reference only and does not constitute any legal, tax, investment, or professional advice. Trust services are provided by Dilliz Capital Trust Limited (License No. TC010540)."}
+              {t("inline.layout.6", lang)}
             </p>
           </div>
 
@@ -365,14 +363,14 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" | "cn" }) {
           {/* 頭部 */}
           <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between bg-[#1a1a1a]/80">
             <span className="text-xs font-bold tracking-wider text-slate-200 font-serif">
-              {lang === "zh" ? "通知中心" : lang === "cn" ? "通知中心" : "Notification Center"} ({unreadCount})
+              {t("inline.layout.7", lang)} ({unreadCount})
             </span>
             {unreadCount > 0 && (
               <button
                 onClick={markAllAsRead}
                 className="text-[10px] font-bold tracking-wider text-metal-gold hover:underline uppercase"
               >
-                {lang === "zh" ? "全部標記已讀" : lang === "cn" ? "全部标记已读" : "Mark all read"}
+                {t("inline.layout.8", lang)}
               </button>
             )}
           </div>
@@ -383,7 +381,7 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" | "cn" }) {
               <div className="py-12 text-center space-y-3">
                 <CheckCircle2 size={32} className="text-metal-gold/30 mx-auto" />
                 <p className="text-xs text-slate-500 font-light">
-                  {lang === "zh" ? "暫無任何新通知" : lang === "cn" ? "暂无任何新通知" : "No new notifications"}
+                  {t("inline.layout.9", lang)}
                 </p>
               </div>
             ) : (
@@ -427,7 +425,7 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" | "cn" }) {
           {/* 腳部 */}
           <div className="px-5 py-3 border-t border-white/5 bg-[#1a1a1a]/50 text-center">
             <span className="text-[9px] text-slate-500 font-semibold tracking-wider uppercase">
-              {lang === "zh" ? "🛡️ 帝力斯安全合規通道" : lang === "cn" ? "🛡️ 帝力斯安全合规通道" : "🛡️ DILLIZ SECURE COMPLIANCE CHANNEL"}
+              {t("inline.layout.10", lang)}
             </span>
           </div>
 

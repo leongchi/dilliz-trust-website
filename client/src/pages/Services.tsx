@@ -175,7 +175,7 @@ export default function Services() {
 
                   <div className="border-t border-white/10 pt-6 space-y-4">
                     <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase">
-                      {lang === "zh" ? "核心服務優勢" : lang === "cn" ? "核心服务优势" : "Core Advantages"}
+                      {t("inline.services.0", lang)}
                     </h4>
                     <div className="grid grid-cols-1 gap-3.5">
                       {detail.features.map((feat, fIdx) => (
@@ -192,7 +192,7 @@ export default function Services() {
 
                 <div className="pt-8 border-t border-white/10 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <span className="text-[10px] text-slate-400 font-light italic">
-                    {lang === "zh" ? "* 服務具體條款與操作細節，請預約專屬客戶專員洽詢" : lang === "cn" ? "* 服务具体条款与操作细节，请预约专属客户专员洽询" : "* Specific terms and details, please book a private manager"}
+                    {t("inline.services.1", lang)}
                   </span>
                   <a href="/contact" className="btn-gold text-center py-3 px-8 font-bold text-xs tracking-wider inline-flex items-center justify-center gap-2">
                     {t("nav.book", lang)} <ArrowRight size={14} />
@@ -221,11 +221,11 @@ export default function Services() {
                 <div className="absolute bottom-8 left-8 right-8 z-20 space-y-1">
                   <span className="text-[10px] font-bold tracking-widest text-metal-gold uppercase">DILLIZ TRUST</span>
                   <h4 className="text-lg font-bold text-white font-serif">
-                    {activeTab === "asset" && (lang === "zh" ? "資產託管 · 法律隔離" : lang === "cn" ? "资产托管 · 法律隔离" : "Asset Custody & Legal Isolation")}
-                    {activeTab === "trust" && (lang === "zh" ? "稅務優化 · 家族傳承" : lang === "cn" ? "税务优化 · 家族传承" : "Tax Optimization & Succession")}
-                    {activeTab === "deposit" && (lang === "zh" ? "全球賬戶 · 安全便捷" : lang === "cn" ? "全球账户 · 安全便捷" : "Global Accounts & Security")}
-                    {activeTab === "finance" && (lang === "zh" ? "資產聯動 · 尊貴特權" : lang === "cn" ? "资产联动 · 尊贵特权" : "Asset Link Credit Card")}
-                    {activeTab === "card" && (lang === "zh" ? "賬單代付 · 全球代繳" : lang === "cn" ? "账单代付 · 全球代缴" : "Global Bill Escrow")}
+                    {activeTab === "asset" && (t("inline.services.2", lang))}
+                    {activeTab === "trust" && (t("inline.services.3", lang))}
+                    {activeTab === "deposit" && (t("inline.services.4", lang))}
+                    {activeTab === "finance" && (t("inline.services.5", lang))}
+                    {activeTab === "card" && (t("inline.services.6", lang))}
                   </h4>
                 </div>
               </div>
