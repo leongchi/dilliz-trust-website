@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Shield, Target, Eye, Compass, Award, Building, Sparkles } from "lucide-react";
+import { Shield, Target, Eye, Compass, Award, Building, Sparkles, Scale, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import { Link } from "wouter";
 import { ProgressiveImage } from "@/components/ProgressiveImage";
 import { t } from "@/lib/translations";
 
@@ -185,6 +186,27 @@ export default function About() {
             </div>
           </div>
 
+        </div>
+
+        {/* 合規與監管段落 */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 shadow-gold-glow">
+          <div className="flex flex-col md:flex-row items-start gap-6">
+            <div className="w-14 h-14 rounded-full bg-metal-gold/10 border border-metal-gold/30 flex items-center justify-center text-metal-gold shrink-0">
+              <Scale size={28} />
+            </div>
+            <div className="space-y-4 flex-1">
+              <h3 className="text-2xl font-bold text-metal-gold font-serif">
+                {t("about.compliance.title", lang)}
+              </h3>
+              <p className="text-sm text-slate-300 font-light leading-relaxed">
+                {t("about.compliance.desc", lang)}
+              </p>
+              <Link href="/legislation" className="inline-flex items-center gap-2 text-sm font-medium text-metal-gold hover:text-metal-gold/80 transition-colors group">
+                {t("about.compliance.link", lang)}
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
         </div>
 
       </div>

@@ -113,11 +113,6 @@ export default function Privacy() {
 
         </div>
 
-        {/* 底部印章 */}
-        <div className="pt-10 border-t border-white/10 text-center text-xs text-slate-500 space-y-2">
-          <p>© 2026 DILLIZ CAPITAL TRUST LIMITED. All rights reserved.</p>
-          <p>{t("inline.privacy.13", lang)}</p>
-        </div>
       </main>
     </Layout>
   );

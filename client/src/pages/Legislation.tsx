@@ -53,16 +53,6 @@ export default function Legislation() {
     return () => window.removeEventListener("dilliz_lang_changed", handleLangChange);
   }, []);
 
-  const pageTitle = { zh: "法規與合規", en: "Legislation & Compliance", cn: "法规与合规" };
-  const pageSubtitle = { zh: "帝力斯資本信託有限公司嚴格遵守香港特別行政區所有適用的法律、法規及行業守則，確保為客戶提供合法、合規且值得信賴的信託服務。", en: "Dilliz Capital Trust Limited strictly complies with all applicable laws, regulations and industry guidelines in the Hong Kong SAR, ensuring lawful, compliant and trustworthy trust services for our clients.", cn: "帝力斯资本信托有限公司严格遵守香港特别行政区所有适用的法律、法规及行业守则，确保为客户提供合法、合规且值得信赖的信托服务。" };
-  const introText = { zh: "根據《受託人條例》（第29章）第3A條，帝力斯資本信託有限公司必須遵守所規定的法定謹慎責任。我們履行條例第8部分第77(2)節的受託人執照要求，在政府庫務署存入了規定的存款。我們非常重視我們的法律責任與合規義務。", en: "Pursuant to Section 3A of the Trustee Ordinance (Cap. 29), Dilliz Capital Trust Limited must comply with the statutory duty of care as prescribed. We fulfill the trustee license requirements under Section 77(2) of Part 8 of the Ordinance by depositing the required amount with the Government Treasury. We take our legal responsibilities and compliance obligations very seriously.", cn: "根据《受托人条例》（第29章）第3A条，帝力斯资本信托有限公司必须遵守所规定的法定谨慎责任。我们履行条例第8部分第77(2)节的受托人执照要求，在政府库务署存入了规定的存款。我们非常重视我们的法律责任与合规义务。" };
-  const sectionLegislation = { zh: "香港法例", en: "Hong Kong Ordinances", cn: "香港法例" };
-  const sectionGuidelines = { zh: "行業守則與指引", en: "Industry Guidelines", cn: "行业守则与指引" };
-  const sectionOthers = { zh: "其他參考", en: "Other References", cn: "其他参考" };
-  const chapterLabel = { zh: "第", en: "Cap.", cn: "第" };
-  const chapterSuffix = { zh: "章", en: "", cn: "章" };
-  const licenseNote = { zh: "香港持牌信託服務公司 · 牌照號碼: TC010540", en: "Licensed Trust Company in HK · License No. TC010540", cn: "香港持牌信托服务公司 · 牌照号码: TC010540" };
-
   return (
     <Layout>
       <main className="max-w-4xl mx-auto px-6 py-20 space-y-12">
@@ -72,17 +62,17 @@ export default function Legislation() {
             <Scale size={32} />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-metal-gold font-serif">
-            {pageTitle[lang]}
+            {t("legislation.title", lang)}
           </h1>
           <p className="text-sm text-slate-300 font-light leading-relaxed max-w-2xl mx-auto">
-            {pageSubtitle[lang]}
+            {t("legislation.subtitle", lang)}
           </p>
         </div>
 
         {/* 引言 */}
         <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-gold-glow">
           <p className="text-slate-300 font-light text-sm md:text-base leading-relaxed">
-            {introText[lang]}
+            {t("legislation.intro", lang)}
           </p>
         </div>
 
@@ -93,7 +83,7 @@ export default function Legislation() {
           <section className="space-y-4">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="w-1 h-6 bg-metal-gold rounded-full" />
-              {sectionLegislation[lang]}
+              {t("legislation.section.ordinances", lang)}
             </h2>
             <div className="space-y-2">
               {legislations.map((item, idx) => (
@@ -105,7 +95,7 @@ export default function Legislation() {
                   className="group flex items-center gap-4 bg-white/[0.03] hover:bg-white/[0.07] border border-white/10 hover:border-metal-gold/30 rounded-xl px-5 py-4 transition-all duration-200"
                 >
                   <span className="text-xs text-metal-gold/70 font-mono whitespace-nowrap min-w-[72px]">
-                    {chapterLabel[lang]}{item.chapter}{chapterSuffix[lang]}
+                    {t("legislation.chapter.prefix", lang)}{item.chapter}{t("legislation.chapter.suffix", lang)}
                   </span>
                   <span className="text-slate-200 font-light text-sm md:text-base flex-1">
                     {item.name[lang]}
@@ -120,7 +110,7 @@ export default function Legislation() {
           <section className="space-y-4">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="w-1 h-6 bg-metal-gold rounded-full" />
-              {sectionGuidelines[lang]}
+              {t("legislation.section.guidelines", lang)}
             </h2>
             <div className="space-y-2">
               {guidelines.map((item, idx) => (
@@ -144,7 +134,7 @@ export default function Legislation() {
           <section className="space-y-4">
             <h2 className="text-xl font-bold text-metal-gold font-serif flex items-center gap-3">
               <span className="w-1 h-6 bg-metal-gold rounded-full" />
-              {sectionOthers[lang]}
+              {t("legislation.section.others", lang)}
             </h2>
             <div className="space-y-2">
               {others.map((item, idx) => (
@@ -165,7 +155,6 @@ export default function Legislation() {
           </section>
 
         </div>
-
       </main>
     </Layout>
   );
