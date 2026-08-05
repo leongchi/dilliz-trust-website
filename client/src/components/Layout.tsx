@@ -253,13 +253,21 @@ export default function Layout({ children }: LayoutProps) {
             </p>
             
             {/* T&C 與 Privacy Policy 連結 */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs font-medium text-metal-gold/80">
+            <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 text-xs font-medium text-metal-gold/80">
               <Link href="/terms" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
                 {t("inline.layout.4", lang)}
               </Link>
               <span className="text-slate-700 hidden sm:inline">|</span>
               <Link href="/privacy" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
                 {t("inline.layout.5", lang)}
+              </Link>
+              <span className="text-slate-700 hidden sm:inline">|</span>
+              <Link href="/legislation" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
+                {lang === "en" ? "Legislation" : lang === "cn" ? "法规" : "法規"}
+              </Link>
+              <span className="text-slate-700 hidden sm:inline">|</span>
+              <Link href="/disclaimer" className="hover:text-metal-gold transition-colors underline underline-offset-4 decoration-metal-gold/30">
+                {lang === "en" ? "Disclaimer & Risk" : lang === "cn" ? "免责声明" : "免責聲明"}
               </Link>
             </div>
 
