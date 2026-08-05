@@ -11,8 +11,14 @@ export default function Layout({ children }: LayoutProps) {
   const [location, setLocation] = useLocation();
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // Force re-render when content.json finishes loading
-  const _translationsReady = useTranslationsReady();
+  // Force re-render of ALL children when content.json finishes loading
+  const translationsReady = useTranslationsReady();
+  const [, forceUpdate] = useState(0);
+  useEffect(() => {
+    if (translationsReady) {
+      forceUpdate(n => n + 1);
+    }
+  }, [translationsReady]);
 
   // 初始化時讀取 localStorage 中的語言設定，確保跨頁面一致
   useEffect(() => {
@@ -222,13 +228,22 @@ export default function Layout({ children }: LayoutProps) {
         )}
       </header>
 
-      {/* 頁面主體內容 */}
-      <div className="grow">
+      {/* 頁面主體內容 - key forces full re-render when content.json loads */}
+      <div className="grow" key={translationsReady ? "loaded" : "loading"}>
         {children}
       </div>
 
       {/* 官方頁尾 (Footer) */}
       <footer className="bg-[#141414] text-slate-500 py-12 border-t border-white/5 text-xs shrink-0">
+        {/* Risk Disclosure Banner */}
+        <div className="max-w-7xl mx-auto px-6 mb-8">
+          <div className="border border-amber-700/30 bg-amber-950/20 rounded-lg px-5 py-3">
+            <p className="text-[11px] md:text-xs text-amber-200/80 font-light leading-relaxed">
+              {t("inline.layout.risk_disclosure", lang)}
+            </p>
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* 左側：版權與聲明 */}
