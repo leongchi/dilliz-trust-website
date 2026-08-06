@@ -322,9 +322,9 @@ function NotificationCenter({ lang }: { lang: "zh" | "en" | "cn" }) {
     },
     {
       id: "n2",
-      titleZh: "📈 限時尊享：美金定存年化 5.2%",
-      titleEn: "📈 Limited Offer: 5.2% USD Fixed Deposit",
-      descZh: "即日起至本季度末，帝力斯會員尊享限時定存特惠年化收益率。請即聯絡您的專屬客戶經理預約設立。",
+      titleZh: "📈 限時尊享：美金固定收益年化 5.2%",
+      titleEn: "📈 Limited Offer: 5.2% USD Fixed Income Trust",
+      descZh: "即日起至本季度末，帝力斯會員尊享限時固定收益特惠年化收益率。請即聯絡您的專屬客戶經理預約設立。",
       descEn: "Exclusive yield for DILLIZ members until end of quarter. Contact your dedicated manager to subscribe.",
       timeZh: "2小時前",
       timeEn: "2 hours ago",
