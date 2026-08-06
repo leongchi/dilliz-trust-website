@@ -501,7 +501,7 @@
   },
   "membership.duration": {
     "zh": "期限",
-    "en": "Tenor",
+    "en": "Fixed Income Trust Duration",
     "cn": "期限"
   },
   "membership.offshore": {
@@ -881,7 +881,7 @@
   },
   "contact.form.amount": {
     "zh": "預計信託資產規模",
-    "en": "Estimated Trust Asset Size",
+    "en": "Estimated Trust Size",
     "cn": "预计信托资产规模"
   },
   "contact.form.amount.placeholder": {
@@ -1026,7 +1026,7 @@
   },
   "inline.about.13": {
     "zh": "打破傳統信託的高昂門檻，為每位客戶量身定制靈活的信託條款，並獨家提供信託資產授信、聯名信用卡與全球賬單支付代繳等尊榮服務。",
-    "en": "Breaking traditional high trustee thresholds, tailoring flexible clauses, and exclusively offering trust asset credit facilities, co-branded credit cards, and global bill payment services.",
+    "en": "Breaking traditional high trustee thresholds, tailoring flexible clauses, and exclusively offering asset-linked credit cards and global bill escrow services.",
     "cn": "打破传统信托的高昂门槛，为每位客户量身定制灵活的信托条款，并独家提供信托资产授信、联名信用卡与全球账单支付代缴等尊荣服务。"
   },
   "inline.cases.0": {
@@ -1141,7 +1141,7 @@
   },
   "inline.home.6": {
     "zh": "信託資產直接授信，獲發尊貴資產聯動信用卡",
-    "en": "Direct credit facility based on trust assets, exclusive asset-linked credit card",
+    "en": "Direct credit based on assets, exclusive asset-linked credit card",
     "cn": "信托资产直接授信，获发尊贵资产联动信用卡"
   },
   "inline.home.7": {
@@ -1180,9 +1180,9 @@
     "cn": "专属固定收益信托会员计划"
   },
   "inline.home.14": {
-    "zh": "因為您，才值得擁有。我們獨家推出基礎、標準、尊享、典藏四大固定收益信託會員計劃，為不同資產規模的委託人提供極具競爭力的穩健收益與尊榮黑金卡權益。",
-    "en": "Because of you, it's worth having. We launch four tiers of Fixed Income Trust membership: Foundation, Standard, Premium, and Heritage — providing competitive stable returns and exclusive privileges for settlors of different asset scales.",
-    "cn": "因为您，才值得拥有。我们独家推出基础、标准、尊享、典藏四大固定收益信托会员计划，为不同资产规模的委托人提供极具竞争力的稳健收益与尊荣黑金卡权益。"
+    "zh": "因為您，才值得擁有。我們獨家推出基礎、標準、尊享、典藏四大固定收益信託會員計劃，為不同資產規模的委託人提供極具競爭力的特惠收益與尊榮黑金卡權益。",
+    "en": "Because of you, it's worth having. We launch four tiers of membership: Basic, Standard, Premium, and Royal, providing highly competitive yields and black card privileges.",
+    "cn": "因为您，才值得拥有。我们独家推出基础、标准、尊享、典藏四大固定收益信托会员计划，为不同资产规模的委托人提供极具竞争力的特惠收益与尊荣黑金卡权益。"
   },
   "inline.home.15": {
     "zh": "美金10,000起",
@@ -1241,7 +1241,7 @@
   },
   "inline.membership.2": {
     "zh": "固定收益信託基本回報安排",
-    "en": "Basic Fixed Income Trust Return Arrangement",
+    "en": "Basic deposit yield",
     "cn": "固定收益信托基本回报安排"
   },
   "inline.membership.3": {
@@ -1260,9 +1260,9 @@
     "cn": "全球账单托管代缴服务"
   },
   "inline.membership.6": {
-    "zh": "尊享鎖息收益優先議價服務",
-    "en": "Premium Lock-in Yield Priority Negotiation Service",
-    "cn": "尊享锁息收益优先议价服务"
+    "zh": "尊享固定收益優先議價服務",
+    "en": "Premium Fixed Income Priority Negotiation Service",
+    "cn": "尊享固定收益优先议价服务"
   },
   "inline.membership.7": {
     "zh": "尊享已包括標準所有權益",
@@ -1361,7 +1361,7 @@
   },
   "inline.privacy.7": {
     "zh": "我們收集的個人資料將嚴格用於以下目的：提供定制化信託諮詢服務、進行客戶身份盡職調查（KYC）、防範洗錢及金融犯罪合規審查、履行受託人日常管理職責，以及向您發送與信託或固定收益安排相關的合規通告與重要通知。",
-    "en": "The personal data we collect will be strictly used for: providing customized trust consultation services, performing client due diligence (KYC), complying with anti-money laundering and financial crime prevention audits, performing daily trustee administrative duties, and sending you regulatory circulars and important notices related to your trust or fixed income arrangements.",
+    "en": "The personal data we collect will be strictly used for: providing customized trust consultation services, performing client due diligence (KYC), complying with anti-money laundering and financial crime prevention audits, performing daily trustee administrative duties, and sending you regulatory circulars and important notices related to your trust or fixed income trusts.",
     "cn": "我们收集的个人资料将严格用于以下目的：提供定制化信托咨询服务、进行客户身份尽职调查（KYC）、防范洗钱及金融犯罪合规审查、履行受托人日常管理职责，以及向您发送与信托或固定收益安排相关的合规通告与重要通知。"
   },
   "inline.privacy.8": {
@@ -1564,9 +1564,149 @@
     "en": "🛡️ DILLIZ SECURE COMPLIANCE CHANNEL",
     "cn": "🛡️ 帝力斯安全合规通道"
   },
-  "inline.layout.risk_disclosure": {
-    "zh": "風險披露：本網站所展示之固定收益信託產品非銀行存款，不受香港存款保障計劃保障。投資涉及風險，過往業績並不代表將來表現。",
-    "en": "Risk Disclosure: The fixed income trust products displayed on this website are not bank deposits and are not protected by the Hong Kong Deposit Protection Scheme. Investment involves risks; past performance is not indicative of future results.",
-    "cn": "风险披露：本网站所展示之固定收益信托产品非银行存款，不受香港存款保障计划保障。投资涉及风险，过往业绩并不代表将来表现。"
+  "legislation.title": {
+    "zh": "法規與合規",
+    "en": "Legislation & Compliance",
+    "cn": "法规与合规"
+  },
+  "legislation.subtitle": {
+    "zh": "帝力斯資本信託有限公司嚴格遵守香港特別行政區所有適用的法律、法規及行業守則，確保為客戶提供合法、合規且值得信賴的信託服務。",
+    "en": "Dilliz Capital Trust Limited strictly complies with all applicable laws, regulations and industry guidelines in the Hong Kong SAR, ensuring lawful, compliant and trustworthy trust services for our clients.",
+    "cn": "帝力斯资本信托有限公司严格遵守香港特别行政区所有适用的法律、法规及行业守则，确保为客户提供合法、合规且值得信赖的信托服务。"
+  },
+  "legislation.intro": {
+    "zh": "根據《受託人條例》（第29章）第3A條，帝力斯資本信託有限公司必須遵守所規定的法定謹慎責任。我們履行條例第8部分第77(2)節的受託人執照要求，在政府庫務署存入了規定的存款。我們非常重視我們的法律責任與合規義務。",
+    "en": "Pursuant to Section 3A of the Trustee Ordinance (Cap. 29), Dilliz Capital Trust Limited must comply with the statutory duty of care as prescribed. We fulfill the trustee license requirements under Section 77(2) of Part 8 of the Ordinance by depositing the required amount with the Government Treasury. We take our legal responsibilities and compliance obligations very seriously.",
+    "cn": "根据《受托人条例》（第29章）第3A条，帝力斯资本信托有限公司必须遵守所规定的法定谨慎责任。我们履行条例第8部分第77(2)节的受托人执照要求，在政府库务署存入了规定的存款。我们非常重视我们的法律责任与合规义务。"
+  },
+  "legislation.section.ordinances": {
+    "zh": "香港法例",
+    "en": "Hong Kong Ordinances",
+    "cn": "香港法例"
+  },
+  "legislation.section.guidelines": {
+    "zh": "行業守則與指引",
+    "en": "Industry Guidelines",
+    "cn": "行业守则与指引"
+  },
+  "legislation.section.others": {
+    "zh": "其他參考",
+    "en": "Other References",
+    "cn": "其他参考"
+  },
+  "legislation.chapter.prefix": {
+    "zh": "第",
+    "en": "Cap.",
+    "cn": "第"
+  },
+  "legislation.chapter.suffix": {
+    "zh": "章",
+    "en": "",
+    "cn": "章"
+  },
+  "disclaimer.title": {
+    "zh": "免責聲明與風險披露",
+    "en": "Disclaimer & Risk Disclosure",
+    "cn": "免责声明与风险披露"
+  },
+  "disclaimer.subtitle": {
+    "zh": "DILLIZ CAPITAL TRUST LIMITED · 帝力斯資本信託有限公司",
+    "en": "DILLIZ CAPITAL TRUST LIMITED",
+    "cn": "DILLIZ CAPITAL TRUST LIMITED · 帝力斯资本信托有限公司"
+  },
+  "disclaimer.s1.title": {
+    "zh": "免責聲明",
+    "en": "Disclaimer",
+    "cn": "免责声明"
+  },
+  "disclaimer.s1.p1": {
+    "zh": "本網站所載資料僅供一般參考用途，不構成任何法律、稅務、投資、財務或其他專業建議，亦不構成任何要約、招攬或推薦。",
+    "en": "The information contained on this website is for general reference purposes only and does not constitute any legal, tax, investment, financial or other professional advice, nor does it constitute any offer, solicitation or recommendation.",
+    "cn": "本网站所载资料仅供一般参考用途，不构成任何法律、税务、投资、财务或其他专业建议，亦不构成任何要约、招揽或推荐。"
+  },
+  "disclaimer.s1.p2": {
+    "zh": "帝力斯資本信託有限公司（「本公司」）已盡合理努力確保本網站所載資料的準確性，但不對其完整性、準確性或時效性作出任何明示或暗示的保證或陳述。本公司保留隨時修改、更新或刪除本網站任何內容的權利，恕不另行通知。",
+    "en": "Dilliz Capital Trust Limited (the \"Company\") has made reasonable efforts to ensure the accuracy of the information on this website, but makes no express or implied warranty or representation as to its completeness, accuracy or timeliness. The Company reserves the right to modify, update or delete any content on this website at any time without prior notice.",
+    "cn": "帝力斯资本信托有限公司（「本公司」）已尽合理努力确保本网站所载资料的准确性，但不对其完整性、准确性或时效性作出任何明示或暗示的保证或陈述。本公司保留随时修改、更新或删除本网站任何内容的权利，恕不另行通知。"
+  },
+  "disclaimer.s1.p3": {
+    "zh": "本網站可能包含指向第三方網站的連結，該等連結僅為方便瀏覽而設。本公司對任何第三方網站的內容、隱私政策或做法不承擔任何責任，亦不對因使用或依賴該等網站而產生的任何損失或損害承擔責任。",
+    "en": "This website may contain links to third-party websites, which are provided for convenience only. The Company assumes no responsibility for the content, privacy policies or practices of any third-party websites, nor shall it be liable for any loss or damage arising from the use of or reliance on such websites.",
+    "cn": "本网站可能包含指向第三方网站的连结，该等连结仅为方便浏览而设。本公司对任何第三方网站的内容、隐私政策或做法不承担任何责任，亦不对因使用或依赖该等网站而产生的任何损失或损害承担责任。"
+  },
+  "disclaimer.s1.p4": {
+    "zh": "在法律允許的最大範圍內，本公司及其董事、職員、僱員和代理人不對因使用或無法使用本網站或依賴本網站所載資料而引起的任何直接、間接、附帶、特殊或後果性損失或損害承擔任何責任。",
+    "en": "To the maximum extent permitted by law, the Company and its directors, officers, employees and agents shall not be liable for any direct, indirect, incidental, special or consequential loss or damage arising from the use of or inability to use this website or reliance on the information contained herein.",
+    "cn": "在法律允许的最大范围内，本公司及其董事、职员、雇员和代理人不对因使用或无法使用本网站或依赖本网站所载资料而引起的任何直接、间接、附带、特殊或后果性损失或损害承担任何责任。"
+  },
+  "disclaimer.s2.title": {
+    "zh": "風險披露",
+    "en": "Risk Disclosure",
+    "cn": "风险披露"
+  },
+  "disclaimer.s2.p1": {
+    "zh": "信託服務涉及多種風險，包括但不限於市場風險、流動性風險、信用風險、匯率風險、利率風險及法律風險。信託資產的價值可能會因市場波動而上升或下降，過往表現並不代表將來的回報。",
+    "en": "Trust services involve various risks, including but not limited to market risk, liquidity risk, credit risk, exchange rate risk, interest rate risk and legal risk. The value of trust assets may rise or fall due to market fluctuations, and past performance is not indicative of future returns.",
+    "cn": "信托服务涉及多种风险，包括但不限于市场风险、流动性风险、信用风险、汇率风险、利率风险及法律风险。信托资产的价值可能会因市场波动而上升或下降，过往表现并不代表将来的回报。"
+  },
+  "disclaimer.s2.p2": {
+    "zh": "客戶在作出任何信託安排前，應充分了解相關風險，並根據自身的財務狀況、投資目標及風險承受能力作出獨立判斷。本公司強烈建議客戶在作出決定前諮詢獨立的法律、稅務及財務顧問。",
+    "en": "Clients should fully understand the relevant risks before making any trust arrangements and make independent judgments based on their own financial situation, investment objectives and risk tolerance. The Company strongly recommends that clients consult independent legal, tax and financial advisors before making decisions.",
+    "cn": "客户在作出任何信托安排前，应充分了解相关风险，并根据自身的财务状况、投资目标及风险承受能力作出独立判断。本公司强烈建议客户在作出决定前咨询独立的法律、税务及财务顾问。"
+  },
+  "disclaimer.s2.p3": {
+    "zh": "跨境信託安排可能受到不同司法管轄區的法律及稅務規定影響。不同國家或地區的法律變更、政策調整或監管行動可能對信託資產的管理及分配產生重大影響。",
+    "en": "Cross-border trust arrangements may be subject to the laws and tax regulations of different jurisdictions. Changes in laws, policy adjustments or regulatory actions in different countries or regions may have a material impact on the management and distribution of trust assets.",
+    "cn": "跨境信托安排可能受到不同司法管辖区的法律及税务规定影响。不同国家或地区的法律变更、政策调整或监管行动可能对信托资产的管理及分配产生重大影响。"
+  },
+  "disclaimer.s2.p4": {
+    "zh": "本公司不保證任何信託安排能夠完全達到客戶的預期目標。信託的設立、管理及終止均須遵守適用法律，且可能受到法院命令或監管機構指令的影響。",
+    "en": "The Company does not guarantee that any trust arrangement will fully achieve the client's expected objectives. The establishment, management and termination of trusts are subject to applicable laws and may be affected by court orders or regulatory directives.",
+    "cn": "本公司不保证任何信托安排能够完全达到客户的预期目标。信托的设立、管理及终止均须遵守适用法律，且可能受到法院命令或监管机构指令的影响。"
+  },
+  "disclaimer.s3.title": {
+    "zh": "反洗錢聲明",
+    "en": "Anti-Money Laundering Statement",
+    "cn": "反洗钱声明"
+  },
+  "disclaimer.s3.p1": {
+    "zh": "本公司嚴格遵守《打擊洗錢及恐怖分子資金籌集條例》（第615章）及相關法規，對所有客戶執行客戶盡職審查（CDD）及持續監察。本公司有權拒絕任何未能通過合規審查的申請，或終止任何涉嫌違反反洗錢規定的業務關係。",
+    "en": "The Company strictly complies with the Anti-Money Laundering and Counter-Terrorist Financing Ordinance (Cap. 615) and related regulations, conducting Customer Due Diligence (CDD) and ongoing monitoring for all clients. The Company reserves the right to reject any application that fails compliance checks or terminate any business relationship suspected of violating AML regulations.",
+    "cn": "本公司严格遵守《打击洗钱及恐怖分子资金筹集条例》（第615章）及相关法规，对所有客户执行客户尽职审查（CDD）及持续监察。本公司有权拒绝任何未能通过合规审查的申请，或终止任何涉嫌违反反洗钱规定的业务关系。"
+  },
+  "disclaimer.s4.title": {
+    "zh": "知識產權",
+    "en": "Intellectual Property",
+    "cn": "知识产权"
+  },
+  "disclaimer.s4.p1": {
+    "zh": "本網站的所有內容，包括但不限於文字、圖片、標誌、設計、軟件及其排列方式，均為帝力斯資本信託有限公司的財產或已獲授權使用，受香港及國際知識產權法律保護。未經本公司事先書面同意，不得以任何方式複製、修改、分發或使用本網站的任何內容。",
+    "en": "All content on this website, including but not limited to text, images, logos, designs, software and their arrangement, is the property of Dilliz Capital Trust Limited or used under license, and is protected by Hong Kong and international intellectual property laws. No content on this website may be reproduced, modified, distributed or used in any manner without the prior written consent of the Company.",
+    "cn": "本网站的所有内容，包括但不限于文字、图片、标志、设计、软件及其排列方式，均为帝力斯资本信托有限公司的财产或已获授权使用，受香港及国际知识产权法律保护。未经本公司事先书面同意，不得以任何方式复制、修改、分发或使用本网站的任何内容。"
+  },
+  "disclaimer.s5.title": {
+    "zh": "適用法律與司法管轄權",
+    "en": "Governing Law & Jurisdiction",
+    "cn": "适用法律与司法管辖权"
+  },
+  "disclaimer.s5.p1": {
+    "zh": "本免責聲明及風險披露受香港特別行政區法律管轄並按其解釋。因本網站或本聲明引起之任何爭議，應提交香港法院專屬管轄。",
+    "en": "This Disclaimer and Risk Disclosure shall be governed by and construed in accordance with the laws of the Hong Kong Special Administrative Region. Any disputes arising from this website or this statement shall be subject to the exclusive jurisdiction of the courts of Hong Kong.",
+    "cn": "本免责声明及风险披露受香港特别行政区法律管辖并按其解释。因本网站或本声明引起之任何争议，应提交香港法院专属管辖。"
+  },
+  "about.compliance.title": {
+    "zh": "合規與監管",
+    "en": "Compliance & Regulation",
+    "cn": "合规与监管"
+  },
+  "about.compliance.desc": {
+    "zh": "帝力斯資本信託有限公司持有香港信託或公司服務提供者（TCSP）牌照（牌照號碼：TC010540），嚴格遵守《受託人條例》（第29章）、《打擊洗錢及恐怖分子資金籌集條例》（第615章）等香港法例及行業守則。我們對所有客戶執行客戶盡職審查（CDD），並持續監察以確保合規。",
+    "en": "Dilliz Capital Trust Limited holds a Hong Kong Trust or Company Service Provider (TCSP) license (License No. TC010540) and strictly complies with the Trustee Ordinance (Cap. 29), the Anti-Money Laundering and Counter-Terrorist Financing Ordinance (Cap. 615), and other applicable Hong Kong laws and industry guidelines. We conduct Customer Due Diligence (CDD) for all clients and maintain ongoing monitoring to ensure compliance.",
+    "cn": "帝力斯资本信托有限公司持有香港信托或公司服务提供者（TCSP）牌照（牌照号码：TC010540），严格遵守《受托人条例》（第29章）、《打击洗钱及恐怖分子资金筹集条例》（第615章）等香港法例及行业守则。我们对所有客户执行客户尽职审查（CDD），并持续监察以确保合规。"
+  },
+  "about.compliance.link": {
+    "zh": "查看完整法規清單",
+    "en": "View Full Legislation List",
+    "cn": "查看完整法规清单"
   }
 }

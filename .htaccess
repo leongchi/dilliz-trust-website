@@ -8,11 +8,27 @@
   RewriteRule . /index.html [L]
 </IfModule>
 
-# Prevent caching of content.json so text edits take effect immediately
+# Force NO CACHE on ALL HTML pages - ensures browser always loads latest JS/CSS references
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# Force NO CACHE on content.json
 <IfModule mod_headers.c>
   <FilesMatch "content\.json$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
     Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# JS and CSS use hashed filenames - short cache to expire old files fast
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=3600"
   </FilesMatch>
 </IfModule>
