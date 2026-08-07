@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Serif+TC:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-DDT4bKgr.js"></script>
+    <script type="module" crossorigin src="/assets/index-BfpNeSCt.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-IiSlDvfS.css">
     <script src="/__manus__/debug-collector.js" defer></script>
   </head>
@@ -108,42 +108,47 @@ Error generating stack: `+l.message+`
 </html>
 <script>
 (function(){
-  var fixes = {
-    '定存門檻':'資產金額','定存期限':'期限',
-    '定存基本收益保障':'固定收益信託回報','定存基本收益安排':'固定收益信託回報',
-    '尊享定存特惠收益率':'尊享固定收益優先議價服務','尊享定存優先議價服務':'尊享固定收益優先議價服務',
-    '尊享鎖息收益優先議價服務':'尊享固定收益優先議價服務',
-    '定存/信託資產直接授信':'信託資產直接授信','信託/定存資產直接聯動':'信託資產直接聯動',
-    '預計定存/信託規模':'預計信託資產規模','定存資產授信':'信託資產授信',
-    '定存資產直接授信':'信託資產直接授信','專屬定存與信託會員計劃':'專屬固定收益信託會員計劃',
-    '四大定存與信託會員計劃':'四大固定收益信託會員計劃','定存美金10,000起':'美金10,000起',
-    '信託或定存相關':'信託或固定收益安排相關','資產保護及定存等服務':'資產保護及固定收益信託等服務',
-    '金融定存均存在':'固定收益信託均存在','美金定存年化':'美金固定收益年化',
-    '限時定存特惠':'限時固定收益特惠',
-    '定存门槛':'资产金额','定存期限':'期限',
-    '定存基本收益保障':'固定收益信托回报',
-    '尊享定存特惠收益率':'尊享固定收益优先议价服务',
-    '尊享锁息收益优先议价服务':'尊享固定收益优先议价服务',
-    '定存/信托资产直接授信':'信托资产直接授信','信托/定存资产直接联动':'信托资产直接联动',
-    '预计定存/信托规模':'预计信托资产规模','定存资产授信':'信托资产授信',
-    '定存资产直接授信':'信托资产直接授信','专属定存与信托会员计划':'专属固定收益信托会员计划',
-    '四大定存与信托会员计划':'四大固定收益信托会员计划','定存美金10,000起':'美金10,000起',
-    '信托或定存相关':'信托或固定收益安排相关','资产保护及定存等服务':'资产保护及固定收益信托等服务',
-    '金融定存均存在':'固定收益信托均存在','美金定存年化':'美金固定收益年化',
-    '限时定存特惠':'限时固定收益特惠',
-    'Fixed Deposit Threshold':'Asset Amount','Fixed Deposit Tenor':'Tenor',
-    'Basic Fixed Deposit Return':'Fixed Income Trust Return',
-    'Premium Fixed Deposit Rate':'Premium Fixed Income Priority Negotiation Service',
-    'Premium Lock-in Yield Priority Negotiation Service':'Premium Fixed Income Priority Negotiation Service',
-    '$10,000+ USD Fixed Deposit':'From USD 10,000',
-    'Exclusive Trust & Deposit Plans':'Exclusive Fixed Income Trust Membership Plans',
-    'USD Fixed Deposit':'USD Fixed Income Trust',
-    'fixed deposit':'fixed income trust','Fixed Deposit':'Fixed Income Trust'
-  };
-  function f(n){if(n.nodeType===3){var t=n.textContent;for(var o in fixes){if(t.indexOf(o)!==-1)t=t.split(o).join(fixes[o]);}if(t!==n.textContent)n.textContent=t;}else if(n.nodeType===1&&n.childNodes){for(var i=0;i<n.childNodes.length;i++)f(n.childNodes[i]);}}
-  function r(){f(document.body);}
-  var ob=new MutationObserver(function(){r();});
-  function init(){ob.observe(document.body,{childList:true,subtree:true,characterData:true});setTimeout(r,300);setTimeout(r,1000);setTimeout(r,2500);}
-  if(document.body)init();else document.addEventListener('DOMContentLoaded',init);
+var F={
+'定存門檻':'資產金額','定存期限':'期限',
+'定存基本收益保障':'固定收益信託回報','定存基本收益安排':'固定收益信託回報',
+'固定收益信託基本回報安排':'固定收益信託回報',
+'尊享定存特惠收益率':'尊享固定收益優先議價服務','尊享定存優先議價服務':'尊享固定收益優先議價服務',
+'尊享鎖息收益優先議價服務':'尊享固定收益優先議價服務',
+'定存/信託資產直接授信':'信託資產直接授信','信託/定存資產直接聯動':'信託資產直接聯動',
+'預計定存/信託規模':'預計信託資產規模','定存資產授信':'信託資產授信',
+'定存資產直接授信':'信託資產直接授信','專屬定存與信託會員計劃':'專屬固定收益信託會員計劃',
+'四大定存與信託會員計劃':'四大固定收益信託會員計劃','定存美金10,000起':'美金10,000起',
+'信託或定存相關':'信託或固定收益安排相關','資產保護及定存等服務':'資產保護及固定收益信託等服務',
+'金融定存均存在':'固定收益信託均存在','美金定存年化':'美金固定收益年化',
+'限時定存特惠':'限時固定收益特惠',
+'定存门槛':'资产金额',
+'定存基本收益保障':'固定收益信托回报',
+'固定收益信托基本回报安排':'固定收益信托回报',
+'尊享定存特惠收益率':'尊享固定收益优先议价服务',
+'尊享锁息收益优先议价服务':'尊享固定收益优先议价服务',
+'定存/信托资产直接授信':'信托资产直接授信','信托/定存资产直接联动':'信托资产直接联动',
+'预计定存/信托规模':'预计信托资产规模','定存资产授信':'信托资产授信',
+'定存资产直接授信':'信托资产直接授信','专属定存与信托会员计划':'专属固定收益信托会员计划',
+'四大定存与信托会员计划':'四大固定收益信托会员计划','定存美金10,000起':'美金10,000起',
+'信托或定存相关':'信托或固定收益安排相关','资产保护及定存等服务':'资产保护及固定收益信托等服务',
+'金融定存均存在':'固定收益信托均存在','美金定存年化':'美金固定收益年化',
+'限时定存特惠':'限时固定收益特惠',
+'Fixed Deposit Threshold':'Asset Amount','Fixed Deposit Tenor':'Tenor',
+'Basic Fixed Deposit Return':'Fixed Income Trust Return',
+'Basic Fixed Income Trust Return Arrangement':'Fixed Income Trust Return',
+'Premium Fixed Deposit Rate':'Premium Fixed Income Priority Negotiation Service',
+'Premium Lock-in Yield Priority Negotiation Service':'Premium Fixed Income Priority Negotiation Service',
+'$10,000+ USD Fixed Deposit':'From USD 10,000',
+'Exclusive Trust & Deposit Plans':'Exclusive Fixed Income Trust Membership Plans',
+'USD Fixed Deposit':'USD Fixed Income Trust',
+'fixed deposit':'fixed income trust','Fixed Deposit':'Fixed Income Trust'
+};
+function w(n){if(n.nodeType===3){var t=n.textContent,o=t;for(var k in F){while(t.indexOf(k)!==-1)t=t.replace(k,F[k]);}if(t!==o)n.textContent=t;}else if(n.childNodes){for(var i=0;i<n.childNodes.length;i++)w(n.childNodes[i]);}}
+function R(){if(document.body)w(document.body);}
+var iv=setInterval(R,200);
+setTimeout(function(){clearInterval(iv);iv=setInterval(R,2000);},10000);
+setTimeout(function(){clearInterval(iv);},60000);
+if(document.body){new MutationObserver(R).observe(document.body,{childList:true,subtree:true});}
+else document.addEventListener('DOMContentLoaded',function(){new MutationObserver(R).observe(document.body,{childList:true,subtree:true});});
 })();
 </script>
