@@ -236,9 +236,9 @@ export default function Layout({ children }: LayoutProps) {
       {/* 官方頁尾 (Footer) */}
       <footer className="bg-[#141414] text-slate-500 py-12 border-t border-white/5 text-xs shrink-0">
         {/* Risk Disclosure Banner */}
-        <div className="max-w-7xl mx-auto px-6 mb-8">
-          <div className="border border-amber-700/30 bg-amber-950/20 rounded-lg px-5 py-3">
-            <p className="text-[11px] md:text-xs text-amber-200/80 font-light leading-relaxed">
+        <div className="max-w-7xl mx-auto px-6 mb-6">
+          <div>
+            <p className="text-[11px] md:text-xs text-slate-500 font-light leading-relaxed">
               {t("inline.layout.risk_disclosure", lang)}
             </p>
           </div>
