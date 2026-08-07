@@ -1,6 +1,11 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/dillizca/public_html/
-    - /bin/cp -R * $DEPLOYPATH
+    - export DEPLOYPATH=/home/dilldvbi/public_html/
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH 2>/dev/null; true
+    - /bin/cp -R manus-storage $DEPLOYPATH 2>/dev/null; true
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp 404.html $DEPLOYPATH
+    - /bin/cp content.json $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
