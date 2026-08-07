@@ -165,9 +165,9 @@
     "cn": "智慧规划，合规增值。我们的专业税务与法律顾问团队，为您量身定制跨国资产信托架构，在合规合法的框架下，最大程度降低全球资产所得税、遗产税等税务负担，实现资产的高效增值。"
   },
   "services.trust.feature1": {
-    "zh": "移民/海外投資前置稅務規劃與申報優化",
-    "en": "Pre-immigration/offshore investment tax planning",
-    "cn": "移民/海外投资前置税务规划与申报优化"
+    "zh": "移民/海外資產前置稅務規劃與申報優化",
+    "en": "Pre-immigration/offshore wealth tax planning",
+    "cn": "移民/海外资产前置税务规划与申报优化"
   },
   "services.trust.feature2": {
     "zh": "利用香港無遺產稅與低稅率優勢進行資產重組",
@@ -185,9 +185,9 @@
     "cn": "全球银行户口开设服务"
   },
   "services.deposit.desc": {
-    "zh": "連接全球，佈局世界。協助個人及企業在全球金融中心設立專屬銀行賬戶，提供更廣闊的投資管道、更靈活的資金調配以及極致的隱私保護。",
-    "en": "Connect globally, lay out the world. Assist individuals and enterprises in setting up dedicated bank accounts in global financial centers, providing wider investment channels, more flexible capital allocation, and ultimate privacy protection.",
-    "cn": "连接全球，布局世界。协助个人及企业在全球金融中心设立专属银行账户，提供更广阔的投资管道、更灵活的资金调配以及极致的隐私保护。"
+    "zh": "連接全球，佈局世界。協助個人及企業在全球金融中心設立專屬銀行賬戶，提供更廣闊的理財管道、更靈活的資金調配以及極致的隱私保護。",
+    "en": "Connect globally, lay out the world. Assist individuals and enterprises in setting up dedicated bank accounts in global financial centers, providing wider wealth management channels, more flexible capital allocation, and ultimate privacy protection.",
+    "cn": "连接全球，布局世界。协助个人及企业在全球金融中心设立专属银行账户，提供更广阔的理财管道、更灵活的资金调配以及极致的隐私保护。"
   },
   "services.deposit.feature1": {
     "zh": "全球銀行開戶快速通道",
@@ -290,9 +290,9 @@
     "cn": "创业成功，却因债务风险未建个人资产隔离"
   },
   "cases.c1.desc": {
-    "zh": "王先生經營製造業企業多年，公司規模迅速擴張。然而，在一次市場波動中，公司面臨巨額債務與法律糾紛，由於早期未做好資產隔離規劃，個人名下房產和投資資產面臨被迫索風險。",
-    "en": "Mr. Wang has run a manufacturing enterprise for many years, expanding rapidly. However, during a market fluctuation, the company faced huge debts and legal disputes. Due to a lack of early asset isolation planning, his personal properties and investment assets faced foreclosure risks.",
-    "cn": "王先生经营制造业企业多年，公司规模迅速扩张。然而，在一次市场波动中，公司面临巨额债务与法律纠纷，由于早期未做好资产隔离规划，个人名下房产和投资资产面临被迫索风险。"
+    "zh": "王先生經營製造業企業多年，公司規模迅速擴張。然而，在一次市場波動中，公司面臨巨額債務與法律糾紛，由於早期未做好資產隔離規劃，個人名下房產和個人資產面臨被迫追索風險。",
+    "en": "Mr. Wang has run a manufacturing enterprise for many years, expanding rapidly. However, during a market fluctuation, the company faced huge debts and legal disputes. Due to a lack of early asset isolation planning, his personal properties and personal assets faced foreclosure risks.",
+    "cn": "王先生经营制造业企业多年，公司规模迅速扩张。然而，在一次市场波动中，公司面临巨额债务与法律纠纷，由于早期未做好资产隔离规划，个人名下房产和个人资产面临被迫追索风险。"
   },
   "cases.c1.sol1": {
     "zh": "建立控股架構，區分個人與企業責任",
@@ -320,9 +320,9 @@
     "cn": "婚姻变动，财富面临重新分配"
   },
   "cases.c2.desc": {
-    "zh": "陳女士為高淨值投資人，婚姻關係發生變化時，才發現大部分資產屬於夫妻共同財產，可能面臨高比例分割。",
-    "en": "Ms. Chen, a high-net-worth investor, realized when her marriage changed that most of her assets were joint marital property, facing a high risk of being split.",
-    "cn": "陈女士为高净值投资人，婚姻关系发生变化时，才发现大部分资产属于夫妻共同财产，可能面临高比例分割。"
+    "zh": "陳女士為高淨值人士，婚姻關係發生變化時，才發現大部分資產屬於夫妻共同財產，可能面臨高比例分割。",
+    "en": "Ms. Chen, a high-net-worth individual, realized when her marriage changed that most of her assets were joint marital property, facing a high risk of being split.",
+    "cn": "陈女士为高净值人士，婚姻关系发生变化时，才发现大部分资产属于夫妻共同财产，可能面临高比例分割。"
   },
   "cases.c2.sol1": {
     "zh": "提前設立信託持有部分資產",
@@ -355,9 +355,9 @@
     "cn": "退休规划不足，晚年生活品质面临风险"
   },
   "cases.c3.desc": {
-    "zh": "陳女士事業成功、資產豐厚，卻將多數資金投入高波動投資與家族事業，未完整規劃退休現金流與醫療保障。當年齡漸長、健康出現變化時，才發現資產雖多，卻缺乏穩定可支配收入來源，養老生活可能受到影響。",
-    "en": "Ms. Chen is successful with abundant assets, but put most funds into high-volatility investments and family business, lacking structured retirement cash flow and medical coverage. As she aged and health changed, she realized she lacked stable disposable income, risking her retirement quality.",
-    "cn": "陈女士事业成功、资产丰厚，却将多数资金投入高波动投资与家族事业，未完整规划退休现金流与医疗保障。当年龄渐长、健康出现变化时，才发现资产虽多，却缺乏稳定可支配收入来源，养老生活可能受到影响。"
+    "zh": "陳女士事業成功、資產豐厚，卻將多數資金投入高波動資產配置與家族事業，未完整規劃退休現金流與醫療保障。當年齡漸長、健康出現變化時，才發現資產雖多，卻缺乏穩定可支配收入來源，養老生活可能受到影響。",
+    "en": "Ms. Chen is successful with abundant assets, but put most funds into high-volatility asset allocations and family business, lacking structured retirement cash flow and medical coverage. As she aged and health changed, she realized she lacked stable disposable income, risking her retirement quality.",
+    "cn": "陈女士事业成功、资产丰厚，却将多数资金投入高波动资产配置与家族事业，未完整规划退休现金流与医疗保障。当年龄渐长、健康出现变化时，才发现资产虽多，却缺乏稳定可支配收入来源，养老生活可能受到影响。"
   },
   "cases.c3.sol1": {
     "zh": "提前設立退休專屬信託，鎖定穩定現金流",
@@ -735,9 +735,9 @@
     "cn": "Q8：信托公司的客户经理或你们的专业团队会管理我帐户中的资产吗？"
   },
   "faq.a8": {
-    "zh": "委託人如需要專業或投資建議，絕對有權自行聘請律師、會計師或持牌投資顧問等獨立專業人士。帝力斯信託不提供投資建議。我們的客戶經理僅以信託行政人員身份，嚴格按照您的指示行事。",
-    "en": "Settlors have the absolute right to hire independent professionals such as lawyers, accountants, or licensed investment advisors if they require professional or investment advice. DILLIZ Trust does not provide investment advice. Our relationship managers act strictly as trust administrators and execute orders in accordance with your explicit instructions.",
-    "cn": "委托人如需要专业或投资建议，绝对有权自行聘请律师、会计师或持牌投资顾问等独立专业人士。帝力斯信托不提供投资建议。我们的客户经理仅以信托行政人员身份，严格按照您的指示行事。"
+    "zh": "委託人如需要專業建議，絕對有權自行聘請律師、會計師或持牌顧問等獨立專業人士。帝力斯信託不提供任何財務建議。我們的客戶經理僅以信託行政人員身份，嚴格按照您的指示行事。",
+    "en": "Settlors have the absolute right to hire independent professionals such as lawyers, accountants, or licensed financial advisors if they require professional advice. DILLIZ Trust does not provide financial advice. Our relationship managers act strictly as trust administrators and execute orders in accordance with your explicit instructions.",
+    "cn": "委托人如需要专业建议，绝对有权自行聘请律师、会计师或持牌顾问等独立专业人士。帝力斯信托不提供任何财务建议。我们的客户经理仅以信托行政人员身份，严格按照您的指示行事。"
   },
   "faq.q9": {
     "zh": "Q9: 經營信託業務需要特別的證照嗎？",
@@ -950,9 +950,9 @@
     "cn": "免责声明"
   },
   "footer.disclaimer.text": {
-    "zh": "本網站所載之所有資訊、案例分析與產品描述僅供一般參考之用，並不構成任何法律、稅務、投資、財務或其他專業建議。信託設立、資產託管及全球銀行戶口開設服務涉及複雜的跨境法律與稅務規範，客戶在做出任何決策前，應尋求獨立的法律與稅務專家諮詢。DILLIZ 亦不對因使用本網站資訊而產生的任何損失承擔責任。",
-    "en": "All information, case studies, and product descriptions contained on this website are for general reference purposes only and do not constitute legal, tax, investment, financial, or other professional advice. Trust establishment, asset custody, and global bank account opening involve complex cross-border legal and tax regulations. Clients should seek independent advice from legal and tax experts before making any decisions. DILLIZ assumes no liability for any loss arising from the use of the information on this website.",
-    "cn": "本网站所载之所有资讯、案例分析与产品描述仅供一般参考之用，并不构成任何法律、税务、投资、财务或其他专业建议。信托设立、资产托管及全球银行户口开设服务涉及复杂的跨境法律与税务规范，客户在做出任何决策前，应寻求独立的法律与税务专家咨询。DILLIZ 亦不对因使用本网站资讯而产生的任何损失承担责任。"
+    "zh": "本網站所載之所有資訊、案例分析與產品描述僅供一般參考之用，並不構成任何法律、稅務、財務或其他專業建議。信託設立、資產託管及全球銀行戶口開設服務涉及複雜的跨境法律與稅務規範，客戶在做出任何決策前，應尋求獨立的法律與稅務專家諮詢。DILLIZ 亦不對因使用本網站資訊而產生的任何損失承擔責任。",
+    "en": "All information, case studies, and product descriptions contained on this website are for general reference purposes only and do not constitute legal, tax, financial, or other professional advice. Trust establishment, asset custody, and global bank account opening involve complex cross-border legal and tax regulations. Clients should seek independent advice from legal and tax experts before making any decisions. DILLIZ assumes no liability for any loss arising from the use of the information on this website.",
+    "cn": "本网站所载之所有资讯、案例分析与产品描述仅供一般参考之用，并不构成任何法律、税务、财务或其他专业建议。信托设立、资产托管及全球银行户口开设服务涉及复杂的跨境法律与税务规范，客户在做出任何决策前，应寻求独立的法律与税务专家咨询。DILLIZ 亦不对因使用本网站资讯而产生的任何损失承担责任。"
   },
   "footer.copyright": {
     "zh": "© 2026 帝力斯資本信託有限公司 (DilliZ Capital Trust Limited). 版權所有。香港持牌信託服務公司 (TC010540)",
@@ -1450,9 +1450,9 @@
     "cn": "欢迎访问帝力斯资本信托有限公司（以下简称「本公司」或「我们」）官方网站。本公司是一家在香港合法注册并持有信托或公司服务提供者牌照（牌照号码：TC010540）的持牌机构。访问、浏览或使用本网站，即表示您已阅读、理解并同意接受本条款之约束。"
   },
   "inline.terms.4": {
-    "zh": "本網站所載之所有資訊及服務均受香港特別行政區法律管轄。本網站的內容僅供一般參考之用，不構成任何法律、稅務、財務、投資或專業建議。",
-    "en": "All information and services on this website are governed by the laws of the Hong Kong Special Administrative Region. The content of this website is for general informational purposes only and does not constitute legal, tax, financial, investment, or professional advice.",
-    "cn": "本网站所载之所有信息及服务均受香港特别行政区法律管辖。本网站的内容仅供一般参考之用，不构成任何法律、税务、财务、投资或专业建议。"
+    "zh": "本網站所載之所有資訊及服務均受香港特別行政區法律管轄。本網站的內容僅供一般參考之用，不構成任何法律、稅務、財務或其他專業建議。",
+    "en": "All information and services on this website are governed by the laws of the Hong Kong Special Administrative Region. The content of this website is for general informational purposes only and does not constitute legal, tax, financial, or other professional advice.",
+    "cn": "本网站所载之所有信息及服务均受香港特别行政区法律管辖。本网站的内容仅供一般参考之用，不构成任何法律、税务、财务或其他专业建议。"
   },
   "inline.terms.5": {
     "zh": "受託人職責與合規承諾",
@@ -1540,9 +1540,9 @@
     "cn": "隐私政策 (Privacy Policy)"
   },
   "inline.layout.6": {
-    "zh": "免責聲明：本網站所載資料僅供參考，不構成任何法律、稅務、投資或專業建議。信託服務由香港持牌信託服務公司帝力斯資本信託有限公司（牌照號碼：TC010540）依法提供。",
-    "en": "Disclaimer: The information contained in this website is for reference only and does not constitute any legal, tax, investment, or professional advice. Trust services are provided by Dilliz Capital Trust Limited (License No. TC010540).",
-    "cn": "免责声明：本网站所载资料仅供参考，不构成任何法律、税务、投资或专业建议。信托服务由香港持牌信托服务公司帝力斯资本信托有限公司（牌照号码：TC010540）依法提供。"
+    "zh": "免責聲明：本網站所載資料僅供參考，不構成任何法律、稅務、財務或專業建議。信託服務由香港持牌信託服務公司帝力斯資本信託有限公司（牌照號碼：TC010540）依法提供。",
+    "en": "Disclaimer: The information contained in this website is for reference only and does not constitute any legal, tax, financial, or professional advice. Trust services are provided by Dilliz Capital Trust Limited (License No. TC010540).",
+    "cn": "免责声明：本网站所载资料仅供参考，不构成任何法律、税务、财务或专业建议。信托服务由香港持牌信托服务公司帝力斯资本信托有限公司（牌照号码：TC010540）依法提供。"
   },
   "inline.layout.7": {
     "zh": "通知中心",
@@ -1620,9 +1620,9 @@
     "cn": "免责声明"
   },
   "disclaimer.s1.p1": {
-    "zh": "本網站所載資料僅供一般參考用途，不構成任何法律、稅務、投資、財務或其他專業建議，亦不構成任何要約、招攬或推薦。",
-    "en": "The information contained on this website is for general reference purposes only and does not constitute any legal, tax, investment, financial or other professional advice, nor does it constitute any offer, solicitation or recommendation.",
-    "cn": "本网站所载资料仅供一般参考用途，不构成任何法律、税务、投资、财务或其他专业建议，亦不构成任何要约、招揽或推荐。"
+    "zh": "本網站所載資料僅供一般參考用途，不構成任何法律、稅務、財務或其他專業建議，亦不構成任何要約、招攬或推薦。",
+    "en": "The information contained on this website is for general reference purposes only and does not constitute any legal, tax, financial or other professional advice, nor does it constitute any offer, solicitation or recommendation.",
+    "cn": "本网站所载资料仅供一般参考用途，不构成任何法律、税务、财务或其他专业建议，亦不构成任何要约、招揽或推荐。"
   },
   "disclaimer.s1.p2": {
     "zh": "帝力斯資本信託有限公司（「本公司」）已盡合理努力確保本網站所載資料的準確性，但不對其完整性、準確性或時效性作出任何明示或暗示的保證或陳述。本公司保留隨時修改、更新或刪除本網站任何內容的權利，恕不另行通知。",
@@ -1650,9 +1650,9 @@
     "cn": "信托服务涉及多种风险，包括但不限于市场风险、流动性风险、信用风险、汇率风险、利率风险及法律风险。信托资产的价值可能会因市场波动而上升或下降，过往表现并不代表将来的回报。"
   },
   "disclaimer.s2.p2": {
-    "zh": "客戶在作出任何信託安排前，應充分了解相關風險，並根據自身的財務狀況、投資目標及風險承受能力作出獨立判斷。本公司強烈建議客戶在作出決定前諮詢獨立的法律、稅務及財務顧問。",
-    "en": "Clients should fully understand the relevant risks before making any trust arrangements and make independent judgments based on their own financial situation, investment objectives and risk tolerance. The Company strongly recommends that clients consult independent legal, tax and financial advisors before making decisions.",
-    "cn": "客户在作出任何信托安排前，应充分了解相关风险，并根据自身的财务状况、投资目标及风险承受能力作出独立判断。本公司强烈建议客户在作出决定前咨询独立的法律、税务及财务顾问。"
+    "zh": "客戶在作出任何信託安排前，應充分了解相關風險，並根據自身的財務狀況、財務目標及風險承受能力作出獨立判斷。本公司強烈建議客戶在作出決定前諮詢獨立的法律、稅務及財務顧問。",
+    "en": "Clients should fully understand the relevant risks before making any trust arrangements and make independent judgments based on their own financial situation, financial objectives and risk tolerance. The Company strongly recommends that clients consult independent legal, tax and financial advisors before making decisions.",
+    "cn": "客户在作出任何信托安排前，应充分了解相关风险，并根据自身的财务状况、财务目标及风险承受能力作出独立判断。本公司强烈建议客户在作出决定前咨询独立的法律、税务及财务顾问。"
   },
   "disclaimer.s2.p3": {
     "zh": "跨境信託安排可能受到不同司法管轄區的法律及稅務規定影響。不同國家或地區的法律變更、政策調整或監管行動可能對信託資產的管理及分配產生重大影響。",
