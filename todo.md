@@ -8,7 +8,7 @@
 
 ## 正式同步及部署
 
-- [ ] 核對遠端 `main` 最新狀態並同步網站文件與快取設定。
+- [x] 核對遠端 `main` 最新狀態並同步網站文件與快取設定。
 - [ ] 重新建置網站並把 `dist/public/` 發佈至 `gh-pages`。
 - [ ] 在 cPanel 執行 Update from Remote 及 Deploy HEAD Commit。
 - [ ] 核對正式網站已載入新版本及最新快取設定。
