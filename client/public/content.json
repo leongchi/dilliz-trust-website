@@ -481,33 +481,33 @@
   },
   "membership.title": {
     "zh": "會員計劃",
-    "en": "Membership Plan",
+    "en": "Membership Plans",
     "cn": "会员计划"
   },
   "membership.subtitle": {
     "zh": "因為您，才值得擁有。量身定制的專屬信託權益與尊榮服務",
-    "en": "Because of you, it's worth having. Tailored exclusive trust rights and prestigious services",
-    "cn": "因为您，才值得拥有。量身定制的专属信托权益与尊荣服务"
+    "en": "Build A Trust with DILLIZ\nSHAPE THE FUTURE YOU DESERVE",
+    "cn": "因為您，才值得擁有 · 量身定制的专属信托权益与尊荣服务"
   },
   "membership.btn.select": {
     "zh": "立即申請預約",
-    "en": "Apply Now",
+    "en": "Book Consultation",
     "cn": "立即申请预约"
   },
   "membership.threshold": {
-    "zh": "資產金額",
-    "en": "Asset Amount",
-    "cn": "资产金额"
+    "zh": "固定收益門檻*",
+    "en": "Fixed Income Trust Threshold*",
+    "cn": "固定收益门槛*"
   },
   "membership.duration": {
-    "zh": "期限",
-    "en": "Fixed Income Trust Duration",
-    "cn": "期限"
+    "zh": "收益發放周期",
+    "en": "Distribution Cycle",
+    "cn": "收益发放周期"
   },
   "membership.offshore": {
-    "zh": "全球銀行戶口開設服務",
-    "en": "Global Bank Account Opening",
-    "cn": "全球银行户口开设服务"
+    "zh": "離岸賬戶配置",
+    "en": "Offshore Account Setup",
+    "cn": "离岸账户配置"
   },
   "membership.billpay": {
     "zh": "全球賬單支付",
@@ -516,18 +516,18 @@
   },
   "membership.customerservice": {
     "zh": "客戶服務",
-    "en": "Customer Service",
+    "en": "Client Service",
     "cn": "客户服务"
   },
   "membership.linkedcard": {
     "zh": "資產聯動信用卡",
-    "en": "Asset Link Credit Card",
+    "en": "Asset-linked Credit Card",
     "cn": "资产联动信用卡"
   },
   "membership.brochure.note": {
-    "zh": "如需了解詳情，請與資深客戶專員聯絡",
-    "en": "For details, please contact our senior relationship manager",
-    "cn": "如需了解详情，请与资深客户专员联络"
+    "zh": "本網站所展示之固定收益信託依據香港信託條例運作，非香港銀行存款，不受香港存款保障計劃保障。",
+    "en": "The Fixed Income Trust displayed on this website operates under the Hong Kong Trustee Ordinance. It is not a Hong Kong bank deposit and is not protected by the Deposit Protection Scheme.",
+    "cn": "本网站所展示之固定收益信托依据香港信托条例运作，非香港银行存款，不受香港存款保障计划保障。"
   },
   "membership.t1.name": {
     "zh": "基礎",
@@ -536,27 +536,27 @@
   },
   "membership.t1.threshold": {
     "zh": "美金10,000 +",
-    "en": "$10,000+ USD",
+    "en": "USD 10,000+",
     "cn": "美金10,000 +"
   },
   "membership.t1.duration": {
-    "zh": "12個月",
-    "en": "12 Months",
-    "cn": "12个月"
+    "zh": "每12個月",
+    "en": "Every 12 months",
+    "cn": "每12个月"
   },
   "membership.t1.offshore": {
-    "zh": "行政費",
-    "en": "Admin Fee",
-    "cn": "行政费"
+    "zh": "不適用",
+    "en": "Not applicable",
+    "cn": "不适用"
   },
   "membership.t1.billpay": {
     "zh": "不適用",
-    "en": "N/A",
+    "en": "Not applicable",
     "cn": "不适用"
   },
   "membership.t1.service": {
     "zh": "線上諮詢",
-    "en": "Online Chat",
+    "en": "Online consultation",
     "cn": "线上咨询"
   },
   "membership.t2.name": {
@@ -566,27 +566,27 @@
   },
   "membership.t2.threshold": {
     "zh": "美金50,000 +",
-    "en": "$50,000+ USD",
+    "en": "USD 50,000+",
     "cn": "美金50,000 +"
   },
   "membership.t2.duration": {
-    "zh": "6/12個月",
-    "en": "6 or 12 Months",
-    "cn": "6/12个月"
+    "zh": "每6個月",
+    "en": "Every 6 months",
+    "cn": "每6个月"
   },
   "membership.t2.offshore": {
     "zh": "行政費",
-    "en": "Admin Fee",
+    "en": "Admin fee applies",
     "cn": "行政费"
   },
   "membership.t2.billpay": {
     "zh": "1% 手續費",
-    "en": "1% Fee",
+    "en": "1% service fee",
     "cn": "1% 手续费"
   },
   "membership.t2.service": {
     "zh": "線上諮詢",
-    "en": "Online Chat",
+    "en": "Online consultation",
     "cn": "线上咨询"
   },
   "membership.t3.name": {
@@ -596,58 +596,58 @@
   },
   "membership.t3.threshold": {
     "zh": "美金200,000 +",
-    "en": "$200,000+ USD",
+    "en": "USD 200,000+",
     "cn": "美金200,000 +"
   },
   "membership.t3.duration": {
-    "zh": "3/6/9/12個月",
-    "en": "3/6/9/12 Months",
-    "cn": "3/6/9/12个月"
+    "zh": "每3個月",
+    "en": "Every 3 months",
+    "cn": "每3个月"
   },
   "membership.t3.offshore": {
-    "zh": "豁免行政費",
-    "en": "Waived Admin Fee",
-    "cn": "豁免行政费"
+    "zh": "行政費",
+    "en": "Admin fee applies",
+    "cn": "行政费"
   },
   "membership.t3.billpay": {
     "zh": "0.5% 手續費",
-    "en": "0.5% Fee",
+    "en": "0.5% service fee",
     "cn": "0.5% 手续费"
   },
   "membership.t3.service": {
     "zh": "專屬客服熱線",
-    "en": "Dedicated Hotline",
+    "en": "Dedicated service hotline",
     "cn": "专属客服热线"
   },
   "membership.t4.name": {
     "zh": "典藏",
-    "en": "Royal",
+    "en": "Elite",
     "cn": "典藏"
   },
   "membership.t4.threshold": {
-    "zh": "專員洽詢",
-    "en": "Contact Manager",
-    "cn": "专员洽询"
+    "zh": "專屬方案｜詳情請洽專員",
+    "en": "Bespoke plan — contact our specialist",
+    "cn": "专属方案｜详情请洽专员"
   },
   "membership.t4.duration": {
-    "zh": "靈活定制",
-    "en": "Bespoke",
-    "cn": "灵活定制"
+    "zh": "按方案定制",
+    "en": "Tailored schedule",
+    "cn": "按方案定制"
   },
   "membership.t4.offshore": {
-    "zh": "豁免並優先配置",
-    "en": "Waived & Priority",
-    "cn": "豁免并优先配置"
+    "zh": "優先配置",
+    "en": "Priority configuration",
+    "cn": "优先配置"
   },
   "membership.t4.billpay": {
     "zh": "特惠手續費",
-    "en": "Special Fee",
+    "en": "Preferential service fee",
     "cn": "特惠手续费"
   },
   "membership.t4.service": {
-    "zh": "資深客戶專員聯絡",
-    "en": "Senior Manager",
-    "cn": "资深客户专员联络"
+    "zh": "資深客戶專員對接",
+    "en": "Senior relationship specialist",
+    "cn": "资深客户专员对接"
   },
   "faq.title": {
     "zh": "常見問題與信託知識庫",
@@ -1231,88 +1231,88 @@
   },
   "inline.membership.0": {
     "zh": "信託賬戶設立基礎託管",
-    "en": "Basic trust account setup",
+    "en": "Basic trust account setup and custody",
     "cn": "信托账户设立基础托管"
   },
   "inline.membership.1": {
     "zh": "資產法律隔離保護",
-    "en": "Asset legal isolation",
+    "en": "Legal segregation of trust assets",
     "cn": "资产法律隔离保护"
   },
   "inline.membership.2": {
     "zh": "固定收益信託回報",
-    "en": "Basic deposit yield",
+    "en": "Fixed Income Trust returns",
     "cn": "固定收益信托回报"
   },
   "inline.membership.3": {
-    "zh": "標準已包括基礎所有權益",
-    "en": "Standard includes all Basic rights",
-    "cn": "标准已包括基础所有权益"
+    "zh": "完整包括基礎級別全部權益",
+    "en": "All Basic tier benefits",
+    "cn": "完整包括基础级别全部权益"
   },
   "inline.membership.4": {
-    "zh": "專屬全球銀行開戶快速通道",
-    "en": "Fast-track global bank opening",
-    "cn": "专属全球银行开户快速通道"
+    "zh": "全球銀行開戶快速通道",
+    "en": "Fast-track global bank account opening",
+    "cn": "全球银行开户快速通道"
   },
   "inline.membership.5": {
     "zh": "全球賬單託管代繳服務",
-    "en": "Global bill escrow services",
+    "en": "Global bill management and payment",
     "cn": "全球账单托管代缴服务"
   },
   "inline.membership.6": {
-    "zh": "尊享固定收益優先議價服務",
-    "en": "Premium Fixed Income Priority Negotiation Service",
-    "cn": "尊享固定收益优先议价服务"
+    "zh": "固定收益優先議價服務",
+    "en": "Priority Fixed Income Trust negotiation",
+    "cn": "固定收益优先议价服务"
   },
   "inline.membership.7": {
-    "zh": "尊享已包括標準所有權益",
-    "en": "Premium includes all Standard rights",
-    "cn": "尊享已包括标准所有权益"
+    "zh": "完整包括標準級別全部權益",
+    "en": "All Standard tier benefits",
+    "cn": "完整包括标准级别全部权益"
   },
   "inline.membership.8": {
-    "zh": "完全豁免全球銀行戶口開設行政費",
-    "en": "Waived global bank account opening admin fees",
-    "cn": "完全豁免全球银行户口开设行政费"
+    "zh": "全球銀行戶口開設行政費全免",
+    "en": "Bank account opening admin fee waiver",
+    "cn": "全球银行账户开设行政费全免"
   },
   "inline.membership.9": {
-    "zh": "資產聯動信用卡授信",
-    "en": "Asset Link Credit Card",
-    "cn": "资产联动信用卡授信"
+    "zh": "資產聯動信用卡專屬授信安排",
+    "en": "Dedicated Asset-linked Credit Card facility",
+    "cn": "资产联动信用卡专属授信安排"
   },
   "inline.membership.10": {
-    "zh": "專屬客戶經理（辦公時間）",
-    "en": "Dedicated relationship manager (Office Hours)",
-    "cn": "专属客户经理（办公时间）"
+    "zh": "專屬客戶經理於辦公時間跟進",
+    "en": "Relationship manager during office hours",
+    "cn": "专属客户经理于办公时间跟进"
   },
   "inline.membership.11": {
-    "zh": "定制化信託受益人條款",
-    "en": "Customized trust clauses",
-    "cn": "定制化信托受益人条款"
+    "zh": "按需要定制信託受益人條款",
+    "en": "Tailored trust beneficiary provisions",
+    "cn": "按需要定制信托受益人条款"
   },
   "inline.membership.12": {
-    "zh": "典藏已包括尊享所有權益",
-    "en": "Royal includes all Premium rights",
-    "cn": "典藏已包括尊享所有权益"
+    "zh": "完整包括尊享級別全部權益",
+    "en": "All Premium tier benefits",
+    "cn": "完整包括尊享级别全部权益"
   },
   "inline.membership.13": {
-    "zh": "全球資產與股權信託架構定製",
-    "en": "Global asset & equity trust design",
-    "cn": "全球资产与股权信托架构定制"
+    "zh": "全球資產及股權信託架構定制",
+    "en": "Global asset and equity trust structuring",
+    "cn": "全球资产及股权信托架构定制"
   },
   "inline.membership.14": {
-    "zh": "極致隱私保護與多重信託聯動",
-    "en": "Ultimate privacy & multi-trusts",
-    "cn": "极致隐私保护与多重信托联动"
+    "zh": "跨司法區私隱保護及多重信託協調",
+    "en": "Cross-jurisdiction privacy and trust coordination",
+    "cn": "跨司法区隐私保护及多重信托协调"
   },
   "inline.membership.15": {
-    "zh": "資深合夥人親自提供諮詢服務",
-    "en": "Senior partners consulting",
-    "cn": "资深合伙人亲自提供咨询服务"
+    "zh": "資深合夥人提供一對一策略諮詢",
+    "en": "One-to-one strategy consultation with a senior partner",
+    "cn": "资深合伙人提供一对一策略咨询"
   },
   "inline.membership.16": {
-    "zh": "專屬家族辦公室秘書對接",
-    "en": "Dedicated family office secretary",
-    "cn": "专属家族办公室秘书对接"
+    "zh": "家族辦公室秘書及跨專業團隊對接",
+    "en": "Family-office secretarial and professional coordination",
+    "cn": "家族办公室秘书及跨专业团队对接"
   },
   "inline.membership.17": {
     "zh": "推薦級別",
@@ -1321,7 +1321,7 @@
   },
   "inline.membership.18": {
     "zh": "包含權益",
-    "en": "Rights Included",
+    "en": "Benefits Included",
     "cn": "包含权益"
   },
   "inline.privacy.0": {
@@ -1708,5 +1708,30 @@
     "zh": "查看完整法規清單",
     "en": "View Full Legislation List",
     "cn": "查看完整法规清单"
+  },
+  "membership.brochure.term": {
+    "zh": "固定收益存續期為十二個月。",
+    "en": "Fixed Income Trust term: 12 months.",
+    "cn": "固定收益存续期为十二个月。"
+  },
+  "membership.t1.linkedcard": {
+    "zh": "包括",
+    "en": "Included",
+    "cn": "包括"
+  },
+  "membership.t2.linkedcard": {
+    "zh": "包括",
+    "en": "Included",
+    "cn": "包括"
+  },
+  "membership.t3.linkedcard": {
+    "zh": "包括",
+    "en": "Included",
+    "cn": "包括"
+  },
+  "membership.t4.linkedcard": {
+    "zh": "專屬安排",
+    "en": "Bespoke arrangement",
+    "cn": "专属安排"
   }
 }

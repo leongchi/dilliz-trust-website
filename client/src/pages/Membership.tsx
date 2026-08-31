@@ -30,6 +30,7 @@ export default function Membership() {
       icon: Star,
       threshold: t("membership.t1.threshold", lang),
       duration: t("membership.t1.duration", lang),
+      linkedcard: t("membership.t1.linkedcard", lang),
       offshore: t("membership.t1.offshore", lang),
       billpay: t("membership.t1.billpay", lang),
       service: t("membership.t1.service", lang),
@@ -46,6 +47,7 @@ export default function Membership() {
       icon: Shield,
       threshold: t("membership.t2.threshold", lang),
       duration: t("membership.t2.duration", lang),
+      linkedcard: t("membership.t2.linkedcard", lang),
       offshore: t("membership.t2.offshore", lang),
       billpay: t("membership.t2.billpay", lang),
       service: t("membership.t2.service", lang),
@@ -63,6 +65,7 @@ export default function Membership() {
       icon: Award,
       threshold: t("membership.t3.threshold", lang),
       duration: t("membership.t3.duration", lang),
+      linkedcard: t("membership.t3.linkedcard", lang),
       offshore: t("membership.t3.offshore", lang),
       billpay: t("membership.t3.billpay", lang),
       service: t("membership.t3.service", lang),
@@ -81,6 +84,7 @@ export default function Membership() {
       icon: Sparkles,
       threshold: t("membership.t4.threshold", lang),
       duration: t("membership.t4.duration", lang),
+      linkedcard: t("membership.t4.linkedcard", lang),
       offshore: t("membership.t4.offshore", lang),
       billpay: t("membership.t4.billpay", lang),
       service: t("membership.t4.service", lang),
@@ -110,7 +114,7 @@ export default function Membership() {
             <h1 className="text-4xl md:text-5xl font-bold text-metal-gold font-serif leading-tight">
               {t("membership.title", lang)}
             </h1>
-            <p className="text-slate-300 font-light leading-relaxed">
+            <p className="text-slate-300 font-light leading-relaxed whitespace-pre-line">
               {t("membership.subtitle", lang)}
             </p>
           </div>
@@ -157,7 +161,7 @@ export default function Membership() {
                         <span className="text-[10px] text-slate-500 font-bold tracking-wider uppercase block">
                           {t("membership.threshold", lang)}
                         </span>
-                        <span className="text-xl font-bold text-metal-gold font-serif">
+                        <span className={`${tier.id === "t4" ? "text-base" : "text-xl"} font-bold text-metal-gold font-serif leading-snug block`}>
                           {tier.threshold}
                         </span>
                       </div>
@@ -175,20 +179,25 @@ export default function Membership() {
 
                     {/* 細項特徵對照 */}
                     <div className="space-y-4 text-xs font-medium">
+
+                      <div className="flex justify-between items-center gap-3 py-1 border-b border-white/5">
+                        <span className="text-slate-500 leading-snug">{t("membership.linkedcard", lang)}</span>
+                        <span className="text-slate-200 text-right leading-snug max-w-[52%]">{tier.linkedcard}</span>
+                      </div>
                       
-                      <div className="flex justify-between items-center py-1 border-b border-white/5">
-                        <span className="text-slate-500">{t("membership.offshore", lang)}</span>
-                        <span className="text-slate-200">{tier.offshore}</span>
+                      <div className="flex justify-between items-center gap-3 py-1 border-b border-white/5">
+                        <span className="text-slate-500 leading-snug">{t("membership.offshore", lang)}</span>
+                        <span className="text-slate-200 text-right leading-snug max-w-[52%]">{tier.offshore}</span>
                       </div>
 
-                      <div className="flex justify-between items-center py-1 border-b border-white/5">
-                        <span className="text-slate-500">{t("membership.billpay", lang)}</span>
-                        <span className="text-slate-200">{tier.billpay}</span>
+                      <div className="flex justify-between items-center gap-3 py-1 border-b border-white/5">
+                        <span className="text-slate-500 leading-snug">{t("membership.billpay", lang)}</span>
+                        <span className="text-slate-200 text-right leading-snug max-w-[52%]">{tier.billpay}</span>
                       </div>
 
-                      <div className="flex justify-between items-center py-1 border-b border-white/5">
-                        <span className="text-slate-500">{t("membership.customerservice", lang)}</span>
-                        <span className="text-slate-200">{tier.service}</span>
+                      <div className="flex justify-between items-center gap-3 py-1 border-b border-white/5">
+                        <span className="text-slate-500 leading-snug">{t("membership.customerservice", lang)}</span>
+                        <span className="text-slate-200 text-right leading-snug max-w-[52%]">{tier.service}</span>
                       </div>
 
                     </div>
@@ -196,7 +205,7 @@ export default function Membership() {
                     <hr className="border-white/10" />
 
                     {/* 特色亮點 */}
-                    <div className="space-y-3">
+                    <div className="space-y-3 min-h-[222px]">
                       <span className="text-[10px] text-slate-500 font-bold tracking-wider uppercase block">
                         {t("inline.membership.18", lang)}
                       </span>
@@ -232,9 +241,12 @@ export default function Membership() {
           </div>
 
           {/* 底部說明 */}
-          <div className="text-center">
+          <div className="text-center space-y-1">
             <p className="text-xs text-slate-500 font-light italic">
               * {t("membership.brochure.note", lang)}
+            </p>
+            <p className="text-xs text-slate-500 font-light italic">
+              * {t("membership.brochure.term", lang)}
             </p>
           </div>
 
