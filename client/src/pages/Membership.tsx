@@ -3,6 +3,8 @@ import { Star, Shield, Award, Sparkles, Check, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import { t } from "@/lib/translations";
 
+// Design philosophy: restrained private-banking luxury—micro-motion is subtle,
+// champagne-gold emphasis is selective, and content stability takes priority.
 export default function Membership() {
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
 
@@ -126,12 +128,14 @@ export default function Membership() {
               return (
                 <div
                   key={idx}
-                  className={`bg-white/5 backdrop-blur border rounded-3xl p-8 flex flex-col justify-between shadow-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform relative ${
+                  className={`group bg-white/5 backdrop-blur border rounded-3xl p-8 flex flex-col justify-between shadow-md relative transform-gpu transition-[transform,border-color,box-shadow,background-color] duration-250 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transform-none motion-reduce:transition-none focus-within:border-metal-gold/60 focus-within:shadow-gold-glow ${
                     tier.isPopular 
-                      ? "border-metal-gold/60 shadow-gold-glow scale-[1.03] z-10 hover:scale-[1.06] hover:-translate-y-2.5 hover:border-metal-gold hover:shadow-[0_25px_60px_-10px_rgba(149,133,110,0.45),0_0_30px_6px_rgba(149,133,110,0.35)]" 
-                      : "border-white/10 hover:scale-[1.03] hover:-translate-y-2 hover:border-metal-gold/50 hover:shadow-gold-glow hover:z-10"
+                      ? "border-metal-gold/60 shadow-gold-glow scale-[1.03] z-10 motion-safe:hover:scale-[1.04] motion-safe:hover:-translate-y-2 hover:border-metal-gold/90 hover:bg-white/[0.065] hover:shadow-[0_24px_54px_-18px_rgba(149,133,110,0.58),0_0_26px_rgba(149,133,110,0.22)]" 
+                      : "border-white/10 motion-safe:hover:scale-[1.012] motion-safe:hover:-translate-y-2 hover:border-metal-gold/45 hover:bg-white/[0.065] hover:shadow-[0_22px_48px_-20px_rgba(149,133,110,0.48),0_0_22px_rgba(149,133,110,0.14)] hover:z-10"
                   }`}
                 >
+                  <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-metal-gold/80 to-transparent opacity-0 transition-opacity duration-250 group-hover:opacity-100 group-focus-within:opacity-100 motion-reduce:transition-none" />
+
                   {/* 熱門徽章 */}
                   {tier.isPopular && (
                     <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-metal-gold text-[#2b2b2b] text-[10px] font-extrabold tracking-widest uppercase px-4 py-1 rounded-full shadow-md">
@@ -144,7 +148,7 @@ export default function Membership() {
                     {/* 級別頭部 */}
                     <div className="flex items-center justify-between">
                       <h3 className="text-xl font-bold text-slate-200 font-serif">{tier.name}</h3>
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center border ${
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center border transform-gpu transition-[transform,color,border-color,background-color,box-shadow] duration-250 ease-[cubic-bezier(0.23,1,0.32,1)] motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:scale-105 group-hover:text-metal-gold group-hover:border-metal-gold/45 group-hover:bg-metal-gold/10 group-hover:shadow-[0_0_18px_rgba(149,133,110,0.16)] group-focus-within:text-metal-gold group-focus-within:border-metal-gold/45 group-focus-within:bg-metal-gold/10 motion-reduce:transform-none motion-reduce:transition-none ${
                         tier.isPopular 
                           ? "bg-metal-gold/10 border-metal-gold/30 text-metal-gold" 
                           : "bg-white/5 border-white/10 text-slate-400"

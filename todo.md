@@ -59,9 +59,18 @@
 - [x] 將已批准的繁體、簡體及英文會員內容寫入正式網站來源與 runtime `content.json`。
 - [x] 英文第四級使用 `Elite`；典藏／Elite 只保留一次洽詢提示。
 - [x] 建置並檢查三語會員頁、合規字眼、JSON 格式及響應式顯示。
-- [ ] 同步 `main` 及 `gh-pages`，保留現有 cPanel 部署設定與正式內容。
+- [x] 同步 `main` 及 `gh-pages`，保留現有 cPanel 部署設定與正式內容。
 - [ ] 經確認後執行 cPanel Update from Remote 及 Deploy HEAD Commit。
 - [ ] 核對正式網站三語會員頁已更新。
+
+## 會員卡 Hover 微動畫
+
+- [x] 四張會員卡在桌面滑鼠懸停時輕微上移並增加克制的金色邊線及光感。
+- [x] 卡片圖示同步柔和增亮，內容文字及卡片尺寸不得跳動。
+- [x] 尊享推薦卡保留原有視覺優先級，不因其他卡 Hover 而被削弱。
+- [x] 流動裝置不依賴 Hover；`prefers-reduced-motion` 使用者不播放位移動畫。
+- [x] 完成 TypeScript、建置及桌面／流動版視覺檢查。
+- [ ] 同步 `main` 及 `gh-pages`。
 
 ## 英文會員口號更新
 
