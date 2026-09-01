@@ -231,9 +231,9 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-6 space-y-20">
           
           {/* 頁面標題 */}
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className={`text-center mx-auto space-y-4 ${lang === "en" ? "max-w-5xl" : "max-w-3xl"}`}>
             <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block">Contact Us</span>
-            <h1 className="text-4xl md:text-5xl font-bold text-metal-gold font-serif leading-tight">
+            <h1 className={`${lang === "en" ? "text-3xl sm:text-4xl md:text-[42px] lg:text-5xl md:whitespace-nowrap" : "text-4xl md:text-5xl"} font-bold text-metal-gold font-serif leading-tight`}>
               {t("contact.title", lang)}
             </h1>
             <p className="text-slate-300 font-light leading-relaxed whitespace-pre-line">
