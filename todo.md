@@ -94,8 +94,17 @@
 - [x] 只把英文 `membership.threshold` 更新為 `Custodian Plan`，繁體及簡體值保持不變。
 - [x] 同步 runtime `content.json` 及 fallback `translations.json`。
 - [x] 完成三語內容斷言、TypeScript、建置及桌面／手機檢查。
-- [ ] 同步 `main` 及 `gh-pages`，經確認後部署正式網站。
+- [x] 同步 `main` 及 `gh-pages`。
+- [ ] 經確認後部署正式網站。
 - [ ] 核對正式英文會員頁顯示 `Custodian Plan`。
+
+## 移除會員頁重複風險披露
+
+- [x] 移除會員卡下方的重複固定收益信託風險披露，繁體、簡體及英文同步生效。
+- [x] 保留會員頁獨立的十二個月存續期說明。
+- [x] 保留全站頁尾的三語風險披露，不修改其內容或位置。
+- [x] 完成 TypeScript、建置及三語頁面檢查。
+- [ ] 同步 `main` 及 `gh-pages`。
 
 ## 英文會員口號更新
 

@@ -247,9 +247,6 @@ export default function Membership() {
           {/* 底部說明 */}
           <div className="text-center space-y-1">
             <p className="text-xs text-slate-500 font-light italic">
-              * {t("membership.brochure.note", lang)}
-            </p>
-            <p className="text-xs text-slate-500 font-light italic">
               * {t("membership.brochure.term", lang)}
             </p>
           </div>
