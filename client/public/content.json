@@ -526,7 +526,7 @@
   },
   "membership.brochure.note": {
     "zh": "本網站所展示之固定收益信託依據香港信託條例運作，非香港銀行存款，不受香港存款保障計劃保障。",
-    "en": "The Fixed Income Trust displayed on this website operates under the Hong Kong Trustee Ordinance. It is not a Hong Kong bank deposit and is not protected by the Deposit Protection Scheme.",
+    "en": "The Fixed-Term Custodian Funding Plan displayed on this website operates under the Hong Kong Trustee Ordinance. It is not a Hong Kong bank deposit and is not protected by the Deposit Protection Scheme.",
     "cn": "本网站所展示之固定收益信托依据香港信托条例运作，非香港银行存款，不受香港存款保障计划保障。"
   },
   "membership.t1.name": {
@@ -1176,12 +1176,12 @@
   },
   "inline.home.13": {
     "zh": "專屬固定收益信託會員計劃",
-    "en": "Exclusive Fixed Income Trust Membership Plans",
+    "en": "Exclusive Custodian Plan Membership",
     "cn": "专属固定收益信托会员计划"
   },
   "inline.home.14": {
     "zh": "因為您，才值得擁有。我們獨家推出基礎、標準、尊享、典藏四大固定收益信託會員計劃，為不同資產規模的委託人提供極具競爭力的特惠收益與尊榮黑金卡權益。",
-    "en": "Because of you, it's worth having. We launch four tiers of membership: Basic, Standard, Premium, and Royal, providing highly competitive yields and black card privileges.",
+    "en": "DILLIZ offers four membership tiers under its Fixed-Term Custodian Funding Plan (\"Custodian Plan\"): Basic, Standard, Premium, and Elite — with tailored privileges for different asset levels.",
     "cn": "因为您，才值得拥有。我们独家推出基础、标准、尊享、典藏四大固定收益信托会员计划，为不同资产规模的委托人提供极具竞争力的特惠收益与尊荣黑金卡权益。"
   },
   "inline.home.15": {
@@ -1241,7 +1241,7 @@
   },
   "inline.membership.2": {
     "zh": "固定收益信託回報",
-    "en": "Fixed Income Trust returns",
+    "en": "Custodian Plan returns",
     "cn": "固定收益信托回报"
   },
   "inline.membership.3": {
@@ -1261,7 +1261,7 @@
   },
   "inline.membership.6": {
     "zh": "固定收益優先議價服務",
-    "en": "Priority Fixed Income Trust negotiation",
+    "en": "Priority Custodian Plan arrangements",
     "cn": "固定收益优先议价服务"
   },
   "inline.membership.7": {
@@ -1361,7 +1361,7 @@
   },
   "inline.privacy.7": {
     "zh": "我們收集的個人資料將嚴格用於以下目的：提供定制化信託諮詢服務、進行客戶身份盡職調查（KYC）、防範洗錢及金融犯罪合規審查、履行受託人日常管理職責，以及向您發送與信託或固定收益安排相關的合規通告與重要通知。",
-    "en": "The personal data we collect will be strictly used for: providing customized trust consultation services, performing client due diligence (KYC), complying with anti-money laundering and financial crime prevention audits, performing daily trustee administrative duties, and sending you regulatory circulars and important notices related to your trust or fixed income trusts.",
+    "en": "The personal data we collect will be strictly used for: providing customized trust consultation services, performing client due diligence (KYC), complying with anti-money laundering and financial crime prevention audits, performing daily trustee administrative duties, and sending you regulatory circulars and important notices related to your trust or Custodian Plan arrangements.",
     "cn": "我们收集的个人资料将严格用于以下目的：提供定制化信托咨询服务、进行客户身份尽职调查（KYC）、防范洗钱及金融犯罪合规审查、履行受托人日常管理职责，以及向您发送与信托或固定收益安排相关的合规通告与重要通知。"
   },
   "inline.privacy.8": {
@@ -1476,7 +1476,7 @@
   },
   "inline.terms.9": {
     "zh": "本網站所展示的信託、財富傳承、資產保護及固定收益信託等服務，均需根據客戶的具體情況進行定制，並最終以雙方正式簽署的信託契約（Trust Deed）或服務協議為準。",
-    "en": "The trust, wealth succession, asset protection, and fixed income trust services displayed on this website are subject to customization based on each client's specific circumstances, and are ultimately governed by the formal Trust Deed or Service Agreement signed by both parties.",
+    "en": "The trust, wealth succession, asset protection, and Fixed-Term Custodian Funding Plan services displayed on this website are subject to customization based on each client's specific circumstances, and are ultimately governed by the formal Trust Deed or Service Agreement signed by both parties.",
     "cn": "本网站所展示的信托、财富传承、资产保护及固定收益信托等服务，均需根据客户的具体情况进行定制，并最终以双方正式签署的信托契约（Trust Deed）或服务协议为准。"
   },
   "inline.terms.10": {
@@ -1491,7 +1491,7 @@
   },
   "inline.terms.12": {
     "zh": "本公司盡力確保本網站所載資訊的準確性，但對於因使用或依賴本網站資訊而導致的任何直接或間接損失，本公司不承擔任何法律責任。資產配置、信託架構及固定收益信託均存在一定的市場、稅務及法規變動風險，歷史業績不代表未來表現。",
-    "en": "The Company endeavors to ensure the accuracy of the information contained on this website, but accepts no liability for any direct or indirect loss resulting from the use of or reliance on such information. Asset allocation, trust structuring, and fixed income trusts are subject to market, tax, and regulatory risks, and historical performance is not indicative of future results.",
+    "en": "The Company endeavors to ensure the accuracy of the information contained on this website, but accepts no liability for any direct or indirect loss resulting from the use of or reliance on such information. Asset allocation, trust structuring, and Custodian Plans are subject to market, tax, and regulatory risks, and historical performance is not indicative of future results.",
     "cn": "本公司尽力确保本网站所载资讯的准确性，但对于因使用或依赖本网站资讯而导致的任何直接或间接损失，本公司不承担任何法律责任。资产配置、信托架构及固定收益信托均存在一定的市场、税务及法规变动风险，历史业绩不代表未来表现。"
   },
   "inline.terms.13": {
@@ -1711,7 +1711,7 @@
   },
   "membership.brochure.term": {
     "zh": "固定收益存續期為十二個月。",
-    "en": "Fixed Income Trust term: 12 months.",
+    "en": "Custodian Plan term: 12 months.",
     "cn": "固定收益存续期为十二个月。"
   },
   "membership.t1.linkedcard": {

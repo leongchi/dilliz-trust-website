@@ -132,3 +132,21 @@
 - [x] 英文會員頁改為兩行口號：`Build A Trust with DILLIZ` 及 `SHAPE THE FUTURE YOU DESERVE`。
 - [x] 繁體及簡體會員頁口號與內容維持不變。
 - [x] 重新建置及檢查英文桌面與流動版換行效果後，再繼續正式部署。
+
+## Fixed-Term Custodian Funding Plan 術語效果圖
+
+- [x] 深度搜尋全站英文 `Fixed Income Trust`、`Fixed-Income Trust` 及相關變體，逐項分類使用場景。
+- [x] 只修改英文；繁體及簡體中文文字、內容與版面全部保持不變。
+- [x] 正式／首次介紹、服務標題及重要說明使用 `Fixed-Term Custodian Funding Plan`。
+- [x] 會員卡、重複段落、按鈕、窄版位置使用簡稱 `Custodian Plan`。
+- [x] 首次出現時評估使用 `Fixed-Term Custodian Funding Plan ("Custodian Plan")`。
+- [x] 製作具代表性的網站效果圖供確認；批准前不得修改、提交或部署正式網站。
+
+## 英文 Custodian Funding Plan 術語正式上線
+
+- [x] 依已確認效果圖更新 runtime `content.json` 與 fallback `translations.json` 的英文內容。
+- [x] 首次介紹、正式服務範圍及頁尾風險披露使用 `Fixed-Term Custodian Funding Plan`。
+- [x] 會員卡、權益、期限、重複段落及窄版位置使用 `Custodian Plan`。
+- [x] 更新硬編碼英文通知並清除全站 `Fixed Income Trust`／`fixed income trust` 遺留。
+- [x] 斷言繁體及簡體內容逐字不變，完成 TypeScript、建置及桌面／手機檢查。
+- [ ] 同步 `main` 及 `gh-pages`。
