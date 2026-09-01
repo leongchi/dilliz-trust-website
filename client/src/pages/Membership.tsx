@@ -185,22 +185,22 @@ export default function Membership() {
                     <div className="space-y-3.5 lg:space-y-4 text-[13px] lg:text-xs font-medium">
 
                       <div className="grid grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] items-start gap-4 py-1.5 border-b border-white/5">
-                        <span className="min-w-0 text-slate-400 lg:text-slate-500 leading-snug">{t("membership.linkedcard", lang)}</span>
+                        <span className={`min-w-0 text-slate-400 lg:text-slate-500 leading-snug ${lang === "en" ? "uppercase tracking-wide" : ""}`}>{t("membership.linkedcard", lang)}</span>
                         <span className="min-w-0 text-slate-100 lg:text-slate-200 text-right leading-snug break-words">{tier.linkedcard}</span>
                       </div>
                       
                       <div className="grid grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] items-start gap-4 py-1.5 border-b border-white/5">
-                        <span className="min-w-0 text-slate-400 lg:text-slate-500 leading-snug">{t("membership.offshore", lang)}</span>
+                        <span className={`min-w-0 text-slate-400 lg:text-slate-500 leading-snug ${lang === "en" ? "uppercase tracking-wide" : ""}`}>{t("membership.offshore", lang)}</span>
                         <span className="min-w-0 text-slate-100 lg:text-slate-200 text-right leading-snug break-words">{tier.offshore}</span>
                       </div>
 
                       <div className="grid grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] items-start gap-4 py-1.5 border-b border-white/5">
-                        <span className="min-w-0 text-slate-400 lg:text-slate-500 leading-snug">{t("membership.billpay", lang)}</span>
+                        <span className={`min-w-0 text-slate-400 lg:text-slate-500 leading-snug ${lang === "en" ? "uppercase tracking-wide" : ""}`}>{t("membership.billpay", lang)}</span>
                         <span className="min-w-0 text-slate-100 lg:text-slate-200 text-right leading-snug break-words">{tier.billpay}</span>
                       </div>
 
                       <div className="grid grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] items-start gap-4 py-1.5 border-b border-white/5">
-                        <span className="min-w-0 text-slate-400 lg:text-slate-500 leading-snug">{t("membership.customerservice", lang)}</span>
+                        <span className={`min-w-0 text-slate-400 lg:text-slate-500 leading-snug ${lang === "en" ? "uppercase tracking-wide" : ""}`}>{t("membership.customerservice", lang)}</span>
                         <span className="min-w-0 text-slate-100 lg:text-slate-200 text-right leading-snug break-words">{tier.service}</span>
                       </div>
 
