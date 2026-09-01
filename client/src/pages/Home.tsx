@@ -369,10 +369,10 @@ export default function Home() {
       <section className="py-20 bg-[#2b2b2b] border-t border-white/5 text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-metal-gold/5 rounded-full blur-[120px] pointer-events-none" />
         
-        <div className="max-w-3xl mx-auto px-6 relative z-10">
+        <div className={`${lang === "en" ? "max-w-6xl" : "max-w-3xl"} mx-auto px-6 relative z-10`}>
           <ScrollReveal className="space-y-8">
             <span className="text-xs font-bold tracking-[0.25em] text-metal-gold uppercase block">Start Your Legacy</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white font-serif leading-tight">
+            <h2 className={`text-3xl md:text-4xl font-bold text-white font-serif leading-tight ${lang === "en" ? "lg:whitespace-nowrap" : ""}`}>
               {t("inline.home.20", lang)}
             </h2>
             <p className="text-slate-300 font-light text-sm md:text-base leading-relaxed max-w-2xl mx-auto whitespace-pre-line">

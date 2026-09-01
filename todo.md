@@ -149,4 +149,12 @@
 - [x] 會員卡、權益、期限、重複段落及窄版位置使用 `Custodian Plan`。
 - [x] 更新硬編碼英文通知並清除全站 `Fixed Income Trust`／`fixed income trust` 遺留。
 - [x] 斷言繁體及簡體內容逐字不變，完成 TypeScript、建置及桌面／手機檢查。
+- [x] 同步 `main` 及 `gh-pages`。
+
+## 英文首頁 CTA 標題單行顯示
+
+- [x] 英文 `Begin Your Bespoke Wealth Planning Today` 在桌面版保持單行。
+- [x] 手機版允許自然、平衡換行，不可縮至難以閱讀或出現橫向溢出。
+- [x] 繁體及簡體標題與版面保持不變。
+- [x] 完成 TypeScript、建置及桌面／手機視覺檢查。
 - [ ] 同步 `main` 及 `gh-pages`。
