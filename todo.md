@@ -81,7 +81,21 @@
 - [x] 完成繁體中文 390px 及 320px 小螢幕檢查。
 - [x] 完成簡體中文及英文小螢幕檢查。
 - [x] 在小螢幕檢查繁體、簡體及英文並完成建置。
-- [ ] 同步 `main` 及 `gh-pages`。
+- [x] 同步 `main` 及 `gh-pages`。
+
+## 英文 Custodian Plan 標籤效果圖
+
+- [x] 只把英文會員頁的 `Fixed Income Trust Threshold*` 暫改為 `Custodian Plan`。
+- [x] 四張卡的數值、權益、Elite 名稱、兩行英文口號及所有設計保持不變。
+- [x] 製作英文效果圖後還原臨時程式；未獲批准前不修改或部署正式網站。
+
+## Custodian Plan 英文正式上線
+
+- [x] 只把英文 `membership.threshold` 更新為 `Custodian Plan`，繁體及簡體值保持不變。
+- [x] 同步 runtime `content.json` 及 fallback `translations.json`。
+- [x] 完成三語內容斷言、TypeScript、建置及桌面／手機檢查。
+- [ ] 同步 `main` 及 `gh-pages`，經確認後部署正式網站。
+- [ ] 核對正式英文會員頁顯示 `Custodian Plan`。
 
 ## 英文會員口號更新
 
