@@ -292,6 +292,14 @@
 - [x] 核對 GitHub 遠端 `main`／`gh-pages` commit；`www.dilliz.com` 仍顯示舊資產，等待 cPanel 部署。
 - [x] 提供 `Git Version Control → Manage → Pull or Deploy → Update from Remote → Deploy HEAD Commit` 步驟。
 
+## 移除評估頁資料處理提示橫幅
+
+- [ ] 移除開戶初步評估頁頂部整個「資料處理提示」橫幅及所示句子。
+- [ ] 保留第八步同意內容、電郵提交前提示及私隱政策的 EmailJS 披露。
+- [ ] 驗證繁體、簡體、英文、桌面及手機版沒有空白區或重複提示。
+- [ ] 重新執行 TypeScript、production build 及禁止字眼檢查。
+- [ ] 同步修正版到 GitHub `main` 及 `gh-pages`，再提供最新 cPanel 部署 commit。
+
 ## `/assessment-preview` EmailJS 沙盒通知正式串接
 
 - [ ] 核對 Google Sheet 成功回覆、現有 EmailJS service、`template_id6y2ku` 及 `info@dilliz.com` 設定。

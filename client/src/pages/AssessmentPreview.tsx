@@ -12,7 +12,6 @@ import {
   Check,
   ChevronLeft,
   ClipboardCheck,
-  Eye,
   FlaskConical,
   LockKeyhole,
   MailOpen,
@@ -968,14 +967,6 @@ export default function AssessmentPreview() {
               {text(assessmentUi.subtitle, lang)}
             </p>
           </div>
-
-          <section className="mb-8 flex items-start gap-4 border-y border-[#95856e]/35 bg-[#1b2229] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.018)] sm:px-5" aria-label={text(experienceUi.previewLabel, lang)}>
-            <Eye size={19} className="mt-0.5 shrink-0 text-[#bfae95]" aria-hidden="true" />
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.2em] text-[#bfae95]">{text(experienceUi.previewLabel, lang)}</p>
-              <p className="mt-1 text-xs leading-6 text-slate-300 sm:text-sm">{text(experienceUi.previewNotice, lang)}</p>
-            </div>
-          </section>
 
           {!isProductionExperience && <section className="mb-8 border border-[#66717a]/25 bg-[#182028] px-4 py-4 sm:px-5" aria-label={text(assessmentUi.testTools, lang)}>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
