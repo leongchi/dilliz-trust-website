@@ -283,14 +283,14 @@
 
 ## 客戶評估表及小冊子正式發布
 
-- [ ] 核對本機工作樹、`main`、`gh-pages` 及遠端最新 commit，避免覆蓋其他工作階段更新。
-- [ ] 將詳細評估 EmailJS 正式寄送設定由沙盒鎖定改為可用，保留短表與詳細表獨立 template。
-- [ ] 確認 About 小冊子下載資產可在正式部署環境長期存取。
-- [ ] 執行 TypeScript、production build、禁止字眼、三語、EmailJS 欄位、PDF 及路由檢查。
-- [ ] 保存並同步完整來源版本到 GitHub `main`。
-- [ ] 只把 `dist/public` 正式資產發布至 `gh-pages`，保留 `.cpanel.yml`、`CNAME`、`.nojekyll`、`404.html` 及 `.htaccess`。
-- [ ] 核對 GitHub 遠端 `main`／`gh-pages` commit，並確認正式網站更新狀態。
-- [ ] 如 cPanel 未自動部署，提供 `Git Version Control → Manage → Pull or Deploy → Update from Remote → Deploy HEAD Commit` 步驟。
+- [x] 核對本機工作樹、`main`、`gh-pages` 及遠端最新 commit，避免覆蓋其他工作階段更新。
+- [x] 將詳細評估 EmailJS 正式寄送設定由沙盒鎖定改為可用，保留短表與詳細表獨立 template。
+- [x] 確認 About 小冊子下載資產可在正式部署環境長期存取。
+- [x] 執行 TypeScript、production build、禁止字眼、三語、EmailJS 欄位、PDF 及路由檢查。
+- [x] 保存並同步完整來源版本到 GitHub `main`。
+- [x] 只把 `dist/public` 正式資產發布至 `gh-pages`，保留 `.cpanel.yml`、`.nojekyll`、`404.html` 及 `.htaccess`。
+- [x] 核對 GitHub 遠端 `main`／`gh-pages` commit；`www.dilliz.com` 仍顯示舊資產，等待 cPanel 部署。
+- [x] 提供 `Git Version Control → Manage → Pull or Deploy → Update from Remote → Deploy HEAD Commit` 步驟。
 
 ## `/assessment-preview` EmailJS 沙盒通知正式串接
 
