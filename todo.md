@@ -294,11 +294,11 @@
 
 ## 移除評估頁資料處理提示橫幅
 
-- [ ] 移除開戶初步評估頁頂部整個「資料處理提示」橫幅及所示句子。
-- [ ] 保留第八步同意內容、電郵提交前提示及私隱政策的 EmailJS 披露。
-- [ ] 驗證繁體、簡體、英文、桌面及手機版沒有空白區或重複提示。
-- [ ] 重新執行 TypeScript、production build 及禁止字眼檢查。
-- [ ] 同步修正版到 GitHub `main` 及 `gh-pages`，再提供最新 cPanel 部署 commit。
+- [x] 移除開戶初步評估頁頂部整個「資料處理提示」橫幅及所示句子。
+- [x] 保留第八步同意內容、電郵提交前提示及私隱政策的 EmailJS 披露。
+- [x] 驗證繁體、簡體、英文、桌面及手機版沒有空白區或重複提示。
+- [x] 重新執行 TypeScript、production build 及禁止字眼檢查。
+- [x] 同步修正版到 GitHub `main` 及 `gh-pages`；cPanel 正式部署仍待執行。
 
 ## `/assessment-preview` EmailJS 沙盒通知正式串接
 
