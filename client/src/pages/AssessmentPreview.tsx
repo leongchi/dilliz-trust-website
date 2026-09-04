@@ -21,7 +21,7 @@ import {
   TriangleAlert
 } from "lucide-react";
 import Layout from "@/components/Layout";
-import { sendAssessmentEmail, type AssessmentEmailParams } from "@/lib/assessmentEmail";
+import { isAssessmentEmailEnabled, sendAssessmentEmail, type AssessmentEmailParams } from "@/lib/assessmentEmail";
 import { consumeContactAssessmentPrefill, contactContinuationCopy } from "@/lib/contactAssessmentHandoff";
 import { isSandboxPreviewFeature } from "@/lib/sandboxPreview";
 import {
@@ -780,9 +780,7 @@ export default function AssessmentPreview() {
     declaration_label: text(labels.declaration, lang),
     declaration: declarationValue
   };
-  const emailSendEnabled = import.meta.env.PROD
-    ? import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_LIVE === "true"
-    : import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_TEST === "true";
+  const emailSendEnabled = isAssessmentEmailEnabled();
 
   const sendFullAssessmentEmail = async () => {
     if (emailDeliveryStatus === "sending" || emailDeliveryStatus === "sent") return;

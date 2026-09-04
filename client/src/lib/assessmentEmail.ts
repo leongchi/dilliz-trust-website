@@ -1,5 +1,27 @@
 import emailjs from "@emailjs/browser";
 
+const assessmentEmailConfig = {
+  serviceId: "service_p02igzf",
+  templateId: "template_id6y2ku",
+  publicKey: "jV6VJZBOtjeaELQb2"
+} as const;
+
+const productionAssessmentHosts = new Set(["dilliz.com", "www.dilliz.com"]);
+
+export function isAssessmentEmailEnabled() {
+  if (typeof window === "undefined") return false;
+  const hostname = window.location.hostname.toLowerCase();
+  if (productionAssessmentHosts.has(hostname)) return true;
+  const trustedPreviewHost =
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname.endsWith(".manus.computer") ||
+    hostname.endsWith(".manuspre.computer");
+  return trustedPreviewHost &&
+    window.location.pathname === "/assessment-preview" &&
+    import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_TEST === "true";
+}
+
 export const assessmentEmailParamKeys = [
   "email_title",
   "email_intro",
@@ -91,19 +113,14 @@ export function validateAssessmentEmailParams(params: AssessmentEmailParams) {
 
 export async function sendAssessmentEmail(params: AssessmentEmailParams) {
   validateAssessmentEmailParams(params);
-  const emailEnabled = import.meta.env.PROD
-    ? import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_LIVE === "true"
-    : import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_TEST === "true";
-  if (!emailEnabled) {
+  if (!isAssessmentEmailEnabled()) {
     throw new Error("Assessment EmailJS sending is not enabled.");
   }
 
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const templateId = import.meta.env.VITE_EMAILJS_ASSESSMENT_TEMPLATE_ID;
-  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-  if (!serviceId || !templateId || !publicKey) {
-    throw new Error("EmailJS assessment configuration is incomplete.");
-  }
-
-  return emailjs.send(serviceId, templateId, params, publicKey);
+  return emailjs.send(
+    assessmentEmailConfig.serviceId,
+    assessmentEmailConfig.templateId,
+    params,
+    assessmentEmailConfig.publicKey
+  );
 }

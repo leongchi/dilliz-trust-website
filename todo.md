@@ -328,6 +328,16 @@
 - [x] 驗證 production build、手機版核對頁、直接提交及無沙盒工具。
 - [x] 重新同步 GitHub `main` 及 `gh-pages`；最新 `gh-pages` commit 為 `e878e63`，cPanel 仍待部署。
 
+## 正式評估按鈕顯示暫時未能提交
+
+- [ ] 重現並確認 production bundle 未讀取 EmailJS live 啟用設定的原因。
+- [ ] 核對 Vite 的 `.env.production` 載入位置、service ID、template ID、public key 及 live flag。
+- [ ] 修正頁面按鈕與寄送模組使用相同的 production enable 判斷。
+- [ ] 以 compiled production preview 驗證第九步顯示可用「提交評估」按鈕，不啟用沙盒工具。
+- [ ] 在不重複寄送的前提下驗證 EmailJS 參數、失敗處理及成功狀態。
+- [ ] 重新同步 GitHub `main` 及 `gh-pages`，提供最新 cPanel 部署 commit。
+- [ ] cPanel 部署後核對 `www.dilliz.com` 按鈕可正常提交。
+
 ## `/assessment-preview` EmailJS 沙盒通知正式串接
 
 - [ ] 核對 Google Sheet 成功回覆、現有 EmailJS service、`template_id6y2ku` 及 `info@dilliz.com` 設定。
