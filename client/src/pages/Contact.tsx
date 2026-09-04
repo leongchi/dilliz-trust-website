@@ -8,6 +8,7 @@ import {
   storeContactAssessmentPrefill,
   type ContactAssessmentPrefill
 } from "@/lib/contactAssessmentHandoff";
+import { isSandboxPreviewFeature } from "@/lib/sandboxPreview";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { useLocation } from "wouter";
@@ -35,7 +36,7 @@ const EMAILJS_PUBLIC_KEY: string = "jV6VJZBOtjeaELQb2";     // 填入您的 Publ
 
 export default function Contact() {
   const [, setLocation] = useLocation();
-  const isSandboxContactTest = import.meta.env.DEV && new URLSearchParams(window.location.search).has("shortFormTest");
+  const isSandboxContactTest = isSandboxPreviewFeature("shortFormTest", "/contact");
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [submitted, setSubmitted] = useState(false);
   const [submittedContact, setSubmittedContact] = useState<ContactAssessmentPrefill | null>(null);
@@ -51,8 +52,7 @@ export default function Contact() {
   // 實時格式校驗狀態
   const [errors, setErrors] = useState({
     phone: "",
-    email: "",
-    contact: ""
+    email: ""
   });
 
   // 正規表示式定義
@@ -63,7 +63,7 @@ export default function Contact() {
   // 實時校驗電郵
   const validateEmail = (value: string) => {
     if (!value) {
-      return "";
+      return contactContinuationCopy.emailRequired[lang];
     }
     if (!emailRegex.test(value)) {
       return t("inline.contact.0", lang);
@@ -85,13 +85,13 @@ export default function Contact() {
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
     setFormData(prev => ({ ...prev, email: val }));
-    setErrors(prev => ({ ...prev, email: validateEmail(val), contact: val || formData.phone ? "" : prev.contact }));
+    setErrors(prev => ({ ...prev, email: validateEmail(val) }));
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
     setFormData(prev => ({ ...prev, phone: val }));
-    setErrors(prev => ({ ...prev, phone: validatePhone(val), contact: val || formData.email ? "" : prev.contact }));
+    setErrors(prev => ({ ...prev, phone: validatePhone(val) }));
   };
 
   useEffect(() => {
@@ -112,7 +112,7 @@ export default function Contact() {
   }, []);
 
   useEffect(() => {
-    if (!import.meta.env.DEV || !new URLSearchParams(window.location.search).has("continuationPreview")) return;
+    if (!isSandboxPreviewFeature("continuationPreview", "/contact")) return;
     const fictionalContact = {
       name: "陳測試",
       phone: "+852 5555 0101",
@@ -128,12 +128,9 @@ export default function Contact() {
     // 提交前進行最終格式校驗
     const emailErr = validateEmail(formData.email);
     const phoneErr = validatePhone(formData.phone);
-    const contactErr = !formData.email.trim() && !formData.phone.trim()
-      ? contactContinuationCopy.contactRequired[lang]
-      : "";
 
-    if (emailErr || phoneErr || contactErr) {
-      setErrors({ email: emailErr, phone: phoneErr, contact: contactErr });
+    if (emailErr || phoneErr) {
+      setErrors({ email: emailErr, phone: phoneErr });
       toast.error(
         t("inline.contact.2", lang)
       );
@@ -176,7 +173,7 @@ export default function Contact() {
       const templateParams = {
         from_name: formData.name,
         phone: formData.phone || contactContinuationCopy.notProvided[lang],
-        reply_to: formData.email || "info@dilliz.com",
+        reply_to: formData.email,
         message: formData.message || "（無留言 / No Message）"
       };
 
@@ -455,7 +452,7 @@ export default function Contact() {
                       </label>
                       <input
                         type="tel"
-                        placeholder={lang === "zh" ? "請輸入聯絡電話" : "Enter phone number"}
+                        placeholder={lang === "zh" ? "請輸入聯絡電話" : lang === "cn" ? "请输入联络电话" : "Enter phone number"}
                         value={formData.phone}
                         onChange={handlePhoneChange}
                         className={`w-full bg-[#1a1a1a] border rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none transition-all duration-300 ${
@@ -478,10 +475,11 @@ export default function Contact() {
                     {/* 電郵 */}
                     <div className="space-y-2">
                       <label className="text-[10px] text-slate-400 font-bold tracking-wider uppercase block">
-                        {t("contact.form.email", lang)} <span className="text-slate-600">{contactContinuationCopy.optional[lang]}</span>
+                        {t("contact.form.email", lang)} <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="email"
+                        required
                         placeholder={t("inline.contact.8", lang)}
                         value={formData.email}
                         onChange={handleEmailChange}
@@ -499,12 +497,6 @@ export default function Contact() {
                     </div>
 
                   </div>
-
-                  {errors.contact && (
-                    <p role="alert" className="-mt-3 text-[10px] font-medium tracking-wide text-red-400/90 animate-fadeIn">
-                      {errors.contact}
-                    </p>
-                  )}
 
                   {/* 備註 */}
                   <div className="space-y-2">

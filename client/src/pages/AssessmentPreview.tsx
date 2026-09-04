@@ -23,6 +23,7 @@ import {
 import Layout from "@/components/Layout";
 import { sendAssessmentEmail, type AssessmentEmailParams } from "@/lib/assessmentEmail";
 import { consumeContactAssessmentPrefill, contactContinuationCopy } from "@/lib/contactAssessmentHandoff";
+import { isSandboxPreviewFeature } from "@/lib/sandboxPreview";
 import {
   assessmentSteps,
   assessmentProductionUi,
@@ -396,9 +397,8 @@ function ReviewSection({
 }
 
 export default function AssessmentPreview() {
-  const isProductionExperience = import.meta.env.PROD || (
-    import.meta.env.DEV && new URLSearchParams(window.location.search).has("productionPreview")
-  );
+  const sandboxToolsEnabled = isSandboxPreviewFeature("sandboxTools", "/assessment-preview");
+  const isProductionExperience = !sandboxToolsEnabled;
   const experienceUi = isProductionExperience ? assessmentProductionUi : assessmentUi;
   const [lang, setLang] = useState<AssessmentLang>("zh");
   const [currentStep, setCurrentStep] = useState(1);
@@ -444,7 +444,7 @@ export default function AssessmentPreview() {
   }, []);
 
   useEffect(() => {
-    if (!import.meta.env.DEV || !new URLSearchParams(window.location.search).has("emailPreview")) return;
+    if (!isSandboxPreviewFeature("emailPreview", "/assessment-preview")) return;
     setForm(createTestForm(lang));
     setReviewing(false);
     setSubmissionStatus("email-preview");
@@ -968,7 +968,7 @@ export default function AssessmentPreview() {
             </p>
           </div>
 
-          {!isProductionExperience && <section className="mb-8 border border-[#66717a]/25 bg-[#182028] px-4 py-4 sm:px-5" aria-label={text(assessmentUi.testTools, lang)}>
+          {sandboxToolsEnabled && <section className="mb-8 border border-[#66717a]/25 bg-[#182028] px-4 py-4 sm:px-5" aria-label={text(assessmentUi.testTools, lang)}>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
                 <FlaskConical size={18} className="shrink-0 text-[#bfae95]" aria-hidden="true" />

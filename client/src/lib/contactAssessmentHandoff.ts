@@ -15,14 +15,14 @@ const HANDOFF_MAX_AGE_MS = 10 * 60 * 1000;
 
 export const contactContinuationCopy = {
   minimumHint: {
-    zh: "只需填寫姓名，以及電話或電郵其中一項；備註可選填。",
-    cn: "只需填写姓名，以及电话或电邮其中一项；备注可选填。",
-    en: "Only your name and either a phone number or email address are required. Notes are optional."
+    zh: "只需填寫姓名及電子郵件；聯絡電話與備註可選填。",
+    cn: "只需填写姓名及电子邮件；联络电话与备注可选填。",
+    en: "Only your name and email address are required. Phone number and notes are optional."
   },
-  contactRequired: {
-    zh: "請至少提供電話或電郵其中一項，方便專員聯絡你。",
-    cn: "请至少提供电话或电邮其中一项，方便专员联络你。",
-    en: "Please provide either a phone number or an email address so our specialist can contact you."
+  emailRequired: {
+    zh: "請輸入電子郵件，方便專員回覆你的查詢。",
+    cn: "请输入电子邮件，方便专员回复你的查询。",
+    en: "Please enter your email address so our specialist can respond to your enquiry."
   },
   optional: {
     zh: "選填",

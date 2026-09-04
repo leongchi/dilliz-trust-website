@@ -91,8 +91,9 @@ export function validateAssessmentEmailParams(params: AssessmentEmailParams) {
 
 export async function sendAssessmentEmail(params: AssessmentEmailParams) {
   validateAssessmentEmailParams(params);
-  const emailEnabled = import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL === "true" ||
-    import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_TEST === "true";
+  const emailEnabled = import.meta.env.PROD
+    ? import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_LIVE === "true"
+    : import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_TEST === "true";
   if (!emailEnabled) {
     throw new Error("Assessment EmailJS sending is not enabled.");
   }
