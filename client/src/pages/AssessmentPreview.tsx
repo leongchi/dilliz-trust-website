@@ -60,7 +60,7 @@ type FormState = {
   declaration: boolean;
 };
 
-type SubmissionStatus = "idle" | "email-preview";
+type SubmissionStatus = "idle" | "submitted";
 type EmailDeliveryStatus = "locked" | "sending" | "sent" | "error";
 
 const initialForm: FormState = {
@@ -443,24 +443,6 @@ export default function AssessmentPreview() {
     setPrefillApplied(true);
   }, []);
 
-  useEffect(() => {
-    if (!isSandboxPreviewFeature("emailPreview", "/assessment-preview")) return;
-    setForm(createTestForm(lang));
-    setReviewing(false);
-    setSubmissionStatus("email-preview");
-    setTestReference(createAssessmentReference(false));
-    setPreviewedAt(
-      new Intl.DateTimeFormat(lang === "en" ? "en-GB" : lang === "cn" ? "zh-CN" : "zh-HK", {
-        dateStyle: "medium",
-        timeStyle: "medium",
-        timeZone: "Asia/Hong_Kong"
-      }).format(new Date())
-    );
-    setErrors({});
-    setLockedNotice("");
-    setEmailDeliveryStatus("locked");
-  }, [lang]);
-
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => {
     setForm((previous) => ({ ...previous, [key]: value }));
     setTestReference("");
@@ -646,24 +628,6 @@ export default function AssessmentPreview() {
     scrollToStage();
   };
 
-  const openEmailPreview = () => {
-    const reference = testReference || createAssessmentReference(isProductionExperience);
-    setTestReference(reference);
-    setPreviewedAt(
-      new Intl.DateTimeFormat(lang === "en" ? "en-GB" : lang === "cn" ? "zh-CN" : "zh-HK", {
-        dateStyle: "medium",
-        timeStyle: "medium",
-        timeZone: "Asia/Hong_Kong"
-      }).format(new Date())
-    );
-    setSubmissionStatus("email-preview");
-    setEmailDeliveryStatus("locked");
-    setReviewing(false);
-    setErrors({});
-    setLockedNotice("");
-    scrollToStage();
-  };
-
   const step = assessmentSteps[currentStep - 1];
   const stageNumber = reviewing || submissionStatus !== "idle" ? 9 : currentStep;
   const progress = `${(stageNumber / 9) * 100}%`;
@@ -816,15 +780,26 @@ export default function AssessmentPreview() {
     declaration_label: text(labels.declaration, lang),
     declaration: declarationValue
   };
-  const emailSendEnabled = import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL === "true" ||
-    import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_TEST === "true";
+  const emailSendEnabled = import.meta.env.PROD
+    ? import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_LIVE === "true"
+    : import.meta.env.VITE_ENABLE_ASSESSMENT_EMAIL_TEST === "true";
 
   const sendFullAssessmentEmail = async () => {
     if (emailDeliveryStatus === "sending" || emailDeliveryStatus === "sent") return;
+    const reference = testReference || createAssessmentReference(isProductionExperience);
+    const submittedAt = previewedAt || new Intl.DateTimeFormat(
+      lang === "en" ? "en-GB" : lang === "cn" ? "zh-CN" : "zh-HK",
+      { dateStyle: "medium", timeStyle: "medium", timeZone: "Asia/Hong_Kong" }
+    ).format(new Date());
+    setTestReference(reference);
+    setPreviewedAt(submittedAt);
     setEmailDeliveryStatus("sending");
     try {
-      await sendAssessmentEmail(emailParams);
+      await sendAssessmentEmail({ ...emailParams, submission_id: reference, submitted_at: submittedAt });
       setEmailDeliveryStatus("sent");
+      setSubmissionStatus("submitted");
+      setReviewing(false);
+      scrollToStage();
     } catch {
       setEmailDeliveryStatus("error");
     }
@@ -1113,119 +1088,24 @@ export default function AssessmentPreview() {
                 <section className="relative border border-[#66717a]/30 bg-[#1b2026] shadow-[inset_0_1px_0_rgba(255,255,255,0.03),inset_0_0_55px_rgba(15,28,40,0.18),0_22px_70px_rgba(0,0,0,0.3)]">
                   <div className="h-1 w-full bg-gradient-to-r from-transparent via-[#95856e] to-transparent" />
 
-                  {submissionStatus === "email-preview" ? (
-                    <>
-                      <div className="flex items-center justify-between border-b border-[#95856e]/25 bg-[#182028] px-5 py-3 text-[9px] font-bold tracking-[0.18em] text-slate-500 sm:px-8 md:px-10">
-                        <span className="text-[#bfae95]">{text(experienceUi.emailPreviewEyebrow, lang)}</span>
-                        <MailOpen size={16} className="text-[#bfae95]" aria-hidden="true" />
+                  {submissionStatus === "submitted" ? (
+                    <div className="px-5 py-14 text-center sm:px-8 sm:py-16 md:px-10">
+                      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#bfae95]/60 text-[#bfae95]">
+                        <Check size={26} aria-hidden="true" />
                       </div>
-                      <div className="bg-[#eee9df] px-3 py-5 sm:px-7 sm:py-8 md:px-10">
-                        <article className="mx-auto max-w-3xl border border-[#cfc2ad] bg-white text-[#17202a] shadow-[0_22px_65px_rgba(0,0,0,0.22)]">
-                          <header className="border-b-[3px] border-[#b5a17e] bg-[#151b22] px-5 py-7 sm:px-8">
-                            <p className="text-[9px] font-bold tracking-[0.22em] text-[#c9b895]">DILLIZ CAPITAL TRUST LIMITED</p>
-                            <h2 className="mt-3 font-serif text-2xl font-bold leading-tight text-white sm:text-3xl">{text(experienceUi.emailPreviewTitle, lang)}</h2>
-                            <p className="mt-3 text-xs leading-6 text-slate-300">{text(experienceUi.emailIntro, lang)}</p>
-                          </header>
-
-                          <div className="border-b border-[#e5ded2] px-5 py-6 sm:px-8">
-                            <dl className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
-                              <div>
-                                <dt className="text-[9px] font-bold tracking-[0.15em] text-[#7d6e57]">{text(assessmentUi.emailTo, lang)}</dt>
-                                <dd className="mt-1 break-all text-sm font-semibold">info@dilliz.com</dd>
-                              </div>
-                              <div>
-                                <dt className="text-[9px] font-bold tracking-[0.15em] text-[#7d6e57]">{text(assessmentUi.emailReplyTo, lang)}</dt>
-                                <dd className="mt-1 break-all text-sm font-semibold">{form.email}</dd>
-                              </div>
-                              <div className="sm:col-span-2">
-                                <dt className="text-[9px] font-bold tracking-[0.15em] text-[#7d6e57]">{text(assessmentUi.emailSubject, lang)}</dt>
-                                <dd className="mt-1 break-words text-sm font-semibold">{text(experienceUi.emailSubjectValue, lang)} — {testReference}</dd>
-                              </div>
-                              <div>
-                                <dt className="text-[9px] font-bold tracking-[0.15em] text-[#7d6e57]">{text(assessmentUi.testReference, lang)}</dt>
-                                <dd className="mt-1 break-all font-mono text-xs">{testReference}</dd>
-                              </div>
-                              <div>
-                                <dt className="text-[9px] font-bold tracking-[0.15em] text-[#7d6e57]">{text(experienceUi.submitting, lang)}</dt>
-                                <dd className="mt-1 text-sm font-semibold">{previewedAt}</dd>
-                              </div>
-                            </dl>
-                          </div>
-
-                          <div className="border-b border-[#e5ded2] bg-[#fbf9f5] px-5 py-5 sm:px-8">
-                            <p className="text-xs font-semibold leading-6 text-[#6d5840]">{text(experienceUi.emailPrivacyWarning, lang)}</p>
-                          </div>
-
-                          <div className="px-5 py-2 sm:px-8">
-                            {reviewSections.map((section) => (
-                              <section key={section.stepId} className="border-b border-[#e5ded2] py-6 last:border-b-0">
-                                <div className="mb-5 flex items-center gap-3">
-                                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#a8916c] text-[9px] font-bold text-[#7d6e57]">
-                                    {String(section.stepId).padStart(2, "0")}
-                                  </span>
-                                  <h3 className="font-serif text-lg font-bold text-[#17202a]">{text(assessmentSteps[section.stepId - 1].title, lang)}</h3>
-                                </div>
-                                <dl className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
-                                  {section.items.map((item, index) => (
-                                    <div key={`${section.stepId}-email-${index}`} className="min-w-0">
-                                      <dt className="text-[9px] font-bold uppercase tracking-[0.14em] text-[#8a7b67]">{text(item.label, lang)}</dt>
-                                      <dd className="mt-1.5 whitespace-pre-wrap break-words text-sm leading-6 text-[#33404c]">{item.value}</dd>
-                                    </div>
-                                  ))}
-                                </dl>
-                              </section>
-                            ))}
-                          </div>
-
-                          <footer className="border-t border-[#e5ded2] bg-[#f7f4ee] px-5 py-5 text-[11px] leading-5 text-[#6f7479] sm:px-8">
-                            {text(experienceUi.emailPrivacyWarning, lang)}
-                          </footer>
-                        </article>
-                      </div>
-                      <footer className="border-t border-[#95856e]/25 bg-[#182028]/55 px-5 py-6 sm:px-8 md:px-10">
-                        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                          <p
-                            role={emailDeliveryStatus === "error" ? "alert" : "status"}
-                            className={`max-w-xl text-xs leading-6 ${
-                              emailDeliveryStatus === "error"
-                                ? "text-[#e2a7a7]"
-                                : emailDeliveryStatus === "sent"
-                                  ? "text-[#bfae95]"
-                                  : "text-slate-500"
-                            }`}
-                          >
-                            {emailDeliveryStatus === "error"
-                                ? text(experienceUi.emailSendError, lang)
-                              : emailDeliveryStatus === "sent"
-                                ? text(experienceUi.emailSentText, lang)
-                                : text(experienceUi.emailNotSent, lang)}
-                          </p>
-                          <div className="flex flex-col gap-3 sm:flex-row">
-                            <button type="button" onClick={openReview} disabled={emailDeliveryStatus === "sending"} className="btn-gold-outline inline-flex min-h-12 shrink-0 items-center justify-center gap-2 px-6 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-50">
-                              <ChevronLeft size={15} aria-hidden="true" />
-                              {text(experienceUi.emailBackToReview, lang)}
-                            </button>
-                            <button
-                              type="button"
-                              onClick={sendFullAssessmentEmail}
-                              disabled={!emailSendEnabled || emailDeliveryStatus === "sending" || emailDeliveryStatus === "sent"}
-                              className="btn-gold inline-flex min-h-12 shrink-0 items-center justify-center gap-2 px-6 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-55"
-                            >
-                              <MailOpen size={15} aria-hidden="true" />
-                              {emailDeliveryStatus === "sending"
-                                ? text(experienceUi.emailSending, lang)
-                                : emailDeliveryStatus === "sent"
-                                  ? text(experienceUi.emailSent, lang)
-                                  : emailDeliveryStatus === "error"
-                                    ? text(experienceUi.emailRetry, lang)
-                                    : emailSendEnabled
-                                      ? text(experienceUi.emailSendTest, lang)
-                                      : text(experienceUi.emailSendLocked, lang)}
-                            </button>
-                          </div>
+                      <h2 className="mt-6 font-serif text-2xl font-bold text-slate-100 md:text-3xl">{text(experienceUi.emailSent, lang)}</h2>
+                      <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-400">{text(experienceUi.emailSentText, lang)}</p>
+                      <dl className="mx-auto mt-8 grid max-w-xl gap-5 border-y border-[#95856e]/25 py-6 text-left sm:grid-cols-2">
+                        <div>
+                          <dt className="text-[9px] font-bold tracking-[0.16em] text-[#bfae95]">{text(assessmentUi.testReference, lang)}</dt>
+                          <dd className="mt-2 break-all font-mono text-xs text-slate-300">{testReference}</dd>
                         </div>
-                      </footer>
-                    </>
+                        <div>
+                          <dt className="text-[9px] font-bold tracking-[0.16em] text-[#bfae95]">{text(experienceUi.submitting, lang)}</dt>
+                          <dd className="mt-2 text-xs text-slate-300">{previewedAt}</dd>
+                        </div>
+                      </dl>
+                    </div>
                   ) : reviewing ? (
                     <>
                       <div className="flex flex-col gap-2 border-b border-[#95856e]/25 bg-[#182028] px-5 py-3 text-[9px] font-bold tracking-[0.18em] text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8 md:px-10">
@@ -1253,11 +1133,24 @@ export default function AssessmentPreview() {
                         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
                           <div className="max-w-xl">
                             <p className="text-[10px] font-bold tracking-[0.2em] text-[#bfae95]">{text(experienceUi.testSubmitLead, lang)}</p>
-                            <p className="mt-2 text-xs leading-6 text-slate-500">{text(experienceUi.testSubmitText, lang)}</p>
+                            <p role={emailDeliveryStatus === "error" ? "alert" : "status"} className={`mt-2 text-xs leading-6 ${emailDeliveryStatus === "error" ? "text-[#e2a7a7]" : "text-slate-500"}`}>
+                              {emailDeliveryStatus === "error" ? text(experienceUi.emailSendError, lang) : text(experienceUi.testSubmitText, lang)}
+                            </p>
                           </div>
                           <div className="flex flex-col gap-3 sm:flex-row">
-                            <button type="button" onClick={openEmailPreview} className="btn-gold inline-flex min-h-12 items-center justify-center gap-2 px-6 text-xs font-bold">
-                              {text(experienceUi.simulateSuccess, lang)}
+                            <button
+                              type="button"
+                              onClick={sendFullAssessmentEmail}
+                              disabled={!emailSendEnabled || emailDeliveryStatus === "sending" || emailDeliveryStatus === "sent"}
+                              className="btn-gold inline-flex min-h-12 items-center justify-center gap-2 px-6 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-55"
+                            >
+                              {emailDeliveryStatus === "sending"
+                                ? text(experienceUi.emailSending, lang)
+                                : emailDeliveryStatus === "error"
+                                  ? text(experienceUi.emailRetry, lang)
+                                  : emailSendEnabled
+                                    ? text(experienceUi.emailSendTest, lang)
+                                    : text(experienceUi.emailSendLocked, lang)}
                               <MailOpen size={15} aria-hidden="true" />
                             </button>
                           </div>

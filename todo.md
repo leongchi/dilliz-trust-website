@@ -318,6 +318,16 @@
 - [x] 確認短表 EmailJS `reply_to` 一定有有效電郵，詳細評估一次性帶入維持正常。
 - [x] 與沙盒控制項修正一併驗證及重新發布 `main`、`gh-pages`。
 
+## 詳細評估由核對頁直接正式提交
+
+- [ ] 移除客戶可見的「完整電郵預覽」畫面及相關返回按鈕。
+- [ ] 在第九步「核對資料」直接提供正式提交按鈕。
+- [ ] 按鈕直接呼叫 `template_id6y2ku`，成功後顯示提交完成及編號。
+- [ ] 保留寄送中鎖定、重複提交防護、失敗提示及返回修改功能。
+- [ ] 更新繁體、簡體及英文按鈕與說明，避免提及預覽電郵內容。
+- [ ] 驗證 production build、手機版核對頁、直接提交及無沙盒工具。
+- [ ] 重新同步 GitHub `main` 及 `gh-pages`，提供最新 cPanel 部署 commit。
+
 ## `/assessment-preview` EmailJS 沙盒通知正式串接
 
 - [ ] 核對 Google Sheet 成功回覆、現有 EmailJS service、`template_id6y2ku` 及 `info@dilliz.com` 設定。

@@ -59,9 +59,9 @@ export const assessmentUi = {
   review: localize("核對資料", "核对资料", "REVIEW DETAILS"),
   reviewTitle: localize("提交前核對", "提交前核对", "Review Before Submission"),
   reviewDescription: localize(
-    "請核對八個部分的虛構測試資料。你可以返回任何部分修改，然後預覽寄給 CS 的完整電郵正文。",
-    "请核对八个部分的虚构测试资料。你可以返回任何部分修改，然后预览寄给 CS 的完整电邮正文。",
-    "Review the fictional test data across all eight sections. You may edit any section before previewing the complete email body for CS."
+    "請核對八個部分的虛構測試資料。你可以返回任何部分修改，確認無誤後直接提交。",
+    "请核对八个部分的虚构测试资料。你可以返回任何部分修改，确认无误后直接提交。",
+    "Review the fictional test data across all eight sections. You may edit any section, then submit directly when the details are correct."
   ),
   edit: localize("修改", "修改", "EDIT"),
   notProvided: localize("未提供", "未提供", "Not provided"),
@@ -78,11 +78,11 @@ export const assessmentUi = {
     "请先完成当前部分，才可前往后续步骤。",
     "Complete the current section before opening later steps."
   ),
-  testSubmitLead: localize("完整電郵正文預覽", "完整电邮正文预览", "COMPLETE EMAIL BODY PREVIEW"),
+  testSubmitLead: localize("確認並提交", "确认并提交", "CONFIRM AND SUBMIT"),
   testSubmitText: localize(
-    "以下按鈕只會顯示準備寄到 info@dilliz.com 的完整電郵內容，不會呼叫 EmailJS、寄出郵件或保存資料。",
-    "以下按钮只会显示准备寄到 info@dilliz.com 的完整电邮内容，不会调用 EmailJS、寄出邮件或保存资料。",
-    "The button only displays the complete email prepared for info@dilliz.com. It does not call EmailJS, send email or store data."
+    "確認八個部分的資料後，可在此直接提交評估。",
+    "确认八个部分的资料后，可在此直接提交评估。",
+    "After confirming all eight sections, submit the assessment directly here."
   ),
   simulateSuccess: localize("預覽完整電郵", "预览完整电邮", "PREVIEW COMPLETE EMAIL"),
   submitting: localize("預覽時間（香港）", "预览时间（香港）", "PREVIEWED AT (HONG KONG)"),
@@ -150,15 +150,15 @@ export const assessmentProductionUi = {
     "After submission, all information will be sent through EmailJS and email to DILLIZ Client Services at info@dilliz.com solely for preliminary account-opening assessment and follow-up."
   ),
   reviewDescription: localize(
-    "請核對八個部分的資料。你可以返回任何部分修改，確認完整電郵內容後再提交給 DILLIZ 客戶服務團隊。",
-    "请核对八个部分的资料。你可以返回任何部分修改，确认完整电邮内容后再提交给 DILLIZ 客户服务团队。",
-    "Review all eight sections. You may return to any section before confirming the complete email and submitting it to DILLIZ Client Services."
+    "請核對八個部分的資料。你可以返回任何部分修改，確認無誤後直接提交給 DILLIZ 客戶服務團隊。",
+    "请核对八个部分的资料。你可以返回任何部分修改，确认无误后直接提交给 DILLIZ 客户服务团队。",
+    "Review all eight sections. You may return to any section to make changes, then submit directly to DILLIZ Client Services."
   ),
-  testSubmitLead: localize("確認電郵內容", "确认电邮内容", "CONFIRM EMAIL CONTENT"),
+  testSubmitLead: localize("確認並提交", "确认并提交", "CONFIRM AND SUBMIT"),
   testSubmitText: localize(
-    "下一步會顯示將寄往 info@dilliz.com 的完整電郵內容；資料在你按「提交評估」前不會寄出。",
-    "下一步会显示将发送至 info@dilliz.com 的完整电邮内容；资料在你按“提交评估”前不会发送。",
-    "The next step shows the complete email prepared for info@dilliz.com. Nothing is sent until you select Submit Assessment."
+    "按「提交評估」後，資料會直接傳送至 DILLIZ 客戶服務團隊；請確認內容正確。",
+    "按“提交评估”后，资料会直接发送至 DILLIZ 客户服务团队；请确认内容正确。",
+    "Select Submit Assessment to send the information directly to DILLIZ Client Services. Confirm the details are correct first."
   ),
   simulateSuccess: localize("預覽完整電郵", "预览完整电邮", "PREVIEW COMPLETE EMAIL"),
   submitting: localize("提交時間（香港）", "提交时间（香港）", "SUBMITTED AT (HONG KONG)"),
