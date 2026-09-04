@@ -3,8 +3,14 @@ import { Mail, Phone, MapPin, Shield, CheckCircle2, ArrowRight, MessageSquare, C
 import Layout from "@/components/Layout";
 import { t } from "@/lib/translations";
 import { MapView } from "@/components/Map";
+import {
+  contactContinuationCopy,
+  storeContactAssessmentPrefill,
+  type ContactAssessmentPrefill
+} from "@/lib/contactAssessmentHandoff";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
+import { useLocation } from "wouter";
 
 // ==========================================
 // EmailJS 服務配置說明 (方案一)
@@ -20,8 +26,6 @@ import { toast } from "sonner";
 // - 客戶姓名: {{from_name}}
 // - 聯絡電話: {{phone}}
 // - 電子郵件: {{reply_to}}
-// - 諮詢項目: {{interest}}
-// - 資產規模: {{amount}}
 // - 諮詢留言: {{message}}
 // - 收件人: info@dilliz.com
 // ==========================================
@@ -30,22 +34,25 @@ const EMAILJS_TEMPLATE_ID: string = "template_qunjjdo";   // 填入您的 EmailJ
 const EMAILJS_PUBLIC_KEY: string = "jV6VJZBOtjeaELQb2";     // 填入您的 Public Key (在 Account -> API Keys 頁面)
 
 export default function Contact() {
+  const [, setLocation] = useLocation();
+  const isSandboxContactTest = import.meta.env.DEV && new URLSearchParams(window.location.search).has("shortFormTest");
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [submitted, setSubmitted] = useState(false);
+  const [submittedContact, setSubmittedContact] = useState<ContactAssessmentPrefill | null>(null);
+  const [continuationSkipped, setContinuationSkipped] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    interest: "",
-    amount: "",
     message: ""
   });
 
   // 實時格式校驗狀態
   const [errors, setErrors] = useState({
     phone: "",
-    email: ""
+    email: "",
+    contact: ""
   });
 
   // 正規表示式定義
@@ -78,13 +85,13 @@ export default function Contact() {
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
     setFormData(prev => ({ ...prev, email: val }));
-    setErrors(prev => ({ ...prev, email: validateEmail(val) }));
+    setErrors(prev => ({ ...prev, email: validateEmail(val), contact: val || formData.phone ? "" : prev.contact }));
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
     setFormData(prev => ({ ...prev, phone: val }));
-    setErrors(prev => ({ ...prev, phone: validatePhone(val) }));
+    setErrors(prev => ({ ...prev, phone: validatePhone(val), contact: val || formData.email ? "" : prev.contact }));
   };
 
   useEffect(() => {
@@ -104,26 +111,16 @@ export default function Contact() {
     return () => window.removeEventListener("dilliz_lang_changed", handleLangChange);
   }, []);
 
-  const getInterestLabel = (key: string, currentLang: "zh" | "en" | "cn") => {
-    switch (key) {
-      case "asset": return currentLang === "zh" ? "託管服務" : currentLang === "cn" ? "托管服务" : "Custody Services";
-      case "trust": return currentLang === "zh" ? "稅務優化" : currentLang === "cn" ? "税务优化" : "Tax Optimization";
-      case "deposit": return currentLang === "zh" ? "全球銀行戶口開設" : currentLang === "cn" ? "全球银行户口开设" : "Global Bank Account Setup";
-      case "finance": return currentLang === "zh" ? "資產聯動信用卡" : currentLang === "cn" ? "资产联动信用卡" : "Asset-Linked Credit Card";
-      case "card": return currentLang === "zh" ? "全球賬單代付" : currentLang === "cn" ? "全球账单代付" : "Global Bill Payment";
-      default: return key;
-    }
-  };
-
-  const getAmountLabel = (key: string, currentLang: "zh" | "en" | "cn") => {
-    switch (key) {
-      case "t1": return "$10,000 - $50,000 USD";
-      case "t2": return "$50,000 - $250,000 USD";
-      case "t3": return "$250,000 - $1,000,000 USD";
-      case "t4": return "$1,000,000+ USD";
-      default: return key;
-    }
-  };
+  useEffect(() => {
+    if (!import.meta.env.DEV || !new URLSearchParams(window.location.search).has("continuationPreview")) return;
+    const fictionalContact = {
+      name: "陳測試",
+      phone: "+852 5555 0101",
+      email: "test.applicant@example.com"
+    };
+    setSubmittedContact(fictionalContact);
+    setSubmitted(true);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -131,12 +128,23 @@ export default function Contact() {
     // 提交前進行最終格式校驗
     const emailErr = validateEmail(formData.email);
     const phoneErr = validatePhone(formData.phone);
+    const contactErr = !formData.email.trim() && !formData.phone.trim()
+      ? contactContinuationCopy.contactRequired[lang]
+      : "";
 
-    if (emailErr || phoneErr) {
-      setErrors({ email: emailErr, phone: phoneErr });
+    if (emailErr || phoneErr || contactErr) {
+      setErrors({ email: emailErr, phone: phoneErr, contact: contactErr });
       toast.error(
         t("inline.contact.2", lang)
       );
+      return;
+    }
+
+    if (isSandboxContactTest) {
+      setSubmittedContact({ name: formData.name, phone: formData.phone, email: formData.email });
+      setContinuationSkipped(false);
+      setSubmitted(true);
+      setFormData({ name: "", phone: "", email: "", message: "" });
       return;
     }
     
@@ -149,14 +157,14 @@ export default function Contact() {
       toast.warning(
         t("inline.contact.3", lang)
       );
-      
+
+      setSubmittedContact({ name: formData.name, phone: formData.phone, email: formData.email });
+      setContinuationSkipped(false);
       setSubmitted(true);
       setFormData({
         name: "",
         phone: "",
         email: "",
-        interest: "",
-        amount: "",
         message: ""
       });
       return;
@@ -167,10 +175,8 @@ export default function Contact() {
     try {
       const templateParams = {
         from_name: formData.name,
-        phone: formData.phone,
-        reply_to: formData.email,
-        interest: getInterestLabel(formData.interest, lang),
-        amount: getAmountLabel(formData.amount, lang),
+        phone: formData.phone || contactContinuationCopy.notProvided[lang],
+        reply_to: formData.email || "info@dilliz.com",
         message: formData.message || "（無留言 / No Message）"
       };
 
@@ -185,13 +191,13 @@ export default function Contact() {
         t("inline.contact.4", lang)
       );
 
+      setSubmittedContact({ name: formData.name, phone: formData.phone, email: formData.email });
+      setContinuationSkipped(false);
       setSubmitted(true);
       setFormData({
         name: "",
         phone: "",
         email: "",
-        interest: "",
-        amount: "",
         message: ""
       });
     } catch (error: any) {
@@ -219,6 +225,18 @@ export default function Contact() {
     } finally {
       setIsSending(false);
     }
+  };
+
+  const continueToAssessment = () => {
+    if (!submittedContact) return;
+    storeContactAssessmentPrefill(submittedContact);
+    setLocation("/account-opening-assessment");
+  };
+
+  const resetContactForm = () => {
+    setSubmittedContact(null);
+    setContinuationSkipped(false);
+    setSubmitted(false);
   };
 
   return (
@@ -351,7 +369,7 @@ export default function Contact() {
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-metal-gold" />
 
               {submitted ? (
-                <div className="py-16 text-center space-y-6 max-w-md mx-auto my-auto animate-fadeIn">
+                <div className="py-10 text-center space-y-6 max-w-lg mx-auto my-auto animate-fadeIn">
                   <div className="w-16 h-16 rounded-full bg-metal-gold/10 border border-metal-gold/30 flex items-center justify-center text-metal-gold mx-auto shadow-gold-glow">
                     <Check size={32} />
                   </div>
@@ -361,9 +379,45 @@ export default function Contact() {
                   <p className="text-slate-300 text-sm leading-relaxed font-light">
                     {t("contact.form.success", lang)}
                   </p>
+                  {submittedContact && !continuationSkipped && (
+                    <div className="border-y border-metal-gold/25 bg-[#171b20]/80 px-5 py-7 text-left sm:px-7">
+                      <span className="text-[9px] font-bold tracking-[0.2em] text-metal-gold uppercase">
+                        {contactContinuationCopy.eyebrow[lang]}
+                      </span>
+                      <h4 className="mt-3 font-serif text-xl font-bold leading-tight text-slate-100">
+                        {contactContinuationCopy.title[lang]}
+                      </h4>
+                      <p className="mt-3 text-sm font-light leading-7 text-slate-400">
+                        {contactContinuationCopy.body[lang]}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={continueToAssessment}
+                        className="btn-gold mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 px-6 text-xs font-bold tracking-[0.12em] uppercase"
+                      >
+                        {contactContinuationCopy.continue[lang]} <ArrowRight size={14} />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setContinuationSkipped(true)}
+                        className="mt-3 inline-flex min-h-11 w-full items-center justify-center px-4 text-[10px] font-bold tracking-[0.12em] text-slate-500 uppercase transition-colors hover:text-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-metal-gold"
+                      >
+                        {contactContinuationCopy.skip[lang]}
+                      </button>
+                      <p className="mt-4 text-[10px] leading-5 text-slate-600">
+                        {contactContinuationCopy.privacy[lang]}
+                      </p>
+                    </div>
+                  )}
+                  {continuationSkipped && (
+                    <p role="status" className="border-y border-white/10 px-5 py-5 text-sm leading-6 text-slate-400">
+                      {contactContinuationCopy.skipConfirmed[lang]}
+                    </p>
+                  )}
                   <button
-                    onClick={() => setSubmitted(false)}
-                    className="btn-gold px-8 py-3 font-bold text-xs tracking-widest uppercase inline-flex items-center gap-2"
+                    type="button"
+                    onClick={resetContactForm}
+                    className="inline-flex min-h-11 items-center justify-center gap-2 border border-white/10 px-6 text-[10px] font-bold tracking-[0.12em] text-slate-400 uppercase transition-colors hover:border-metal-gold/50 hover:text-metal-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-metal-gold"
                   >
                     {t("inline.contact.6", lang)} <ArrowRight size={14} />
                   </button>
@@ -373,6 +427,9 @@ export default function Contact() {
                   <h3 className="text-2xl font-bold text-slate-200 font-serif mb-6">
                     {t("contact.form.title", lang)}
                   </h3>
+                  <p className="-mt-3 text-xs leading-6 text-slate-500">
+                    {contactContinuationCopy.minimumHint[lang]}
+                  </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
@@ -394,11 +451,10 @@ export default function Contact() {
                     {/* 電話 */}
                     <div className="space-y-2">
                       <label className="text-[10px] text-slate-400 font-bold tracking-wider uppercase block">
-                        {t("contact.form.phone", lang)} <span className="text-red-500">*</span>
+                        {t("contact.form.phone", lang)} <span className="text-slate-600">{contactContinuationCopy.optional[lang]}</span>
                       </label>
                       <input
                         type="tel"
-                        required
                         placeholder={lang === "zh" ? "請輸入聯絡電話" : "Enter phone number"}
                         value={formData.phone}
                         onChange={handlePhoneChange}
@@ -417,16 +473,15 @@ export default function Contact() {
 
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6">
                     
                     {/* 電郵 */}
                     <div className="space-y-2">
                       <label className="text-[10px] text-slate-400 font-bold tracking-wider uppercase block">
-                        {t("contact.form.email", lang)} <span className="text-red-500">*</span>
+                        {t("contact.form.email", lang)} <span className="text-slate-600">{contactContinuationCopy.optional[lang]}</span>
                       </label>
                       <input
                         type="email"
-                        required
                         placeholder={t("inline.contact.8", lang)}
                         value={formData.email}
                         onChange={handleEmailChange}
@@ -443,46 +498,13 @@ export default function Contact() {
                       )}
                     </div>
 
-                    {/* 服務選擇 */}
-                    <div className="space-y-2">
-                      <label className="text-[10px] text-slate-400 font-bold tracking-wider uppercase block">
-                        {t("contact.form.interest", lang)} <span className="text-red-500">*</span>
-                      </label>
-                      <select
-                        required
-                        value={formData.interest}
-                        onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                        className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300 appearance-none cursor-pointer"
-                      >
-                        <option value="" disabled>{t("contact.form.interest.placeholder", lang)}</option>
-                        <option value="asset">{t("contact.form.interest.asset", lang)}</option>
-                        <option value="trust">{t("contact.form.interest.trust", lang)}</option>
-                        <option value="deposit">{t("contact.form.interest.deposit", lang)}</option>
-                        <option value="finance">{t("contact.form.interest.finance", lang)}</option>
-                        <option value="card">{t("contact.form.interest.card", lang)}</option>
-                      </select>
-                    </div>
-
                   </div>
 
-                  {/* 資產規模 */}
-                  <div className="space-y-2">
-                    <label className="text-[10px] text-slate-400 font-bold tracking-wider uppercase block">
-                      {t("contact.form.amount", lang)} <span className="text-red-500">*</span>
-                    </label>
-                    <select
-                      required
-                      value={formData.amount}
-                      onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
-                      className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-metal-gold focus:ring-1 focus:ring-metal-gold/30 transition-all duration-300 appearance-none cursor-pointer"
-                    >
-                      <option value="" disabled>{t("contact.form.amount.placeholder", lang)}</option>
-                      <option value="t1">{t("contact.form.amount.t1", lang)}</option>
-                      <option value="t2">{t("contact.form.amount.t2", lang)}</option>
-                      <option value="t3">{t("contact.form.amount.t3", lang)}</option>
-                      <option value="t4">{t("contact.form.amount.t4", lang)}</option>
-                    </select>
-                  </div>
+                  {errors.contact && (
+                    <p role="alert" className="-mt-3 text-[10px] font-medium tracking-wide text-red-400/90 animate-fadeIn">
+                      {errors.contact}
+                    </p>
+                  )}
 
                   {/* 備註 */}
                   <div className="space-y-2">

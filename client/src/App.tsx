@@ -15,6 +15,7 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Legislation from "./pages/Legislation";
 import Disclaimer from "./pages/Disclaimer";
+import AssessmentPreview from "./pages/AssessmentPreview";
 
 
 function Router() {
@@ -30,7 +31,9 @@ function Router() {
       <Route path="/terms" component={Terms} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/legislation" component={Legislation} />
-      <Route path="/disclaimer" component={Disclaimer} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/account-opening-assessment" component={AssessmentPreview} />
+      <Route path="/assessment-preview" component={AssessmentPreview} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

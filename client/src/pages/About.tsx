@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
-import { Shield, Target, Eye, Compass, Award, Building, Sparkles, Scale, ArrowRight } from "lucide-react";
+import { Shield, Target, Eye, Compass, Award, Building, Sparkles, FileText, Download } from "lucide-react";
 import Layout from "@/components/Layout";
 import { Link } from "wouter";
 import { ProgressiveImage } from "@/components/ProgressiveImage";
 import { t } from "@/lib/translations";
+import { brochures, brochureSectionCopy } from "@/lib/brochureContent";
+
+// Design philosophy: Swiss private-banking restraint — the brochure area reads as an editorial document index, using precise rules and restrained champagne-gold accents rather than generic download cards.
 
 export default function About() {
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
@@ -24,6 +27,10 @@ export default function About() {
     window.addEventListener("dilliz_lang_changed", handleLangChange);
     return () => window.removeEventListener("dilliz_lang_changed", handleLangChange);
   }, []);
+
+  const orderedBrochures = lang === "en"
+    ? [brochures[1], brochures[0]]
+    : [brochures[0], brochures[1]];
 
   return (
     <Layout>
@@ -133,6 +140,62 @@ export default function About() {
             </div>
 
           </div>
+
+          {/* 公司小冊子下載：公司介紹後的編輯式文件索引 */}
+          <section aria-labelledby="brochure-download-title" className="border-y border-metal-gold/20 bg-[#171a1e]/80">
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="border-b border-metal-gold/15 px-7 py-10 sm:px-10 lg:col-span-4 lg:border-b-0 lg:border-r lg:py-12">
+                <span className="text-[10px] font-bold tracking-[0.24em] text-metal-gold uppercase">
+                  {brochureSectionCopy.eyebrow[lang]}
+                </span>
+                <h2 id="brochure-download-title" className="mt-4 font-serif text-2xl font-bold leading-tight text-slate-100 md:text-3xl">
+                  {brochureSectionCopy.title[lang]}
+                </h2>
+                <p className="mt-4 text-sm font-light leading-7 text-slate-400">
+                  {brochureSectionCopy.description[lang]}
+                </p>
+                <p className="mt-6 text-[10px] tracking-[0.12em] text-slate-600 uppercase">
+                  {brochureSectionCopy.opensNewTab[lang]}
+                </p>
+              </div>
+
+              <div className="lg:col-span-8">
+                {orderedBrochures.map((brochure, index) => (
+                  <article
+                    key={brochure.id}
+                    className={`grid grid-cols-[56px_1fr] gap-x-4 px-7 py-8 sm:grid-cols-[72px_1fr_auto] sm:items-center sm:px-10 ${index > 0 ? "border-t border-white/10" : ""}`}
+                  >
+                    <div className="row-span-2 flex h-14 w-14 items-center justify-center border border-metal-gold/35 font-serif text-base font-bold text-metal-gold sm:h-16 sm:w-16">
+                      {brochure.marker}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[9px] font-bold tracking-[0.18em] text-metal-gold uppercase">
+                        {brochure.language[lang]}
+                      </p>
+                      <h3 className="mt-2 font-serif text-lg font-bold leading-snug text-slate-100 sm:text-xl">
+                        {brochure.title[lang]}
+                      </h3>
+                      <p className="mt-2 text-[10px] tracking-[0.08em] text-slate-500 uppercase">
+                        {brochure.meta[lang]}
+                      </p>
+                    </div>
+                    <a
+                      href={brochure.href}
+                      download={brochure.downloadName}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${brochureSectionCopy.download[lang]} — ${brochure.title[lang]}`}
+                      className="col-span-2 mt-6 inline-flex min-h-12 items-center justify-center gap-3 border border-metal-gold/45 px-6 text-[10px] font-bold tracking-[0.16em] text-metal-gold uppercase transition-colors hover:bg-metal-gold hover:text-[#17191c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-metal-gold sm:col-span-1 sm:mt-0"
+                    >
+                      <FileText size={15} aria-hidden="true" />
+                      {brochureSectionCopy.download[lang]}
+                      <Download size={14} aria-hidden="true" />
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
 
           {/* 核心競爭優勢板塊 */}
           <div className="bg-[#2b2b2b] border border-metal-gold/20 rounded-3xl p-10 md:p-12 shadow-gold-glow space-y-10">
