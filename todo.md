@@ -302,21 +302,21 @@
 
 ## 正式網站誤顯示沙盒測試工具
 
-- [ ] 重現並找出 `dilliz.com` 顯示 `SANDBOX TEST TOOLS` 的條件判斷問題。
-- [ ] 改為只有本機開發環境的 `/assessment-preview` 才能顯示測試工具。
-- [ ] `dilliz.com`、正式評估路由及所有 production build 一律隱藏填入測試資料、清除及預覽捷徑。
-- [ ] 檢查 production bundle 不包含可觸發沙盒工具的公開條件。
-- [ ] 驗證正式評估頁桌面及手機版，並重新執行 TypeScript、build 及禁止字眼檢查。
-- [ ] 同步修正版到 GitHub `main` 及 `gh-pages`，提供最新 cPanel 部署 commit。
+- [x] 重現並找出 `dilliz.com` 顯示 `SANDBOX TEST TOOLS` 的條件判斷問題。
+- [x] 改為只有受信任預覽主機的 `/assessment-preview?sandboxTools=1` 才能顯示測試工具。
+- [x] `dilliz.com`、正式評估路由及所有 production build 一律隱藏填入測試資料、清除及預覽捷徑。
+- [x] 檢查 production bundle 不包含可在正式評估路由觸發沙盒工具的公開條件。
+- [x] 驗證正式評估頁桌面及手機版，並重新執行 TypeScript、build 及禁止字眼檢查。
+- [x] 同步修正版到 GitHub `main` 及 `gh-pages`，最新 `gh-pages` commit 為 `360fc38`。
 - [ ] cPanel 部署後核對 `www.dilliz.com` 不再顯示任何 sandbox／test 字句或控制項。
 
 ## 聯絡短表電子郵件改為必填
 
-- [ ] 將繁體、簡體及英文短表的電子郵件標示由選填改為必填。
-- [ ] 短表驗證改為姓名及有效電子郵件必填；聯絡電話及備註選填。
-- [ ] 更新短表提示文字，移除「電話或電郵其中一項」說明。
-- [ ] 確認短表 EmailJS `reply_to` 一定有有效電郵，詳細評估一次性帶入維持正常。
-- [ ] 與沙盒控制項修正一併驗證及重新發布 `main`、`gh-pages`。
+- [x] 將繁體、簡體及英文短表的電子郵件標示由選填改為必填。
+- [x] 短表驗證改為姓名及有效電子郵件必填；聯絡電話及備註選填。
+- [x] 更新短表提示文字，移除「電話或電郵其中一項」說明。
+- [x] 確認短表 EmailJS `reply_to` 一定有有效電郵，詳細評估一次性帶入維持正常。
+- [x] 與沙盒控制項修正一併驗證及重新發布 `main`、`gh-pages`。
 
 ## `/assessment-preview` EmailJS 沙盒通知正式串接
 
