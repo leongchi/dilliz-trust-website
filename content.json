@@ -1350,9 +1350,9 @@
     "cn": "个人数据收集与范畴"
   },
   "inline.privacy.5": {
-    "zh": "當您使用本網站預約諮詢或提交表單時，我們可能會收集您的：姓名、聯絡電話、電子郵件、意向信託服務類型、意向資產規模等。在正式建立信託關係時，根據監管要求，我們還將收集身份證明、住址證明、稅務居民身份及資金來源證明（SOF）。",
-    "en": "When you use this website to book consultations or submit forms, we may collect your: name, phone number, email address, intended trust service types, and intended asset scale. Upon formally establishing a trust, we will also collect identity proof, proof of address, tax residency status, and source of funds (SOF) as required by regulations.",
-    "cn": "当您使用本网站预约咨询或提交表单时，我们可能会收集您的：姓名、联络电话、电子邮件、意向信托服务类型、意向资产规模等。在正式建立信托关系时，根据监管要求，我们还将收集身份证明、住址证明、税务居民身份及资金来源证明（SOF）。"
+    "zh": "當你使用本網站提交諮詢或開戶初步評估時，我們可能收集姓名、電話、電子郵件、首選聯絡方式、客戶類型、國籍或稅務身份、政治公眾人物身份、信託及開戶目的、資產類型、受益人安排、預期最初款項級距、資金來源、注入方式及帳戶偏好。正式建立信託關係時，我們亦可能按監管要求收集身份、地址、稅務及資金來源證明。",
+    "en": "When you submit an enquiry or preliminary account-opening assessment through this website, we may collect your name, phone number, email address, preferred contact method, client type, nationality or tax status, politically exposed person status, trust and account purpose, asset type, beneficiary arrangements, expected initial funding range, source of funds, funding method and account preference. If a trust relationship is formally established, we may also collect identity, address, tax and source-of-funds evidence as required by applicable obligations.",
+    "cn": "当你使用本网站提交咨询或开户初步评估时，我们可能收集姓名、电话、电子邮件、首选联络方式、客户类型、国籍或税务身份、政治公众人物身份、信托及开户目的、资产类型、受益人安排、预期最初款项级距、资金来源、注入方式及账户偏好。正式建立信托关系时，我们亦可能按监管要求收集身份、地址、税务及资金来源证明。"
   },
   "inline.privacy.6": {
     "zh": "資料使用目的",
@@ -1370,9 +1370,9 @@
     "cn": "资料安全与国际合规保密"
   },
   "inline.privacy.9": {
-    "zh": "本公司採用銀行級的數據加密傳輸與安全存儲技術，嚴格限制非授權人員訪問您的個人及資產資訊。我們絕不會將您的資料出售、出租或洩露給任何第三方機構。",
-    "en": "The Company employs bank-grade data encryption and secure storage technologies, strictly restricting unauthorized personnel from accessing your personal and asset information. We will never sell, rent, or disclose your data to any third-party organizations.",
-    "cn": "本公司采用银行级的数据加密传输与安全存储技术，严格限制非授权人员访问您的个人及资产资讯。我们绝不会将您的资料出售、出租或泄露给任何第三方机构。"
+    "zh": "網站表格資料會透過 EmailJS 及電子郵件傳送至 DILLIZ 客戶服務郵箱，由獲授權人員作初步評估及跟進。我們採取合理的技術及行政措施限制未獲授權存取，並不會出售或出租你的個人資料；如需服務供應商協助傳送或處理資料，我們會按服務需要限制其用途。",
+    "en": "Website form information is transmitted through EmailJS and email to DILLIZ Client Services for preliminary assessment and follow-up by authorised personnel. We apply reasonable technical and administrative controls to restrict unauthorised access and do not sell or rent your personal data. Where a service provider assists with transmission or processing, its use is limited to the relevant service purpose.",
+    "cn": "网站表格资料会通过 EmailJS 及电子邮件发送至 DILLIZ 客户服务邮箱，由获授权人员作初步评估及跟进。我们采取合理的技术及行政措施限制未获授权存取，并不会出售或出租你的个人资料；如需服务供应商协助发送或处理资料，我们会按服务需要限制其用途。"
   },
   "inline.privacy.10": {
     "zh": "作為持牌受託機構，我們在遵守本地保密法的同時，嚴格履行與共同申報標準（CRS）及美國外國帳戶稅收合規法案（FATCA）相關的國際合規與申報義務。",
