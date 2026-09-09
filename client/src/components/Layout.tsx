@@ -2,6 +2,49 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Globe, Menu, X, ArrowRight, Shield, Bell, Trash2, CheckCircle2, User } from "lucide-react";
 import { t, useTranslationsReady } from "@/lib/translations";
+import { isSandboxPreviewFeature } from "@/lib/sandboxPreview";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+
+// DILLIZ Swiss private-banking system: restrained brand icons, champagne hairlines,
+// and a discreet graphite WhatsApp seal across the public site.
+
+type ExternalDestination = {
+  name: "X" | "Facebook" | "WhatsApp";
+  url: string;
+};
+
+function BrandIcon({ brand, className = "h-4 w-4" }: { brand: ExternalDestination["name"]; className?: string }) {
+  if (brand === "X") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
+      </svg>
+    );
+  }
+
+  if (brand === "Facebook") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.972h-1.513c-1.49 0-1.956.931-1.956 1.887v2.262h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.496.1-.198.05-.372-.025-.521-.074-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347M12.003 21.5a9.45 9.45 0 0 1-4.815-1.318l-.345-.205-3.58.939.956-3.49-.224-.358a9.44 9.44 0 0 1-1.451-5.04c0-5.214 4.243-9.456 9.459-9.456 2.526 0 4.9.984 6.684 2.77a9.39 9.39 0 0 1 2.768 6.686c-.002 5.214-4.245 9.457-9.452 9.457m8.047-17.8A11.3 11.3 0 0 0 12.003.365C5.735.365.636 5.462.634 11.73c0 2.003.523 3.958 1.517 5.679L.54 23.296l6.023-1.58a11.36 11.36 0 0 0 5.435 1.384h.005c6.267 0 11.366-5.098 11.369-11.367A11.3 11.3 0 0 0 20.05 3.7Z" />
+    </svg>
+  );
+}
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,6 +54,16 @@ export default function Layout({ children }: LayoutProps) {
   const [location, setLocation] = useLocation();
   const [lang, setLang] = useState<"zh" | "en" | "cn">("zh");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [externalDestination, setExternalDestination] = useState<ExternalDestination | null>(null);
+  const socialFocusEnabled = isSandboxPreviewFeature("socialFocus", location);
+
+  useEffect(() => {
+    if (!socialFocusEnabled || window.location.hash !== "#site-footer") return;
+    const scrollTimer = window.setTimeout(() => {
+      document.getElementById("site-footer")?.scrollIntoView({ block: "end" });
+    }, 80);
+    return () => window.clearTimeout(scrollTimer);
+  }, [socialFocusEnabled]);
   // Force re-render of ALL children when content.json finishes loading
   const translationsReady = useTranslationsReady();
   const [, forceUpdate] = useState(0);
@@ -230,11 +283,51 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* 頁面主體內容 - key forces full re-render when content.json loads */}
       <div className="grow" key={translationsReady ? "loaded" : "loading"}>
-        {children}
+        {socialFocusEnabled ? (
+          <section className="flex min-h-[430px] items-center bg-[#181a1d] px-5 py-14 md:min-h-[500px] md:px-8">
+            <div className="mx-auto w-full max-w-5xl border-y border-[#95856e]/35 bg-[#1b2026] px-6 py-9 shadow-[inset_0_1px_0_rgba(255,255,255,0.025)] md:px-10 md:py-12">
+              <p className="text-[10px] font-bold tracking-[0.28em] text-[#bfae95]">
+                {lang === "en" ? "FOCUSED EFFECT PREVIEW" : lang === "cn" ? "聚焦效果预览" : "聚焦效果預覽"}
+              </p>
+              <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <p className="text-xs tracking-[0.18em] text-slate-500">
+                    {lang === "en" ? "NAVIGATION LABEL" : lang === "cn" ? "导航标签" : "導覽標籤"}
+                  </p>
+                  <p className="mt-3 font-serif text-4xl text-slate-100 md:text-5xl">
+                    {lang === "en" ? "Trust" : lang === "cn" ? "信托" : "信託"}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 border-t border-white/10 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+                  <img
+                    src="/images/dilliz_new_logo_transparent_a0c86cf6.png"
+                    alt="DILLIZ Capital Trust Limited"
+                    className="h-12 w-auto opacity-75 grayscale"
+                  />
+                  <div className="h-8 w-px bg-white/10" aria-hidden="true" />
+                  {([
+                    { name: "X", url: "https://x.com/DLZcapital" },
+                    { name: "Facebook", url: "https://www.facebook.com/dillizcapital" }
+                  ] as ExternalDestination[]).map((item) => (
+                    <button
+                      key={`focus-${item.name}`}
+                      type="button"
+                      onClick={() => setExternalDestination(item)}
+                      aria-label={lang === "en" ? `Open DILLIZ on ${item.name}` : lang === "cn" ? `打开 DILLIZ ${item.name}` : `開啟 DILLIZ ${item.name}`}
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-[#95856e]/55 bg-[#17191c] text-[#cdbb9f] transition-colors hover:border-[#e2d2b8] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#bfae95]"
+                    >
+                      <BrandIcon brand={item.name} className="h-[18px] w-[18px]" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : children}
       </div>
 
       {/* 官方頁尾 (Footer) */}
-      <footer className="bg-[#141414] text-slate-500 py-12 border-t border-white/5 text-xs shrink-0">
+      <footer id="site-footer" className="scroll-mt-20 bg-[#141414] text-slate-500 py-12 border-t border-white/5 text-xs shrink-0">
         {/* Risk Disclosure Banner */}
         <div className="max-w-7xl mx-auto px-6 mb-6">
           <div>
@@ -276,8 +369,8 @@ export default function Layout({ children }: LayoutProps) {
             </p>
           </div>
 
-          {/* 右側：Logo */}
-          <div className="shrink-0">
+          {/* 右側：Logo 與預覽社交入口 */}
+          <div className="flex shrink-0 items-center gap-3">
             <Link href="/">
               <img 
                 src="/images/dilliz_new_logo_transparent_a0c86cf6.png" 
@@ -285,10 +378,70 @@ export default function Layout({ children }: LayoutProps) {
                 className="h-10 w-auto opacity-45 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer"
               />
             </Link>
+            <div className="flex items-center gap-2 border-l border-white/10 pl-3" aria-label={lang === "en" ? "DILLIZ social media" : lang === "cn" ? "DILLIZ 社交媒体" : "DILLIZ 社交媒體"}>
+              {([
+                { name: "X", url: "https://x.com/DLZcapital" },
+                { name: "Facebook", url: "https://www.facebook.com/dillizcapital" }
+              ] as ExternalDestination[]).map((item) => (
+                <button
+                  key={item.name}
+                  type="button"
+                  onClick={() => setExternalDestination(item)}
+                  aria-label={lang === "en" ? `Open DILLIZ on ${item.name}` : lang === "cn" ? `打开 DILLIZ ${item.name}` : `開啟 DILLIZ ${item.name}`}
+                  title={item.name}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#95856e]/45 bg-[#1b1d20] text-[#bfae95] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#cdbb9f] hover:text-[#eadcc5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#bfae95] motion-reduce:transform-none"
+                >
+                  <BrandIcon brand={item.name} />
+                </button>
+              ))}
+            </div>
           </div>
 
         </div>
       </footer>
+
+      <button
+        type="button"
+        onClick={() => setExternalDestination({ name: "WhatsApp", url: "https://wa.me/85265286838" })}
+        aria-label={lang === "en" ? "Contact DILLIZ on WhatsApp" : lang === "cn" ? "通过 WhatsApp 联络 DILLIZ" : "透過 WhatsApp 聯絡 DILLIZ"}
+        title="WhatsApp"
+        className="fixed bottom-5 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full border border-[#bfae95]/70 bg-[#1b2026] text-white shadow-[0_10px_35px_rgba(0,0,0,0.45),0_0_0_1px_rgba(191,174,149,0.12)] transition-all duration-200 hover:-translate-y-1 hover:border-[#d9c8ad] hover:bg-[#222a31] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#bfae95] focus-visible:ring-offset-2 focus-visible:ring-offset-[#141414] motion-reduce:transform-none md:bottom-6 md:right-6 md:h-[60px] md:w-[60px]"
+      >
+        <BrandIcon brand="WhatsApp" className="h-7 w-7" />
+      </button>
+
+      <AlertDialog open={Boolean(externalDestination)} onOpenChange={(open) => !open && setExternalDestination(null)}>
+        <AlertDialogContent className="border-[#95856e]/45 bg-[#1b2026] text-slate-100 shadow-[0_24px_70px_rgba(0,0,0,0.55)]">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="font-serif text-xl text-[#d8c8ad]">
+              {lang === "en" ? "You are leaving the DILLIZ website" : lang === "cn" ? "即将离开 DILLIZ 网站" : "即將離開 DILLIZ 網站"}
+            </AlertDialogTitle>
+            <AlertDialogDescription className="leading-6 text-slate-400">
+              {lang === "en"
+                ? `You will continue to ${externalDestination?.name ?? "an external service"}. The third-party site is governed by its own terms and privacy policy.`
+                : lang === "cn"
+                  ? `你将前往 ${externalDestination?.name ?? "第三方服务"}。第三方网站受其自身条款及私隐政策约束。`
+                  : `你將前往 ${externalDestination?.name ?? "第三方服務"}。第三方網站受其自身條款及私隱政策約束。`}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel className="border-white/10 bg-transparent text-slate-300 hover:bg-white/5 hover:text-white">
+              {lang === "en" ? "Cancel" : lang === "cn" ? "取消" : "取消"}
+            </AlertDialogCancel>
+            <AlertDialogAction
+              className="bg-[#b7a486] text-[#17191c] hover:bg-[#c9b798]"
+              onClick={() => {
+                if (externalDestination) {
+                  window.open(externalDestination.url, "_blank", "noopener,noreferrer");
+                }
+                setExternalDestination(null);
+              }}
+            >
+              {lang === "en" ? "Continue" : lang === "cn" ? "继续" : "繼續"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
 
     </div>
   );

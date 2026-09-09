@@ -348,3 +348,46 @@
 - [ ] 取得使用者再次確認後，以虛構資料從網站寄出一封通知到 `info@dilliz.com`。
 - [ ] 核對 EmailJS 寄送結果、Sheet 資料列及提交編號一致。
 - [ ] 交付沙盒測試連結；正式網站、現有 Contact 表格、GitHub、gh-pages 及 cPanel 保持不變。
+
+## 頁尾社交圖示及 WhatsApp 浮動按鈕效果圖
+
+- [x] 找出網站內所有「信託服務」顯示位置，確認只縮短導覽入口，避免誤改法規或公司描述。
+- [x] 核對頁尾公司 Logo、現有外部連結提示及手機版固定元素，選擇不重疊的圖示尺寸與間距。
+- [x] 在沙盒頁尾公司 Logo 旁加入 X 與 Facebook 純 Logo 連結：`https://x.com/DLZcapital`、`https://www.facebook.com/dillizcapital`。
+- [x] 在網站右下角加入只顯示 WhatsApp Logo 的浮動圓形按鈕，使用公司電話 `+852 6528 6838`，不加入聊天文字氣泡。
+- [x] 外部社交連結及 WhatsApp 保留三語離站提示、鍵盤焦點、可讀標籤及新分頁安全屬性。
+- [x] 驗證桌面、手機、頁尾及長頁面不遮擋內容或其他固定元素。
+- [x] 只交付桌面及手機效果圖；使用者確認前不更新 GitHub、gh-pages、cPanel 或正式網站。
+
+## 社交及 WhatsApp 聚焦效果圖修正
+
+- [x] 確認整頁長截圖會縮小頁尾圖示，並因固定元素截圖規則隱藏 WhatsApp 按鈕。
+- [x] 建立只在沙盒顯示的聚焦預覽區，同時清楚呈現「信託」、X、Facebook 及 WhatsApp。
+- [x] 提供可直接開啟的沙盒聚焦網址，不依賴捲動到頁尾或全頁截圖縮放。
+- [x] 重新捕捉桌面及手機效果圖，確認圖示尺寸、間距及離站提示。
+- [x] 未獲確認前不更新 GitHub、gh-pages、cPanel 或正式網站。
+
+## 社交圖示只保留 Logo
+
+- [x] 移除聚焦效果頁中 X、Facebook 及 WhatsApp 位置說明文字。
+- [x] 聚焦效果的社交區只保留 DILLIZ 公司 Logo、X、Facebook 及右下角 WhatsApp Logo。
+- [x] 驗證桌面及手機圖示對齊、留白與觸控尺寸。
+- [x] 重新提供沒有說明文字的效果圖；未獲確認前不更新正式網站。
+
+## WhatsApp 桌面及手機跳轉驗證
+
+- [x] 核對浮動按鈕使用 `https://wa.me/85265286838`，不附帶或自動發送訊息。
+- [x] 以桌面視窗驗證離站提示及 WhatsApp Web 目的地可正常開啟。
+- [x] 以手機視窗及 iPhone Safari user agent 驗證 WhatsApp App／流動網頁 handoff 目的地正確。
+- [x] 確認新分頁安全屬性、電話號碼及取消操作正常，而且不會實際送出訊息。
+- [x] 記錄測試結果；正式網站、GitHub、gh-pages 及 cPanel 保持不變。
+
+## 信託導覽、社交 Logo 及 WhatsApp 正式發布
+
+- [ ] 將 `nav.services` 三語正式改為「信託／信托／Trust」，並同步 runtime 及 fallback JSON。
+- [ ] 把頁尾 X／Facebook 純 Logo 與右下角 WhatsApp 浮動 Logo 從沙盒預覽改為正式全站顯示。
+- [ ] 保留三語離站提示、`noopener,noreferrer`、正確社交網址及 WhatsApp 號碼。
+- [ ] 移除正式版本對 `socialPreview` 的依賴，聚焦效果頁只保留於受信任沙盒。
+- [ ] 完成 TypeScript、production build、桌面／手機及外部跳轉驗證。
+- [ ] 同步 GitHub `main`，再以全新 `gh-pages` 工作區發布建置資產並保留 cPanel 控制檔。
+- [ ] 在 cPanel 執行或確認 Update from Remote／Deploy HEAD Commit，並核對 `www.dilliz.com` 正式效果。
