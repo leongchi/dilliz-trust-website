@@ -384,10 +384,10 @@
 
 ## 信託導覽、社交 Logo 及 WhatsApp 正式發布
 
-- [ ] 將 `nav.services` 三語正式改為「信託／信托／Trust」，並同步 runtime 及 fallback JSON。
-- [ ] 把頁尾 X／Facebook 純 Logo 與右下角 WhatsApp 浮動 Logo 從沙盒預覽改為正式全站顯示。
-- [ ] 保留三語離站提示、`noopener,noreferrer`、正確社交網址及 WhatsApp 號碼。
-- [ ] 移除正式版本對 `socialPreview` 的依賴，聚焦效果頁只保留於受信任沙盒。
-- [ ] 完成 TypeScript、production build、桌面／手機及外部跳轉驗證。
-- [ ] 同步 GitHub `main`，再以全新 `gh-pages` 工作區發布建置資產並保留 cPanel 控制檔。
-- [ ] 在 cPanel 執行或確認 Update from Remote／Deploy HEAD Commit，並核對 `www.dilliz.com` 正式效果。
+- [x] 將 `nav.services` 三語正式改為「信託／信托／Trust」，並同步 runtime 及 fallback JSON。
+- [x] 把頁尾 X／Facebook 純 Logo 與右下角 WhatsApp 浮動 Logo 從沙盒預覽改為正式全站顯示。
+- [x] 保留三語離站提示、`noopener,noreferrer`、正確社交網址及 WhatsApp 號碼。
+- [x] 移除正式版本對 `socialPreview` 的依賴，聚焦效果頁只保留於受信任沙盒。
+- [x] 完成 TypeScript、production build、桌面／手機及外部跳轉驗證。
+- [x] 同步 GitHub `main`，並以全新 `gh-pages` 工作區發布建置資產；`gh-pages` commit 為 `c0aa0e1`。
+- [ ] cPanel 需要登入後執行 Update from Remote／Deploy HEAD Commit；目前 `www.dilliz.com` 仍載入舊資產 `index-ZnWpu1vx.js`。
