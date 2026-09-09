@@ -35,9 +35,9 @@
     "cn": "预约专属咨询"
   },
   "hero.badge": {
-    "zh": "香港持牌信託服務公司",
-    "en": "HK Licensed Trust Service Provider",
-    "cn": "香港持牌信托服务公司"
+    "zh": "香港持牌信託",
+    "en": "HK Licensed Trust Company",
+    "cn": "香港持牌信托"
   },
   "hero.title": {
     "zh": "Build A Trust with DILLIZ",
@@ -50,9 +50,9 @@
     "cn": "Shape The Future YOU Deserve"
   },
   "hero.desc": {
-    "zh": "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 總部設於香港，是一家香港持牌信託服務公司。我們專注為客戶提供定制化信託解決方案，旨在成為您最值得信賴的信託公司。",
-    "en": "Dilliz Capital Trust Limited is a licensed trust service provider in Hong Kong. We specialize in providing customized trust solutions, aiming to be your most trusted partner in wealth preservation and legacy planning.",
-    "cn": "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 总部设于香港，是一家香港持牌信托服务公司。我们专注为客户提供定制化信托解决方案，旨在成为您最值得信赖的信托公司。"
+    "zh": "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 總部設於香港，是一家香港持牌信託公司。我們專注為客戶提供定制化信託解決方案，旨在成為您最值得信賴的信託公司。",
+    "en": "Dilliz Capital Trust Limited is a licensed trust company in Hong Kong. We specialize in providing customized trust solutions, aiming to be your most trusted partner in wealth preservation and legacy planning.",
+    "cn": "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 总部设于香港，是一家香港持牌信托公司。我们专注为客户提供定制化信托解决方案，旨在成为您最值得信赖的信托公司。"
   },
   "hero.btn.explore": {
     "zh": "探索信託方案",
@@ -930,9 +930,9 @@
     "cn": "感谢您的咨询！我们的资深客户专员将于 24 小时内与您联络，为您提供专属信托规划服务。"
   },
   "footer.desc": {
-    "zh": "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為全球高淨值客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。",
-    "en": "DilliZ Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global high-net-worth clients and family offices.",
-    "cn": "帝力斯资本信托有限公司 DilliZ Capital Trust Limited 是一家总部设于香港的持牌信托服务公司。我们致力于为全球高净值客户与家族办公室提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
+    "zh": "帝力斯資本信託有限公司 DilliZ Capital Trust Limited 是一家總部設於香港的持牌信託公司。我們致力於為全球高淨值客戶與家族辦公室提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。",
+    "en": "DilliZ Capital Trust Limited is a licensed trust company in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global high-net-worth clients and family offices.",
+    "cn": "帝力斯资本信托有限公司 DilliZ Capital Trust Limited 是一家总部设于香港的持牌信托公司。我们致力于为全球高净值客户与家族办公室提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
   },
   "footer.license": {
     "zh": "信託或公司服務提供者牌照",
@@ -955,9 +955,9 @@
     "cn": "本网站所载之所有资讯、案例分析与产品描述仅供一般参考之用，并不构成任何法律、税务、财务或其他专业建议。信托设立、资产托管及全球银行户口开设服务涉及复杂的跨境法律与税务规范，客户在做出任何决策前，应寻求独立的法律与税务专家咨询。DILLIZ 亦不对因使用本网站资讯而产生的任何损失承担责任。"
   },
   "footer.copyright": {
-    "zh": "© 2026 帝力斯資本信託有限公司 (DilliZ Capital Trust Limited). 版權所有。香港持牌信託服務公司 (TC010540)",
-    "en": "© 2026 DilliZ Capital Trust Limited. All Rights Reserved. Licensed Trust Service Provider (TC010540)",
-    "cn": "© 2026 帝力斯资本信托有限公司 (DilliZ Capital Trust Limited). 版权所有。香港持牌信托服务公司 (TC010540)"
+    "zh": "© 2026 帝力斯資本信託有限公司 (DilliZ Capital Trust Limited). 版權所有。香港持牌信託 (TC010540)",
+    "en": "© 2026 DilliZ Capital Trust Limited. All Rights Reserved. Licensed Trust Company (TC010540)",
+    "cn": "© 2026 帝力斯资本信托有限公司 (DilliZ Capital Trust Limited). 版权所有。香港持牌信托 (TC010540)"
   },
   "inline.about.0": {
     "zh": "關於帝力斯信託",
@@ -980,9 +980,9 @@
     "cn": "我们的品牌故事"
   },
   "inline.about.4": {
-    "zh": "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為全球客戶提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。",
-    "en": "Dilliz Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global clients.",
-    "cn": "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 是一家总部设于香港的持牌信托服务公司。我们致力于为全球客户提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
+    "zh": "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 是一家總部設於香港的持牌信託公司。我們致力於為全球客戶提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。",
+    "en": "Dilliz Capital Trust Limited is a licensed trust company in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for global clients.",
+    "cn": "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 是一家总部设于香港的持牌信托公司。我们致力于为全球客户提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
   },
   "inline.about.5": {
     "zh": "我們深知，財富不僅僅是數字的累積，更是家族奮鬥歷史的沉澱與對未來的期許。因此，我們秉持「以客為本，信任相連」的核心價值，將私人銀行的嚴謹與精緻，與香港普通法系下信託架構的靈活優勢完美結合。",
@@ -1115,9 +1115,9 @@
     "cn": "关于帝力斯信托"
   },
   "inline.home.1": {
-    "zh": "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 是一家總部設於香港的持牌信託服務公司。我們致力於為客戶提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。",
-    "en": "Dilliz Capital Trust Limited is a licensed trust service provider in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for our clients.",
-    "cn": "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 是一家总部设于香港的持牌信托服务公司。我们致力于为客户提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
+    "zh": "帝力斯資本信託有限公司 Dilliz Capital Trust Limited 是一家總部設於香港的持牌信託公司。我們致力於為客戶提供安全、合規、隱密且簡易靈活的財富保護、託管與跨代傳承解決方案。",
+    "en": "Dilliz Capital Trust Limited is a licensed trust company in Hong Kong. We are dedicated to providing secure, compliant, private, and highly flexible wealth protection, custody, and multi-generational succession solutions for our clients.",
+    "cn": "帝力斯资本信托有限公司 Dilliz Capital Trust Limited 是一家总部设于香港的持牌信托公司。我们致力于为客户提供安全、合规、隐密且简易灵活的财富保护、托管与跨代传承解决方案。"
   },
   "inline.home.2": {
     "zh": "了解更多品牌故事",
@@ -1390,9 +1390,9 @@
     "cn": "您有权随时要求查询、更正或删除我们所持有的您的个人资料。如需行使上述权利，或对我们的隐私政策有任何疑问，请通过本网站的联络电子邮件或电话与我们的合规官（Compliance Officer）联络。"
   },
   "inline.privacy.13": {
-    "zh": "香港持牌信託服務公司 · 牌照號碼: TC010540",
+    "zh": "香港持牌信託公司 · 牌照號碼: TC010540",
     "en": "Licensed Trust Company in HK · License No. TC010540",
-    "cn": "香港持牌信托服务公司 · 牌照号码: TC010540"
+    "cn": "香港持牌信托公司 · 牌照号码: TC010540"
   },
   "inline.services.0": {
     "zh": "核心服務優勢",
@@ -1505,9 +1505,9 @@
     "cn": "本使用条款受香港特别行政区法律管辖并按其解释。因本网站或本条款引起之任何争议，应提交香港法院专属管辖。"
   },
   "inline.terms.15": {
-    "zh": "香港持牌信託服務公司 · 牌照號碼: TC010540",
+    "zh": "香港持牌信託公司 · 牌照號碼: TC010540",
     "en": "Licensed Trust Company in HK · License No. TC010540",
-    "cn": "香港持牌信托服务公司 · 牌照号码: TC010540"
+    "cn": "香港持牌信托公司 · 牌照号码: TC010540"
   },
   "inline.layout.0": {
     "zh": "cn",
@@ -1540,9 +1540,9 @@
     "cn": "隐私政策 (Privacy Policy)"
   },
   "inline.layout.6": {
-    "zh": "免責聲明：本網站所載資料僅供參考，不構成任何法律、稅務、財務或專業建議。信託服務由香港持牌信託服務公司帝力斯資本信託有限公司（牌照號碼：TC010540）依法提供。",
+    "zh": "免責聲明：本網站所載資料僅供參考，不構成任何法律、稅務、財務或專業建議。信託服務由香港持牌信託公司帝力斯資本信託有限公司（牌照號碼：TC010540）依法提供。",
     "en": "Disclaimer: The information contained in this website is for reference only and does not constitute any legal, tax, financial, or professional advice. Trust services are provided by Dilliz Capital Trust Limited (License No. TC010540).",
-    "cn": "免责声明：本网站所载资料仅供参考，不构成任何法律、税务、财务或专业建议。信托服务由香港持牌信托服务公司帝力斯资本信托有限公司（牌照号码：TC010540）依法提供。"
+    "cn": "免责声明：本网站所载资料仅供参考，不构成任何法律、税务、财务或专业建议。信托服务由香港持牌信托公司帝力斯资本信托有限公司（牌照号码：TC010540）依法提供。"
   },
   "inline.layout.7": {
     "zh": "通知中心",

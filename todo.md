@@ -391,3 +391,13 @@
 - [x] 完成 TypeScript、production build、桌面／手機及外部跳轉驗證。
 - [x] 同步 GitHub `main`，並以全新 `gh-pages` 工作區發布建置資產；`gh-pages` commit 為 `c0aa0e1`。
 - [ ] cPanel 需要登入後執行 Update from Remote／Deploy HEAD Commit；目前 `www.dilliz.com` 仍載入舊資產 `index-ZnWpu1vx.js`。
+
+## 全站「香港持牌信託服務」改為「香港持牌信託」
+
+- [x] 掃描繁體、簡體、英文、runtime `content.json`、fallback 翻譯及頁面程式中的持牌信託身份用語。
+- [x] 將繁體「香港持牌信託服務／持牌信託服務」改為「香港持牌信託／持牌信託」。
+- [x] 將簡體對應「香港持牌信托服务／持牌信托服务」改為「香港持牌信托／持牌信托」。
+- [x] 檢查英文對應身份描述，只在需要時移除 `services`，不誤改一般服務內容。
+- [x] 保留功能／產品頁的一般「服務／服务／services」名稱及法規披露，不作無關刪除。
+- [x] 同步 runtime 與 fallback 內容，執行 TypeScript、production build 及禁止字眼檢查。
+- [ ] 發布修正版至 GitHub `main` 及 `gh-pages`，提供最新 cPanel Deploy HEAD Commit。
