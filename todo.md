@@ -400,4 +400,4 @@
 - [x] 檢查英文對應身份描述，只在需要時移除 `services`，不誤改一般服務內容。
 - [x] 保留功能／產品頁的一般「服務／服务／services」名稱及法規披露，不作無關刪除。
 - [x] 同步 runtime 與 fallback 內容，執行 TypeScript、production build 及禁止字眼檢查。
-- [ ] 發布修正版至 GitHub `main` 及 `gh-pages`，提供最新 cPanel Deploy HEAD Commit。
+- [x] 發布修正版至 GitHub `main` (`92b1c7be`) 及 `gh-pages` (`24c1248`)；`www.dilliz.com` 仍載入舊資產 `index-Toa60ajm.js`，等待 cPanel Deploy HEAD Commit。
