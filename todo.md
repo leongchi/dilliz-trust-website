@@ -408,4 +408,4 @@
 - [x] 修正客戶姓名參數對照，確保主旨與正文均顯示同一姓名，並加入空白防護。
 - [x] 在不寄出實際郵件的情況下驗證姓名、電話、電郵及備註 payload。
 - [x] 完成 TypeScript、production build 及 Contact 成功流程檢查。
-- [ ] 發布修正版至 GitHub `main` 及 `gh-pages`，提供最新 cPanel Deploy HEAD Commit。
+- [x] 發布修正版至 GitHub `main` (`242d5059`) 及 `gh-pages` (`62c615c`)；`www.dilliz.com` 仍載入上一版資產 `index-C9nIWGtC.js`，等待 cPanel Deploy HEAD Commit。
