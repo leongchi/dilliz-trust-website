@@ -401,3 +401,11 @@
 - [x] 保留功能／產品頁的一般「服務／服务／services」名稱及法規披露，不作無關刪除。
 - [x] 同步 runtime 與 fallback 內容，執行 TypeScript、production build 及禁止字眼檢查。
 - [x] 發布修正版至 GitHub `main` (`92b1c7be`) 及 `gh-pages` (`24c1248`)；`www.dilliz.com` 仍載入舊資產 `index-Toa60ajm.js`，等待 cPanel Deploy HEAD Commit。
+
+## 諮詢 EmailJS 正文缺少客戶姓名
+
+- [x] 核對 Contact 表格傳送至 `template_qunjjdo` 的姓名參數與主旨／正文 template variables。
+- [x] 修正客戶姓名參數對照，確保主旨與正文均顯示同一姓名，並加入空白防護。
+- [x] 在不寄出實際郵件的情況下驗證姓名、電話、電郵及備註 payload。
+- [x] 完成 TypeScript、production build 及 Contact 成功流程檢查。
+- [ ] 發布修正版至 GitHub `main` 及 `gh-pages`，提供最新 cPanel Deploy HEAD Commit。

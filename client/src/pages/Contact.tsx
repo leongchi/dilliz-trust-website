@@ -8,6 +8,7 @@ import {
   storeContactAssessmentPrefill,
   type ContactAssessmentPrefill
 } from "@/lib/contactAssessmentHandoff";
+import { buildContactEmailTemplateParams } from "@/lib/contactEmail";
 import { isSandboxPreviewFeature } from "@/lib/sandboxPreview";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
@@ -24,7 +25,7 @@ import { useLocation } from "wouter";
 // 3. PUBLIC_KEY: 您的帳戶公鑰 (例如: "user_xxx" 或 "xxx-xxxxxxxxxxxx")
 //
 // 建議的郵件模板 (Email Template) 變數配置：
-// - 客戶姓名: {{from_name}}
+// - 客戶姓名: {{from_name}}（兼容 {{customer_name}}、{{name}} 等舊範本變數）
 // - 聯絡電話: {{phone}}
 // - 電子郵件: {{reply_to}}
 // - 諮詢留言: {{message}}
@@ -170,12 +171,10 @@ export default function Contact() {
     setIsSending(true);
 
     try {
-      const templateParams = {
-        from_name: formData.name,
-        phone: formData.phone || contactContinuationCopy.notProvided[lang],
-        reply_to: formData.email,
-        message: formData.message || "（無留言 / No Message）"
-      };
+      const templateParams = buildContactEmailTemplateParams(
+        formData,
+        contactContinuationCopy.notProvided[lang]
+      );
 
       await emailjs.send(
         EMAILJS_SERVICE_ID,
